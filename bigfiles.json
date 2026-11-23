@@ -16,5 +16,13 @@
    "adapter_model.safetensors.part01",
    "adapter_model.safetensors.part02"
   ]
+ },
+ "data/site_kandla/blender/kandla_world.blend": {
+  "sha256": "f2edbc799e5926cbd6561327e36dc934b64952ef323b61d3aefc2c44dda71924",
+  "bytes": 176239613,
+  "parts": [
+   "kandla_world.blend.part00",
+   "kandla_world.blend.part01"
+  ]
  }
 }

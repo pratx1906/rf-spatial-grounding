@@ -184,7 +184,7 @@ runs on native Windows or Linux with OptiX; it is only needed to rebuild the rad
 git clone https://github.com/pratx1906/rf-spatial-grounding.git
 cd rf-spatial-grounding
 make setup                         # creates .venv-wsl from requirements/wsl.lock
-python scripts/bigfiles.py join    # rebuilds the LoRA adapters from their parts (checks SHA-256)
+python scripts/bigfiles.py join    # rebuilds the LoRA adapters and the Blender world from their parts (SHA-256 checked)
 make test                          # unit, truth-separation and schema tests
 ```
 
@@ -203,10 +203,10 @@ python -m serve.llm --lora sft=checkpoints/sft_v14 &      # in another shell
 python -m eval.run --policy model --served sft --set eval/frozen/v6/tasks.jsonl
 ```
 
-**What a fresh clone contains and what it rebuilds.** The port twin, all scenario observations, questions, frozen test
-sets, adapters and results are committed. The full Blender world file and the per-sensor ray-tracing path caches are
-not (several GB). Coverage maps and sensor link tables are included, so the console and most tools work out of the
-box; the tools that predict multipath bearings from the ray-traced scene (`predict_aoa`, the ray-traced match in
+**What a fresh clone contains and what it rebuilds.** The port twin (including the full Blender world,
+`data/site_kandla/blender/kandla_world.blend`, as parts), all scenario observations, questions, frozen test sets,
+adapters and results are committed. The per-sensor ray-tracing path caches are not (several GB). Coverage maps and
+sensor link tables are included, so the console and most tools work out of the box; the tools that predict multipath bearings from the ray-traced scene (`predict_aoa`, the ray-traced match in
 `fit_candidates`) need the path caches, which `envbuild/air7311_precompute.py` and `scripts/precompute_variants.py`
 rebuild with Sionna RT.
 
