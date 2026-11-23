@@ -1,0 +1,54 @@
+id: M3
+kind: hw_mismatch
+side: world
+seed: 55
+override:
+  impairments:
+    use_phase_sigma_deg: 15.0
+heading_bias_deg_1sigma: 0.5
+use_phase_sigma_deg: 15.0
+df_calibration_drift_rel_db: -40.0
+nodes:
+  S1:
+    heading_bias_deg: 0.023105
+    channel_phase_deg:
+    - 6.726418
+    - -8.064264
+    - -32.145714
+    - -7.826402
+  S2:
+    heading_bias_deg: -0.388284
+    channel_phase_deg:
+    - -3.258189
+    - -0.454968
+    - -28.259533
+    - -5.889612
+  S3:
+    heading_bias_deg: 0.306539
+    channel_phase_deg:
+    - -14.958331
+    - -6.111254
+    - 3.823549
+    - 24.658411
+  S4:
+    heading_bias_deg: -0.175193
+    channel_phase_deg:
+    - 34.056561
+    - -10.974379
+    - -9.738029
+    - 14.011849
+  S5:
+    heading_bias_deg: -0.310773
+    channel_phase_deg:
+    - -2.787803
+    - 13.815411
+    - -4.103003
+    - 18.822182
+labels:
+  debiased: true
+  source_dir: kandla_s55_X_M3
+  rule: label on az - heading_bias_deg (AUDIT_CODE C4)
+  agree_with_biased_labels: 0.9774
+  los_old: 292
+  los_new: 322
+  note: use-time phase error (M3) not removable by a constant; heading bias only

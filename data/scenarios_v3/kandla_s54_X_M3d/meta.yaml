@@ -1,0 +1,77 @@
+schema_version: stub-1
+seed: 54
+time:
+  t0_iso: '2026-01-01T00:00:00Z'
+  duration_s: 600.0
+  track_dt_s: 2.0
+  bearing_dt_s: 10.0
+bands:
+  sub_ghz_868_915:
+  - 863
+  - 928
+  ism_2400:
+  - 2400
+  - 2483.5
+  ism_5800:
+  - 5725
+  - 5875
+  gnss_l1:
+  - 1559
+  - 1610
+  gnss_l2:
+  - 1215
+  - 1254
+  vhf_marine:
+  - 156
+  - 174
+  cellular_lte:
+  - 700
+  - 2690
+  other:
+  - 0
+  - 100000
+site: site_kandla
+frame:
+  type: ENU
+  units: m
+  bearing: deg clockwise from true north
+  origin:
+    lat: 23.032732096100432
+    lon: 70.2124771559827
+    alt_m: 0.0
+    datum: WGS-84 ellipsoid
+    frame: local ENU tangent plane at origin; bearings relative to true north
+extent_m:
+- -3500.0
+- -3500.0
+- 3500.0
+- 3500.0
+hero_zone_m:
+- -1000.0
+- -1000.0
+- 1000.0
+- 1000.0
+rf_backend: air7311
+rf_cache_dir: data/site_kandla/rf_cache_v3
+fidelity:
+  geometry: Blender world (data/site_kandla/blender/kandla_world.blend; built from
+    OpenStreetMap (ODbL), Sentinel-2 and Overture inputs); RF scene data/site_kandla/rf_scene_blender_rfr;
+    heights estimated; no survey data
+  names: OSM names where present; other labels synthetic
+  sensors: synthetic placements
+  emitters: synthetic scenario
+  rf: Sionna RT paths (textbook UTD diffraction) + simulated IQ through an AIR7311
+    receive chain; detection-driven tracking (simulation)
+attribution: (c) OpenStreetMap contributors
+cast: varied
+obs_version: v2
+df_coupling_cal: true
+version_hash: 2b8b089c41206615
+counts:
+  objects: 431
+  zones: 15
+  sensors: 6
+  tracks: 24
+  track_points: 1715
+  bearings: 1826
+  events: 155

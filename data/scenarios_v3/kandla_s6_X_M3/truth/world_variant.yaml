@@ -1,0 +1,46 @@
+id: M3
+kind: hw_mismatch
+side: world
+seed: 6
+override:
+  impairments:
+    use_phase_sigma_deg: 15.0
+heading_bias_deg_1sigma: 0.5
+use_phase_sigma_deg: 15.0
+df_calibration_drift_rel_db: -40.0
+nodes:
+  S1:
+    heading_bias_deg: -0.275156
+    channel_phase_deg:
+    - -29.401825
+    - -17.395784
+    - 1.832209
+    - -10.15516
+  S2:
+    heading_bias_deg: 0.316206
+    channel_phase_deg:
+    - 18.044128
+    - -16.28858
+    - -9.92731
+    - -5.336381
+  S3:
+    heading_bias_deg: -0.012843
+    channel_phase_deg:
+    - 12.902102
+    - 7.076116
+    - -1.502214
+    - -7.443326
+  S4:
+    heading_bias_deg: 0.538729
+    channel_phase_deg:
+    - 6.37707
+    - 43.023048
+    - -7.458682
+    - 4.511615
+  S5:
+    heading_bias_deg: 0.457123
+    channel_phase_deg:
+    - -4.387399
+    - -11.773622
+    - -28.318689
+    - -6.452231

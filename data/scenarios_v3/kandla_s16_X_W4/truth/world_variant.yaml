@@ -1,0 +1,75 @@
+id: W4
+side: world
+stack: v2
+geometry: blender
+water_z_m: -3.5
+weather:
+  rain_mm_h: 0
+  rh_pct: 60
+wet: false
+material_seed: 204
+material_scale:
+  brick:
+    eps: 1.0219
+    sigma: 1.1872
+  concrete:
+    eps: 1.0712
+    sigma: 0.8348
+  corrugated_metal:
+    eps: 1.0
+    sigma: 0.9105
+  ground_dry:
+    eps: 0.6471
+    sigma: 0.8177
+  mudflat_wet:
+    eps: 1.3768
+    sigma: 1.2108
+  sea_water:
+    eps: 0.9712
+    sigma: 0.8209
+  steel:
+    eps: 1.0
+    sigma: 0.9411
+diffuse: false
+sea_state: 0
+sea_sigma_h_m: 0.0
+shapes: 1137
+hidden_features:
+  structures: 1106
+  clutter: 3
+  tank_fill: 25
+  ships_absent: []
+  ships_shifted: []
+  ships_floating_dz_m: 0.0
+  ship_offsets_m: {}
+  fills:
+    tank_t001: 0.947
+    tank_t007: 0.68
+    tank_t015: 0.514
+    tank_t042: 0.62
+    tank_t078: 0.846
+    tank_t079: 0.945
+    tank_t103: 0.255
+    tank_t158: 0.822
+    tank_t159: 0.314
+    tank_t160: 0.744
+    tank_t161: 0.545
+    tank_t217: 0.837
+    tank_t218: 0.435
+    tank_t219: 0.491
+    tank_t220: 0.352
+    tank_t221: 0.627
+    tank_t222: 0.786
+    tank_t223: 0.859
+    tank_t224: 0.736
+    tank_t225: 0.311
+    tank_t226: 0.805
+    tank_t227: 0.522
+    tank_t228: 0.724
+    tank_t229: 0.872
+    tank_t230: 0.886
+  clutter_fidelity: illustrative
+source: /mnt/c/Users/Pratyush Dixit/Desktop/Urbexsim/data/site_kandla/rf_scene_blender_rfr/objects.json
+note: 'dynamic port state: traffic snapshot + floating-roof fill'
+data_version: v3
+rf_scene: rf_scene_blender_rfr

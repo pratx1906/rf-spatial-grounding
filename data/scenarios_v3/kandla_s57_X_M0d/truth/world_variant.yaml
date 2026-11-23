@@ -1,0 +1,53 @@
+id: M0
+kind: hw_mismatch
+side: world
+seed: 57
+override:
+  heading_datum:
+    bias_deg_1sigma: 0.5
+heading_bias_deg_1sigma: 0.5
+use_phase_sigma_deg: 0.0
+df_calibration_drift_rel_db: -40.0
+nodes:
+  S1:
+    heading_bias_deg: 0.181903
+    channel_phase_deg:
+    - -2.0499
+    - -1.260802
+    - -0.206803
+    - 2.131518
+  S2:
+    heading_bias_deg: 0.218577
+    channel_phase_deg:
+    - -0.104143
+    - 0.362397
+    - -0.455088
+    - 0.927202
+  S3:
+    heading_bias_deg: 0.729552
+    channel_phase_deg:
+    - -1.612635
+    - 0.278669
+    - 0.777228
+    - 0.048929
+  S4:
+    heading_bias_deg: -0.372387
+    channel_phase_deg:
+    - -0.15681
+    - 0.648447
+    - -1.230059
+    - -1.573822
+  S5:
+    heading_bias_deg: -0.066042
+    channel_phase_deg:
+    - -0.294919
+    - -0.645068
+    - -0.104263
+    - -0.208915
+labels:
+  debiased: true
+  source_dir: kandla_s57_X_M0
+  rule: label on az - heading_bias_deg (AUDIT_CODE C4)
+  agree_with_biased_labels: 0.9967
+  los_old: 1027
+  los_new: 1027

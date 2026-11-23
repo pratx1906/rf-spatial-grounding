@@ -1,0 +1,84 @@
+sensors:
+- id: S1
+  type: fixed_df
+  pose:
+    x_m: 942.7
+    y_m: 956.4
+    z_m: 25.0
+  bands: &id001
+  - sub_ghz_868_915
+  - ism_2400
+  - ism_5800
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: obj:jetty_j1 (jetty-head mast, synthetic placement)
+  placement: synthetic
+- id: S2
+  type: fixed_df
+  pose:
+    x_m: -149.6
+    y_m: -1397.8
+    z_m: 12.0
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: obj:building_b101 (roof mast, synthetic placement)
+  placement: synthetic
+- id: S3
+  type: fixed_df
+  pose:
+    x_m: 997.6
+    y_m: -615.3
+    z_m: 25.0
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: obj:jetty_j5 (jetty-head mast, synthetic placement)
+  placement: synthetic
+- id: S4
+  type: fixed_df
+  pose:
+    x_m: -353.7
+    y_m: -248.5
+    z_m: 12.0
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: obj:building_b120 (roof mast, synthetic placement)
+  placement: synthetic
+- id: S5
+  type: fixed_df
+  pose:
+    x_m: 333.8
+    y_m: 197.4
+    z_m: 12.0
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: obj:building_b030 (roof mast, synthetic placement)
+  placement: synthetic
+- id: D1
+  type: drone_df
+  pose:
+    x_m: 0.0
+    y_m: 0.0
+    z_m: 80.0
+  bands:
+  - ism_2400
+  - ism_5800
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: drone (synthetic)
+  placement: synthetic

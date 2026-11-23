@@ -1,0 +1,124 @@
+id: W5
+side: world
+stack: v2
+geometry: blender
+water_z_m: -6.0
+weather:
+  rain_mm_h: 0
+  rh_pct: 60
+wet: false
+material_seed: 205
+material_scale:
+  brick:
+    eps: 1.2449
+    sigma: 0.8368
+  concrete:
+    eps: 1.1939
+    sigma: 0.8142
+  corrugated_metal:
+    eps: 1.0
+    sigma: 0.8906
+  ground_dry:
+    eps: 0.9701
+    sigma: 0.6753
+  mudflat_wet:
+    eps: 0.908
+    sigma: 1.374
+  sea_water:
+    eps: 1.1592
+    sigma: 1.0431
+  steel:
+    eps: 1.0
+    sigma: 1.0713
+diffuse: true
+sea_state: 1
+sea_sigma_h_m: 0.0125
+shapes: 1135
+hidden_features:
+  structures: 1104
+  clutter: 3
+  tank_fill: 25
+  ships_absent:
+  - ship_obs_2
+  ships_shifted: []
+  ships_floating_dz_m: -2.5
+  ship_offsets_m:
+    ship_obs_1:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_10:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_11:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_12:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_13:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_3:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_4:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_5:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_6:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_7:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_8:
+    - 0.0
+    - 0.0
+    - -2.5
+    ship_obs_9:
+    - 0.0
+    - 0.0
+    - -2.5
+  fills:
+    tank_t001: 0.305
+    tank_t007: 0.483
+    tank_t015: 0.811
+    tank_t042: 0.549
+    tank_t078: 0.574
+    tank_t079: 0.25
+    tank_t103: 0.747
+    tank_t158: 0.901
+    tank_t159: 0.656
+    tank_t160: 0.518
+    tank_t161: 0.398
+    tank_t217: 0.537
+    tank_t218: 0.492
+    tank_t219: 0.307
+    tank_t220: 0.258
+    tank_t221: 0.788
+    tank_t222: 0.802
+    tank_t223: 0.353
+    tank_t224: 0.594
+    tank_t225: 0.884
+    tank_t226: 0.85
+    tank_t227: 0.409
+    tank_t228: 0.206
+    tank_t229: 0.882
+    tank_t230: 0.85
+  clutter_fidelity: illustrative
+source: /mnt/c/Users/Pratyush Dixit/Desktop/Urbexsim/data/site_kandla/rf_scene_blender_rfr/objects.json
+note: 'everything: low tide, traffic, tank fill, diffuse scattering, material draw'
+data_version: v3
+rf_scene: rf_scene_blender_rfr
