@@ -1,0 +1,42 @@
+id: W1t
+side: world
+water_z_m: -6.0
+ships:
+- ship_s1
+- ship_s2
+- ship_s3
+- ship_s4
+weather:
+  rain_mm_h: 0
+  rh_pct: 60
+wet: false
+material_seed: null
+material_scale:
+  brick:
+    eps: 1.0
+    sigma: 1.0
+  concrete:
+    eps: 1.0
+    sigma: 1.0
+  corrugated_metal:
+    eps: 1.0
+    sigma: 1.0
+  ground_dry:
+    eps: 1.0
+    sigma: 1.0
+  mudflat_wet:
+    eps: 1.0
+    sigma: 1.0
+  sea_water:
+    eps: 1.0
+    sigma: 1.0
+  steel:
+    eps: 1.0
+    sigma: 1.0
+shapes: 363
+bands:
+- sub_ghz_868_915
+- ism_2400
+- ism_5800
+fidelity: estimated (D-031)
+note: tide only (low water)

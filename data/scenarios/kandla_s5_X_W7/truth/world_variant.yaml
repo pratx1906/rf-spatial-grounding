@@ -1,0 +1,46 @@
+id: W7
+side: world
+stack: v2
+geometry: blender
+water_z_m: -5.0
+weather:
+  rain_mm_h: 0
+  rh_pct: 70
+wet: false
+material_seed: 302
+material_scale:
+  brick:
+    eps: 1.1558
+    sigma: 1.1236
+  concrete:
+    eps: 1.299
+    sigma: 1.0338
+  corrugated_metal:
+    eps: 1.0
+    sigma: 0.9238
+  ground_dry:
+    eps: 1.1644
+    sigma: 1.1663
+  mudflat_wet:
+    eps: 1.2842
+    sigma: 1.3916
+  sea_water:
+    eps: 0.8447
+    sigma: 1.185
+  steel:
+    eps: 1.0
+    sigma: 0.927
+diffuse: true
+shapes: 1134
+hidden_features:
+  structures: 1131
+  clutter: 0
+  tank_fill: 0
+  ships_absent: []
+  ships_shifted:
+  - ship_obs_2
+  - ship_obs_3
+  fills: {}
+  clutter_fidelity: null
+source: /mnt/c/Users/Pratyush Dixit/Desktop/Urbexsim/data/site_kandla/rf_scene_blender/objects.json
+note: training world

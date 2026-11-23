@@ -1,0 +1,40 @@
+id: W1
+side: world
+water_z_m: -6.0
+ships:
+- ship_s1
+- ship_s3
+weather:
+  rain_mm_h: 0
+  rh_pct: 60
+wet: false
+material_seed: 201
+material_scale:
+  brick:
+    eps: 1.2944
+    sigma: 1.022
+  concrete:
+    eps: 0.993
+    sigma: 1.0552
+  corrugated_metal:
+    eps: 1.0
+    sigma: 1.0059
+  ground_dry:
+    eps: 0.7211
+    sigma: 1.0342
+  mudflat_wet:
+    eps: 1.3111
+    sigma: 1.3661
+  sea_water:
+    eps: 1.0025
+    sigma: 1.0236
+  steel:
+    eps: 1.0
+    sigma: 0.9005
+shapes: 361
+bands:
+- sub_ghz_868_915
+- ism_2400
+- ism_5800
+fidelity: estimated (D-031)
+note: low tide, two berths empty, material draw

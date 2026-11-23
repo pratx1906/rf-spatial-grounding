@@ -1,0 +1,42 @@
+id: W3
+side: world
+water_z_m: -3.5
+ships:
+- ship_s1
+- ship_s2
+- ship_s3
+- ship_s4
+weather:
+  rain_mm_h: 25
+  rh_pct: 95
+wet: true
+material_seed: 203
+material_scale:
+  brick:
+    eps: 1.1686
+    sigma: 0.9066
+  concrete:
+    eps: 0.7525
+    sigma: 0.8386
+  corrugated_metal:
+    eps: 1.0
+    sigma: 1.1086
+  ground_dry:
+    eps: 1.0946
+    sigma: 0.9515
+  mudflat_wet:
+    eps: 1.1716
+    sigma: 1.3074
+  sea_water:
+    eps: 0.875
+    sigma: 0.848
+  steel:
+    eps: 1.0
+    sigma: 1.0695
+shapes: 363
+bands:
+- sub_ghz_868_915
+- ism_2400
+- ism_5800
+fidelity: estimated (D-031)
+note: 'wet world: rain, wet ground and wet concrete, ships shifted along the piers'

@@ -1,0 +1,70 @@
+id: W6
+side: world
+stack: v2
+geometry: blender
+water_z_m: -2.0
+weather:
+  rain_mm_h: 0
+  rh_pct: 60
+wet: false
+material_seed: 301
+material_scale:
+  brick:
+    eps: 0.9404
+    sigma: 0.8202
+  concrete:
+    eps: 0.9086
+    sigma: 1.2561
+  corrugated_metal:
+    eps: 1.0
+    sigma: 1.0699
+  ground_dry:
+    eps: 0.6788
+    sigma: 0.633
+  mudflat_wet:
+    eps: 0.6112
+    sigma: 1.0657
+  sea_water:
+    eps: 0.919
+    sigma: 1.0134
+  steel:
+    eps: 1.0
+    sigma: 1.0324
+diffuse: false
+shapes: 1135
+hidden_features:
+  structures: 1104
+  clutter: 3
+  tank_fill: 25
+  ships_absent:
+  - ship_obs_4
+  ships_shifted: []
+  fills:
+    tank_t001: 0.509
+    tank_t007: 0.386
+    tank_t015: 0.729
+    tank_t042: 0.586
+    tank_t078: 0.876
+    tank_t079: 0.314
+    tank_t103: 0.819
+    tank_t158: 0.474
+    tank_t159: 0.945
+    tank_t160: 0.665
+    tank_t161: 0.477
+    tank_t217: 0.681
+    tank_t218: 0.935
+    tank_t219: 0.258
+    tank_t220: 0.438
+    tank_t221: 0.663
+    tank_t222: 0.484
+    tank_t223: 0.863
+    tank_t224: 0.645
+    tank_t225: 0.614
+    tank_t226: 0.479
+    tank_t227: 0.483
+    tank_t228: 0.317
+    tank_t229: 0.835
+    tank_t230: 0.301
+  clutter_fidelity: illustrative
+source: /mnt/c/Users/Pratyush Dixit/Desktop/Urbexsim/data/site_kandla/rf_scene_blender/objects.json
+note: training world

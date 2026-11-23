@@ -1,0 +1,43 @@
+id: W2
+side: world
+water_z_m: -0.5
+ships:
+- ship_s1
+- ship_s2
+- ship_s3
+- ship_s4
+- ship_x1
+weather:
+  rain_mm_h: 0
+  rh_pct: 85
+wet: false
+material_seed: 202
+material_scale:
+  brick:
+    eps: 0.9078
+    sigma: 0.9662
+  concrete:
+    eps: 1.1895
+    sigma: 1.1125
+  corrugated_metal:
+    eps: 1.0
+    sigma: 0.982
+  ground_dry:
+    eps: 1.0508
+    sigma: 1.2694
+  mudflat_wet:
+    eps: 0.7699
+    sigma: 1.3316
+  sea_water:
+    eps: 0.9262
+    sigma: 1.1113
+  steel:
+    eps: 1.0
+    sigma: 0.9698
+shapes: 364
+bands:
+- sub_ghz_868_915
+- ism_2400
+- ism_5800
+fidelity: estimated (D-031)
+note: high tide, busy creek (anchored tanker)

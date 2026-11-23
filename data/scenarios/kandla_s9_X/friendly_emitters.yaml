@@ -1,0 +1,111 @@
+emitters:
+- id: fe_cctv_1
+  name: CCTV link Jetty J1
+  kind: cctv_link
+  band: ism_5800
+  freq_mhz: 5745.0
+  eirp_dbm: 23.0
+  x_m: 942.7
+  y_m: 956.4
+  z_m: 12.0
+  mount_ref: obj:jetty_j1
+  placement: synthetic
+- id: fe_cctv_2
+  name: CCTV link Jetty J2
+  kind: cctv_link
+  band: ism_5800
+  freq_mhz: 5785.0
+  eirp_dbm: 23.0
+  x_m: 1058.5
+  y_m: 194.6
+  z_m: 12.0
+  mount_ref: obj:jetty_j2
+  placement: synthetic
+- id: fe_cctv_3
+  name: CCTV link Jetty J3
+  kind: cctv_link
+  band: ism_5800
+  freq_mhz: 5825.0
+  eirp_dbm: 23.0
+  x_m: 928.1
+  y_m: -137.2
+  z_m: 12.0
+  mount_ref: obj:jetty_j3
+  placement: synthetic
+- id: fe_lora_1
+  name: Tank gauging telemetry Tank farm TF-1
+  kind: tank_telemetry
+  band: sub_ghz_868_915
+  freq_mhz: 866.5
+  eirp_dbm: 14.0
+  x_m: -206.2
+  y_m: -78.2
+  z_m: 15.0
+  mount_ref: obj:tank_farm_tf1
+  placement: synthetic
+- id: fe_lora_2
+  name: Tank gauging telemetry Tank farm TF-2
+  kind: tank_telemetry
+  band: sub_ghz_868_915
+  freq_mhz: 866.5
+  eirp_dbm: 14.0
+  x_m: -494.9
+  y_m: -139.9
+  z_m: 15.0
+  mount_ref: obj:tank_farm_tf2
+  placement: synthetic
+- id: fe_lora_3
+  name: Tank gauging telemetry Tank farm TF-3
+  kind: tank_telemetry
+  band: sub_ghz_868_915
+  freq_mhz: 866.5
+  eirp_dbm: 14.0
+  x_m: -814.8
+  y_m: -198.9
+  z_m: 15.0
+  mount_ref: obj:tank_farm_tf3
+  placement: synthetic
+- id: fe_lora_4
+  name: Tank gauging telemetry Tank farm TF-4
+  kind: tank_telemetry
+  band: sub_ghz_868_915
+  freq_mhz: 866.5
+  eirp_dbm: 14.0
+  x_m: 714.9
+  y_m: -215.6
+  z_m: 15.0
+  mount_ref: obj:tank_farm_tf4
+  placement: synthetic
+- id: fe_wifi_1
+  name: Port Wi-Fi Building B017
+  kind: port_wifi
+  band: ism_2400
+  freq_mhz: 2437.0
+  eirp_dbm: 20.0
+  x_m: 253.0
+  y_m: 142.9
+  z_m: 10.0
+  mount_ref: obj:building_b017
+  placement: synthetic
+- id: fe_lte_1
+  name: LTE site Building B024
+  kind: lte_site
+  band: cellular_lte
+  freq_mhz: 2350.0
+  eirp_dbm: 46.0
+  x_m: 793.2
+  y_m: 494.5
+  z_m: 30.0
+  mount_ref: obj:building_b024
+  placement: synthetic
+- id: fe_vhf_1
+  name: Port VHF base Jetty J4
+  kind: vhf_base
+  band: vhf_marine
+  freq_mhz: 156.8
+  eirp_dbm: 40.0
+  x_m: 1025.0
+  y_m: -355.1
+  z_m: 20.0
+  mount_ref: obj:jetty_j4
+  placement: synthetic

@@ -1,0 +1,12 @@
+{
+ "base": "Qwen/Qwen3-4B-Instruct-2507",
+ "data": "data/sft/train_v14.jsonl",
+ "examples": 1388,
+ "steps": 87,
+ "accum": 16,
+ "lr": 1.5e-05,
+ "lora_r": 32,
+ "init": "checkpoints/sft_v11",
+ "best_val_loss": 0.01893609998648446,
+ "wallclock_s": 9561
+}
