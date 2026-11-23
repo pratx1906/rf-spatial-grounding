@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🛰️ RF Spatial Grounding
-
-### An AI analyst that finds drones it cannot see
+<img src="assets/banner.png" alt="RF Spatial Grounding: the operator console showing a live answer from the trained model" width="100%">
 
 *Ask a question in plain words. A small language-model agent investigates a ray-traced radio twin of a real port,
 checks its own evidence, and answers on a 3D map.*
@@ -14,10 +12,6 @@ checks its own evidence, and answers on a 3D map.*
 ![training](https://img.shields.io/badge/training-SFT%20%2B%20GRPO-2ea44f)
 ![tests](https://img.shields.io/badge/tests-669%20passing-2ea44f)
 ![sim](https://img.shields.io/badge/results-simulation-lightgrey)
-
-<img src="assets/demo_preview.gif" alt="Ray-traced radio paths over the port, from the demo video" width="720">
-
-**[▶ Watch the 56-second demo](assets/demo.mp4)**
 
 </div>
 
@@ -66,22 +60,7 @@ the answer is accepted.
 
 The whole system runs on one laptop GPU, end to end, from map data to a trained agent.
 
-```mermaid
-flowchart LR
-    subgraph WORLD["Simulated world"]
-        A["Port digital twin<br/>OpenStreetMap · Overture · Sentinel-2<br/>263 tanks · 8 jetties · terrain"] --> B["Ray tracing<br/>Sionna RT · 3 bands<br/>10⁶ rays · 2 bounces"]
-        B --> C["Receiver simulation<br/>4-channel IQ · coupling ·<br/>calibration error"]
-        C --> D["MUSIC bearings + TDOA<br/>(with multipath ghosts)"]
-        D --> E["Truth-free tracker"]
-    end
-    subgraph AGENT["Agent side (belief only)"]
-        E --> F["31 typed tools<br/>p95 ≤ 77 ms"]
-        F <--> G["4B language agent<br/>SFT + GRPO"]
-        G --> H["Verifier<br/>re-derives cited evidence"]
-        H --> I["3D operator console"]
-    end
-    T["Truth guard: ground truth and hidden worlds<br/>are unreadable during every agent step"] -.- AGENT
-```
+<p align="center"><img src="assets/architecture.png" alt="System architecture: simulated world (digital twin, ray tracing, DF receiver, tracker), truth guard, agent (tools, 4B agent, verifier, console), and training (expert, SFT, GRPO, frozen evaluation)" width="100%"></p>
 
 1. **A digital twin of the port.** OpenStreetMap footprints, Overture buildings and Sentinel-2 imagery were turned into a
    detailed 3D model: 263 tanks in 8 tank farms, 8 jetties with piles and loading arms, 129 buildings, pipe racks,
