@@ -1,0 +1,281 @@
+{
+ "collateral": {
+  "n": 50,
+  "score": 0.985,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 3.08
+ },
+ "df_ambiguity": {
+  "n": 50,
+  "score": 0.685,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 3.7
+ },
+ "drone_search": {
+  "n": 37,
+  "score": 0.977,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 7.51
+ },
+ "operator_query": {
+  "n": 50,
+  "score": 0.733,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.04,
+  "turns_mean": 3.48
+ },
+ "replay": {
+  "n": 50,
+  "score": 0.905,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 2.58
+ },
+ "siting": {
+  "n": 50,
+  "score": 1.0,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 2.2
+ },
+ "unanswerable": {
+  "n": 50,
+  "score": 1.0,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 1.0,
+  "turns_mean": 2
+ },
+ "_generalisation": {
+  "seen_families": 0.884,
+  "n_seen": 245,
+  "held_out_families": 0.832,
+  "n_held_out": 42
+ },
+ "_families": {
+  "actuation": [
+   13,
+   1.0
+  ],
+  "band_change": [
+   1,
+   1.0
+  ],
+  "band_in_zone": [
+   4,
+   1.0
+  ],
+  "count_in_zone": [
+   4,
+   0.584
+  ],
+  "direct_all": [
+   9,
+   0.775
+  ],
+  "direct_path": [
+   9,
+   0.778
+  ],
+  "ds_hover": [
+   8,
+   1.0
+  ],
+  "ds_hover_budget2": [
+   9,
+   0.957
+  ],
+  "ds_loiter": [
+   3,
+   0.969
+  ],
+  "ds_swarm": [
+   11,
+   0.968
+  ],
+  "ds_wide_prior": [
+   6,
+   0.995
+  ],
+  "entered_between": [
+   7,
+   0.737
+  ],
+  "entity_not_found": [
+   13,
+   1.0
+  ],
+  "exit_time": [
+   7,
+   1.0
+  ],
+  "first_detection": [
+   7,
+   1.0
+  ],
+  "first_entry": [
+   7,
+   1.0
+  ],
+  "first_into_zone": [
+   7,
+   0.724
+  ],
+  "future_time": [
+   12,
+   1.0
+  ],
+  "genuine_drone": [
+   3,
+   1.0
+  ],
+  "ghost_check": [
+   3,
+   0.0
+  ],
+  "jam_all": [
+   9,
+   0.923
+  ],
+  "jam_aviation": [
+   9,
+   1.0
+  ],
+  "jam_fratricide": [
+   9,
+   0.992
+  ],
+  "jam_links": [
+   9,
+   1.0
+  ],
+  "jam_point": [
+   6,
+   1.0
+  ],
+  "jam_protected": [
+   8,
+   1.0
+  ],
+  "last_seen": [
+   7,
+   1.0
+  ],
+  "locate": [
+   8,
+   0.752
+  ],
+  "locate_ghost": [
+   8,
+   0.373
+  ],
+  "locate_two_sensors": [
+   8,
+   0.808
+  ],
+  "loiter_start": [
+   7,
+   0.857
+  ],
+  "los_check": [
+   3,
+   1.0
+  ],
+  "near_object": [
+   3,
+   0.667
+  ],
+  "near_object_ambiguous": [
+   3,
+   0.667
+  ],
+  "nearest_drone": [
+   3,
+   0.667
+  ],
+  "noisy_band": [
+   3,
+   0.0
+  ],
+  "protocol_id": [
+   3,
+   0.833
+  ],
+  "reject_ghosts": [
+   8,
+   0.598
+  ],
+  "suggest_one": [
+   13,
+   1.0
+  ],
+  "suggest_two": [
+   12,
+   1.0
+  ],
+  "swarm_in_zone": [
+   3,
+   0.667
+  ],
+  "swarm_members": [
+   3,
+   0.667
+  ],
+  "tracks_in_band": [
+   3,
+   1.0
+  ],
+  "unknown_track": [
+   12,
+   1.0
+  ],
+  "weak_detect": [
+   3,
+   1.0
+  ],
+  "weak_df": [
+   10,
+   1.0
+  ],
+  "weak_low_alt": [
+   12,
+   1.0
+  ],
+  "which_zone": [
+   3,
+   1.0
+  ],
+  "zone_incursion": [
+   3,
+   0.944
+  ],
+  "zone_incursion_ambiguous": [
+   3,
+   1.0
+  ]
+ },
+ "_all": {
+  "n": 337,
+  "score": 0.895,
+  "macro_score": 0.898,
+  "latency_p50_s": 11.628,
+  "latency_p95_s": 29.018,
+  "errors": 0,
+  "ungrounded": 0,
+  "no_answer": 10,
+  "wallclock_s": 312.9
+ },
+ "_calibration": {
+  "n": 327,
+  "n_missing": 10,
+  "ece": 0.1685,
+  "brier": 0.0761,
+  "mean_conf": 0.757,
+  "mean_score": 0.922,
+  "confident_wrong_rate": 0.0336,
+  "confident_wrong_of_confident": 0.039,
+  "n_distinct_conf": 6
+ }
+}

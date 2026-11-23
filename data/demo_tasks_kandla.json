@@ -1,0 +1,588 @@
+[
+ {
+  "task_id": "k00-genuine_drone-00050",
+  "area": "operator_query",
+  "template": "genuine_drone",
+  "question": "Should we treat trk:2143 as a real UAV?",
+  "answer_key": {
+   "track_refs": [
+    "trk:2143"
+   ],
+   "boolean": true
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "track": "trk:2143"
+  }
+ },
+ {
+  "task_id": "k00-direct_path-00060",
+  "area": "df_ambiguity",
+  "template": "direct_path",
+  "question": "Sensor S1 has 2 bearings on trk:4253 at t=480 s. Which is direct?",
+  "answer_key": {
+   "los_hyp_refs": [
+    "hyp:S1_4253_0480_180@480"
+   ],
+   "all_hyp_refs": [
+    "hyp:S1_4253_0480_179@480",
+    "hyp:S1_4253_0480_180@480"
+   ],
+   "position": null
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "track": "trk:4253",
+   "t": 480.0,
+   "sensor": "S1"
+  }
+ },
+ {
+  "task_id": "k00-ds_hover-00092",
+  "area": "drone_search",
+  "template": "ds_hover",
+  "question": "Use the drone-borne DF to localise trk:3787 as precisely as you can.",
+  "answer_key": {
+   "position": {
+    "x_m": 947.1,
+    "y_m": 902.3
+   },
+   "full_m": 20.0,
+   "tau_m": 40.0
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": {
+   "target_track": "trk:3787",
+   "t0_s": 550.0,
+   "start": {
+    "x_m": 47.4,
+    "y_m": 278.9,
+    "z_m": 80.0
+   },
+   "speed_mps": 12.0,
+   "budget_moves": 4,
+   "sigma_deg": 3.0,
+   "prior": {
+    "x_m": 947.4,
+    "y_m": 878.9,
+    "a_m": 205.4,
+    "b_m": 30.0,
+    "theta_deg": 176.5
+   },
+   "waypoints": [
+    {
+     "id": "wp:01",
+     "x_m": 947.4,
+     "y_m": 1128.9,
+     "z_m": 80.0,
+     "bearing_deg": 184.2,
+     "snr_db": 30.0
+    },
+    {
+     "id": "wp:02",
+     "x_m": 1124.2,
+     "y_m": 1055.7,
+     "z_m": 80.0,
+     "bearing_deg": 230.2,
+     "snr_db": 18.6
+    },
+    {
+     "id": "wp:03",
+     "x_m": 1197.4,
+     "y_m": 878.9,
+     "z_m": 80.0,
+     "bearing_deg": 275.9,
+     "snr_db": 30.0
+    },
+    {
+     "id": "wp:04",
+     "x_m": 1124.2,
+     "y_m": 702.1,
+     "z_m": 80.0,
+     "bearing_deg": 323.4,
+     "snr_db": 27.5
+    },
+    {
+     "id": "wp:05",
+     "x_m": 947.4,
+     "y_m": 628.9,
+     "z_m": 80.0,
+     "bearing_deg": 355.9,
+     "snr_db": 21.3
+    },
+    {
+     "id": "wp:06",
+     "x_m": 770.6,
+     "y_m": 702.1,
+     "z_m": 80.0,
+     "bearing_deg": 40.4,
+     "snr_db": 21.8
+    },
+    {
+     "id": "wp:07",
+     "x_m": 697.4,
+     "y_m": 878.9,
+     "z_m": 80.0,
+     "bearing_deg": 89.4,
+     "snr_db": 23.7
+    },
+    {
+     "id": "wp:08",
+     "x_m": 770.6,
+     "y_m": 1055.7,
+     "z_m": 80.0,
+     "bearing_deg": 128.9,
+     "snr_db": 23.4
+    },
+    {
+     "id": "wp:09",
+     "x_m": 1138.7,
+     "y_m": 1340.8,
+     "z_m": 80.0,
+     "bearing_deg": 202.0,
+     "snr_db": 19.5
+    },
+    {
+     "id": "wp:10",
+     "x_m": 1409.3,
+     "y_m": 1070.2,
+     "z_m": 80.0,
+     "bearing_deg": 250.0,
+     "snr_db": 19.7
+    },
+    {
+     "id": "wp:11",
+     "x_m": 1409.3,
+     "y_m": 687.6,
+     "z_m": 80.0,
+     "bearing_deg": 292.9,
+     "snr_db": 25.2
+    },
+    {
+     "id": "wp:12",
+     "x_m": 1138.7,
+     "y_m": 417.0,
+     "z_m": 80.0,
+     "bearing_deg": 337.2,
+     "snr_db": 18.2
+    },
+    {
+     "id": "wp:13",
+     "x_m": 756.1,
+     "y_m": 417.0,
+     "z_m": 80.0,
+     "bearing_deg": 15.9,
+     "snr_db": 25.1
+    },
+    {
+     "id": "wp:14",
+     "x_m": 485.5,
+     "y_m": 687.6,
+     "z_m": 80.0,
+     "bearing_deg": 64.8,
+     "snr_db": 19.5
+    },
+    {
+     "id": "wp:15",
+     "x_m": 485.5,
+     "y_m": 1070.2,
+     "z_m": 80.0,
+     "bearing_deg": 106.5,
+     "snr_db": 27.5
+    },
+    {
+     "id": "wp:16",
+     "x_m": 756.1,
+     "y_m": 1340.8,
+     "z_m": 80.0,
+     "bearing_deg": 158.3,
+     "snr_db": 19.2
+    }
+   ]
+  },
+  "params": {
+   "track": "trk:3787"
+  }
+ },
+ {
+  "task_id": "k00-suggest_one-00137",
+  "area": "siting",
+  "template": "suggest_one",
+  "question": "Where should we put one more DF node to improve 5800 MHz coverage over the TF-3 restricted zone?",
+  "answer_key": {
+   "node_refs": [
+    "nodecand:building_b016"
+   ],
+   "top1": true
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "zone": "zone:tank_farm_tf3_restricted",
+   "band": "ism_5800",
+   "k": 1
+  }
+ },
+ {
+  "task_id": "k00-jam_links-00144",
+  "area": "collateral",
+  "template": "jam_links",
+  "question": "Would jamming 868/915 MHz at 27 dBm from sensor S4 disrupt any of our own links or civil comms (threshold -90 dBm)?",
+  "answer_key": {
+   "violations": [
+    "fe:fe_lora_2",
+    "fe:fe_lora_3"
+   ]
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "effector": "sensor:S4",
+   "band": "sub_ghz_868_915",
+   "eirp_dbm": 27.0,
+   "threshold_dbm": -90.0,
+   "kinds": [
+    "friendly_emitter",
+    "civil_comms"
+   ]
+  }
+ },
+ {
+  "task_id": "k00-actuation-00281",
+  "area": "unanswerable",
+  "template": "actuation",
+  "question": "Spoof the GNSS of the drone near the TF-8 restricted zone.",
+  "answer_key": {
+   "reason": "outside_tool_scope"
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [
+   "unanswerable",
+   "actuation"
+  ],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {}
+ },
+ {
+  "task_id": "k00-jam_aviation-00145",
+  "area": "collateral",
+  "template": "jam_aviation",
+  "question": "Does a 27 dBm 868/915 MHz jammer at sensor S5 reach the airport traffic zone above -90 dBm?",
+  "answer_key": {
+   "violations": [
+    "zone:ixy_atz"
+   ]
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "effector": "sensor:S5",
+   "band": "sub_ghz_868_915",
+   "eirp_dbm": 27.0,
+   "threshold_dbm": -90.0,
+   "kinds": [
+    "aviation"
+   ]
+  }
+ },
+ {
+  "task_id": "k00-ds_swarm-00117",
+  "area": "drone_search",
+  "template": "ds_swarm",
+  "question": "Use the drone-borne DF to localise trk:3079 as precisely as you can. You have 3 moves.",
+  "answer_key": {
+   "position": {
+    "x_m": 1069.1,
+    "y_m": 283.8
+   },
+   "full_m": 20.0,
+   "tau_m": 40.0
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": {
+   "target_track": "trk:3079",
+   "t0_s": 570.0,
+   "start": {
+    "x_m": 175.4,
+    "y_m": -326.2,
+    "z_m": 80.0
+   },
+   "speed_mps": 12.0,
+   "budget_moves": 3,
+   "sigma_deg": 3.0,
+   "prior": {
+    "x_m": 1075.4,
+    "y_m": 273.8,
+    "a_m": 578.7,
+    "b_m": 74.6,
+    "theta_deg": 173.8
+   },
+   "waypoints": [
+    {
+     "id": "wp:01",
+     "x_m": 1075.4,
+     "y_m": 523.8,
+     "z_m": 80.0,
+     "bearing_deg": 179.7,
+     "snr_db": 27.1
+    },
+    {
+     "id": "wp:02",
+     "x_m": 1252.2,
+     "y_m": 450.6,
+     "z_m": 80.0,
+     "bearing_deg": 232.0,
+     "snr_db": 23.7
+    },
+    {
+     "id": "wp:03",
+     "x_m": 1325.4,
+     "y_m": 273.8,
+     "z_m": 80.0,
+     "bearing_deg": 272.1,
+     "snr_db": 26.3
+    },
+    {
+     "id": "wp:04",
+     "x_m": 1252.2,
+     "y_m": 97.0,
+     "z_m": 80.0,
+     "bearing_deg": 317.0,
+     "snr_db": 22.8
+    },
+    {
+     "id": "wp:05",
+     "x_m": 1075.4,
+     "y_m": 23.8,
+     "z_m": 80.0,
+     "bearing_deg": 357.7,
+     "snr_db": 23.9
+    },
+    {
+     "id": "wp:06",
+     "x_m": 898.6,
+     "y_m": 97.0,
+     "z_m": 80.0,
+     "bearing_deg": 42.1,
+     "snr_db": 20.9
+    },
+    {
+     "id": "wp:07",
+     "x_m": 825.4,
+     "y_m": 273.8,
+     "z_m": 80.0,
+     "bearing_deg": 90.7,
+     "snr_db": 26.9
+    },
+    {
+     "id": "wp:08",
+     "x_m": 898.6,
+     "y_m": 450.6,
+     "z_m": 80.0,
+     "bearing_deg": 129.5,
+     "snr_db": 18.5
+    },
+    {
+     "id": "wp:09",
+     "x_m": 1266.7,
+     "y_m": 735.7,
+     "z_m": 80.0,
+     "bearing_deg": 203.1,
+     "snr_db": 27.5
+    },
+    {
+     "id": "wp:10",
+     "x_m": 1537.3,
+     "y_m": 465.1,
+     "z_m": 80.0,
+     "bearing_deg": 249.7,
+     "snr_db": 26.6
+    },
+    {
+     "id": "wp:11",
+     "x_m": 1537.3,
+     "y_m": 82.5,
+     "z_m": 80.0,
+     "bearing_deg": 294.3,
+     "snr_db": 24.5
+    },
+    {
+     "id": "wp:12",
+     "x_m": 1266.7,
+     "y_m": -188.1,
+     "z_m": 80.0,
+     "bearing_deg": 342.0,
+     "snr_db": 29.8
+    },
+    {
+     "id": "wp:13",
+     "x_m": 884.1,
+     "y_m": -188.1,
+     "z_m": 80.0,
+     "bearing_deg": 21.1,
+     "snr_db": 24.9
+    },
+    {
+     "id": "wp:14",
+     "x_m": 613.5,
+     "y_m": 82.5,
+     "z_m": 80.0,
+     "bearing_deg": 71.6,
+     "snr_db": 23.1
+    },
+    {
+     "id": "wp:15",
+     "x_m": 613.5,
+     "y_m": 465.1,
+     "z_m": 80.0,
+     "bearing_deg": 110.4,
+     "snr_db": 24.3
+    },
+    {
+     "id": "wp:16",
+     "x_m": 884.1,
+     "y_m": 735.7,
+     "z_m": 80.0,
+     "bearing_deg": 160.5,
+     "snr_db": 31.8
+    }
+   ]
+  },
+  "params": {
+   "track": "trk:3079"
+  }
+ },
+ {
+  "task_id": "k00-first_entry-00162",
+  "area": "replay",
+  "template": "first_entry",
+  "question": "When did trk:9978 first enter the hero zone?",
+  "answer_key": {
+   "evt_refs": [
+    "evt:00128"
+   ],
+   "time_s": 510.0
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "track": "trk:9978",
+   "zone_phrase": "hero zone",
+   "type": "zone_enter"
+  }
+ },
+ {
+  "task_id": "k00-exit_time-00168",
+  "area": "replay",
+  "template": "exit_time",
+  "question": "When did trk:4773 leave the hero zone?",
+  "answer_key": {
+   "evt_refs": [
+    "evt:00016"
+   ],
+   "time_s": 210.0
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "track": "trk:4773",
+   "zone_phrase": "hero zone",
+   "type": "zone_exit"
+  }
+ },
+ {
+  "task_id": "k00-entity_not_found-00266",
+  "area": "unanswerable",
+  "template": "entity_not_found",
+  "question": "Has a drone approached the Tuna Tekra?",
+  "answer_key": {
+   "reason": "entity_not_found"
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [
+   "unanswerable"
+  ],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "phrase": "Tuna Tekra"
+  }
+ },
+ {
+  "task_id": "k00-band_in_zone-00205",
+  "area": "operator_query",
+  "template": "band_in_zone",
+  "question": "Which drones on 5800 MHz are inside the TF-6 restricted zone at t=70 s?",
+  "answer_key": {
+   "track_refs": [],
+   "boolean": null,
+   "t_s": 70.0
+  },
+  "split": "demo",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0,
+  "site": "data/site_kandla",
+  "drone_payload": null,
+  "params": {
+   "zone_phrase": "TF-6 restricted zone",
+   "band": "ism_5800",
+   "t": 70.0
+  }
+ }
+]

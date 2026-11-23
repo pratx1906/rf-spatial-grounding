@@ -1,0 +1,111 @@
+{
+ "name": "sft11_heldout_v1",
+ "rows": {
+  "eval": "runs/paper/results/P1/sft11_heldout_v1/eval.json",
+  "n": 191,
+  "success": 0.738,
+  "mean_tool_calls": 3.65,
+  "corr_calls_success": 0.02,
+  "success_by_tool_calls": {
+   "2": {
+    "n": 47,
+    "success": 0.766
+   },
+   "3": {
+    "n": 49,
+    "success": 0.755
+   },
+   "4": {
+    "n": 73,
+    "success": 0.685
+   },
+   "5": {
+    "n": 1,
+    "success": 1.0
+   },
+   "6": {
+    "n": 4,
+    "success": 0.75
+   },
+   "8": {
+    "n": 17,
+    "success": 0.824
+   }
+  },
+  "success_by_turns": {
+   "2": {
+    "n": 42,
+    "success": 0.857
+   },
+   "3": {
+    "n": 48,
+    "success": 0.771
+   },
+   "4": {
+    "n": 78,
+    "success": 0.641
+   },
+   "5": {
+    "n": 2,
+    "success": 0.5
+   },
+   "6": {
+    "n": 4,
+    "success": 0.75
+   },
+   "8": {
+    "n": 17,
+    "success": 0.824
+   }
+  },
+  "end_reasons": {
+   "submitted": 184,
+   "format_failed": 6,
+   "verifier_failed": 1
+  },
+  "per_family": {
+   "ds_wide_prior": {
+    "n": 21,
+    "success": 0.81,
+    "mean_calls_success": 7.65,
+    "mean_calls_failure": 7.5,
+    "abstain_rate": 0.0
+   },
+   "jam_point": {
+    "n": 10,
+    "success": 1.0,
+    "mean_calls_success": 3.0,
+    "mean_calls_failure": null,
+    "abstain_rate": 0.0
+   },
+   "locate_ghost": {
+    "n": 40,
+    "success": 0.45,
+    "mean_calls_success": 3.61,
+    "mean_calls_failure": 3.23,
+    "abstain_rate": 0.0
+   },
+   "loiter_start": {
+    "n": 40,
+    "success": 0.875,
+    "mean_calls_success": 2.0,
+    "mean_calls_failure": 2.0,
+    "abstain_rate": 0.0
+   },
+   "near_object": {
+    "n": 40,
+    "success": 0.65,
+    "mean_calls_success": 3.46,
+    "mean_calls_failure": 3.64,
+    "abstain_rate": 0.175
+   },
+   "weak_low_alt": {
+    "n": 40,
+    "success": 0.875,
+    "mean_calls_success": 3.8,
+    "mean_calls_failure": 3.6,
+    "abstain_rate": 0.05
+   }
+  }
+ }
+}

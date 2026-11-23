@@ -1,0 +1,98 @@
+{
+ "collateral": {
+  "n": 10,
+  "score": 1.0,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 3
+ },
+ "df_ambiguity": {
+  "n": 40,
+  "score": 0.551,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 4
+ },
+ "drone_search": {
+  "n": 21,
+  "score": 0.88,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 8
+ },
+ "operator_query": {
+  "n": 40,
+  "score": 0.529,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.325,
+  "turns_mean": 3.58
+ },
+ "replay": {
+  "n": 40,
+  "score": 0.925,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 2
+ },
+ "siting": {
+  "n": 40,
+  "score": 0.975,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.025,
+  "turns_mean": 2.73
+ },
+ "_generalisation": {
+  "seen_families": null,
+  "n_seen": 0,
+  "held_out_families": 0.773,
+  "n_held_out": 191
+ },
+ "_families": {
+  "ds_wide_prior": [
+   21,
+   0.88
+  ],
+  "jam_point": [
+   10,
+   1.0
+  ],
+  "locate_ghost": [
+   40,
+   0.551
+  ],
+  "loiter_start": [
+   40,
+   0.925
+  ],
+  "near_object": [
+   40,
+   0.529
+  ],
+  "weak_low_alt": [
+   40,
+   0.975
+  ]
+ },
+ "_all": {
+  "n": 191,
+  "score": 0.773,
+  "macro_score": 0.81,
+  "latency_p50_s": 14.855,
+  "latency_p95_s": 36.404,
+  "errors": 0,
+  "ungrounded": 0,
+  "no_answer": 3,
+  "wallclock_s": 231.0
+ },
+ "_calibration": {
+  "n": 188,
+  "n_missing": 3,
+  "ece": 0.1257,
+  "brier": 0.137,
+  "mean_conf": 0.747,
+  "mean_score": 0.785,
+  "confident_wrong_rate": 0.1383,
+  "confident_wrong_of_confident": 0.1688,
+  "n_distinct_conf": 4
+ }
+}

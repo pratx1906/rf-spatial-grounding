@@ -1,0 +1,9 @@
+{
+ "source": "OpenStreetMap via Overpass API",
+ "query": "[out:json][timeout:120];(way[\"natural\"=\"coastline\"](22.88,70.08,23.12,70.34);way[\"natural\"=\"water\"](22.93,70.14,23.07,70.29););out body geom;",
+ "license": "ODbL 1.0",
+ "attribution": "(c) OpenStreetMap contributors",
+ "retrieved_at": "2026-10-17T22:59:51Z",
+ "sha256": "1d8ee263ef1d1513061c7e78dfd42d39b045ba474ae028bbbfabba1eb19fb495",
+ "elements": 19
+}

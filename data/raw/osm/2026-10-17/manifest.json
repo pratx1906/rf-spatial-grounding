@@ -1,0 +1,18 @@
+{
+  "source": "OpenStreetMap via Overpass API",
+  "url": "https://overpass-api.de/api/interpreter",
+  "bbox_swne": [
+    22.985,
+    70.165,
+    23.06,
+    70.26
+  ],
+  "query": "\n[out:json][timeout:180];\n(\n  way[\"building\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"man_made\"](22.9850,70.1650,23.0600,70.2600);\n  node[\"man_made\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"landuse\"~\"port|industrial|harbour|railway|commercial|military\"](22.9850,70.1650,23.0600,70.2600);\n  relation[\"landuse\"~\"port|industrial|harbour\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"harbour\"](22.9850,70.1650,23.0600,70.2600);\n  node[\"harbour\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"seamark:type\"](22.9850,70.1650,23.0600,70.2600);\n  node[\"seamark:type\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"natural\"~\"water|coastline|wetland|bay|mud|beach\"](22.9850,70.1650,23.0600,70.2600);\n  relation[\"natural\"~\"water|wetland|bay\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"waterway\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"railway\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"highway\"~\"primary|secondary|tertiary|trunk|motorway|service|unclassified\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"aeroway\"](22.9850,70.1650,23.0600,70.2600);\n  node[\"amenity\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"amenity\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"power\"](22.9850,70.1650,23.0600,70.2600);\n  node[\"power\"~\"tower|substation\"](22.9850,70.1650,23.0600,70.2600);\n  way[\"barrier\"=\"fence\"](22.9850,70.1650,23.0600,70.2600);\n);\nout body geom;\n",
+  "license": "ODbL 1.0",
+  "attribution": "(c) OpenStreetMap contributors",
+  "retrieved_at": "2026-10-17T18:46:36+0000",
+  "sha256": "9d02100844c36d9e0722135ab8558343941d2fcdc50052674d8b5d8030e54f92",
+  "elements": 929,
+  "seconds": 32.2,
+  "osm_base_timestamp": "2026-10-17T18:45:21Z"
+}

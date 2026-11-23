@@ -1,0 +1,73 @@
+{
+ "episodes": 700,
+ "failed": 126,
+ "class_share": {
+  "wrong_track": 0.175,
+  "ghost_picked": 0.167,
+  "over_abstain": 0.103,
+  "position_off": 0.103,
+  "parse_format": 0.095,
+  "wrong_intent": 0.095,
+  "wrong_event": 0.079,
+  "position_imprecise": 0.063,
+  "incomplete_collateral": 0.032,
+  "wrong_zone": 0.032,
+  "missed_direct": 0.024,
+  "budget_exhausted": 0.016,
+  "wrong_protocol": 0.016
+ },
+ "class_count": {
+  "wrong_track": 22,
+  "ghost_picked": 21,
+  "over_abstain": 13,
+  "position_off": 13,
+  "parse_format": 12,
+  "wrong_intent": 12,
+  "wrong_event": 10,
+  "position_imprecise": 8,
+  "incomplete_collateral": 4,
+  "wrong_zone": 4,
+  "missed_direct": 3,
+  "budget_exhausted": 2,
+  "wrong_protocol": 2
+ },
+ "by_area": {
+  "collateral": {
+   "over_abstain": 4,
+   "incomplete_collateral": 4
+  },
+  "df_ambiguity": {
+   "ghost_picked": 21,
+   "parse_format": 11,
+   "position_off": 5,
+   "missed_direct": 3,
+   "position_imprecise": 1
+  },
+  "drone_search": {
+   "position_off": 8,
+   "position_imprecise": 7,
+   "wrong_intent": 3,
+   "over_abstain": 3
+  },
+  "operator_query": {
+   "wrong_track": 22,
+   "wrong_intent": 9,
+   "over_abstain": 4,
+   "wrong_zone": 4,
+   "budget_exhausted": 2,
+   "wrong_protocol": 2
+  },
+  "replay": {
+   "wrong_event": 10
+  },
+  "siting": {
+   "over_abstain": 2
+  },
+  "unanswerable": {
+   "parse_format": 1
+  }
+ },
+ "eval": "runs/paper/results/P1/sft14_v6/eval.json",
+ "set": "eval/frozen/v6/tasks.jsonl",
+ "thr": 0.8
+}

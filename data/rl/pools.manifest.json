@@ -1,0 +1,182 @@
+{
+ "seed": 0,
+ "replay_frac": 0.4,
+ "targets": {
+  "A": [
+   "entered_between",
+   "first_into_zone",
+   "ghost_check",
+   "noisy_band",
+   "protocol_id",
+   "swarm_in_zone",
+   "tracks_in_band",
+   "weak_detect"
+  ],
+  "B": [
+   "count_in_zone",
+   "direct_all",
+   "direct_path",
+   "locate",
+   "locate_two_sensors",
+   "near_object_ambiguous",
+   "nearest_drone",
+   "reject_ghosts",
+   "swarm_members"
+  ],
+  "replay": [
+   "actuation",
+   "band_in_zone",
+   "ds_hover",
+   "entity_not_found",
+   "exit_time",
+   "first_detection",
+   "first_entry",
+   "future_time",
+   "jam_all",
+   "jam_aviation",
+   "jam_links",
+   "jam_protected",
+   "last_seen",
+   "los_check",
+   "suggest_one",
+   "suggest_two",
+   "unknown_track",
+   "weak_df",
+   "which_zone",
+   "zone_incursion_ambiguous"
+  ]
+ },
+ "excluded_areas": [
+  "collateral",
+  "siting"
+ ],
+ "excluded_keys": "empty answer scores 1.0 (yes/no incursion families kept, 'no' capped at 'yes' per family)",
+ "rule": {
+  "A": "n>=4 and expert>=0.80 and expert-model>=0.15",
+  "B": "n>=4 and expert<0.80",
+  "replay": "n>=4 and model>=0.95",
+  "source": "x3/val_clean per-family scores (not v6; Revision 1 M3)"
+ },
+ "unavailable": [
+  "first_into_zone",
+  "noisy_band",
+  "weak_detect",
+  "noisy_band",
+  "first_into_zone"
+ ],
+ "pools": {
+  "A": {
+   "sha256": "3abfe88867a057c3414689d89442eb83c923e61bfb1ce0c1a4421c191ec7f53a",
+   "n": 2395,
+   "buckets": {
+    "target_B": 761,
+    "replay": 951,
+    "target_A": 496,
+    "reword": 60,
+    "ds_wording": 100,
+    "abstain_pair": 27
+   },
+   "worlds": {
+    "None": 2395
+   },
+   "families": {
+    "actuation": 79,
+    "band_in_zone": 79,
+    "count_in_zone": 100,
+    "direct_all": 100,
+    "direct_path": 100,
+    "ds_hover": 112,
+    "ds_hover_budget2": 31,
+    "ds_loiter": 22,
+    "ds_swarm": 14,
+    "entered_between": 180,
+    "entity_not_found": 79,
+    "exit_time": 79,
+    "first_detection": 79,
+    "first_entry": 79,
+    "future_time": 79,
+    "ghost_check": 120,
+    "last_seen": 79,
+    "locate": 100,
+    "locate_two_sensors": 100,
+    "los_check": 79,
+    "near_object_ambiguous": 14,
+    "nearest_drone": 100,
+    "protocol_id": 120,
+    "reject_ghosts": 100,
+    "swarm_in_zone": 16,
+    "swarm_members": 47,
+    "tracks_in_band": 120,
+    "unknown_track": 79,
+    "which_zone": 79,
+    "zone_incursion": 23,
+    "zone_incursion_ambiguous": 7
+   },
+   "disjoint": {
+    "n": 2395,
+    "eval_ids": 29524,
+    "eval_sites": 48,
+    "same_question_text": 111
+   },
+   "note": "A and B hold the same rows (arms differ only in init / algorithm)"
+  },
+  "B": {
+   "sha256": "3abfe88867a057c3414689d89442eb83c923e61bfb1ce0c1a4421c191ec7f53a",
+   "n": 2395,
+   "buckets": {
+    "target_B": 761,
+    "replay": 951,
+    "target_A": 496,
+    "reword": 60,
+    "ds_wording": 100,
+    "abstain_pair": 27
+   },
+   "worlds": {
+    "None": 2395
+   },
+   "families": {
+    "actuation": 79,
+    "band_in_zone": 79,
+    "count_in_zone": 100,
+    "direct_all": 100,
+    "direct_path": 100,
+    "ds_hover": 112,
+    "ds_hover_budget2": 31,
+    "ds_loiter": 22,
+    "ds_swarm": 14,
+    "entered_between": 180,
+    "entity_not_found": 79,
+    "exit_time": 79,
+    "first_detection": 79,
+    "first_entry": 79,
+    "future_time": 79,
+    "ghost_check": 120,
+    "last_seen": 79,
+    "locate": 100,
+    "locate_two_sensors": 100,
+    "los_check": 79,
+    "near_object_ambiguous": 14,
+    "nearest_drone": 100,
+    "protocol_id": 120,
+    "reject_ghosts": 100,
+    "swarm_in_zone": 16,
+    "swarm_members": 47,
+    "tracks_in_band": 120,
+    "unknown_track": 79,
+    "which_zone": 79,
+    "zone_incursion": 23,
+    "zone_incursion_ambiguous": 7
+   },
+   "disjoint": {
+    "n": 2395,
+    "eval_ids": 29524,
+    "eval_sites": 48,
+    "same_question_text": 111
+   },
+   "note": "A and B hold the same rows (arms differ only in init / algorithm)"
+  },
+  "C": {
+   "skipped": "pool C skipped: no mismatch train tasks under data/tasks/x3_Mtrain (TODO: P6a)"
+  }
+ }
+}

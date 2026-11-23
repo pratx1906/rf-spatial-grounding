@@ -1,0 +1,464 @@
+{
+ "version": "newarea_v1",
+ "n": 665,
+ "per_area": {
+  "collateral": 100,
+  "df_ambiguity": 100,
+  "drone_search": 65,
+  "operator_query": 100,
+  "replay": 100,
+  "siting": 100,
+  "unanswerable": 100
+ },
+ "per_family": {
+  "actuation": 25,
+  "band_change": 3,
+  "band_in_zone": 7,
+  "count_in_zone": 7,
+  "direct_all": 18,
+  "direct_path": 18,
+  "ds_hover": 28,
+  "ds_hover_budget2": 30,
+  "ds_wide_prior": 6,
+  "entered_between": 14,
+  "entity_not_found": 25,
+  "exit_time": 14,
+  "first_detection": 14,
+  "first_entry": 14,
+  "first_into_zone": 14,
+  "future_time": 25,
+  "genuine_drone": 7,
+  "ghost_check": 7,
+  "jam_all": 19,
+  "jam_aviation": 19,
+  "jam_fratricide": 19,
+  "jam_links": 19,
+  "jam_point": 5,
+  "jam_protected": 19,
+  "last_seen": 14,
+  "locate": 18,
+  "locate_ghost": 12,
+  "locate_two_sensors": 17,
+  "loiter_start": 13,
+  "los_check": 7,
+  "near_object": 7,
+  "near_object_ambiguous": 7,
+  "nearest_drone": 7,
+  "noisy_band": 7,
+  "pilot_locate": 1,
+  "protocol_id": 6,
+  "reject_ghosts": 17,
+  "suggest_one": 24,
+  "suggest_two": 24,
+  "swarm_in_zone": 6,
+  "swarm_members": 1,
+  "tracks_in_band": 6,
+  "unknown_track": 25,
+  "weak_detect": 6,
+  "weak_df": 23,
+  "weak_low_alt": 23,
+  "which_zone": 6,
+  "zone_incursion": 6,
+  "zone_incursion_ambiguous": 6
+ },
+ "per_seed": {
+  "61": 124,
+  "62": 90,
+  "63": 86,
+  "64": 134,
+  "65": 91,
+  "66": 140
+ },
+ "per_family_cluster": {
+  "actuation": {
+   "61": 3,
+   "62": 2,
+   "63": 3,
+   "64": 7,
+   "65": 5,
+   "66": 5
+  },
+  "band_change": {
+   "62": 2,
+   "63": 1
+  },
+  "band_in_zone": {
+   "61": 1,
+   "63": 2,
+   "64": 2,
+   "66": 2
+  },
+  "count_in_zone": {
+   "61": 1,
+   "62": 2,
+   "64": 1,
+   "65": 1,
+   "66": 2
+  },
+  "direct_all": {
+   "61": 7,
+   "62": 1,
+   "63": 1,
+   "64": 6,
+   "66": 3
+  },
+  "direct_path": {
+   "61": 5,
+   "62": 1,
+   "63": 1,
+   "64": 4,
+   "66": 7
+  },
+  "ds_hover": {
+   "61": 5,
+   "62": 3,
+   "63": 6,
+   "64": 6,
+   "66": 8
+  },
+  "ds_hover_budget2": {
+   "61": 5,
+   "62": 3,
+   "63": 6,
+   "64": 8,
+   "66": 8
+  },
+  "ds_wide_prior": {
+   "61": 1,
+   "64": 5
+  },
+  "entered_between": {
+   "61": 1,
+   "62": 1,
+   "63": 1,
+   "64": 3,
+   "65": 6,
+   "66": 2
+  },
+  "entity_not_found": {
+   "62": 4,
+   "63": 7,
+   "64": 6,
+   "65": 4,
+   "66": 4
+  },
+  "exit_time": {
+   "62": 2,
+   "63": 2,
+   "64": 1,
+   "65": 5,
+   "66": 4
+  },
+  "first_detection": {
+   "61": 1,
+   "62": 3,
+   "63": 2,
+   "64": 1,
+   "65": 4,
+   "66": 3
+  },
+  "first_entry": {
+   "61": 2,
+   "62": 5,
+   "63": 1,
+   "64": 3,
+   "65": 1,
+   "66": 2
+  },
+  "first_into_zone": {
+   "61": 1,
+   "62": 2,
+   "63": 2,
+   "64": 2,
+   "65": 3,
+   "66": 4
+  },
+  "future_time": {
+   "61": 5,
+   "62": 5,
+   "63": 3,
+   "64": 5,
+   "65": 3,
+   "66": 4
+  },
+  "genuine_drone": {
+   "61": 1,
+   "63": 1,
+   "65": 3,
+   "66": 2
+  },
+  "ghost_check": {
+   "61": 1,
+   "63": 3,
+   "64": 1,
+   "65": 1,
+   "66": 1
+  },
+  "jam_all": {
+   "61": 4,
+   "62": 3,
+   "63": 3,
+   "64": 4,
+   "65": 3,
+   "66": 2
+  },
+  "jam_aviation": {
+   "61": 6,
+   "62": 3,
+   "63": 1,
+   "64": 4,
+   "65": 3,
+   "66": 2
+  },
+  "jam_fratricide": {
+   "61": 3,
+   "62": 3,
+   "63": 3,
+   "64": 4,
+   "65": 3,
+   "66": 3
+  },
+  "jam_links": {
+   "61": 4,
+   "62": 5,
+   "63": 4,
+   "64": 2,
+   "65": 1,
+   "66": 3
+  },
+  "jam_point": {
+   "61": 2,
+   "62": 1,
+   "65": 1,
+   "66": 1
+  },
+  "jam_protected": {
+   "61": 4,
+   "62": 3,
+   "63": 2,
+   "64": 2,
+   "65": 4,
+   "66": 4
+  },
+  "last_seen": {
+   "61": 2,
+   "62": 3,
+   "63": 1,
+   "64": 1,
+   "65": 4,
+   "66": 3
+  },
+  "locate": {
+   "64": 5,
+   "66": 13
+  },
+  "locate_ghost": {
+   "61": 5,
+   "62": 1,
+   "63": 3,
+   "64": 3
+  },
+  "locate_two_sensors": {
+   "61": 5,
+   "64": 2,
+   "65": 1,
+   "66": 9
+  },
+  "loiter_start": {
+   "61": 2,
+   "62": 2,
+   "63": 2,
+   "64": 3,
+   "65": 2,
+   "66": 2
+  },
+  "los_check": {
+   "61": 1,
+   "64": 2,
+   "65": 2,
+   "66": 2
+  },
+  "near_object": {
+   "61": 3,
+   "63": 1,
+   "65": 1,
+   "66": 2
+  },
+  "near_object_ambiguous": {
+   "61": 2,
+   "62": 1,
+   "63": 1,
+   "64": 2,
+   "66": 1
+  },
+  "nearest_drone": {
+   "61": 3,
+   "64": 3,
+   "66": 1
+  },
+  "noisy_band": {
+   "61": 1,
+   "62": 1,
+   "64": 1,
+   "65": 2,
+   "66": 2
+  },
+  "pilot_locate": {
+   "65": 1
+  },
+  "protocol_id": {
+   "61": 2,
+   "62": 1,
+   "64": 1,
+   "65": 2
+  },
+  "reject_ghosts": {
+   "61": 6,
+   "64": 7,
+   "66": 4
+  },
+  "suggest_one": {
+   "61": 4,
+   "62": 2,
+   "63": 4,
+   "64": 3,
+   "65": 7,
+   "66": 4
+  },
+  "suggest_two": {
+   "61": 4,
+   "62": 2,
+   "63": 4,
+   "64": 5,
+   "65": 5,
+   "66": 4
+  },
+  "swarm_in_zone": {
+   "61": 1,
+   "64": 2,
+   "66": 3
+  },
+  "swarm_members": {
+   "61": 1
+  },
+  "tracks_in_band": {
+   "61": 2,
+   "62": 1,
+   "65": 1,
+   "66": 2
+  },
+  "unknown_track": {
+   "61": 6,
+   "62": 5,
+   "63": 2,
+   "64": 6,
+   "65": 4,
+   "66": 2
+  },
+  "weak_detect": {
+   "61": 2,
+   "62": 1,
+   "63": 1,
+   "64": 1,
+   "65": 1
+  },
+  "weak_df": {
+   "61": 3,
+   "62": 4,
+   "63": 6,
+   "64": 1,
+   "65": 4,
+   "66": 5
+  },
+  "weak_low_alt": {
+   "61": 5,
+   "62": 5,
+   "63": 4,
+   "64": 5,
+   "65": 2,
+   "66": 2
+  },
+  "which_zone": {
+   "62": 3,
+   "63": 1,
+   "66": 2
+  },
+  "zone_incursion": {
+   "62": 3,
+   "63": 1,
+   "64": 1,
+   "66": 1
+  },
+  "zone_incursion_ambiguous": {
+   "61": 1,
+   "62": 1,
+   "64": 3,
+   "65": 1
+  }
+ },
+ "tasks_sha": "360647c1a2e94bf9",
+ "tasks_sha256": "360647c1a2e94bf9faaeca29120680519b4a8c5573e5daa5850682039019d54f",
+ "code_sha": {
+  "tasks/scoring.py": "000beddc4d414e02",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "c7fa6277a04b3dc5",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "1b23f6de89308e14",
+  "harness/env.py": "d6ec0cabe2a4f47d",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "a2eae7a828ff311e",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/x3_newarea/test.jsonl (seeds 61-66)",
+ "source_sha256": "8a667516f19a97775682ba155db86fb7f1f73530b99d21d3d54b4452fb159dec",
+ "selection": {
+  "mode": "per-area 100, round-robin over families",
+  "areas": null,
+  "rng_seed": 1234,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "ds_wide_prior",
+  "jam_point",
+  "locate_ghost",
+  "loiter_start",
+  "near_object",
+  "weak_low_alt"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s61_X": "1b2f5981352688e3",
+  "data/scenarios_v3/kandla_s62_X": "8e13217ca66bf4a0",
+  "data/scenarios_v3/kandla_s63_X": "76227eacb277b657",
+  "data/scenarios_v3/kandla_s64_X": "0ae2ad940dd85389",
+  "data/scenarios_v3/kandla_s65_X": "66c449f6657e06f1",
+  "data/scenarios_v3/kandla_s66_X": "511ad685a7e8332e"
+ }
+}

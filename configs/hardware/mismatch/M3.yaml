@@ -1,0 +1,5 @@
+# Mismatch world M3 (plan 2026-10-28 T6, audit B1): use-time-only channel phase error, sigma 15 deg per channel.
+# Applied in sim/obs_model/observe_v2.cal_residuals ONLY (never to the calibration tones, so C_hat cannot absorb it);
+# drawn from its own stream, added on top of the nominal residuals. Realised phases in truth/world_variant.yaml.
+impairments:
+  use_phase_sigma_deg: 15.0

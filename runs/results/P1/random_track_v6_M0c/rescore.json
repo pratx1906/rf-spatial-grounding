@@ -1,0 +1,484 @@
+{
+ "source": "runs/paper/results/P1/random_track_v6_M0c/eval.json",
+ "nominal_source": "runs/paper/results/P1/random_track_v6_Npair/eval.json",
+ "set": "eval/frozen/v6_M0c/tasks.jsonl",
+ "set_sha256": "2212b8b6338da6d727b43e28dccafa64c3883ec4b6efc0f172360d66c50e489b",
+ "policy": "random_track",
+ "model_id": "random_track",
+ "ablation": "none",
+ "samples": 1,
+ "answers_available": true,
+ "scorer": {
+  "v1": "tasks.scoring.score_answer",
+  "v2": "tasks.scoring.score_answer_v2 (C2)",
+  "verifier_strict": "verifier-rejected answer = 0 (C7)",
+  "headline": "tasks.scoring.is_headline (C6)"
+ },
+ "n": 866,
+ "score_v1": {
+  "n": 866,
+  "mean": 0.1461,
+  "ci95": [
+   0.1257,
+   0.1676
+  ],
+  "n_clusters": 2
+ },
+ "score_v1_verifier_strict": {
+  "n": 866,
+  "mean": 0.1461,
+  "ci95": [
+   0.1257,
+   0.1676
+  ],
+  "n_clusters": 2
+ },
+ "score_v2": {
+  "n": 866,
+  "mean": 0.1461,
+  "ci95": [
+   0.1257,
+   0.1676
+  ],
+  "n_clusters": 2
+ },
+ "score_v2_verifier_strict": {
+  "n": 866,
+  "mean": 0.1461,
+  "ci95": [
+   0.1257,
+   0.1676
+  ],
+  "n_clusters": 2
+ },
+ "headline": {
+  "n": 704,
+  "score_v1": {
+   "n": 704,
+   "mean": 0.1797,
+   "ci95": [
+    0.158,
+    0.2021
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 704,
+   "mean": 0.1797,
+   "ci95": [
+    0.158,
+    0.2021
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 704,
+   "mean": 0.1797,
+   "ci95": [
+    0.158,
+    0.2021
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 704,
+   "mean": 0.1797,
+   "ci95": [
+    0.158,
+    0.2021
+   ],
+   "n_clusters": 2
+  }
+ },
+ "non_headline": {
+  "n": 162,
+  "score_v1": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  }
+ },
+ "per_area": {
+  "df_ambiguity": {
+   "n": 298,
+   "v1": 0.0,
+   "v2": 0.0,
+   "v2_strict": 0.0
+  },
+  "operator_query": {
+   "n": 568,
+   "v1": 0.2227,
+   "v2": 0.2227,
+   "v2_strict": 0.2227
+  }
+ },
+ "c2": {
+  "n_position_keys": 149,
+  "n_applied": 0,
+  "n_unresolved_no_answer": 0
+ },
+ "c7": {
+  "n_verifier_rejected": 0,
+  "v1_mean_on_rejected": null
+ },
+ "c6": {
+  "n_headline": 704,
+  "n_empty_key": 162,
+  "n_collateral_siting": 0
+ },
+ "v1_recompute": {
+  "checked": 866,
+  "mismatch": 0
+ },
+ "near_object_split": {
+  "positive_key": {
+   "n": 16,
+   "score_v1": {
+    "n": 16,
+    "mean": 0.6111,
+    "ci95": [
+     0.5185,
+     0.7619
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 16,
+    "mean": 0.6111,
+    "ci95": [
+     0.5185,
+     0.7619
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 16,
+    "mean": 0.6111,
+    "ci95": [
+     0.5185,
+     0.7619
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 16,
+    "mean": 0.6111,
+    "ci95": [
+     0.5185,
+     0.7619
+    ],
+    "n_clusters": 2
+   }
+  },
+  "empty_key": {
+   "n": 34,
+   "score_v1": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   }
+  }
+ },
+ "pairing": {
+  "thr": 0.8,
+  "pairs": 248,
+  "unmatched_pairs": 0,
+  "twin_fail": 15,
+  "twin_fail_rate": 0.0605,
+  "part_twin_fail": 8,
+  "totals": {
+   "n": 248,
+   "ok_n": 31,
+   "ok_m": 32,
+   "twin_fail": 15,
+   "twin_fix": 16,
+   "part_ok_n": 94,
+   "part_ok_m": 92,
+   "part_twin_fail": 8,
+   "act_ok_n": 31,
+   "flag_m": 20,
+   "act_abstain_ok": 0,
+   "world_n": 248,
+   "world_part_ok_n": 99,
+   "world_part_ok_m": 98,
+   "world_part_twin_fail": 6,
+   "key_disagree_n": 67,
+   "key_disagree_m": 67
+  },
+  "per_family": {
+   "band_in_zone": {
+    "n": 46,
+    "ok_n": 2,
+    "ok_m": 3,
+    "twin_fail": 0,
+    "twin_fix": 1,
+    "part_ok_n": 11,
+    "part_ok_m": 11,
+    "part_twin_fail": 0,
+    "act_ok_n": 2,
+    "flag_m": 4,
+    "act_abstain_ok": 0,
+    "world_n": 46,
+    "world_part_ok_n": 9,
+    "world_part_ok_m": 9,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 18,
+    "key_disagree_m": 18
+   },
+   "count_in_zone": {
+    "n": 36,
+    "ok_n": 3,
+    "ok_m": 4,
+    "twin_fail": 1,
+    "twin_fix": 2,
+    "part_ok_n": 11,
+    "part_ok_m": 11,
+    "part_twin_fail": 0,
+    "act_ok_n": 3,
+    "flag_m": 3,
+    "act_abstain_ok": 0,
+    "world_n": 36,
+    "world_part_ok_n": 12,
+    "world_part_ok_m": 12,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 26,
+    "key_disagree_m": 26
+   },
+   "near_object": {
+    "n": 50,
+    "ok_n": 3,
+    "ok_m": 4,
+    "twin_fail": 1,
+    "twin_fix": 2,
+    "part_ok_n": 16,
+    "part_ok_m": 16,
+    "part_twin_fail": 0,
+    "act_ok_n": 3,
+    "flag_m": 5,
+    "act_abstain_ok": 0,
+    "world_n": 50,
+    "world_part_ok_n": 20,
+    "world_part_ok_m": 20,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 6,
+    "key_disagree_m": 6
+   },
+   "nearest_drone": {
+    "n": 33,
+    "ok_n": 12,
+    "ok_m": 10,
+    "twin_fail": 8,
+    "twin_fix": 6,
+    "part_ok_n": 12,
+    "part_ok_m": 10,
+    "part_twin_fail": 8,
+    "act_ok_n": 12,
+    "flag_m": 1,
+    "act_abstain_ok": 0,
+    "world_n": 33,
+    "world_part_ok_n": 9,
+    "world_part_ok_m": 8,
+    "world_part_twin_fail": 6,
+    "key_disagree_n": 9,
+    "key_disagree_m": 9
+   },
+   "swarm_in_zone": {
+    "n": 26,
+    "ok_n": 1,
+    "ok_m": 1,
+    "twin_fail": 1,
+    "twin_fix": 1,
+    "part_ok_n": 10,
+    "part_ok_m": 10,
+    "part_twin_fail": 0,
+    "act_ok_n": 1,
+    "flag_m": 1,
+    "act_abstain_ok": 0,
+    "world_n": 26,
+    "world_part_ok_n": 13,
+    "world_part_ok_m": 13,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 3,
+    "key_disagree_m": 3
+   },
+   "zone_incursion": {
+    "n": 57,
+    "ok_n": 10,
+    "ok_m": 10,
+    "twin_fail": 4,
+    "twin_fix": 4,
+    "part_ok_n": 34,
+    "part_ok_m": 34,
+    "part_twin_fail": 0,
+    "act_ok_n": 10,
+    "flag_m": 6,
+    "act_abstain_ok": 0,
+    "world_n": 57,
+    "world_part_ok_n": 36,
+    "world_part_ok_m": 36,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 5,
+    "key_disagree_m": 5
+   }
+  },
+  "unpaired_mean_score": {
+   "direct_all": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "direct_path": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "genuine_drone": {
+    "N": 0.333,
+    "M": 0.321
+   },
+   "ghost_check": {
+    "N": 0.199,
+    "M": 0.169
+   },
+   "locate": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "locate_ghost": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "locate_two_sensors": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "los_check": {
+    "N": 0.6,
+    "M": 0.6
+   },
+   "near_object_ambiguous": {
+    "N": 0.095,
+    "M": 0.119
+   },
+   "noisy_band": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "protocol_id": {
+    "N": 0.039,
+    "M": 0.039
+   },
+   "reject_ghosts": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "swarm_members": {
+    "N": 0.083,
+    "M": 0.0
+   },
+   "tracks_in_band": {
+    "N": 0.154,
+    "M": 0.176
+   },
+   "which_zone": {
+    "N": 0.13,
+    "M": 0.07
+   },
+   "zone_incursion_ambiguous": {
+    "N": 0.0,
+    "M": 0.0
+   }
+  },
+  "act_abstain": {
+   "n": 248,
+   "act_ok_n": 31,
+   "flag_m": 20,
+   "pairs_ok": 0,
+   "rate": 0.0,
+   "m_world": [
+    "M0"
+   ],
+   "m_twin_world": false,
+   "ci95_cluster": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "world_key": {
+   "pairs": 248,
+   "unresolved": 0,
+   "part_ok_n": 99,
+   "part_ok_m": 98,
+   "part_twin_fail": 6,
+   "part_twin_fail_rate": 0.0242,
+   "key_disagree_n": 67,
+   "key_disagree_m": 67,
+   "tracker_key": {
+    "part_twin_fail": 8,
+    "part_twin_fail_rate": 0.0323
+   }
+  },
+  "nominal_set": "eval/frozen/v6_Npair/tasks.jsonl"
+ }
+}

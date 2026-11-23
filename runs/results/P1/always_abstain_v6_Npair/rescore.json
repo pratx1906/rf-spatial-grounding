@@ -1,0 +1,243 @@
+{
+ "source": "runs/paper/results/P1/always_abstain_v6_Npair/eval.json",
+ "set": "eval/frozen/v6_Npair/tasks.jsonl",
+ "set_sha256": "eb06a395f4104d0cce75d0879d2fcf8ad9b723df53115e69befae6f4f2ce9afc",
+ "policy": "always_abstain",
+ "model_id": "always_abstain",
+ "ablation": "none",
+ "samples": 1,
+ "answers_available": true,
+ "scorer": {
+  "v1": "tasks.scoring.score_answer",
+  "v2": "tasks.scoring.score_answer_v2 (C2)",
+  "verifier_strict": "verifier-rejected answer = 0 (C7)",
+  "headline": "tasks.scoring.is_headline (C6)"
+ },
+ "n": 866,
+ "score_v1": {
+  "n": 866,
+  "mean": 0.0,
+  "ci95": [
+   0.0,
+   0.0
+  ],
+  "n_clusters": 2
+ },
+ "score_v1_verifier_strict": {
+  "n": 866,
+  "mean": 0.0,
+  "ci95": [
+   0.0,
+   0.0
+  ],
+  "n_clusters": 2
+ },
+ "score_v2": {
+  "n": 866,
+  "mean": 0.0,
+  "ci95": [
+   0.0,
+   0.0
+  ],
+  "n_clusters": 2
+ },
+ "score_v2_verifier_strict": {
+  "n": 866,
+  "mean": 0.0,
+  "ci95": [
+   0.0,
+   0.0
+  ],
+  "n_clusters": 2
+ },
+ "headline": {
+  "n": 704,
+  "score_v1": {
+   "n": 704,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 704,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 704,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 704,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  }
+ },
+ "non_headline": {
+  "n": 162,
+  "score_v1": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 162,
+   "mean": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  }
+ },
+ "per_area": {
+  "df_ambiguity": {
+   "n": 298,
+   "v1": 0.0,
+   "v2": 0.0,
+   "v2_strict": 0.0
+  },
+  "operator_query": {
+   "n": 568,
+   "v1": 0.0,
+   "v2": 0.0,
+   "v2_strict": 0.0
+  }
+ },
+ "c2": {
+  "n_position_keys": 149,
+  "n_applied": 0,
+  "n_unresolved_no_answer": 0
+ },
+ "c7": {
+  "n_verifier_rejected": 0,
+  "v1_mean_on_rejected": null
+ },
+ "c6": {
+  "n_headline": 704,
+  "n_empty_key": 162,
+  "n_collateral_siting": 0
+ },
+ "v1_recompute": {
+  "checked": 866,
+  "mismatch": 0
+ },
+ "near_object_split": {
+  "positive_key": {
+   "n": 16,
+   "score_v1": {
+    "n": 16,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 16,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 16,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 16,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   }
+  },
+  "empty_key": {
+   "n": 34,
+   "score_v1": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 34,
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_clusters": 2
+   }
+  }
+ }
+}

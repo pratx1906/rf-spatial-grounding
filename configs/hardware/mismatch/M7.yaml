@@ -1,0 +1,5 @@
+# Magnitude sweep (2026-11-06, review W4): sigma = 15.0 deg random per-node heading error (world side only).
+# Same per-node N(0,1) draw as M1/M2 (stable_seed(seed, "heading", sid)) scaled by sigma, so the sweep is node-by-node
+# proportional. Deep-merged by scripts/build_scenarios.py --hw-override ... --tag M7.
+heading_datum:
+  bias_deg_1sigma: 15.0

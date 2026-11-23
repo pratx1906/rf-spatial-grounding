@@ -1,0 +1,16 @@
+{
+ "rule": "30 pair_ids per seed (51-60), random.Random(20261031), from pairs present in Npair/M0c/M1c/M2c _51",
+ "pairs": 300,
+ "seeds": [
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60
+ ]
+}

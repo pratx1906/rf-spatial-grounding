@@ -1,0 +1,46 @@
+{
+ "version": "v4_W4",
+ "n": 326,
+ "per_area": {
+  "collateral": 50,
+  "df_ambiguity": 50,
+  "drone_search": 26,
+  "operator_query": 50,
+  "replay": 50,
+  "siting": 50,
+  "unanswerable": 50
+ },
+ "tasks_sha": "a05a827dda5f274e",
+ "code_sha": {
+  "tasks/scoring.py": "2014766785441485",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "170095b43ff53100",
+  "harness/prompt.py": "7ab9ff4d0d8bd299",
+  "harness/executor.py": "5c95f56ba12f6c90",
+  "harness/env.py": "55b49404744c4f2e",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "688f39486143fa4e",
+  "tools/df.py": "4ebe25878defb209",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "7687713ce336a12e",
+  "tools/registry.py": "bd37c02fd56db596",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "78d60dd788691981",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/rf_cache.py": "99db7ce51d9eff00",
+  "sim/belief/site_view.py": "1d7a81016313238f",
+  "sim/belief/tdoa.py": "c093fed4e29c273f",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/x_W4/test.jsonl (seeds 15-16)",
+ "data_sha": {
+  "data/scenarios/kandla_s15_X_W4": "dbd4c7ad8e41e4b6",
+  "data/scenarios/kandla_s16_X_W4": "6d98855f2464802b"
+ }
+}

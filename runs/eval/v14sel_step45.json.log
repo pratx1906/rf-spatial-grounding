@@ -1,0 +1,267 @@
+/mnt/c/Users/Pratyush Dixit/Desktop/Urbexsim/tools/coverage.py:72: RuntimeWarning: overflow encountered in exp
+  p = 1.0 / (1.0 + np.exp(-(np.nan_to_num(snr, nan=-60.0) - DETECT_SNR_DB) / 1.5))
+{
+ "collateral": {
+  "n": 48,
+  "score": 0.958,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 3.35
+ },
+ "df_ambiguity": {
+  "n": 18,
+  "score": 0.507,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 4.06
+ },
+ "drone_search": {
+  "n": 34,
+  "score": 0.877,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 7.24
+ },
+ "operator_query": {
+  "n": 38,
+  "score": 0.858,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.026,
+  "turns_mean": 3.13
+ },
+ "replay": {
+  "n": 21,
+  "score": 0.914,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 2.76
+ },
+ "siting": {
+  "n": 36,
+  "score": 0.944,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.0,
+  "turns_mean": 2.14
+ },
+ "unanswerable": {
+  "n": 9,
+  "score": 0.889,
+  "verifier_reject_rate": 0.0,
+  "abstain_rate": 0.889,
+  "turns_mean": 2.11
+ },
+ "_generalisation": {
+  "seen_families": 0.875,
+  "n_seen": 195,
+  "held_out_families": null,
+  "n_held_out": 0
+ },
+ "_families": {
+  "actuation": [
+   2,
+   1.0
+  ],
+  "band_change": [
+   1,
+   1.0
+  ],
+  "band_in_zone": [
+   2,
+   1.0
+  ],
+  "count_in_zone": [
+   2,
+   0.834
+  ],
+  "direct_all": [
+   2,
+   0.689
+  ],
+  "direct_path": [
+   10,
+   0.504
+  ],
+  "ds_hover": [
+   10,
+   0.95
+  ],
+  "ds_hover_budget2": [
+   10,
+   0.848
+  ],
+  "ds_loiter": [
+   7,
+   0.915
+  ],
+  "ds_swarm": [
+   6,
+   0.906
+  ],
+  "entered_between": [
+   10,
+   0.919
+  ],
+  "entity_not_found": [
+   2,
+   1.0
+  ],
+  "exit_time": [
+   2,
+   1.0
+  ],
+  "first_detection": [
+   2,
+   1.0
+  ],
+  "first_entry": [
+   2,
+   1.0
+  ],
+  "first_into_zone": [
+   2,
+   0.5
+  ],
+  "future_time": [
+   2,
+   1.0
+  ],
+  "genuine_drone": [
+   2,
+   1.0
+  ],
+  "ghost_check": [
+   2,
+   0.5
+  ],
+  "jam_all": [
+   8,
+   1.0
+  ],
+  "jam_aviation": [
+   10,
+   1.0
+  ],
+  "jam_fratricide": [
+   10,
+   1.0
+  ],
+  "jam_links": [
+   10,
+   0.8
+  ],
+  "jam_protected": [
+   10,
+   1.0
+  ],
+  "last_seen": [
+   2,
+   1.0
+  ],
+  "locate": [
+   2,
+   0.273
+  ],
+  "locate_two_sensors": [
+   2,
+   0.666
+  ],
+  "los_check": [
+   10,
+   1.0
+  ],
+  "near_object_ambiguous": [
+   2,
+   0.5
+  ],
+  "nearest_drone": [
+   2,
+   0.5
+  ],
+  "noisy_band": [
+   2,
+   0.5
+  ],
+  "pilot_locate": [
+   1,
+   0.0
+  ],
+  "protocol_id": [
+   2,
+   1.0
+  ],
+  "reject_ghosts": [
+   2,
+   0.416
+  ],
+  "rf_ambiguous": [
+   1,
+   0.0
+  ],
+  "suggest_one": [
+   2,
+   1.0
+  ],
+  "suggest_two": [
+   2,
+   1.0
+  ],
+  "swarm_in_zone": [
+   2,
+   1.0
+  ],
+  "swarm_members": [
+   2,
+   0.712
+  ],
+  "tracks_in_band": [
+   2,
+   1.0
+  ],
+  "unknown_track": [
+   2,
+   1.0
+  ],
+  "weak_detect": [
+   12,
+   0.831
+  ],
+  "weak_df": [
+   20,
+   1.0
+  ],
+  "which_zone": [
+   2,
+   1.0
+  ],
+  "zone_incursion": [
+   2,
+   0.75
+  ],
+  "zone_incursion_ambiguous": [
+   2,
+   1.0
+  ]
+ },
+ "_all": {
+  "n": 204,
+  "score": 0.876,
+  "macro_score": 0.85,
+  "latency_p50_s": 12.681,
+  "latency_p95_s": 24.983,
+  "errors": 0,
+  "ungrounded": 0,
+  "no_answer": 4,
+  "wallclock_s": 206.2
+ },
+ "_calibration": {
+  "n": 200,
+  "n_missing": 4,
+  "ece": 0.1367,
+  "brier": 0.0827,
+  "mean_conf": 0.757,
+  "mean_score": 0.893,
+  "confident_wrong_rate": 0.05,
+  "confident_wrong_of_confident": 0.0538,
+  "n_distinct_conf": 5
+ }
+}

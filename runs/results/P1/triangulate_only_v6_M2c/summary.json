@@ -1,0 +1,53 @@
+{
+ "task": "P1",
+ "model": "triangulate_only",
+ "policy": "triangulate_only",
+ "set": "v6_M2c",
+ "set_path": "eval/frozen/v6_M2c/tasks.jsonl",
+ "ablation": "none",
+ "samples": 1,
+ "seed": 0,
+ "n": 791,
+ "score": 0.149,
+ "macro_score": 0.242,
+ "per_area": {
+  "df_ambiguity": {
+   "n": 243,
+   "score": 0.484,
+   "abstain_rate": 0.0
+  },
+  "operator_query": {
+   "n": 548,
+   "score": 0.0,
+   "abstain_rate": 1.0
+  }
+ },
+ "abstain_rate": 0.6928,
+ "errors": 0,
+ "no_answer": 0,
+ "end_reasons": {
+  "submitted": 791
+ },
+ "generalisation": {
+  "seen_families": 0.151,
+  "n_seen": 691,
+  "held_out_families": 0.133,
+  "n_held_out": 100
+ },
+ "rfg": {
+  "rfg": 0.14868773704171934,
+  "n": 791,
+  "ds": null,
+  "n_ds": 0
+ },
+ "wallclock_s": 96.5,
+ "episodes_per_s": 8.1969,
+ "latency_p50_s": 0.086,
+ "latency_p95_s": 0.178,
+ "ci95": [
+  0.0719,
+  0.2211
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 2
+}

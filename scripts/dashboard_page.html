@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --harbour: #0e2231;      /* chart paper, deep water */
+  --shoal: #143043;        /* raised surfaces */
+  --contour: #234459;      /* depth contours / grid */
+  --foam: #8fd8c8;         /* training loss */
+  --port: #ef6a5b;         /* validation buoys */
+  --starboard: #5fc27e;    /* healthy */
+  --amber: #f2b63d;        /* attention / finish light */
+  --ink: #e7f0f2;
+  --mist: #8ba7b4;
+  --display: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+  --text: "Barlow", system-ui, sans-serif;
+}
+.evalp { margin: 24px 0; padding: 16px; background: var(--shoal); border: 1px solid var(--contour); }
+.evalp h2 { font-family: var(--display); margin: 0 0 12px; font-size: 20px; }
+.evalp h2 span { font-family: var(--text); font-size: 14px; color: var(--amber); margin-left: 8px; }
+.evalp h3 { font-size: 13px; color: var(--mist); margin: 14px 0 6px; font-weight: 600; }
+.evgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+.evalp table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.evalp td, .evalp th { padding: 4px 6px; border-bottom: 1px solid var(--contour); text-align: left; }
+.evalp th { color: var(--mist); font-weight: 500; }
+.evalp tr.done td { color: var(--ink); } .evalp tr.queued td { color: var(--mist); }
+.evalp tr.running td { color: var(--amber); }
+.evalp tr.setrow td { font-weight: 600; border-top: 1px solid var(--mist); }
+.evalp td.area { padding-left: 18px; color: var(--mist); }
+.evalp td.up { color: var(--starboard); } .evalp td.down { color: var(--port); }
+.evalp .track.sm { display: inline-block; width: 70px; height: 5px; margin-right: 6px; vertical-align: middle; }
+.evalp pre { white-space: pre-wrap; font-size: 12px; color: var(--mist); margin: 0; max-height: 220px; overflow: auto;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--harbour); color: var(--ink); font: 15px/1.45 var(--text); }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 520px at 78% -10%, #183c52 0%, transparent 60%),
+    repeating-radial-gradient(circle at 12% 120%, transparent 0 46px, rgba(35,68,89,.22) 46px 47px),
+    var(--harbour);
+}
+.wrap { max-width: 1320px; margin: 0 auto; padding: 22px 28px 36px; }
+
+/* title bar */
+.top { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.mark { width: 34px; height: 34px; flex: none; }
+h1 { font: 600 24px/1.1 var(--display); margin: 0; letter-spacing: .2px; }
+h1 small { display: block; font: 400 14px/1.3 var(--text); color: var(--mist); letter-spacing: 0; margin-top: 3px; }
+.status { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 12px;
+  border-radius: 999px; background: rgba(95,194,126,.12); color: var(--starboard); font: 600 15px var(--display); }
+.status i { width: 10px; height: 10px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 0 currentColor;
+  animation: beacon 2.4s ease-out infinite; }
+.status.warn { background: rgba(242,182,61,.13); color: var(--amber); }
+.status.bad { background: rgba(239,106,91,.14); color: var(--port); }
+.status.done { background: rgba(143,216,200,.12); color: var(--foam); }
+.status.done i { animation: none; }
+@keyframes beacon { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 55%, transparent); }
+                    100% { box-shadow: 0 0 0 12px transparent; } }
+.updated { color: var(--mist); font-size: 13px; width: 100%; text-align: right; margin-top: -6px; }
+
+/* the chart: the one memorable thing */
+.chart { position: relative; margin-top: 18px; border-radius: 14px; background: linear-gradient(180deg, #12293a, #0f2333);
+  box-shadow: inset 0 0 0 1px #1d3b4f; padding: 18px 18px 8px; }
+.chart canvas { width: 100%; height: 420px; display: block; }
+.legend { position: absolute; top: 18px; right: 24px; display: flex; gap: 18px; font-size: 13px; color: var(--mist); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend b { width: 18px; height: 3px; border-radius: 2px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: #0b1c28; border: 1px solid #2a5068; border-radius: 8px;
+  padding: 7px 10px; font-size: 13px; color: var(--ink); transform: translate(-50%, -115%); white-space: nowrap; opacity: 0;
+  transition: opacity .12s; }
+.tip.on { opacity: 1; }
+.tip em { font-style: normal; color: var(--mist); }
+
+/* readings strip */
+.readings { display: grid; grid-template-columns: 1.25fr 1fr 1.2fr 1fr 1.3fr; margin-top: 16px; border-radius: 14px;
+  background: var(--shoal); box-shadow: inset 0 0 0 1px #1d3b4f; overflow: hidden; }
+.r { padding: 16px 20px 18px; position: relative; }
+.r + .r::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 1px; background: var(--contour); }
+.r label { display: block; color: var(--mist); font-size: 13.5px; margin-bottom: 4px; }
+.r .v { font: 600 34px/1.05 var(--display); font-variant-numeric: tabular-nums; letter-spacing: .3px; }
+.r .v small { font: 500 17px var(--display); color: var(--mist); margin-left: 4px; }
+.r .sub { color: var(--mist); font-size: 13.5px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.r .sub.good { color: var(--starboard); }
+.r .sub.bad { color: var(--port); }
+.track { height: 6px; border-radius: 3px; background: #0e2433; margin-top: 10px; overflow: hidden; }
+.track i { display: block; height: 100%; width: 0; border-radius: 3px; background: linear-gradient(90deg, #5fb3a3, var(--foam));
+  transition: width .6s ease; }
+.spark { width: 100%; height: 30px; display: block; margin-top: 8px; }
+
+/* console */
+details { margin-top: 16px; border-radius: 14px; background: var(--shoal); box-shadow: inset 0 0 0 1px #1d3b4f; }
+summary { cursor: pointer; padding: 13px 20px; color: var(--mist); font-size: 14px; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▸"; display: inline-block; width: 16px; transition: transform .15s; }
+details[open] summary::before { transform: rotate(90deg); }
+pre { margin: 0; padding: 0 20px 16px 36px; white-space: pre-wrap; color: #b7cad2; font: 12.5px/1.5 Consolas, "Cascadia Mono", monospace;
+  max-height: 220px; overflow: auto; }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+
+@media (max-width: 980px) {
+  .readings { grid-template-columns: 1fr 1fr; }
+  .r + .r::before { display: none; }
+  .r { border-top: 1px solid var(--contour); }
+  .chart canvas { height: 320px; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 16px; }
+  .readings { grid-template-columns: 1fr; }
+  .legend { position: static; margin: 0 0 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .status i { animation: none; } .track i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <svg class="mark" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="15.5" fill="none" stroke="#2b5268" stroke-width="1.4"/>
+      <circle cx="17" cy="17" r="9.5" fill="none" stroke="#2b5268" stroke-width="1.2"/>
+      <path d="M17 17 L17 2.5" stroke="#8fd8c8" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17 17 L28.5 9" stroke="#ef6a5b" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 2.4"/>
+      <circle cx="17" cy="17" r="2.4" fill="#e7f0f2"/>
+    </svg>
+    <h1>SceneScout is learning<small id="sub">Supervised fine-tuning on expert tool-use trajectories</small></h1>
+    <div class="status" id="status" role="status"><i></i><span id="statusText">Connecting</span></div>
+    <div class="updated" id="updated"></div>
+  </div>
+
+  <section class="chart" aria-label="Loss over training steps">
+    <div class="legend">
+      <span><b style="background:#8fd8c8"></b>Training loss</span>
+      <span><b style="background:#ef6a5b;height:8px;width:8px;border-radius:50%"></b>Validation loss</span>
+      <span><b style="background:#f2b63d;height:8px;width:8px;border-radius:50%"></b>Projected finish</span>
+    </div>
+    <canvas id="cv"></canvas>
+    <div class="tip" id="tip"></div>
+  </section>
+
+  <section class="readings" aria-label="Current readings">
+    <div class="r"><label>Progress</label><div class="v" id="step">0<small>/ 0</small></div>
+      <div class="track"><i id="bar"></i></div><div class="sub" id="pct"></div></div>
+    <div class="r"><label>Training loss</label><div class="v" id="loss">–</div><div class="sub" id="lossd"></div></div>
+    <div class="r"><label>Validation loss</label><div class="v" id="val">–</div><div class="sub" id="vald"></div></div>
+    <div class="r"><label>Finishes around</label><div class="v" id="eta">–</div><div class="sub" id="etad"></div></div>
+    <div class="r"><label>GPU</label><div class="v" id="gpu">–</div><div class="sub" id="gpud"></div>
+      <canvas class="spark" id="spark"></canvas></div>
+  </section>
+
+  <section class="evalp" aria-label="Evaluation">
+    <h2>Evaluation <span id="evState"></span></h2>
+    <div class="evgrid">
+      <div>
+        <h3>Pipeline</h3>
+        <table id="evStages"><thead><tr><th>Set</th><th>Model</th><th>Tasks</th><th>Progress</th><th>Score</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>v1.1 vs v1.2 vs v1.3 (same code, same questions; change = newest vs v1.1)</h3>
+        <table id="evRes"><thead><tr><th>Set / area</th><th>v1.1</th><th>v1.2</th><th>v1.3</th><th>Change</th></tr></thead><tbody></tbody></table>
+        <h3>Decision</h3><pre id="evDec">Waiting for all sets.</pre>
+      </div>
+    </div>
+    <h3>Latest ledger lines</h3><pre id="evLed"></pre>
+  </section>
+
+  <details>
+    <summary>Training console</summary>
+    <pre id="con">Waiting for output</pre>
+  </details>
+</div>
+
+<script>
+"use strict";
+const $ = (s) => document.querySelector(s);
+const C = { foam: "#8fd8c8", foamDim: "rgba(143,216,200,.28)", port: "#ef6a5b", amber: "#f2b63d", grid: "#21425a",
+            mist: "#8ba7b4", ink: "#e7f0f2" };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let D = null, drawn = false, gpuHist = [], hover = null;
+
+function sizeCanvas(c) {
+  const r = c.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
+  const x = c.getContext("2d"); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [x, r.width, r.height];
+}
+
+function geometry(d, W, H) {
+  const pad = { l: 54, r: 26, t: 34, b: 52 };
+  const ys = [...d.steps.map((s) => s.loss), ...d.vals.map((v) => v[1])];
+  let lo = Math.min(...ys), hi = Math.max(...ys);
+  if (!isFinite(lo)) { lo = 0; hi = 1; }
+  const span = Math.max(hi - lo, 0.05);
+  lo = Math.max(0, lo - span * 0.12); hi = hi + span * 0.12;
+  const n = Math.max(d.total, 1);
+  return { pad, lo, hi, n, X: (s) => pad.l + (W - pad.l - pad.r) * (s / n),
+           Y: (v) => pad.t + (H - pad.t - pad.b) * (1 - (v - lo) / (hi - lo)) };
+}
+
+function smoothPath(x, pts) {
+  if (pts.length < 2) return;
+  x.moveTo(pts[0][0], pts[0][1]);
+  for (let i = 1; i < pts.length; i++) {
+    const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], mx = (x0 + x1) / 2;
+    x.bezierCurveTo(mx, y0, mx, y1, x1, y1);
+  }
+}
+
+function drawChart(progress = 1) {
+  if (!D) return;
+  const c = $("#cv"), [x, W, H] = sizeCanvas(c), g = geometry(D, W, H);
+  x.clearRect(0, 0, W, H);
+  // depth contours (horizontal) and step soundings (vertical)
+  x.font = "12px Barlow, sans-serif"; x.fillStyle = C.mist; x.textBaseline = "middle";
+  for (let i = 0; i <= 5; i++) {
+    const v = g.lo + (g.hi - g.lo) * i / 5, y = g.Y(v);
+    x.strokeStyle = C.grid; x.lineWidth = 1; x.setLineDash([2, 5]);
+    x.beginPath(); x.moveTo(g.pad.l, y); x.lineTo(W - g.pad.r, y); x.stroke();
+    x.setLineDash([]); x.fillText(v.toFixed(2), 8, y);
+  }
+  x.textBaseline = "top"; x.textAlign = "center";
+  const every = Math.max(1, Math.round(g.n / Math.max(3, Math.floor((W - 80) / 90))));
+  for (let s = 0; s <= g.n; s += every) x.fillText(s, g.X(s), H - g.pad.b + 10);
+  x.textAlign = "left"; x.fillText("Optimizer steps, 16 examples each", g.pad.l, H - 16);
+  x.textAlign = "left";
+
+  const steps = D.steps, k = Math.max(1, Math.floor(steps.length * progress));
+  const raw = steps.slice(0, k).map((s) => [g.X(s.step), g.Y(s.loss)]);
+  const sm = steps.slice(0, k).map((s, i) => [g.X(s.step), g.Y(D.smooth[i])]);
+  // raw loss: faint spray
+  x.fillStyle = C.foamDim;
+  raw.forEach(([a, b]) => { x.beginPath(); x.arc(a, b, 2, 0, 7); x.fill(); });
+  // smoothed loss with a depth-shaded wake under it
+  if (sm.length > 1) {
+    const grad = x.createLinearGradient(0, g.pad.t, 0, H - g.pad.b);
+    grad.addColorStop(0, "rgba(143,216,200,.22)"); grad.addColorStop(1, "rgba(143,216,200,0)");
+    x.beginPath(); smoothPath(x, sm); x.lineTo(sm[sm.length - 1][0], H - g.pad.b); x.lineTo(sm[0][0], H - g.pad.b);
+    x.closePath(); x.fillStyle = grad; x.fill();
+    x.beginPath(); smoothPath(x, sm); x.strokeStyle = C.foam; x.lineWidth = 2.6; x.stroke();
+    const [ex, ey] = sm[sm.length - 1];
+    x.beginPath(); x.arc(ex, ey, 5, 0, 7); x.fillStyle = C.foam; x.fill();
+    x.beginPath(); x.arc(ex, ey, 10, 0, 7); x.strokeStyle = "rgba(143,216,200,.35)"; x.lineWidth = 2; x.stroke();
+  }
+  // projected finish light at the end of the axis
+  if (steps.length && D.total > steps[steps.length - 1].step) {
+    const lx = g.X(D.total), ly = sm.length ? sm[sm.length - 1][1] : g.Y((g.lo + g.hi) / 2);
+    x.setLineDash([4, 6]); x.strokeStyle = "rgba(242,182,61,.45)"; x.lineWidth = 1.4;
+    x.beginPath(); x.moveTo(sm.length ? sm[sm.length - 1][0] : g.pad.l, ly); x.lineTo(lx, ly); x.stroke(); x.setLineDash([]);
+    x.beginPath(); x.arc(lx, ly, 5, 0, 7); x.fillStyle = C.amber; x.fill();
+    if (D.finish_clock) { x.fillStyle = C.amber; x.textAlign = "right"; x.fillText(D.finish_clock, lx - 10, ly - 22); x.textAlign = "left"; }
+  }
+  // validation buoys
+  D.vals.forEach(([s, v], i) => {
+    const a = g.X(s), b = g.Y(v);
+    x.strokeStyle = "rgba(239,106,91,.35)"; x.lineWidth = 1; x.beginPath(); x.moveTo(a, b + 8); x.lineTo(a, H - g.pad.b); x.stroke();
+    x.beginPath(); x.moveTo(a, b - 9); x.lineTo(a + 7, b + 5); x.lineTo(a - 7, b + 5); x.closePath(); x.fillStyle = C.port; x.fill();
+    x.fillStyle = C.ink; x.textAlign = "center"; x.fillText(v.toFixed(3), a, b - 26); x.textAlign = "left";
+    if (i > 0) { x.strokeStyle = "rgba(239,106,91,.6)"; x.lineWidth = 1.6; x.beginPath();
+      const [s0, v0] = D.vals[i - 1]; x.moveTo(g.X(s0), g.Y(v0)); x.lineTo(a, b); x.stroke(); }
+  });
+  // hover read-off
+  if (hover && steps.length) {
+    const st = steps.reduce((p, q) => Math.abs(g.X(q.step) - hover) < Math.abs(g.X(p.step) - hover) ? q : p);
+    const i = steps.indexOf(st), a = g.X(st.step);
+    x.strokeStyle = "rgba(231,240,242,.35)"; x.beginPath(); x.moveTo(a, g.pad.t); x.lineTo(a, H - g.pad.b); x.stroke();
+    const tip = $("#tip"); tip.innerHTML = `Step ${st.step} &nbsp; <em>loss</em> ${st.loss.toFixed(4)} &nbsp; <em>mean</em> ${D.smooth[i].toFixed(4)}`;
+    const tw = tip.offsetWidth || 220, half = tw / 2 + 8;
+    tip.style.left = Math.min(Math.max(a + 18, half), W - half + 18) + "px";
+    tip.style.top = (g.Y(D.smooth[i]) + 18) + "px"; tip.classList.add("on");
+  } else $("#tip").classList.remove("on");
+}
+
+function drawSpark() {
+  const c = $("#spark"), [x, W, H] = sizeCanvas(c);
+  x.clearRect(0, 0, W, H);
+  if (gpuHist.length < 2) return;
+  const n = gpuHist.length, X = (i) => W * i / (Math.max(n, 60) - 1), Y = (u) => H - 2 - (H - 4) * u / 100;
+  x.beginPath(); gpuHist.forEach((u, i) => (i ? x.lineTo(X(i), Y(u)) : x.moveTo(X(i), Y(u))));
+  x.strokeStyle = C.amber; x.lineWidth = 1.6; x.stroke();
+  x.lineTo(X(n - 1), H); x.lineTo(0, H); x.closePath(); x.fillStyle = "rgba(242,182,61,.12)"; x.fill();
+}
+
+function fmtDur(min) {
+  if (min == null) return "";
+  const h = Math.floor(min / 60), m = Math.round(min % 60);
+  return h ? `${h} h ${m} min left` : `${m} min left`;
+}
+
+function render() {
+  const d = D, last = d.steps[d.steps.length - 1];
+  $("#sub").textContent = `Run ${d.run}: supervised fine-tuning of Qwen3-4B on expert tool-use trajectories`;
+  $("#step").innerHTML = `${last ? last.step : 0}<small>/ ${d.total}</small>`;
+  const pct = last ? 100 * last.step / d.total : 0;
+  $("#bar").style.width = pct.toFixed(1) + "%";
+  $("#pct").textContent = last ? `${pct.toFixed(0)}% done, learning rate ${last.lr.toExponential(1)}` : "Starting";
+  if (d.smooth.length) {
+    const now = d.smooth[d.smooth.length - 1], first = d.smooth[0];
+    $("#loss").textContent = now.toFixed(3);
+    const drop = 100 * (first - now) / first;
+    $("#lossd").textContent = drop >= 0 ? `Down ${drop.toFixed(0)}% from ${first.toFixed(3)}` : `Up ${(-drop).toFixed(0)}% from ${first.toFixed(3)}`;
+    $("#lossd").className = "sub " + (drop >= 0 ? "good" : "bad");
+  }
+  if (d.vals.length) {
+    const v = d.vals[d.vals.length - 1][1];
+    $("#val").textContent = v.toFixed(3);
+    if (d.vals.length > 1) {
+      const p = d.vals[d.vals.length - 2][1], better = v <= p;
+      $("#vald").textContent = `${better ? "Improved" : "Worse"} from ${p.toFixed(3)} at step ${d.vals[d.vals.length - 2][0]}`;
+      $("#vald").className = "sub " + (better ? "good" : "bad");
+    } else { $("#vald").textContent = "Next check at step 40"; $("#vald").className = "sub"; }
+  }
+  $("#eta").textContent = d.finish_clock || "–";
+  $("#etad").textContent = d.eta_min != null ? `${fmtDur(d.eta_min)}, ${Math.round(d.sec_per_step)} s per step` : "Measuring speed";
+  if (d.gpu) {
+    gpuHist.push(d.gpu.util); if (gpuHist.length > 120) gpuHist.shift();
+    $("#gpu").innerHTML = `${d.gpu.util}<small>%</small>`;
+    $("#gpud").textContent = `${d.gpu.power} W, ${(d.gpu.mem / 1024).toFixed(1)} GB memory`;
+  }
+  const st = $("#status"), done = last && last.step >= d.total && d.saved;
+  st.className = "status " + (done ? "done" : d.health === "OK" ? "" : d.health.startsWith("ERROR") ? "bad" : "warn");
+  $("#statusText").textContent = done ? "Finished, adapter saved" : d.health === "OK" ? (last ? "Training, healthy" : "Warming up") : d.health;
+  $("#con").textContent = d.console || "Waiting for output";
+  $("#updated").textContent = "Updated " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  drawSpark();
+  if (!drawn && !reduce) {
+    drawn = true; const t0 = performance.now();
+    const step = (t) => { const p = Math.min(1, (t - t0) / 900); drawChart(1 - Math.pow(1 - p, 3)); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  } else { drawn = true; drawChart(); }
+}
+
+async function tick() {
+  try { D = await (await fetch("/data", { cache: "no-store" })).json(); render(); }
+  catch (e) { $("#statusText").textContent = "Dashboard server not reachable"; $("#status").className = "status bad"; }
+}
+const cv = $("#cv");
+cv.addEventListener("mousemove", (e) => { hover = e.clientX - cv.getBoundingClientRect().left; drawChart(); });
+cv.addEventListener("mouseleave", () => { hover = null; drawChart(); });
+addEventListener("resize", () => { drawChart(); drawSpark(); });
+tick(); setInterval(tick, 5000);
+
+const f3 = (x) => (x == null ? "–" : Number(x).toFixed(3));
+async function evTick() {
+  let E;
+  try { E = await (await fetch("/eval", { cache: "no-store" })).json(); } catch (e) { return; }
+  const run = E.stages.filter((s) => s.state === "running");
+  $("#evState").textContent = E.done ? "finished" : run.length ? `running: ${run[0].set}, ${run[0].model}` : "waiting";
+  $("#evStages tbody").innerHTML = E.stages.map((s) => `<tr class="${s.state}"><td>${s.set}</td><td>${s.model}</td><td>${s.size}</td>
+    <td><div class="track sm"><i style="width:${(s.progress * 100).toFixed(0)}%"></i></div>${s.state === "running" ? "≈" + (s.progress * 100).toFixed(0) + "%" : s.state}</td>
+    <td>${f3(s.score)}</td></tr>`).join("");
+  const rows = [];
+  for (const [set, m] of Object.entries(E.results)) {
+    const a = m["v1.1"], b = m["v1.2"], c = m["v1.3"], nw = c || b;
+    const d = a && nw && a.all != null && nw.all != null ? nw.all - a.all : null;
+    rows.push(`<tr class="setrow"><td>${set}</td><td>${f3(a && a.all)}</td><td>${f3(b && b.all)}</td><td>${f3(c && c.all)}</td><td class="${d > 0 ? "up" : d < 0 ? "down" : ""}">${d == null ? "–" : (d > 0 ? "+" : "") + d.toFixed(3)}</td></tr>`);
+    const areas = new Set([a, b, c].flatMap((q) => Object.keys((q || {}).areas || {})));
+    for (const k of areas) {
+      const x = a && a.areas[k], y = b && b.areas[k], z = c && c.areas[k], w = z ?? y, dd = x != null && w != null ? w - x : null;
+      rows.push(`<tr><td class="area">${k}</td><td>${f3(x)}</td><td>${f3(y)}</td><td>${f3(z)}</td><td class="${dd > 0 ? "up" : dd < 0 ? "down" : ""}">${dd == null ? "–" : (dd > 0 ? "+" : "") + dd.toFixed(3)}</td></tr>`);
+    }
+  }
+  $("#evRes tbody").innerHTML = rows.join("") || `<tr><td colspan="5">No set finished yet.</td></tr>`;
+  if (E.decision) $("#evDec").textContent = E.decision;
+  $("#evLed").textContent = E.ledger.join("\n");
+}
+evTick(); setInterval(evTick, 10000);
+</script>
+</body>
+</html>

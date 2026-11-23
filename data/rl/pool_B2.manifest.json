@@ -1,0 +1,237 @@
+{
+ "source": "data\\rl\\pool_B.jsonl",
+ "run": "runs\\paper\\results\\P4\\B_s0",
+ "n": 1372,
+ "sha256": "76515182995e8bc9795214c78610f0eea52f2474f14ee0093e487d9a828db17d",
+ "rule": {
+  "drop_if_signal_share_below": 0.15,
+  "min_groups": 5,
+  "replay_only_if_success_drop_at_least": 0.05,
+  "replay_share_cap": 0.15,
+  "signal": "group reward std > 0.05"
+ },
+ "dropped_families": [
+  "actuation",
+  "ds_hover_budget2",
+  "entity_not_found",
+  "future_time",
+  "last_seen",
+  "los_check",
+  "tracks_in_band",
+  "unknown_track"
+ ],
+ "replay_families": [
+  "which_zone"
+ ],
+ "buckets": {
+  "target_A": 376,
+  "target_B": 761,
+  "replay": 79,
+  "abstain_pair": 27,
+  "ds_wording": 69,
+  "reword": 60
+ },
+ "families": {
+  "entered_between": 180,
+  "protocol_id": 120,
+  "ghost_check": 120,
+  "nearest_drone": 100,
+  "direct_path": 100,
+  "direct_all": 100,
+  "locate_two_sensors": 100,
+  "count_in_zone": 100,
+  "locate": 100,
+  "reject_ghosts": 100,
+  "which_zone": 79,
+  "swarm_members": 47,
+  "ds_hover": 33,
+  "zone_incursion": 23,
+  "ds_loiter": 22,
+  "swarm_in_zone": 16,
+  "near_object_ambiguous": 14,
+  "ds_swarm": 14,
+  "zone_incursion_ambiguous": 4
+ },
+ "run_b_stats": {
+  "direct_path": {
+   "groups": 25,
+   "signal_share": 0.44,
+   "succ_early": 0.654,
+   "succ_late": 0.703
+  },
+  "which_zone": {
+   "groups": 17,
+   "signal_share": 0.353,
+   "succ_early": 0.944,
+   "succ_late": 0.75
+  },
+  "nearest_drone": {
+   "groups": 22,
+   "signal_share": 0.5,
+   "succ_early": 0.725,
+   "succ_late": 0.896
+  },
+  "entered_between": {
+   "groups": 34,
+   "signal_share": 0.676,
+   "succ_early": 0.426,
+   "succ_late": 0.382
+  },
+  "first_detection": {
+   "groups": 20,
+   "signal_share": 0.2,
+   "succ_early": 0.972,
+   "succ_late": 0.966
+  },
+  "band_in_zone": {
+   "groups": 13,
+   "signal_share": 0.154,
+   "succ_early": 0.479,
+   "succ_late": 0.571
+  },
+  "ghost_check": {
+   "groups": 32,
+   "signal_share": 0.688,
+   "succ_early": 0.0,
+   "succ_late": 0.208
+  },
+  "last_seen": {
+   "groups": 25,
+   "signal_share": 0.08,
+   "succ_early": 1.0,
+   "succ_late": 0.961
+  },
+  "future_time": {
+   "groups": 20,
+   "signal_share": 0.05,
+   "succ_early": 1.0,
+   "succ_late": 0.988
+  },
+  "ds_hover_budget2": {
+   "groups": 7,
+   "signal_share": 0.0,
+   "succ_early": 0.333,
+   "succ_late": 0.75
+  },
+  "first_entry": {
+   "groups": 18,
+   "signal_share": 0.222,
+   "succ_early": 0.903,
+   "succ_late": 0.986
+  },
+  "tracks_in_band": {
+   "groups": 19,
+   "signal_share": 0.053,
+   "succ_early": 0.7,
+   "succ_late": 0.653
+  },
+  "ds_hover": {
+   "groups": 22,
+   "signal_share": 0.364,
+   "succ_early": 0.812,
+   "succ_late": 0.896
+  },
+  "locate_two_sensors": {
+   "groups": 19,
+   "signal_share": 0.263,
+   "succ_early": 0.611,
+   "succ_late": 0.4
+  },
+  "direct_all": {
+   "groups": 21,
+   "signal_share": 0.524,
+   "succ_early": 0.606,
+   "succ_late": 0.578
+  },
+  "locate": {
+   "groups": 15,
+   "signal_share": 0.6,
+   "succ_early": 0.49,
+   "succ_late": 0.625
+  },
+  "entity_not_found": {
+   "groups": 17,
+   "signal_share": 0.0,
+   "succ_early": 1.0,
+   "succ_late": 1.0
+  },
+  "actuation": {
+   "groups": 17,
+   "signal_share": 0.059,
+   "succ_early": 1.0,
+   "succ_late": 0.984
+  },
+  "protocol_id": {
+   "groups": 22,
+   "signal_share": 0.227,
+   "succ_early": 0.7,
+   "succ_late": 0.75
+  },
+  "zone_incursion": {
+   "groups": 4,
+   "signal_share": 0.25,
+   "succ_early": 0.625,
+   "succ_late": 1.0
+  },
+  "los_check": {
+   "groups": 11,
+   "signal_share": 0.091,
+   "succ_early": 0.95,
+   "succ_late": 0.833
+  },
+  "unknown_track": {
+   "groups": 10,
+   "signal_share": 0.0,
+   "succ_early": 1.0,
+   "succ_late": 1.0
+  },
+  "reject_ghosts": {
+   "groups": 26,
+   "signal_share": 0.385,
+   "succ_early": 0.606,
+   "succ_late": 0.442
+  },
+  "swarm_members": {
+   "groups": 7,
+   "signal_share": 0.571,
+   "succ_early": 0.438,
+   "succ_late": 0.525
+  },
+  "exit_time": {
+   "groups": 6,
+   "signal_share": 0.167,
+   "succ_early": 0.875,
+   "succ_late": 1.0
+  },
+  "near_object_ambiguous": {
+   "groups": 4,
+   "signal_share": 0.75,
+   "succ_early": 0.25,
+   "succ_late": 0.875
+  },
+  "count_in_zone": {
+   "groups": 17,
+   "signal_share": 0.235,
+   "succ_early": 0.641,
+   "succ_late": 0.528
+  },
+  "swarm_in_zone": {
+   "groups": 5,
+   "signal_share": 0.6,
+   "succ_early": 0.188,
+   "succ_late": 0.625
+  },
+  "ds_loiter": {
+   "groups": 4,
+   "signal_share": 0.75,
+   "succ_early": null,
+   "succ_late": 0.906
+  },
+  "ds_swarm": {
+   "groups": 1,
+   "signal_share": 0.0,
+   "succ_early": null,
+   "succ_late": 1.0
+  }
+ }
+}

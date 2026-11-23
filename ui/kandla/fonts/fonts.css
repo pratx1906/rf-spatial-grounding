@@ -1,0 +1,23 @@
+/* Self-hosted, SIL Open Font License 1.1 (OFL-B612.txt, OFL-Archivo.txt). Latin subsets. */
+@font-face {
+  font-family: "B612";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("b612-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "B612";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("b612-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 87.5%;
+  font-display: block;
+  src: url("archivo-600-sc.woff2") format("woff2");
+}

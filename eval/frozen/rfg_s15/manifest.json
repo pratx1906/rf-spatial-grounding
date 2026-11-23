@@ -1,0 +1,40 @@
+{
+ "source": "eval/frozen/rfg_s200/tasks.jsonl",
+ "n": 15,
+ "families": [
+  "zone_incursion",
+  "count_in_zone",
+  "nearest_drone",
+  "tracks_in_band",
+  "swarm_members",
+  "near_object_ambiguous",
+  "locate",
+  "locate_ghost",
+  "direct_path",
+  "reject_ghosts",
+  "ghost_check",
+  "locate_two_sensors",
+  "ds_hover",
+  "ds_swarm",
+  "pilot_locate"
+ ],
+ "seed": 15,
+ "areas": {
+  "df_ambiguity": 5,
+  "drone_search": 3,
+  "operator_query": 7
+ },
+ "seeds": [
+  "15",
+  "16",
+  "51",
+  "52",
+  "53",
+  "54",
+  "55",
+  "57",
+  "58",
+  "60"
+ ],
+ "tasks_sha256": "f70175702435f98943c767d258e5613b4daa9d7643f2776538f7b60a56c5a49b"
+}

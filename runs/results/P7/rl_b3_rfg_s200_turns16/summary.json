@@ -1,0 +1,58 @@
+{
+ "task": "P7",
+ "model": "rl_b3",
+ "policy": "model",
+ "set": "rfg_s200",
+ "set_path": "eval/frozen/rfg_s200/tasks.jsonl",
+ "ablation": "turns16",
+ "samples": 1,
+ "seed": 0,
+ "n": 213,
+ "score": 0.724,
+ "macro_score": 0.723,
+ "per_area": {
+  "df_ambiguity": {
+   "n": 48,
+   "score": 0.639,
+   "abstain_rate": 0.0
+  },
+  "drone_search": {
+   "n": 39,
+   "score": 0.794,
+   "abstain_rate": 0.0
+  },
+  "operator_query": {
+   "n": 126,
+   "score": 0.735,
+   "abstain_rate": 0.008
+  }
+ },
+ "abstain_rate": 0.0047,
+ "errors": 0,
+ "no_answer": 0,
+ "end_reasons": {
+  "submitted": 213
+ },
+ "generalisation": {
+  "seen_families": 0.731,
+  "n_seen": 189,
+  "held_out_families": 0.67,
+  "n_held_out": 24
+ },
+ "rfg": {
+  "rfg": 0.7085172413793103,
+  "n": 174,
+  "ds": 0.794,
+  "n_ds": 39
+ },
+ "wallclock_s": 249.9,
+ "episodes_per_s": 0.8523,
+ "latency_p50_s": 25.485,
+ "latency_p95_s": 42.842,
+ "ci95": [
+  0.6352,
+  0.7916
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 12
+}

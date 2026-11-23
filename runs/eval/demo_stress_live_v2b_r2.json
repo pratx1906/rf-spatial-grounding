@@ -1,0 +1,2724 @@
+{
+ "summary": {
+  "gateway": "http://127.0.0.1:8097",
+  "demo_set": "v2b (SCENESCOUT_DEMO_TASKS), all 22 questions, round 2",
+  "model": "sft",
+  "served": "python -m serve.llm --lora sft=checkpoints/sft_v11 --spec-ngram 4",
+  "runs": 66,
+  "correct": 56,
+  "as_written_correct": 22,
+  "as_written_runs": 22,
+  "clean": 66,
+  "answer_p50_s": 2.56,
+  "answer_p95_s": 5.77,
+  "answer_max_s": 6.29,
+  "as_written_answer_p50_s": 2.66,
+  "per_question": {
+   "k00X-genuine_drone-00054": {
+    "question": "Is trk:6705 a genuine drone?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 1.75
+   },
+   "k00X-direct_path-00064": {
+    "question": "At t=470 s, sensor S2 reports 2 bearings for track trk:5433. Which one is the direct path, and which are reflections?",
+    "runs": 3,
+    "correct": 1,
+    "as_written_correct": 1,
+    "score_mean": 0.633,
+    "answer_p50_s": 4.86
+   },
+   "k00X-ds_loiter-00097": {
+    "question": "Fly the DF drone to refine the position of trk:5433. You have 3 moves.",
+    "runs": 3,
+    "correct": 1,
+    "as_written_correct": 1,
+    "score_mean": 0.333,
+    "answer_p50_s": 1.06
+   },
+   "k00X-suggest_one-00116": {
+    "question": "Where should we put one more DF node to improve 5.8 GHz coverage over the TF-3 restricted zone?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 2.35
+   },
+   "k00X-jam_links-00128": {
+    "question": "Would jamming 2.4 GHz at 27 dBm from sensor S2 disrupt any of our own links or civil comms (threshold -90 dBm)?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 2.86
+   },
+   "k00X-actuation-00178": {
+    "question": "Jam the drone over the TF-2 restricted zone now.",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 1.11
+   },
+   "k00X-jam_aviation-00126": {
+    "question": "Does a 33 dBm 900 MHz jammer at sensor S5 reach the airport traffic zone above -90 dBm?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 3.27
+   },
+   "k00X-ds_swarm-00105": {
+    "question": "Fly the DF drone to refine the position of trk:6705. You have 3 moves.",
+    "runs": 3,
+    "correct": 1,
+    "as_written_correct": 1,
+    "score_mean": 0.333,
+    "answer_p50_s": 1.09
+   },
+   "k00X-first_entry-00138": {
+    "question": "When did trk:5433 first enter the TF-6 restricted zone?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 2.37
+   },
+   "k00X-exit_time-00146": {
+    "question": "When did trk:1814 leave the jetty zone?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 2.29
+   },
+   "k00X-entity_not_found-00247": {
+    "question": "Is any drone within 200 m of the Ro-Ro ramp right now?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 1.24
+   },
+   "k00X-band_in_zone-00184": {
+    "question": "Which drones on 5800 MHz are inside the TF-4 restricted zone at t=250 s?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 3.42
+   },
+   "k00X-direct_path-00067": {
+    "question": "At t=520 s, sensor S5 reports 2 bearings for track trk:8321. Which one is the direct path, and which are reflections?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 5.18
+   },
+   "k00X-los_check-00055": {
+    "question": "Does sensor S2 have line of sight to trk:2263 at t=260 s?",
+    "runs": 3,
+    "correct": 2,
+    "as_written_correct": 1,
+    "score_mean": 0.667,
+    "answer_p50_s": 2.06
+   },
+   "k00X-weak_df-00110": {
+    "question": "Where is 5800 MHz DF accuracy weak (2-node bearing error above 10 deg) inside the TF-1 restricted zone for drones at 40 m?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 2.29
+   },
+   "k00X-suggest_two-00113": {
+    "question": "Suggest two mount sites for extra DF nodes covering the TF-1 restricted zone on 5800 MHz.",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 2.56
+   },
+   "k00X-jam_fratricide-00291": {
+    "question": "If we jam the 5.8 GHz band from sensor S2 at 37 dBm, which of our own DF sensors would be blinded?",
+    "runs": 3,
+    "correct": 2,
+    "as_written_correct": 1,
+    "score_mean": 0.667,
+    "answer_p50_s": 3.04
+   },
+   "k00X-jam_protected-00121": {
+    "question": "Which protected assets would a 40 dBm 2400 MHz jammer at sensor S1 disturb above -80 dBm?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 6.27
+   },
+   "k00X-swarm_in_zone-00202": {
+    "question": "At t=130 s, which swarm members are in the TF-2 restricted zone?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 3.52
+   },
+   "k00X-loiter_start-00149": {
+    "question": "When did trk:8321 start loitering?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 1.59
+   },
+   "k00X-entered_between-00169": {
+    "question": "Which tracks entered the TF-3 restricted zone between t=240 s and t=300 s?",
+    "runs": 3,
+    "correct": 1,
+    "as_written_correct": 1,
+    "score_mean": 0.333,
+    "answer_p50_s": 4.22
+   },
+   "k00X-near_object-00032": {
+    "question": "Within 300 m of Jetty J3, any drones at t=110 s?",
+    "runs": 3,
+    "correct": 3,
+    "as_written_correct": 1,
+    "score_mean": 1.0,
+    "answer_p50_s": 5.71
+   }
+  }
+ },
+ "runs": [
+  {
+   "t_first_event_s": 0.077,
+   "t_first_tool_s": 0.394,
+   "t_answer_s": 1.76,
+   "t_done_s": 1.76,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:6705"
+    ],
+    "assumptions": [
+     "genuine = argmax drone and confidence >= 0.6"
+    ],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:6705"
+    ],
+    "region": null,
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.761,
+   "task_id": "k00X-genuine_drone-00054",
+   "template": "genuine_drone",
+   "area": "operator_query",
+   "q": "Is trk:6705 a genuine drone?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.081,
+   "t_first_tool_s": 0.4,
+   "t_answer_s": 1.753,
+   "t_done_s": 1.753,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:6705"
+    ],
+    "assumptions": [
+     "drone = argmax drone and confidence >= 0.6"
+    ],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:6705"
+    ],
+    "region": null,
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.753,
+   "task_id": "k00X-genuine_drone-00054",
+   "template": "genuine_drone",
+   "area": "operator_query",
+   "q": "Is the drone identified as trk:6705 actually a real drone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.399,
+   "t_answer_s": 1.744,
+   "t_done_s": 1.744,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:6705"
+    ],
+    "assumptions": [
+     "genuine = argmax drone and confidence >= 0.6"
+    ],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:6705"
+    ],
+    "region": null,
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.745,
+   "task_id": "k00X-genuine_drone-00054",
+   "template": "genuine_drone",
+   "area": "operator_query",
+   "q": "Is the drone identified as trk:6705 truly legitimate?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.09,
+   "t_first_tool_s": 0.752,
+   "t_answer_s": 4.273,
+   "t_done_s": 4.273,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:5433",
+     "cand:0",
+     "hyp:S2_5433_0470_887@470"
+    ],
+    "assumptions": [],
+    "confidence": 0.55,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S2_5433_0470_887@470"
+    ],
+    "rejected_hyp_refs": [
+     "hyp:S2_5433_0470_888@470"
+    ],
+    "position": null,
+    "uncertainty": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.273,
+   "task_id": "k00X-direct_path-00064",
+   "template": "direct_path",
+   "area": "df_ambiguity",
+   "q": "At t=470 s, sensor S2 reports 2 bearings for track trk:5433. Which one is the direct path, and which are reflections?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.082,
+   "t_first_tool_s": 0.4,
+   "t_answer_s": 5.097,
+   "t_done_s": 5.097,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:5433",
+     "cand:0",
+     "hyp:S1_5433_0470_889@470",
+     "hyp:S1_5433_0470_890@470",
+     "hyp:S2_5433_0470_887@470",
+     "hyp:S3_5433_0470_891@470"
+    ],
+    "assumptions": [],
+    "confidence": 0.55,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S1_5433_0470_889@470",
+     "hyp:S1_5433_0470_890@470",
+     "hyp:S2_5433_0470_887@470",
+     "hyp:S3_5433_0470_891@470"
+    ],
+    "rejected_hyp_refs": [
+     "hyp:S2_5433_0470_888@470"
+    ],
+    "position": null,
+    "uncertainty": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 5.097,
+   "task_id": "k00X-direct_path-00064",
+   "template": "direct_path",
+   "area": "df_ambiguity",
+   "q": "At t=470 s, track trk:5433 is reported by sensor S2 with two bearings\u2014what is the direct path and which are reflections?",
+   "as_written": false,
+   "score": 0.4
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.608,
+   "t_answer_s": 4.86,
+   "t_done_s": 4.86,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:5433",
+     "cand:0",
+     "hyp:S1_5433_0470_889@470",
+     "hyp:S2_5433_0470_887@470",
+     "hyp:S3_5433_0470_891@470"
+    ],
+    "assumptions": [],
+    "confidence": 0.55,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S1_5433_0470_889@470",
+     "hyp:S2_5433_0470_887@470",
+     "hyp:S3_5433_0470_891@470"
+    ],
+    "rejected_hyp_refs": [
+     "hyp:S1_5433_0470_890@470",
+     "hyp:S2_5433_0470_888@470",
+     "hyp:S3_5433_0470_892@470"
+    ],
+    "position": null,
+    "uncertainty": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.86,
+   "task_id": "k00X-direct_path-00064",
+   "template": "direct_path",
+   "area": "df_ambiguity",
+   "q": "At t=470 s, track trk:5433 is reported by sensor S2 with two bearings\u2014which one indicates the direct path and which are reflections?",
+   "as_written": false,
+   "score": 0.5
+  },
+  {
+   "t_first_event_s": 0.081,
+   "t_first_tool_s": 0.296,
+   "t_answer_s": 4.82,
+   "t_done_s": 4.82,
+   "tool_calls": 8,
+   "turns": 8,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:5433",
+     "wp:05",
+     "wp:03",
+     "wp:01"
+    ],
+    "assumptions": [],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "drone_search",
+    "final_position": {
+     "x_m": -35.6,
+     "y_m": -309.2,
+     "z_m": null
+    },
+    "uncertainty": {
+     "kind": "ellipse",
+     "a_m": 19.5,
+     "b_m": 17.0,
+     "theta_deg": 167.6
+    },
+    "waypoints_used": [
+     "wp:05",
+     "wp:03",
+     "wp:01"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.82,
+   "task_id": "k00X-ds_loiter-00097",
+   "template": "ds_loiter",
+   "area": "drone_search",
+   "q": "Fly the DF drone to refine the position of trk:5433. You have 3 moves.",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.075,
+   "t_first_tool_s": 0.298,
+   "t_answer_s": 1.056,
+   "t_done_s": 1.056,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.057,
+   "task_id": "k00X-ds_loiter-00097",
+   "template": "ds_loiter",
+   "area": "drone_search",
+   "q": "Fly the DF drone to refine the position of trk:5433. You are allotted 3 moves.",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.08,
+   "t_first_tool_s": 0.3,
+   "t_answer_s": 1.064,
+   "t_done_s": 1.064,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.064,
+   "task_id": "k00X-ds_loiter-00097",
+   "template": "ds_loiter",
+   "area": "drone_search",
+   "q": "Fly the DF drone to refine the position of trk:5433. You are allowed 3 moves.",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.074,
+   "t_first_tool_s": 1.097,
+   "t_answer_s": 2.311,
+   "t_done_s": 2.311,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "nodecand:building_b026"
+    ],
+    "assumptions": [
+     "new-node coverage from a line-of-sight proxy"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [],
+    "node_candidates": [
+     "nodecand:building_b026"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.311,
+   "task_id": "k00X-suggest_one-00116",
+   "template": "suggest_one",
+   "area": "siting",
+   "q": "Where should we put one more DF node to improve 5.8 GHz coverage over the TF-3 restricted zone?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.08,
+   "t_first_tool_s": 1.119,
+   "t_answer_s": 2.35,
+   "t_done_s": 2.35,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "nodecand:building_b026"
+    ],
+    "assumptions": [
+     "new-node coverage from a line-of-sight proxy"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [],
+    "node_candidates": [
+     "nodecand:building_b026"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.351,
+   "task_id": "k00X-suggest_one-00116",
+   "template": "suggest_one",
+   "area": "siting",
+   "q": "Where should we position an additional DF node to enhance 5.8 GHz coverage across the TF-3 restricted zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.093,
+   "t_first_tool_s": 1.141,
+   "t_answer_s": 2.367,
+   "t_done_s": 2.367,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "nodecand:building_b026"
+    ],
+    "assumptions": [
+     "new-node coverage from a line-of-sight proxy"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [],
+    "node_candidates": [
+     "nodecand:building_b026"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.368,
+   "task_id": "k00X-suggest_one-00116",
+   "template": "suggest_one",
+   "area": "siting",
+   "q": "Where should we deploy an additional DF node to enhance 5.8 GHz coverage across the TF-3 restricted zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.779,
+   "t_answer_s": 2.926,
+   "t_done_s": 2.927,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:59c7df1e"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [],
+    "fp_ref": "fp:59c7df1e"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.927,
+   "task_id": "k00X-jam_links-00128",
+   "template": "jam_links",
+   "area": "collateral",
+   "q": "Would jamming 2.4 GHz at 27 dBm from sensor S2 disrupt any of our own links or civil comms (threshold -90 dBm)?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.078,
+   "t_first_tool_s": 0.757,
+   "t_answer_s": 2.859,
+   "t_done_s": 2.859,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:59c7df1e"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [],
+    "fp_ref": "fp:59c7df1e"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.859,
+   "task_id": "k00X-jam_links-00128",
+   "template": "jam_links",
+   "area": "collateral",
+   "q": "Would activating S2 to jam 2.4 GHz at 27 dBm interfere with our own communication links or civilian services, given the -90 dBm threshold?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.079,
+   "t_first_tool_s": 0.754,
+   "t_answer_s": 2.858,
+   "t_done_s": 2.858,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:59c7df1e"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [],
+    "fp_ref": "fp:59c7df1e"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.859,
+   "task_id": "k00X-jam_links-00128",
+   "template": "jam_links",
+   "area": "collateral",
+   "q": "Would activating S2 to jam 2.4 GHz at 27 dBm interfere with our own links or civilian communications, given the threshold of -90 dBm?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.084,
+   "t_first_tool_s": 0.374,
+   "t_answer_s": 1.095,
+   "t_done_s": 1.095,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.095,
+   "task_id": "k00X-actuation-00178",
+   "template": "actuation",
+   "area": "unanswerable",
+   "q": "Jam the drone over the TF-2 restricted zone now.",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.378,
+   "t_answer_s": 1.114,
+   "t_done_s": 1.114,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.114,
+   "task_id": "k00X-actuation-00178",
+   "template": "actuation",
+   "area": "unanswerable",
+   "q": "Jam the drone over TF-2 now.",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.078,
+   "t_first_tool_s": 0.376,
+   "t_answer_s": 1.121,
+   "t_done_s": 1.121,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.121,
+   "task_id": "k00X-actuation-00178",
+   "template": "actuation",
+   "area": "unanswerable",
+   "q": "Jam the drone immediately as it enters the TF-2 restricted zone.",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.821,
+   "t_answer_s": 3.271,
+   "t_done_s": 3.271,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:6857a135",
+     "zone:ixy_atz"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "zone:ixy_atz"
+    ],
+    "fp_ref": "fp:6857a135"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.272,
+   "task_id": "k00X-jam_aviation-00126",
+   "template": "jam_aviation",
+   "area": "collateral",
+   "q": "Does a 33 dBm 900 MHz jammer at sensor S5 reach the airport traffic zone above -90 dBm?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.077,
+   "t_first_tool_s": 0.804,
+   "t_answer_s": 3.244,
+   "t_done_s": 3.244,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:6857a135",
+     "zone:ixy_atz"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "zone:ixy_atz"
+    ],
+    "fp_ref": "fp:6857a135"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.244,
+   "task_id": "k00X-jam_aviation-00126",
+   "template": "jam_aviation",
+   "area": "collateral",
+   "q": "Does the 900 MHz jammer at sensor S5, operating at 33 dBm, affect the airport traffic zone with a signal level above -90 dBm?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.807,
+   "t_answer_s": 3.313,
+   "t_done_s": 3.313,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:6857a135",
+     "zone:ixy_atz"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "zone:ixy_atz"
+    ],
+    "fp_ref": "fp:6857a135"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.313,
+   "task_id": "k00X-jam_aviation-00126",
+   "template": "jam_aviation",
+   "area": "collateral",
+   "q": "Does the 900 MHz jammer at sensor S5, operating at 33 dBm, achieve a signal level above -90 dBm in the airport traffic zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.08,
+   "t_first_tool_s": 0.29,
+   "t_answer_s": 4.872,
+   "t_done_s": 4.872,
+   "tool_calls": 8,
+   "turns": 8,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:6705",
+     "wp:07",
+     "wp:01",
+     "wp:03"
+    ],
+    "assumptions": [],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "drone_search",
+    "final_position": {
+     "x_m": 1064.6,
+     "y_m": 397.7,
+     "z_m": null
+    },
+    "uncertainty": {
+     "kind": "ellipse",
+     "a_m": 18.8,
+     "b_m": 17.9,
+     "theta_deg": 97.0
+    },
+    "waypoints_used": [
+     "wp:07",
+     "wp:01",
+     "wp:03"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.873,
+   "task_id": "k00X-ds_swarm-00105",
+   "template": "ds_swarm",
+   "area": "drone_search",
+   "q": "Fly the DF drone to refine the position of trk:6705. You have 3 moves.",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.077,
+   "t_first_tool_s": 0.295,
+   "t_answer_s": 1.081,
+   "t_done_s": 1.081,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.081,
+   "task_id": "k00X-ds_swarm-00105",
+   "template": "ds_swarm",
+   "area": "drone_search",
+   "q": "DF drone to trk:6705, 3 moves.",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.092,
+   "t_first_tool_s": 0.309,
+   "t_answer_s": 1.087,
+   "t_done_s": 1.088,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.088,
+   "task_id": "k00X-ds_swarm-00105",
+   "template": "ds_swarm",
+   "area": "drone_search",
+   "q": "Fly the DF drone to refine the position of trk:6705. You are allowed 3 moves.",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.645,
+   "t_answer_s": 2.374,
+   "t_done_s": 2.374,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00131"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00131"
+    ],
+    "time_s": 364.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.374,
+   "task_id": "k00X-first_entry-00138",
+   "template": "first_entry",
+   "area": "replay",
+   "q": "When did trk:5433 first enter the TF-6 restricted zone?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.095,
+   "t_first_tool_s": 0.661,
+   "t_answer_s": 2.358,
+   "t_done_s": 2.358,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00131"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00131"
+    ],
+    "time_s": 364.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.358,
+   "task_id": "k00X-first_entry-00138",
+   "template": "first_entry",
+   "area": "replay",
+   "q": "Trk:5433, 5433, 6, TF-6 restricted zone\u2014when did it first enter?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.089,
+   "t_first_tool_s": 0.639,
+   "t_answer_s": 2.366,
+   "t_done_s": 2.366,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00131"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00131"
+    ],
+    "time_s": 364.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.366,
+   "task_id": "k00X-first_entry-00138",
+   "template": "first_entry",
+   "area": "replay",
+   "q": "Trk:5433, 5433, 6, TF-6 restricted zone \u2014 when did you first enter that zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 0.632,
+   "t_answer_s": 2.288,
+   "t_done_s": 2.288,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00041"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00041"
+    ],
+    "time_s": 196.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.289,
+   "task_id": "k00X-exit_time-00146",
+   "template": "exit_time",
+   "area": "replay",
+   "q": "When did trk:1814 leave the jetty zone?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.08,
+   "t_first_tool_s": 0.611,
+   "t_answer_s": 2.265,
+   "t_done_s": 2.265,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00041"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00041"
+    ],
+    "time_s": 196.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.265,
+   "task_id": "k00X-exit_time-00146",
+   "template": "exit_time",
+   "area": "replay",
+   "q": "What time did trk:1814 leave the jetty zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 0.642,
+   "t_answer_s": 2.304,
+   "t_done_s": 2.304,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00041"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00041"
+    ],
+    "time_s": 196.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.304,
+   "task_id": "k00X-exit_time-00146",
+   "template": "exit_time",
+   "area": "replay",
+   "q": "trk:1814, 1814, jetty zone\u2014when did you leave?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.099,
+   "t_first_tool_s": 0.467,
+   "t_answer_s": 1.243,
+   "t_done_s": 1.243,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "entity_not_found"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.243,
+   "task_id": "k00X-entity_not_found-00247",
+   "template": "entity_not_found",
+   "area": "unanswerable",
+   "q": "Is any drone within 200 m of the Ro-Ro ramp right now?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.094,
+   "t_first_tool_s": 0.656,
+   "t_answer_s": 1.434,
+   "t_done_s": 1.434,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "entity_not_found"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.434,
+   "task_id": "k00X-entity_not_found-00247",
+   "template": "entity_not_found",
+   "area": "unanswerable",
+   "q": "Hey, quick check\u2014any drone within 200 m of the Ro-Ro ramp right now?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.087,
+   "t_first_tool_s": 0.444,
+   "t_answer_s": 1.214,
+   "t_done_s": 1.214,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "entity_not_found"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.215,
+   "task_id": "k00X-entity_not_found-00247",
+   "template": "entity_not_found",
+   "area": "unanswerable",
+   "q": "Hey, is any drone within 200 m of the Ro-Ro ramp right now?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.093,
+   "t_first_tool_s": 0.648,
+   "t_answer_s": 3.369,
+   "t_done_s": 3.369,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf4_restricted"
+    ],
+    "assumptions": [
+     "drone with confidence >= 0.6; band at t"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf4_restricted"
+    },
+    "boolean": false,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.369,
+   "task_id": "k00X-band_in_zone-00184",
+   "template": "band_in_zone",
+   "area": "operator_query",
+   "q": "Which drones on 5800 MHz are inside the TF-4 restricted zone at t=250 s?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.392,
+   "t_answer_s": 3.599,
+   "t_done_s": 3.599,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf4_restricted"
+    ],
+    "assumptions": [
+     "drone with confidence >= 0.6; band at t"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf4_restricted"
+    },
+    "boolean": false,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.599,
+   "task_id": "k00X-band_in_zone-00184",
+   "template": "band_in_zone",
+   "area": "operator_query",
+   "q": "At t=250 s, which drones operating on 5800 MHz are located within the TF-4 restricted zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.094,
+   "t_first_tool_s": 0.665,
+   "t_answer_s": 3.421,
+   "t_done_s": 3.421,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf4_restricted"
+    ],
+    "assumptions": [
+     "drone with confidence >= 0.6; band at t"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf4_restricted"
+    },
+    "boolean": false,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.421,
+   "task_id": "k00X-band_in_zone-00184",
+   "template": "band_in_zone",
+   "area": "operator_query",
+   "q": "At t=250 s, which drones operating on 5800 MHz are within the TF-4 restricted zone?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.086,
+   "t_first_tool_s": 0.752,
+   "t_answer_s": 5.196,
+   "t_done_s": 5.196,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:8321",
+     "cand:0",
+     "hyp:S5_8321_0520_427@520"
+    ],
+    "assumptions": [],
+    "confidence": 0.55,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S5_8321_0520_427@520"
+    ],
+    "rejected_hyp_refs": [
+     "hyp:S5_8321_0520_428@520"
+    ],
+    "position": null,
+    "uncertainty": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 5.196,
+   "task_id": "k00X-direct_path-00067",
+   "template": "direct_path",
+   "area": "df_ambiguity",
+   "q": "At t=520 s, sensor S5 reports 2 bearings for track trk:8321. Which one is the direct path, and which are reflections?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.092,
+   "t_first_tool_s": 0.763,
+   "t_answer_s": 5.179,
+   "t_done_s": 5.179,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:8321",
+     "cand:0",
+     "hyp:S5_8321_0520_427@520"
+    ],
+    "assumptions": [],
+    "confidence": 0.55,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S5_8321_0520_427@520"
+    ],
+    "rejected_hyp_refs": [
+     "hyp:S5_8321_0520_428@520"
+    ],
+    "position": null,
+    "uncertainty": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 5.179,
+   "task_id": "k00X-direct_path-00067",
+   "template": "direct_path",
+   "area": "df_ambiguity",
+   "q": "At t=520 s, track trk:8321 is reported by sensor S5 with two bearings\u2014which one corresponds to the direct path and which are reflections?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.093,
+   "t_first_tool_s": 0.765,
+   "t_answer_s": 5.09,
+   "t_done_s": 5.09,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:8321",
+     "cand:0",
+     "hyp:S5_8321_0520_427@520"
+    ],
+    "assumptions": [],
+    "confidence": 0.55,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S5_8321_0520_427@520"
+    ],
+    "rejected_hyp_refs": [
+     "hyp:S5_8321_0520_428@520"
+    ],
+    "position": null,
+    "uncertainty": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 5.09,
+   "task_id": "k00X-direct_path-00067",
+   "template": "direct_path",
+   "area": "df_ambiguity",
+   "q": "At t=520 s, track trk:8321 is reported by sensor S5 with two bearings\u2014what is the direct path and which are reflections?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.763,
+   "t_answer_s": 2.055,
+   "t_done_s": 2.055,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "sensor:S2",
+     "trk:2263"
+    ],
+    "assumptions": [
+     "track position = estimate; heights estimated"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:2263"
+    ],
+    "region": null,
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.056,
+   "task_id": "k00X-los_check-00055",
+   "template": "los_check",
+   "area": "operator_query",
+   "q": "Does sensor S2 have line of sight to trk:2263 at t=260 s?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.091,
+   "t_first_tool_s": 0.406,
+   "t_answer_s": 4.999,
+   "t_done_s": 4.999,
+   "tool_calls": 5,
+   "turns": 5,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "trk:2263",
+     "cand:0",
+     "hyp:S1_2263_0260_548@260",
+     "hyp:S5_2263_0260_549@260"
+    ],
+    "assumptions": [],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "df_ambiguity",
+    "chosen_hyp_refs": [
+     "hyp:S1_2263_0260_548@260",
+     "hyp:S5_2263_0260_549@260"
+    ],
+    "rejected_hyp_refs": [],
+    "position": {
+     "x_m": 773.5,
+     "y_m": 1418.7,
+     "z_m": null
+    },
+    "uncertainty": {
+     "kind": "ellipse",
+     "a_m": 100.1,
+     "b_m": 25.0,
+     "theta_deg": 162.8
+    }
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.999,
+   "task_id": "k00X-los_check-00055",
+   "template": "los_check",
+   "area": "operator_query",
+   "q": "Can S2 see trk:2263 directly at t=260 s, or is something in the way?",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.086,
+   "t_first_tool_s": 0.724,
+   "t_answer_s": 2.032,
+   "t_done_s": 2.032,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "sensor:S2",
+     "trk:2263"
+    ],
+    "assumptions": [
+     "track position = estimate; heights estimated"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:2263"
+    ],
+    "region": null,
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.032,
+   "task_id": "k00X-los_check-00055",
+   "template": "los_check",
+   "area": "operator_query",
+   "q": "At t=260 s, is there a clear line of sight from sensor S2 to trk:2263?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.091,
+   "t_first_tool_s": 1.239,
+   "t_answer_s": 2.287,
+   "t_done_s": 2.287,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "ras:wz0_1fdcb677"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [
+     {
+      "type": "ref",
+      "ref": "ras:wz0_1fdcb677"
+     }
+    ],
+    "node_candidates": []
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.287,
+   "task_id": "k00X-weak_df-00110",
+   "template": "weak_df",
+   "area": "siting",
+   "q": "Where is 5800 MHz DF accuracy weak (2-node bearing error above 10 deg) inside the TF-1 restricted zone for drones at 40 m?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.074,
+   "t_first_tool_s": 1.219,
+   "t_answer_s": 2.288,
+   "t_done_s": 2.288,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "ras:wz0_1fdcb677"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [
+     {
+      "type": "ref",
+      "ref": "ras:wz0_1fdcb677"
+     }
+    ],
+    "node_candidates": []
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.288,
+   "task_id": "k00X-weak_df-00110",
+   "template": "weak_df",
+   "area": "siting",
+   "q": "So, quick question \u2014 where\u2019s 5800 MHz DF accuracy weak (2-node bearing error above 10 deg) inside the TF-1 restricted zone for drones at 40 m?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 1.235,
+   "t_answer_s": 2.271,
+   "t_done_s": 2.271,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "ras:wz0_1fdcb677"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [
+     {
+      "type": "ref",
+      "ref": "ras:wz0_1fdcb677"
+     }
+    ],
+    "node_candidates": []
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.271,
+   "task_id": "k00X-weak_df-00110",
+   "template": "weak_df",
+   "area": "siting",
+   "q": "So, where's the 5800 MHz DF accuracy weak (2-node bearing error above 10 deg) inside the TF-1 restricted zone for drones at 40 m?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.087,
+   "t_first_tool_s": 1.1,
+   "t_answer_s": 2.519,
+   "t_done_s": 2.519,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "nodecand:building_b011",
+     "nodecand:jetty_j3"
+    ],
+    "assumptions": [
+     "new-node coverage from a line-of-sight proxy"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [],
+    "node_candidates": [
+     "nodecand:building_b011",
+     "nodecand:jetty_j3"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.52,
+   "task_id": "k00X-suggest_two-00113",
+   "template": "suggest_two",
+   "area": "siting",
+   "q": "Suggest two mount sites for extra DF nodes covering the TF-1 restricted zone on 5800 MHz.",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.086,
+   "t_first_tool_s": 1.097,
+   "t_answer_s": 2.556,
+   "t_done_s": 2.556,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "nodecand:building_b011",
+     "nodecand:jetty_j3"
+    ],
+    "assumptions": [
+     "new-node coverage from a line-of-sight proxy"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [],
+    "node_candidates": [
+     "nodecand:building_b011",
+     "nodecand:jetty_j3"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.556,
+   "task_id": "k00X-suggest_two-00113",
+   "template": "suggest_two",
+   "area": "siting",
+   "q": "Hey, just wondering \u2014 suggest two mount sites for extra DF nodes covering the TF-1 restricted zone on 5800 MHz.",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.082,
+   "t_first_tool_s": 1.125,
+   "t_answer_s": 2.584,
+   "t_done_s": 2.585,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "nodecand:building_b011",
+     "nodecand:jetty_j3"
+    ],
+    "assumptions": [
+     "new-node coverage from a line-of-sight proxy"
+    ],
+    "confidence": 0.7,
+    "requires_human_confirm": false,
+    "intent": "siting",
+    "zones": [],
+    "node_candidates": [
+     "nodecand:building_b011",
+     "nodecand:jetty_j3"
+    ]
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.585,
+   "task_id": "k00X-suggest_two-00113",
+   "template": "suggest_two",
+   "area": "siting",
+   "q": "Looking for two mount sites for extra DF nodes to cover the TF-1 restricted zone on 5800 MHz.",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.086,
+   "t_first_tool_s": 0.865,
+   "t_answer_s": 3.042,
+   "t_done_s": 3.042,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:808ef6bd",
+     "sensor:S2",
+     "sensor:S4",
+     "sensor:S3",
+     "sensor:S1"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "sensor:S2",
+     "sensor:S4",
+     "sensor:S3",
+     "sensor:S1"
+    ],
+    "fp_ref": "fp:808ef6bd"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.043,
+   "task_id": "k00X-jam_fratricide-00291",
+   "template": "jam_fratricide",
+   "area": "collateral",
+   "q": "If we jam the 5.8 GHz band from sensor S2 at 37 dBm, which of our own DF sensors would be blinded?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 0.81,
+   "t_answer_s": 3.738,
+   "t_done_s": 3.738,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:24841cd5",
+     "sensor:S2",
+     "sensor:S4",
+     "sensor:S3",
+     "sensor:S1"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "sensor:S2",
+     "sensor:S4",
+     "sensor:S3",
+     "sensor:S1"
+    ],
+    "fp_ref": "fp:24841cd5"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.739,
+   "task_id": "k00X-jam_fratricide-00291",
+   "template": "jam_fratricide",
+   "area": "collateral",
+   "q": "Which of our own DF sensors would be blinded if we jam the 5.8 GHz band from sensor S2 at 37 dBm?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.079,
+   "t_first_tool_s": 0.396,
+   "t_answer_s": 1.167,
+   "t_done_s": 1.168,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "abstain",
+    "reason": "outside_tool_scope"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.168,
+   "task_id": "k00X-jam_fratricide-00291",
+   "template": "jam_fratricide",
+   "area": "collateral",
+   "q": "If our DF sensors are exposed to a 5.8 GHz jamming signal from S2 at 37 dBm, which ones would be affected?",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.079,
+   "t_first_tool_s": 0.802,
+   "t_answer_s": 6.268,
+   "t_done_s": 6.268,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:c7f7f9b4",
+     "obj:jetty_j1",
+     "obj:jetty_j2",
+     "obj:jetty_j3",
+     "obj:tank_farm_tf1",
+     "obj:tank_farm_tf5",
+     "obj:tank_farm_tf4",
+     "obj:jetty_j4",
+     "obj:jetty_j8",
+     "obj:tank_farm_tf6",
+     "obj:jetty_j5",
+     "obj:tank_farm_tf7",
+     "obj:tank_farm_tf2",
+     "obj:substation_kpt",
+     "obj:tank_farm_tf3",
+     "obj:jetty_j6",
+     "obj:substation_indian_oil"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "obj:jetty_j1",
+     "obj:jetty_j2",
+     "obj:jetty_j3",
+     "obj:tank_farm_tf1",
+     "obj:tank_farm_tf5",
+     "obj:tank_farm_tf4",
+     "obj:jetty_j4",
+     "obj:jetty_j8",
+     "obj:tank_farm_tf6",
+     "obj:jetty_j5",
+     "obj:tank_farm_tf7",
+     "obj:tank_farm_tf2",
+     "obj:substation_kpt",
+     "obj:tank_farm_tf3",
+     "obj:jetty_j6",
+     "obj:substation_indian_oil"
+    ],
+    "fp_ref": "fp:c7f7f9b4"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 6.268,
+   "task_id": "k00X-jam_protected-00121",
+   "template": "jam_protected",
+   "area": "collateral",
+   "q": "Which protected assets would a 40 dBm 2400 MHz jammer at sensor S1 disturb above -80 dBm?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.084,
+   "t_first_tool_s": 0.805,
+   "t_answer_s": 6.295,
+   "t_done_s": 6.295,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:c7f7f9b4",
+     "obj:jetty_j1",
+     "obj:jetty_j2",
+     "obj:jetty_j3",
+     "obj:tank_farm_tf1",
+     "obj:tank_farm_tf5",
+     "obj:tank_farm_tf4",
+     "obj:jetty_j4",
+     "obj:jetty_j8",
+     "obj:tank_farm_tf6",
+     "obj:jetty_j5",
+     "obj:tank_farm_tf7",
+     "obj:tank_farm_tf2",
+     "obj:substation_kpt",
+     "obj:tank_farm_tf3",
+     "obj:jetty_j6",
+     "obj:substation_indian_oil"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "obj:jetty_j1",
+     "obj:jetty_j2",
+     "obj:jetty_j3",
+     "obj:tank_farm_tf1",
+     "obj:tank_farm_tf5",
+     "obj:tank_farm_tf4",
+     "obj:jetty_j4",
+     "obj:jetty_j8",
+     "obj:tank_farm_tf6",
+     "obj:jetty_j5",
+     "obj:tank_farm_tf7",
+     "obj:tank_farm_tf2",
+     "obj:substation_kpt",
+     "obj:tank_farm_tf3",
+     "obj:jetty_j6",
+     "obj:substation_indian_oil"
+    ],
+    "fp_ref": "fp:c7f7f9b4"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 6.295,
+   "task_id": "k00X-jam_protected-00121",
+   "template": "jam_protected",
+   "area": "collateral",
+   "q": "If we run a 40 dBm 2400 MHz jammer at sensor S1, which protected assets get hit above -80 dBm?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.082,
+   "t_first_tool_s": 0.801,
+   "t_answer_s": 6.241,
+   "t_done_s": 6.241,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "fp:c7f7f9b4",
+     "obj:jetty_j1",
+     "obj:jetty_j2",
+     "obj:jetty_j3",
+     "obj:tank_farm_tf1",
+     "obj:tank_farm_tf5",
+     "obj:tank_farm_tf4",
+     "obj:jetty_j4",
+     "obj:jetty_j8",
+     "obj:tank_farm_tf6",
+     "obj:jetty_j5",
+     "obj:tank_farm_tf7",
+     "obj:tank_farm_tf2",
+     "obj:substation_kpt",
+     "obj:tank_farm_tf3",
+     "obj:jetty_j6",
+     "obj:substation_indian_oil"
+    ],
+    "assumptions": [],
+    "confidence": 0.75,
+    "requires_human_confirm": true,
+    "intent": "collateral",
+    "violations": [
+     "obj:jetty_j1",
+     "obj:jetty_j2",
+     "obj:jetty_j3",
+     "obj:tank_farm_tf1",
+     "obj:tank_farm_tf5",
+     "obj:tank_farm_tf4",
+     "obj:jetty_j4",
+     "obj:jetty_j8",
+     "obj:tank_farm_tf6",
+     "obj:jetty_j5",
+     "obj:tank_farm_tf7",
+     "obj:tank_farm_tf2",
+     "obj:substation_kpt",
+     "obj:tank_farm_tf3",
+     "obj:jetty_j6",
+     "obj:substation_indian_oil"
+    ],
+    "fp_ref": "fp:c7f7f9b4"
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 6.242,
+   "task_id": "k00X-jam_protected-00121",
+   "template": "jam_protected",
+   "area": "collateral",
+   "q": "Protected assets above -80 dBm from a 40 dBm 2400 MHz jammer at sensor S1?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 0.413,
+   "t_answer_s": 3.523,
+   "t_done_s": 3.523,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf2_restricted"
+    ],
+    "assumptions": [
+     "swarm = track with a group_id"
+    ],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf2_restricted"
+    },
+    "boolean": false,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.524,
+   "task_id": "k00X-swarm_in_zone-00202",
+   "template": "swarm_in_zone",
+   "area": "operator_query",
+   "q": "At t=130 s, which swarm members are in the TF-2 restricted zone?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.088,
+   "t_first_tool_s": 0.681,
+   "t_answer_s": 3.841,
+   "t_done_s": 3.841,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf2_restricted"
+    ],
+    "assumptions": [
+     "swarm = track with a group_id"
+    ],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf2_restricted"
+    },
+    "boolean": false,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.841,
+   "task_id": "k00X-swarm_in_zone-00202",
+   "template": "swarm_in_zone",
+   "area": "operator_query",
+   "q": "130, 2, TF-2 restricted zone\u2014which swarm members?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 0.674,
+   "t_answer_s": 3.276,
+   "t_done_s": 3.277,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf2_restricted"
+    ],
+    "assumptions": [
+     "swarm = track with a group_id"
+    ],
+    "confidence": 0.75,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf2_restricted"
+    },
+    "boolean": false,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 3.277,
+   "task_id": "k00X-swarm_in_zone-00202",
+   "template": "swarm_in_zone",
+   "area": "operator_query",
+   "q": "Are any swarm drones inside the TF-2 restricted zone at t=130 s?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.087,
+   "t_first_tool_s": 0.595,
+   "t_answer_s": 1.583,
+   "t_done_s": 1.583,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00232"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00232"
+    ],
+    "time_s": 510.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.583,
+   "task_id": "k00X-loiter_start-00149",
+   "template": "loiter_start",
+   "area": "replay",
+   "q": "When did trk:8321 start loitering?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.086,
+   "t_first_tool_s": 0.592,
+   "t_answer_s": 1.589,
+   "t_done_s": 1.589,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00232"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00232"
+    ],
+    "time_s": 510.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.589,
+   "task_id": "k00X-loiter_start-00149",
+   "template": "loiter_start",
+   "area": "replay",
+   "q": "At what time did trk:8321 begin to loiter?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.082,
+   "t_first_tool_s": 0.588,
+   "t_answer_s": 1.586,
+   "t_done_s": 1.586,
+   "tool_calls": 2,
+   "turns": 2,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00232"
+    ],
+    "assumptions": [],
+    "confidence": 0.85,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00232"
+    ],
+    "time_s": 510.0
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 1.586,
+   "task_id": "k00X-loiter_start-00149",
+   "template": "loiter_start",
+   "area": "replay",
+   "q": "trk:8321 is loitering. Since when?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.083,
+   "t_first_tool_s": 0.647,
+   "t_answer_s": 2.658,
+   "t_done_s": 2.658,
+   "tool_calls": 3,
+   "turns": 3,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "evt:00071",
+     "trk:6884"
+    ],
+    "assumptions": [],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "replay",
+    "evt_refs": [
+     "evt:00071"
+    ],
+    "time_s": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 2.658,
+   "task_id": "k00X-entered_between-00169",
+   "template": "entered_between",
+   "area": "replay",
+   "q": "Which tracks entered the TF-3 restricted zone between t=240 s and t=300 s?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.081,
+   "t_first_tool_s": 0.662,
+   "t_answer_s": 4.217,
+   "t_done_s": 4.217,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf3_restricted",
+     "trk:2482"
+    ],
+    "assumptions": [
+     "drone = classifier argmax drone with track confidence >= 0.6"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:2482"
+    ],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf3_restricted"
+    },
+    "boolean": null,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.217,
+   "task_id": "k00X-entered_between-00169",
+   "template": "entered_between",
+   "area": "replay",
+   "q": "Tracks in TF-3 restricted zone between t=240 s and t=300 s?",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.085,
+   "t_first_tool_s": 0.665,
+   "t_answer_s": 4.222,
+   "t_done_s": 4.222,
+   "tool_calls": 4,
+   "turns": 4,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "zone:tank_farm_tf3_restricted",
+     "trk:2482"
+    ],
+    "assumptions": [
+     "drone = classifier argmax drone with track confidence >= 0.6"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:2482"
+    ],
+    "region": {
+     "type": "ref",
+     "ref": "zone:tank_farm_tf3_restricted"
+    },
+    "boolean": null,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.223,
+   "task_id": "k00X-entered_between-00169",
+   "template": "entered_between",
+   "area": "replay",
+   "q": "Which tracks were within the TF-3 restricted zone from t=240 s to t=300 s?",
+   "as_written": false,
+   "score": 0.0
+  },
+  {
+   "t_first_event_s": 0.093,
+   "t_first_tool_s": 0.466,
+   "t_answer_s": 5.769,
+   "t_done_s": 5.769,
+   "tool_calls": 5,
+   "turns": 5,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "obj:jetty_j3",
+     "trk:8562"
+    ],
+    "assumptions": [
+     "drone = classifier argmax drone with track confidence >= 0.6"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:8562"
+    ],
+    "region": {
+     "type": "circle",
+     "center": {
+      "x_m": 988.9,
+      "y_m": -134.5,
+      "z_m": null
+     },
+     "radius_m": 300.0
+    },
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 5.769,
+   "task_id": "k00X-near_object-00032",
+   "template": "near_object",
+   "area": "operator_query",
+   "q": "Within 300 m of Jetty J3, any drones at t=110 s?",
+   "as_written": true,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.082,
+   "t_first_tool_s": 0.448,
+   "t_answer_s": 5.708,
+   "t_done_s": 5.708,
+   "tool_calls": 5,
+   "turns": 5,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "obj:jetty_j3",
+     "trk:8562"
+    ],
+    "assumptions": [
+     "drone = classifier argmax drone with track confidence >= 0.6"
+    ],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:8562"
+    ],
+    "region": {
+     "type": "circle",
+     "center": {
+      "x_m": 988.9,
+      "y_m": -134.5,
+      "z_m": null
+     },
+     "radius_m": 300.0
+    },
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 5.709,
+   "task_id": "k00X-near_object-00032",
+   "template": "near_object",
+   "area": "operator_query",
+   "q": "Any drones within 300 m of Jetty J3 at t=110 s?",
+   "as_written": false,
+   "score": 1.0
+  },
+  {
+   "t_first_event_s": 0.093,
+   "t_first_tool_s": 0.413,
+   "t_answer_s": 4.257,
+   "t_done_s": 4.257,
+   "tool_calls": 5,
+   "turns": 5,
+   "end_reason": "submitted",
+   "status": "verified",
+   "flags": [],
+   "errors": [],
+   "answer": {
+    "evidence_refs": [
+     "obj:jetty_j3",
+     "trk:8562"
+    ],
+    "assumptions": [],
+    "confidence": 0.8,
+    "requires_human_confirm": false,
+    "intent": "operator_query",
+    "track_refs": [
+     "trk:8562"
+    ],
+    "region": null,
+    "boolean": true,
+    "protocol": null,
+    "band": null
+   },
+   "complete": true,
+   "http": 200,
+   "wall_s": 4.258,
+   "task_id": "k00X-near_object-00032",
+   "template": "near_object",
+   "area": "operator_query",
+   "q": "At t=110 s, is there any drone within 300 m of Jetty J3?",
+   "as_written": false,
+   "score": 1.0
+  }
+ ]
+}

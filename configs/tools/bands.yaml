@@ -1,0 +1,10 @@
+# Band enum -> frequency range (MHz). Echoed in tool results (SPEC 5 "Band language").
+bands:
+  sub_ghz_868_915: [863, 928]
+  ism_2400: [2400, 2483.5]
+  ism_5800: [5725, 5875]
+  gnss_l1: [1559, 1610]
+  gnss_l2: [1215, 1254]
+  vhf_marine: [156, 174]
+  cellular_lte: [700, 2690]
+  other: [0, 100000]

@@ -1,0 +1,78 @@
+{
+ "task": "NA",
+ "model": "expert",
+ "policy": "expert",
+ "set": "naF_v1",
+ "set_path": "eval/frozen/naF_v1/tasks.jsonl",
+ "ablation": "none",
+ "samples": 1,
+ "seed": 0,
+ "n": 1043,
+ "score": 0.919,
+ "macro_score": 0.918,
+ "per_area": {
+  "collateral": {
+   "n": 85,
+   "score": 1.0,
+   "abstain_rate": 0.0
+  },
+  "df_ambiguity": {
+   "n": 118,
+   "score": 0.674,
+   "abstain_rate": 0.0
+  },
+  "drone_search": {
+   "n": 62,
+   "score": 0.879,
+   "abstain_rate": 0.065
+  },
+  "operator_query": {
+   "n": 310,
+   "score": 0.876,
+   "abstain_rate": 0.0
+  },
+  "replay": {
+   "n": 150,
+   "score": 1.0,
+   "abstain_rate": 0.0
+  },
+  "siting": {
+   "n": 55,
+   "score": 1.0,
+   "abstain_rate": 0.0
+  },
+  "unanswerable": {
+   "n": 263,
+   "score": 1.0,
+   "abstain_rate": 1.0
+  }
+ },
+ "abstain_rate": 0.256,
+ "errors": 0,
+ "no_answer": 0,
+ "end_reasons": {
+  "submitted": 1043
+ },
+ "generalisation": {
+  "seen_families": 0.897,
+  "n_seen": 689,
+  "held_out_families": 0.855,
+  "n_held_out": 91
+ },
+ "rfg": {
+  "rfg": 0.8203084112149532,
+  "n": 428,
+  "ds": 0.879,
+  "n_ds": 62
+ },
+ "wallclock_s": 258.3,
+ "episodes_per_s": 4.0379,
+ "latency_p50_s": 0.197,
+ "latency_p95_s": 0.449,
+ "ci95": [
+  0.9018,
+  0.9353
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 20
+}

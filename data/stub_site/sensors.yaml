@@ -1,0 +1,88 @@
+sensors:
+- id: S1
+  type: fixed_df
+  pose:
+    x_m: 100
+    y_m: 700
+    z_m: 48
+  bands: &id001
+  - sub_ghz_868_915
+  - ism_2400
+  - ism_5800
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: obj:control_tower
+- id: S2
+  type: fixed_df
+  pose:
+    x_m: -1400
+    y_m: 0
+    z_m: 20
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: mast_west
+- id: S3
+  type: fixed_df
+  pose:
+    x_m: 1400
+    y_m: 0
+    z_m: 20
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: mast_east
+- id: S4
+  type: fixed_df
+  pose:
+    x_m: -250
+    y_m: -270
+    z_m: 15
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: quay_mast
+- id: S5
+  type: fixed_df
+  pose:
+    x_m: 900
+    y_m: 950
+    z_m: 25
+  bands: *id001
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: mast_north
+- id: R1
+  type: radar
+  pose:
+    x_m: 0
+    y_m: 500
+    z_m: 30
+  bands: []
+  array:
+    kind: radar
+  mount: radar_mast
+- id: D1
+  type: drone_df
+  pose:
+    x_m: 0
+    y_m: 0
+    z_m: 60
+  bands:
+  - ism_2400
+  - ism_5800
+  array:
+    kind: uca
+    n: 8
+    radius_m: 0.12
+  mount: drone_home

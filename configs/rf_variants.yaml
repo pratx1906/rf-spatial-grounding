@@ -1,0 +1,73 @@
+# RF living-world variants (plan docs/superpowers/plans/2026-10-20-rf-living-world.md rev 2, DECISIONS D-031).
+# All values are ESTIMATED (Kandla tidal range ~6 m, mean sea level ~3.5 m below quay; OSM coastline = mean high
+# water). World variants (side: world) are traced into data/site_kandla/world_cache/ and are never visible to the
+# agent; belief variants form the agent's trust ensemble (rf_cache/ensemble/). Seeds of the two sides are disjoint.
+# Material draws: scale = 1 + U(-perturb_pct, +perturb_pct)/100 per material, independently for eps and sigma,
+# eps clamped >= 1, metal eps never scaled (envbuild/config/materials.yaml perturb_pct).
+variants:
+  W0:   {side: world,  water_z_m: 0.0,  ships: all,                material_seed: null, weather: {rain_mm_h: 0,  rh_pct: 60},
+         note: "control: nominal parameters through the variant pipeline; must reproduce the nominal cache"}
+  W1t:  {side: world,  water_z_m: -6.0, ships: all,                material_seed: null, weather: {rain_mm_h: 0,  rh_pct: 60},
+         note: "tide only (low water)"}
+  W1:   {side: world,  water_z_m: -6.0, ships: {absent: [ship_s2, ship_s4]}, material_seed: 201,
+         weather: {rain_mm_h: 0, rh_pct: 60}, note: "low tide, two berths empty, material draw"}
+  W2:   {side: world,  water_z_m: -0.5, ships: all, extra_ships: [{x_m: 1700.0, y_m: -900.0, heading_deg: 20.0}],
+         material_seed: 202, weather: {rain_mm_h: 0, rh_pct: 85}, note: "high tide, busy creek (anchored tanker)"}
+  W3:   {side: world,  water_z_m: -3.5, ships: {shift_along_m: {ship_s1: 40, ship_s2: -40, ship_s3: 40, ship_s4: -40}},
+         material_seed: 203, wet: true, weather: {rain_mm_h: 25, rh_pct: 95},
+         note: "wet world: rain, wet ground and wet concrete, ships shifted along the piers"}
+  B1:   {side: belief, water_z_m: -2.0, ships: {absent: [ship_s3]}, material_seed: 101, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B2:   {side: belief, water_z_m: -3.5, ships: all,                material_seed: 102, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B3:   {side: belief, water_z_m: -5.0, ships: {absent: [ship_s1]}, material_seed: 103, weather: {rain_mm_h: 0, rh_pct: 60}}
+wet:     # W3 wet-surface overrides, applied on top of the material draw (estimated)
+  ground_dry_as: wet_ground      # ITU-R P.2040 wet ground instead of medium dry ground
+  concrete: {eps: 1.3, sigma: 2.0}
+ship: {length_m: 180.0, beam_m: 30.0, freeboard_m: 22.0}
+bank: {concrete_within_m: 50.0, water_buffer_m: 5.0}
+
+# ---- RF phase 2 (v2 stack): GEOMETRY = THE BLENDER WORLD (envbuild/blender/export_rf.py -> envbuild/blender_rf.py).
+# STRICT rule: the detailed Blender world (structures with roofs, jetty piles, loading arms, pipe racks, observed
+# Sentinel-2 ships, Overture/ML buildings, terrain with the creek bed) is the only production geometry.
+# Water level relative to the quay (land 0 m; Blender mean sea level -3.5 m; tide -6 .. 0 m). Ships: the
+# Sentinel-2-observed vessels; those within node range are ship_obs_2, ship_obs_3, ship_obs_4.
+# Traced with envbuild.sionna_fix (textbook UTD/Luebbers), dual-pol grid, heights 2-80 m; sea water per band
+# (Klein-Swift). N = belief nominal; ensemble N + B1..B7 (8 members). W* = hidden worlds.
+# clutter: true adds the Blender traffic snapshot (ILLUSTRATIVE); tank_fill: floating-roof fill draw (synthetic).
+# sea_state (S7.4, audit A Q7): WMO sea state 0-4 of the creek -> rms wave height sigma_h (sim.rf.materials
+# SEA_STATE_HS_M / 4, ESTIMATED); every specular sea bounce gets the Ament factor rho = exp(-2 (2 pi sigma_h sin psi /
+# lambda)^2) at trace time (envbuild.air7311_precompute --sea-state). Ships (ship_obs_*) float with water_z_m
+# (constant draft) and shift_along_m moves them along their hull heading (envbuild.blender_rf).
+variants_v2:
+  N:    {side: nominal, water_z_m: -3.5, sea_state: 0, ships: all, material_seed: null, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B1:   {side: belief, water_z_m: -2.0, sea_state: 0, ships: {absent: [ship_obs_3]}, material_seed: 101, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B2:   {side: belief, water_z_m: -4.5, sea_state: 1, ships: all, material_seed: 102, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B3:   {side: belief, water_z_m: -5.0, sea_state: 0, ships: {absent: [ship_obs_4]}, material_seed: 103, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B4:   {side: belief, water_z_m: -1.0, sea_state: 0, ships: {absent: [ship_obs_2]}, material_seed: 104, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B5:   {side: belief, water_z_m: -3.0, sea_state: 0, ships: {shift_along_m: {ship_obs_3: 30, ship_obs_4: -30}}, material_seed: 105,
+         weather: {rain_mm_h: 0, rh_pct: 60}}
+  B6:   {side: belief, water_z_m: -5.5, sea_state: 2, ships: all, material_seed: 106, weather: {rain_mm_h: 0, rh_pct: 60}}
+  B7:   {side: belief, water_z_m: -0.5, sea_state: 0, ships: {absent: [ship_obs_3, ship_obs_4]}, material_seed: 107,
+         weather: {rain_mm_h: 0, rh_pct: 60}}
+  W0:   {side: world,  water_z_m: -3.5, sea_state: 0, ships: all, material_seed: null, weather: {rain_mm_h: 0, rh_pct: 60},
+         note: "control: the belief nominal through the world pipeline"}
+  W1t:  {side: world,  water_z_m: -6.0, sea_state: 0, ships: all, material_seed: null, weather: {rain_mm_h: 0, rh_pct: 60},
+         note: "tide only (low water: intertidal bed exposed)"}
+  W1:   {side: world,  water_z_m: -6.0, sea_state: 0, ships: {absent: [ship_obs_3, ship_obs_4]}, material_seed: 201,
+         weather: {rain_mm_h: 0, rh_pct: 60}, note: "low tide, two berths empty, material draw"}
+  W2:   {side: world,  water_z_m: -0.25, sea_state: 2, ships: all, extra_ships: [{x_m: 1700.0, y_m: -900.0, heading_deg: 20.0}],
+         material_seed: 202, weather: {rain_mm_h: 0, rh_pct: 85},
+         note: "high tide, busy creek (anchored tanker); sea 0.25 m below the quay (0 m was coplanar with land, audit A Q7)"}
+  W3:   {side: world,  water_z_m: -3.5, sea_state: 3, ships: {shift_along_m: {ship_obs_2: 40, ship_obs_3: -40, ship_obs_4: 40}},
+         material_seed: 203, wet: true, weather: {rain_mm_h: 25, rh_pct: 95}, note: "wet world, ships shifted"}
+  W4:   {side: world,  water_z_m: -3.5, sea_state: 0, ships: all, material_seed: 204, clutter: true, tank_fill: {seed: 501},
+         weather: {rain_mm_h: 0, rh_pct: 60}, note: "dynamic port state: traffic snapshot + floating-roof fill"}
+  W5:   {side: world,  water_z_m: -6.0, sea_state: 1, ships: {absent: [ship_obs_2]}, material_seed: 205, clutter: true,
+         tank_fill: {seed: 502}, diffuse: true, setup: spec_diff_scat, weather: {rain_mm_h: 0, rh_pct: 60},
+         note: "everything: low tide, traffic, tank fill, diffuse scattering, material draw"}
+  W6:   {side: world,  water_z_m: -2.0, sea_state: 0, ships: {absent: [ship_obs_4]}, material_seed: 301, clutter: true,
+         tank_fill: {seed: 503}, weather: {rain_mm_h: 0, rh_pct: 60}, note: "training world"}
+  W7:   {side: world,  water_z_m: -5.0, sea_state: 0, ships: {shift_along_m: {ship_obs_2: 35, ship_obs_3: -35}}, material_seed: 302,
+         diffuse: true, setup: spec_diff_scat, weather: {rain_mm_h: 0, rh_pct: 70}, note: "training world"}
+  W8:   {side: world,  water_z_m: -1.0, sea_state: 2, ships: all, extra_ships: [{x_m: 1500.0, y_m: -1200.0, heading_deg: 35.0}],
+         material_seed: 303, tank_fill: {seed: 504}, wet: true, weather: {rain_mm_h: 10, rh_pct: 90},
+         note: "training world (wet)"}

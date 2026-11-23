@@ -1,0 +1,4 @@
+# SceneScout Python dependencies (Linux / WSL2 agent stack: torch 2.13 + CUDA 13, vLLM 0.31, TRL, PEFT).
+# Exact, tested pins live in requirements/wsl.lock; scripts/wsl/setup_env.sh installs them with uv into .venv-wsl/.
+# Sionna RT (Windows, optional) is pinned separately in requirements/sionna-win.lock. Setup guide: docs/SETUP.md
+-r requirements/wsl.lock

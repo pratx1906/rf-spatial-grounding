@@ -1,0 +1,289 @@
+{
+ "version": "heldout_v1_disjoint",
+ "source_set": "eval/frozen/heldout_v1/tasks.jsonl",
+ "source_sha256": "327e2423a634eda5bc680965fd30dcd9aa27c7558277b89819d0a8a249930c95",
+ "tasks_sha256": "7b049a8eeefba7ecd878e01de5fec43dc36f60ea4b582968db0ad2c7d0618179",
+ "n": 130,
+ "n_source": 191,
+ "n_dropped": 61,
+ "rule": "masked question (ids + numbers) not equal to any masked training question (scripts/heldout_disjoint.py)",
+ "per_family": {
+  "ds_wide_prior": {
+   "source": 21,
+   "kept": 0
+  },
+  "jam_point": {
+   "source": 10,
+   "kept": 10
+  },
+  "locate_ghost": {
+   "source": 40,
+   "kept": 0
+  },
+  "loiter_start": {
+   "source": 40,
+   "kept": 40
+  },
+  "near_object": {
+   "source": 40,
+   "kept": 40
+  },
+  "weak_low_alt": {
+   "source": 40,
+   "kept": 40
+  }
+ },
+ "per_area": {
+  "collateral": 10,
+  "operator_query": 40,
+  "replay": 40,
+  "siting": 40
+ },
+ "per_seed": {
+  "15": 17,
+  "16": 13,
+  "51": 10,
+  "52": 12,
+  "53": 12,
+  "54": 10,
+  "55": 9,
+  "56": 11,
+  "57": 7,
+  "58": 13,
+  "59": 9,
+  "60": 7
+ },
+ "near_object": {
+  "n": 40,
+  "empty_key_ids": [
+   "k59X3-near_object-00093",
+   "k16X3-near_object-00101",
+   "k53X3-near_object-00101",
+   "k52X3-near_object-00102",
+   "k53X3-near_object-00108",
+   "k54X3-near_object-00090",
+   "k15X3-near_object-00108",
+   "k52X3-near_object-00094",
+   "k57X3-near_object-00092",
+   "k53X3-near_object-00103",
+   "k57X3-near_object-00097",
+   "k51X3-near_object-00105",
+   "k53X3-near_object-00089",
+   "k15X3-near_object-00109",
+   "k55X3-near_object-00110",
+   "k56X3-near_object-00089",
+   "k58X3-near_object-00101",
+   "k58X3-near_object-00092",
+   "k54X3-near_object-00105",
+   "k58X3-near_object-00108",
+   "k51X3-near_object-00099",
+   "k53X3-near_object-00099",
+   "k15X3-near_object-00104",
+   "k52X3-near_object-00091",
+   "k15X3-near_object-00095",
+   "k54X3-near_object-00104",
+   "k15X3-near_object-00110"
+  ],
+  "answerable_ids": [
+   "k60X3-near_object-00098",
+   "k57X3-near_object-00095",
+   "k54X3-near_object-00107",
+   "k56X3-near_object-00090",
+   "k52X3-near_object-00092",
+   "k16X3-near_object-00105",
+   "k59X3-near_object-00098",
+   "k56X3-near_object-00093",
+   "k55X3-near_object-00096",
+   "k60X3-near_object-00110",
+   "k55X3-near_object-00099",
+   "k56X3-near_object-00105",
+   "k16X3-near_object-00114"
+  ],
+  "note": "empty key = no drone near the object at t (an always-'no' answer scores 1.0)"
+ },
+ "dropped_examples": [
+  {
+   "task_id": "k59X3-ds_wide_prior-00326",
+   "masked": "task d# to pin down trk:<id>; report its position and uncertainty."
+  },
+  {
+   "task_id": "k55X3-ds_wide_prior-00348",
+   "masked": "task d# to pin down trk:<id>; report its position and uncertainty."
+  },
+  {
+   "task_id": "k59X3-ds_wide_prior-00336",
+   "masked": "fly the df drone to refine the position of trk:<id>."
+  },
+  {
+   "task_id": "k59X3-ds_wide_prior-00330",
+   "masked": "fly the df drone to refine the position of trk:<id>."
+  },
+  {
+   "task_id": "k56X3-ds_wide_prior-00330",
+   "masked": "task d# to pin down trk:<id>; report its position and uncertainty."
+  },
+  {
+   "task_id": "k53X3-ds_wide_prior-00347",
+   "masked": "fly the df drone to refine the position of trk:<id>."
+  },
+  {
+   "task_id": "k52X3-ds_wide_prior-00312",
+   "masked": "task d# to pin down trk:<id>; report its position and uncertainty."
+  },
+  {
+   "task_id": "k58X3-ds_wide_prior-00329",
+   "masked": "task d# to pin down trk:<id>; report its position and uncertainty."
+  },
+  {
+   "task_id": "k60X3-ds_wide_prior-00296",
+   "masked": "use the drone-borne df to localise trk:<id> as precisely as you can."
+  },
+  {
+   "task_id": "k59X3-ds_wide_prior-00335",
+   "masked": "fly the df drone to refine the position of trk:<id>."
+  }
+ ],
+ "training_sources": [
+  {
+   "path": "data/tasks/train.jsonl",
+   "sha256": "0f21fd013b999c41bbc44f36a9613a286437e74b79247a3ae1cddc829cbf9d7f"
+  },
+  {
+   "path": "data/tasks/train_bal_tasks.jsonl",
+   "sha256": "830c6d4944ff0068143d5a017481bc1d9b617bdeaeb0c2862e5c6b9636b737b3"
+  },
+  {
+   "path": "data/tasks/x/train.jsonl",
+   "sha256": "cabcd78d92b77c9dd7f54bb8fc61b0778be2f11c1d3b0cba0fc04f5e120a1510"
+  },
+  {
+   "path": "data/tasks/x21/train.jsonl",
+   "sha256": "cd9865a4c107974843409c5ac3d9bd96a292e58702d2de286fd228cf5b231a6b"
+  },
+  {
+   "path": "data/tasks/x21_W6/train.jsonl",
+   "sha256": "89c58005c41a260a36058aaae09e0fe032fb9d389edd8207ec0ec3953ca6487b"
+  },
+  {
+   "path": "data/tasks/x21_W7/train.jsonl",
+   "sha256": "8588ee9e13761e6d32af23652f170684e27af90854bad5f79dc6824b1ae8cea1"
+  },
+  {
+   "path": "data/tasks/x21_W8/train.jsonl",
+   "sha256": "dea08b460c9f9f867819aff47beedf2d68a3f5d2dcfd93e13f2c0169239db0ed"
+  },
+  {
+   "path": "data/tasks/x3/train.jsonl",
+   "sha256": "7d719ec203c01acea083b29383a176521287f88d156f69c397c7d3fd9d977e4b"
+  },
+  {
+   "path": "data/tasks/x3_W6/train.jsonl",
+   "sha256": "b5fcb7e94a26a8bceb9b24fa03f1d7216acf40b0bc95a4967d96ea2607b65d39"
+  },
+  {
+   "path": "data/tasks/x3_W6_labelbug/train.jsonl",
+   "sha256": "8a002d8d3b1b732331065ac615d556e59bbe0d3de0b23975ff3b032e60b3b29a"
+  },
+  {
+   "path": "data/tasks/x3_W6_predfcal/train.jsonl",
+   "sha256": "27bbd86e1c90447c46f1a647383cab606aa77ef926690e63d4479d00f5acfdc5"
+  },
+  {
+   "path": "data/tasks/x3_W7/train.jsonl",
+   "sha256": "7c07c22fd017494701ef523b4b9ed63f038b160da4756ce8b5b7e36f225adc7b"
+  },
+  {
+   "path": "data/tasks/x3_W7_labelbug/train.jsonl",
+   "sha256": "ccc0b864ad721f443435d52fd1f330a8acbc800453d400196f9a662835fa23b8"
+  },
+  {
+   "path": "data/tasks/x3_W7_predfcal/train.jsonl",
+   "sha256": "f283e185c677b3595ebbe3c8c955fc4b65923391295c703d63ede56f905c22b8"
+  },
+  {
+   "path": "data/tasks/x3_W8/train.jsonl",
+   "sha256": "b9f9c970bb4874e711de1b29a06051e37a20b938d701b3684cfa37062b525325"
+  },
+  {
+   "path": "data/tasks/x3_W8_labelbug/train.jsonl",
+   "sha256": "8e9825142b65e301dc569a374ee254f76b947cef83838762b46bac15f45d7008"
+  },
+  {
+   "path": "data/tasks/x3_W8_predfcal/train.jsonl",
+   "sha256": "ce70669e70c41be16bbcc4f0873584beef4f427d71c4672f790a0d5906b0be88"
+  },
+  {
+   "path": "data/tasks/x3_labelbug/train.jsonl",
+   "sha256": "083f31ba9ccefc3b7bcf4d5b8732c89f241d512e6115db91f72227d5f252ef43"
+  },
+  {
+   "path": "data/tasks/x3_predfcal/train.jsonl",
+   "sha256": "e4405b44dc0c0bd2f5d7fec51c0f653b613f8f180d4a4d0e07e13d83db87511b"
+  },
+  {
+   "path": "data/tasks/x_W6/train.jsonl",
+   "sha256": "265c32f38ef1daa551cdbdd804c1b54bb46f6f33686fa8a086ddb0e02c81f3f6"
+  },
+  {
+   "path": "data/tasks/x_W7/train.jsonl",
+   "sha256": "ef7f194e5a547cb6c8d50fbb14f1fed2e10db1519462fd0e55a0d21018bc4616"
+  },
+  {
+   "path": "data/tasks/x_W8/train.jsonl",
+   "sha256": "52d375bc6e3d15eae8bf9ea3a823612f5bac905f0eac684244349f40f28f9276"
+  },
+  {
+   "path": "data/tasks/v11_tasks.jsonl",
+   "sha256": "fdb8fd9029bfd49861bc73008e47be106bf18237be8a3383cb772ff2c4ff1bb0"
+  },
+  {
+   "path": "data/tasks/v12_tasks.jsonl",
+   "sha256": "4c6c6b388f531292908be15d09d962d2d6b1244b0a171f9603905715310c0d8a"
+  },
+  {
+   "path": "data/tasks/v11_para.jsonl",
+   "sha256": "e6ae6f7c344378497de8d165206fe67e062ddc933510580094be900e7133b2d2"
+  },
+  {
+   "path": "data/tasks/v12_para.jsonl",
+   "sha256": "f5cdb90affdeb56b719d035cd10c1d80f3dcb1051bcc807e99f325666f741930"
+  },
+  {
+   "path": "data/tasks/v13_extra.jsonl",
+   "sha256": "c84ac37ca96a2281237bc6ee82293b928db472aa8928fb93abec4bd431a14fa5"
+  },
+  {
+   "path": "data/sft/train.jsonl",
+   "sha256": "e1158dd66863242288133f0c8f2c5d4ac635760075cf720aeae437ea45246526"
+  },
+  {
+   "path": "data/sft/train_bal.jsonl",
+   "sha256": "00cc8ffe8e0ab95180bb0bffa60f89b1a85aba497b0dd0d3a11e0d97e91e644f"
+  },
+  {
+   "path": "data/sft/train_bal_v2.jsonl",
+   "sha256": "f0cf6036b6d4daeecb175b93ae6ecb2ee7629c47a622da37b6e855d3a0dbc4e3"
+  },
+  {
+   "path": "data/sft/train_v11.jsonl",
+   "sha256": "bb0433700090fd858b81de2486f3964cb3c97cebd4bd5aa60a2a81ab8fe762d3"
+  },
+  {
+   "path": "data/sft/train_v12.jsonl",
+   "sha256": "7e64dfa5bcf8cf621060cad436267d38ee7d077c0286cfe7d4645aeae37a328d"
+  },
+  {
+   "path": "data/sft/train_v13.jsonl",
+   "sha256": "ea1985beade97fb39ae1c13ee1628ec00c7415e5e6911bdd1266abf66ad4dfc8"
+  },
+  {
+   "path": "data/sft/train_v14.jsonl",
+   "sha256": "6c1e93ce90a223cad2eaf3b67f3da07eebceb915148aff472bf9d0f5070bd9ba"
+  },
+  {
+   "path": "data/sft/train_v2.jsonl",
+   "sha256": "bb0433700090fd858b81de2486f3964cb3c97cebd4bd5aa60a2a81ab8fe762d3"
+  }
+ ],
+ "n_training_masked_questions": 1421
+}

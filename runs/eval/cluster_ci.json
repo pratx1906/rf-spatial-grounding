@@ -1,0 +1,1662 @@
+{
+ "pairs": {
+  "v12-v11/v3": {
+   "n": 603,
+   "diff": -0.025,
+   "ci95_task": [
+    -0.042,
+    -0.009
+   ],
+   "ci95_cluster": [
+    -0.042,
+    -0.009
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.024,
+    "16": -0.026
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 93,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "df_ambiguity": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.015,
+     "ci95": [
+      -0.034,
+      0.001
+     ]
+    },
+    "drone_search": {
+     "n": 45,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.007,
+     "ci95": [
+      -0.047,
+      0.074
+     ]
+    },
+    "replay": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.022,
+     "ci95": [
+      -0.018,
+      0.065
+     ]
+    },
+    "siting": {
+     "n": 65,
+     "n_clusters": 2,
+     "diff": -0.256,
+     "ci95": [
+      -0.355,
+      -0.161
+     ]
+    },
+    "unanswerable": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v13-v11/v3": {
+   "n": 603,
+   "diff": -0.031,
+   "ci95_task": [
+    -0.047,
+    -0.015
+   ],
+   "ci95_cluster": [
+    -0.049,
+    -0.014
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.028,
+    "16": -0.034
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 93,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "df_ambiguity": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.017,
+     "ci95": [
+      -0.036,
+      -0.0
+     ]
+    },
+    "drone_search": {
+     "n": 45,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.009,
+     "ci95": [
+      -0.057,
+      0.055
+     ]
+    },
+    "replay": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.03,
+     "ci95": [
+      0.0,
+      0.076
+     ]
+    },
+    "siting": {
+     "n": 65,
+     "n_clusters": 2,
+     "diff": -0.293,
+     "ci95": [
+      -0.403,
+      -0.184
+     ]
+    },
+    "unanswerable": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v13-v12/v3": {
+   "n": 603,
+   "diff": -0.006,
+   "ci95_task": [
+    -0.015,
+    0.004
+   ],
+   "ci95_cluster": [
+    -0.015,
+    0.004
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.004,
+    "16": -0.007
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 93,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "df_ambiguity": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.002,
+     "ci95": [
+      -0.017,
+      0.013
+     ]
+    },
+    "drone_search": {
+     "n": 45,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.016,
+     "ci95": [
+      -0.057,
+      0.027
+     ]
+    },
+    "replay": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.008,
+     "ci95": [
+      -0.032,
+      0.044
+     ]
+    },
+    "siting": {
+     "n": 65,
+     "n_clusters": 2,
+     "diff": -0.037,
+     "ci95": [
+      -0.061,
+      -0.015
+     ]
+    },
+    "unanswerable": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v12-v11/v4": {
+   "n": 611,
+   "diff": 0.011,
+   "ci95_task": [
+    -0.012,
+    0.034
+   ],
+   "ci95_cluster": [
+    -0.011,
+    0.035
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.015,
+    "16": 0.006
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.01,
+     "ci95": [
+      -0.043,
+      0.0
+     ]
+    },
+    "df_ambiguity": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.003,
+     "ci95": [
+      -0.035,
+      0.032
+     ]
+    },
+    "drone_search": {
+     "n": 32,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.187,
+     "ci95": [
+      0.094,
+      0.29
+     ]
+    },
+    "replay": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.021,
+     "ci95": [
+      -0.024,
+      0.073
+     ]
+    },
+    "siting": {
+     "n": 79,
+     "n_clusters": 2,
+     "diff": -0.178,
+     "ci95": [
+      -0.283,
+      -0.077
+     ]
+    },
+    "unanswerable": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.01,
+     "ci95": [
+      0.0,
+      0.041
+     ]
+    }
+   }
+  },
+  "v13-v11/v4": {
+   "n": 611,
+   "diff": 0.006,
+   "ci95_task": [
+    -0.017,
+    0.03
+   ],
+   "ci95_cluster": [
+    -0.017,
+    0.031
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.011,
+    "16": 0.001
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.005,
+     "ci95": [
+      -0.04,
+      0.012
+     ]
+    },
+    "df_ambiguity": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.004,
+     "ci95": [
+      -0.042,
+      0.047
+     ]
+    },
+    "drone_search": {
+     "n": 32,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.162,
+     "ci95": [
+      0.073,
+      0.269
+     ]
+    },
+    "replay": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.041,
+     "ci95": [
+      0.002,
+      0.093
+     ]
+    },
+    "siting": {
+     "n": 79,
+     "n_clusters": 2,
+     "diff": -0.213,
+     "ci95": [
+      -0.339,
+      -0.102
+     ]
+    },
+    "unanswerable": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.01,
+     "ci95": [
+      0.0,
+      0.041
+     ]
+    }
+   }
+  },
+  "v13-v12/v4": {
+   "n": 611,
+   "diff": -0.005,
+   "ci95_task": [
+    -0.014,
+    0.005
+   ],
+   "ci95_cluster": [
+    -0.014,
+    0.005
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.004,
+    "16": -0.005
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.005,
+     "ci95": [
+      0.001,
+      0.012
+     ]
+    },
+    "df_ambiguity": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.0,
+     "ci95": [
+      -0.032,
+      0.035
+     ]
+    },
+    "drone_search": {
+     "n": 32,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": -0.025,
+     "ci95": [
+      -0.069,
+      0.017
+     ]
+    },
+    "replay": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.02,
+     "ci95": [
+      -0.0,
+      0.05
+     ]
+    },
+    "siting": {
+     "n": 79,
+     "n_clusters": 2,
+     "diff": -0.035,
+     "ci95": [
+      -0.072,
+      -0.011
+     ]
+    },
+    "unanswerable": {
+     "n": 100,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v12-v11/v4_W4": {
+   "n": 326,
+   "diff": 0.023,
+   "ci95_task": [
+    -0.004,
+    0.053
+   ],
+   "ci95_cluster": [
+    -0.004,
+    0.056
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.017,
+    "16": 0.031
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.02,
+     "ci95": [
+      0.0,
+      0.1
+     ]
+    },
+    "df_ambiguity": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.019,
+     "ci95": [
+      -0.053,
+      0.081
+     ]
+    },
+    "drone_search": {
+     "n": 26,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.177,
+     "ci95": [
+      0.073,
+      0.349
+     ]
+    },
+    "replay": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.007,
+     "ci95": [
+      0.0,
+      0.03
+     ]
+    },
+    "siting": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.07,
+     "ci95": [
+      -0.191,
+      0.05
+     ]
+    },
+    "unanswerable": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v13-v11/v4_W4": {
+   "n": 326,
+   "diff": 0.012,
+   "ci95_task": [
+    -0.019,
+    0.044
+   ],
+   "ci95_cluster": [
+    -0.019,
+    0.048
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.005,
+    "16": 0.021
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.012,
+     "ci95": [
+      -0.078,
+      0.075
+     ]
+    },
+    "df_ambiguity": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.019,
+     "ci95": [
+      -0.053,
+      0.081
+     ]
+    },
+    "drone_search": {
+     "n": 26,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.172,
+     "ci95": [
+      0.048,
+      0.361
+     ]
+    },
+    "replay": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "siting": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.101,
+     "ci95": [
+      -0.236,
+      0.035
+     ]
+    },
+    "unanswerable": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v13-v12/v4_W4": {
+   "n": 326,
+   "diff": -0.011,
+   "ci95_task": [
+    -0.022,
+    -0.001
+   ],
+   "ci95_cluster": [
+    -0.023,
+    -0.001
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.012,
+    "16": -0.01
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.032,
+     "ci95": [
+      -0.096,
+      0.012
+     ]
+    },
+    "df_ambiguity": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "drone_search": {
+     "n": 26,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.005,
+     "ci95": [
+      -0.049,
+      0.035
+     ]
+    },
+    "replay": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.007,
+     "ci95": [
+      -0.03,
+      0.0
+     ]
+    },
+    "siting": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.031,
+     "ci95": [
+      -0.061,
+      -0.009
+     ]
+    },
+    "unanswerable": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v12-v11/v4_W5": {
+   "n": 324,
+   "diff": 0.017,
+   "ci95_task": [
+    -0.013,
+    0.048
+   ],
+   "ci95_cluster": [
+    -0.014,
+    0.054
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.007,
+    "16": 0.028
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.043,
+     "ci95": [
+      0.0,
+      0.119
+     ]
+    },
+    "df_ambiguity": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.042,
+     "ci95": [
+      -0.007,
+      0.123
+     ]
+    },
+    "drone_search": {
+     "n": 24,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.158,
+     "ci95": [
+      0.05,
+      0.293
+     ]
+    },
+    "replay": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.015,
+     "ci95": [
+      0.0,
+      0.056
+     ]
+    },
+    "siting": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.148,
+     "ci95": [
+      -0.28,
+      -0.009
+     ]
+    },
+    "unanswerable": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v13-v11/v4_W5": {
+   "n": 324,
+   "diff": -0.006,
+   "ci95_task": [
+    -0.04,
+    0.029
+   ],
+   "ci95_cluster": [
+    -0.046,
+    0.041
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.023,
+    "16": 0.014
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.037,
+     "ci95": [
+      -0.132,
+      0.054
+     ]
+    },
+    "df_ambiguity": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.036,
+     "ci95": [
+      -0.002,
+      0.095
+     ]
+    },
+    "drone_search": {
+     "n": 24,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.14,
+     "ci95": [
+      0.027,
+      0.272
+     ]
+    },
+    "replay": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.015,
+     "ci95": [
+      0.0,
+      0.056
+     ]
+    },
+    "siting": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.191,
+     "ci95": [
+      -0.361,
+      -0.021
+     ]
+    },
+    "unanswerable": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v13-v12/v4_W5": {
+   "n": 324,
+   "diff": -0.023,
+   "ci95_task": [
+    -0.04,
+    -0.008
+   ],
+   "ci95_cluster": [
+    -0.042,
+    -0.005
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.03,
+    "16": -0.014
+   },
+   "per_area_cluster": {
+    "collateral": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.08,
+     "ci95": [
+      -0.167,
+      0.0
+     ]
+    },
+    "df_ambiguity": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.006,
+     "ci95": [
+      -0.062,
+      0.038
+     ]
+    },
+    "drone_search": {
+     "n": 24,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "operator_query": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.019,
+     "ci95": [
+      -0.048,
+      0.0
+     ]
+    },
+    "replay": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "siting": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": -0.043,
+     "ci95": [
+      -0.095,
+      -0.006
+     ]
+    },
+    "unanswerable": {
+     "n": 50,
+     "n_clusters": 2,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "v12-v11/pooled_v4_worlds": {
+   "n": 1261,
+   "diff": 0.015,
+   "ci95_task": [
+    -0.0,
+    0.031
+   ],
+   "ci95_cluster": [
+    0.0,
+    0.032
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.014,
+    "16": 0.018
+   }
+  },
+  "v13-v11/pooled_v4_worlds": {
+   "n": 1261,
+   "diff": 0.005,
+   "ci95_task": [
+    -0.012,
+    0.02
+   ],
+   "ci95_cluster": [
+    -0.013,
+    0.023
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": 0.0,
+    "16": 0.009
+   }
+  },
+  "v13-v12/pooled_v4_worlds": {
+   "n": 1261,
+   "diff": -0.011,
+   "ci95_task": [
+    -0.018,
+    -0.004
+   ],
+   "ci95_cluster": [
+    -0.018,
+    -0.004
+   ],
+   "n_clusters": 2,
+   "per_scenario_diff": {
+    "15": -0.013,
+    "16": -0.008
+   }
+  }
+ },
+ "scores": {
+  "v11/v3": {
+   "score": 0.935,
+   "ci95_cluster": [
+    0.9142,
+    0.9548
+   ],
+   "per_scenario": {
+    "15": 0.926,
+    "16": 0.944
+   },
+   "n": 603
+  },
+  "v12/v3": {
+   "score": 0.91,
+   "ci95_cluster": [
+    0.8866,
+    0.9324
+   ],
+   "per_scenario": {
+    "15": 0.902,
+    "16": 0.918
+   },
+   "n": 603
+  },
+  "v13/v3": {
+   "score": 0.904,
+   "ci95_cluster": [
+    0.8805,
+    0.927
+   ],
+   "per_scenario": {
+    "15": 0.897,
+    "16": 0.91
+   },
+   "n": 603
+  },
+  "v11/v4": {
+   "score": 0.836,
+   "ci95_cluster": [
+    0.8039,
+    0.8686
+   ],
+   "per_scenario": {
+    "15": 0.823,
+    "16": 0.849
+   },
+   "n": 611
+  },
+  "v12/v4": {
+   "score": 0.847,
+   "ci95_cluster": [
+    0.818,
+    0.875
+   ],
+   "per_scenario": {
+    "15": 0.838,
+    "16": 0.855
+   },
+   "n": 611
+  },
+  "v13/v4": {
+   "score": 0.842,
+   "ci95_cluster": [
+    0.8129,
+    0.8706
+   ],
+   "per_scenario": {
+    "15": 0.834,
+    "16": 0.851
+   },
+   "n": 611
+  },
+  "v11/v4_W4": {
+   "score": 0.857,
+   "ci95_cluster": [
+    0.8204,
+    0.8908
+   ],
+   "per_scenario": {
+    "15": 0.863,
+    "16": 0.851
+   },
+   "n": 326
+  },
+  "v12/v4_W4": {
+   "score": 0.881,
+   "ci95_cluster": [
+    0.8487,
+    0.9117
+   ],
+   "per_scenario": {
+    "15": 0.88,
+    "16": 0.882
+   },
+   "n": 326
+  },
+  "v13/v4_W4": {
+   "score": 0.869,
+   "ci95_cluster": [
+    0.8359,
+    0.9031
+   ],
+   "per_scenario": {
+    "15": 0.868,
+    "16": 0.872
+   },
+   "n": 326
+  },
+  "v11/v4_W5": {
+   "score": 0.866,
+   "ci95_cluster": [
+    0.8269,
+    0.9
+   ],
+   "per_scenario": {
+    "15": 0.875,
+    "16": 0.856
+   },
+   "n": 324
+  },
+  "v12/v4_W5": {
+   "score": 0.883,
+   "ci95_cluster": [
+    0.8522,
+    0.9146
+   ],
+   "per_scenario": {
+    "15": 0.882,
+    "16": 0.885
+   },
+   "n": 324
+  },
+  "v13/v4_W5": {
+   "score": 0.86,
+   "ci95_cluster": [
+    0.8236,
+    0.8988
+   ],
+   "per_scenario": {
+    "15": 0.852,
+    "16": 0.87
+   },
+   "n": 324
+  }
+ },
+ "calibration": {
+  "v11/v3": {
+   "n": 0,
+   "n_missing": 603
+  },
+  "v12/v3": {
+   "n": 597,
+   "n_missing": 6,
+   "ece": 0.1575,
+   "brier": 0.0851,
+   "mean_conf": 0.761,
+   "mean_score": 0.919,
+   "confident_wrong_rate": 0.0536,
+   "confident_wrong_of_confident": 0.0627,
+   "n_distinct_conf": 7,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 77,
+     "conf": 0.55,
+     "score": 0.83
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 10,
+     "conf": 0.6,
+     "score": 0.941
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 183,
+     "conf": 0.737,
+     "score": 0.947
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 327,
+     "conf": 0.83,
+     "score": 0.923
+    }
+   ]
+  },
+  "v13/v3": {
+   "n": 599,
+   "n_missing": 4,
+   "ece": 0.1424,
+   "brier": 0.0874,
+   "mean_conf": 0.768,
+   "mean_score": 0.91,
+   "confident_wrong_rate": 0.0601,
+   "confident_wrong_of_confident": 0.0679,
+   "n_distinct_conf": 7,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 63,
+     "conf": 0.55,
+     "score": 0.833
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 6,
+     "conf": 0.6,
+     "score": 0.954
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 188,
+     "conf": 0.737,
+     "score": 0.968
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 342,
+     "conf": 0.827,
+     "score": 0.891
+    }
+   ]
+  },
+  "v11/v4": {
+   "n": 590,
+   "n_missing": 21,
+   "ece": 0.0972,
+   "brier": 0.1063,
+   "mean_conf": 0.769,
+   "mean_score": 0.866,
+   "confident_wrong_rate": 0.0898,
+   "confident_wrong_of_confident": 0.1002,
+   "n_distinct_conf": 5,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 61,
+     "conf": 0.55,
+     "score": 0.744
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 202,
+     "conf": 0.737,
+     "score": 0.949
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 327,
+     "conf": 0.829,
+     "score": 0.837
+    }
+   ]
+  },
+  "v12/v4": {
+   "n": 591,
+   "n_missing": 20,
+   "ece": 0.1134,
+   "brier": 0.1038,
+   "mean_conf": 0.762,
+   "mean_score": 0.875,
+   "confident_wrong_rate": 0.0914,
+   "confident_wrong_of_confident": 0.1047,
+   "n_distinct_conf": 6,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 69,
+     "conf": 0.55,
+     "score": 0.803
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 6,
+     "conf": 0.6,
+     "score": 0.834
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 215,
+     "conf": 0.736,
+     "score": 0.916
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 301,
+     "conf": 0.832,
+     "score": 0.864
+    }
+   ]
+  },
+  "v13/v4": {
+   "n": 589,
+   "n_missing": 22,
+   "ece": 0.1092,
+   "brier": 0.1075,
+   "mean_conf": 0.764,
+   "mean_score": 0.873,
+   "confident_wrong_rate": 0.0951,
+   "confident_wrong_of_confident": 0.1079,
+   "n_distinct_conf": 6,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 64,
+     "conf": 0.55,
+     "score": 0.796
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 6,
+     "conf": 0.6,
+     "score": 0.917
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 206,
+     "conf": 0.737,
+     "score": 0.936
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 313,
+     "conf": 0.829,
+     "score": 0.847
+    }
+   ]
+  },
+  "v11/v4_W4": {
+   "n": 317,
+   "n_missing": 9,
+   "ece": 0.1055,
+   "brier": 0.0982,
+   "mean_conf": 0.776,
+   "mean_score": 0.882,
+   "confident_wrong_rate": 0.0852,
+   "confident_wrong_of_confident": 0.0922,
+   "n_distinct_conf": 5,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 24,
+     "conf": 0.55,
+     "score": 0.695
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 103,
+     "conf": 0.736,
+     "score": 0.972
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 190,
+     "conf": 0.827,
+     "score": 0.856
+    }
+   ]
+  },
+  "v12/v4_W4": {
+   "n": 316,
+   "n_missing": 10,
+   "ece": 0.1455,
+   "brier": 0.0907,
+   "mean_conf": 0.763,
+   "mean_score": 0.909,
+   "confident_wrong_rate": 0.0728,
+   "confident_wrong_of_confident": 0.0824,
+   "n_distinct_conf": 6,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 34,
+     "conf": 0.55,
+     "score": 0.838
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 3,
+     "conf": 0.6,
+     "score": 0.941
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 115,
+     "conf": 0.736,
+     "score": 0.921
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 164,
+     "conf": 0.83,
+     "score": 0.914
+    }
+   ]
+  },
+  "v13/v4_W4": {
+   "n": 317,
+   "n_missing": 9,
+   "ece": 0.127,
+   "brier": 0.1014,
+   "mean_conf": 0.767,
+   "mean_score": 0.894,
+   "confident_wrong_rate": 0.0852,
+   "confident_wrong_of_confident": 0.0947,
+   "n_distinct_conf": 5,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 32,
+     "conf": 0.55,
+     "score": 0.839
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 114,
+     "conf": 0.737,
+     "score": 0.955
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 171,
+     "conf": 0.828,
+     "score": 0.864
+    }
+   ]
+  },
+  "v11/v4_W5": {
+   "n": 315,
+   "n_missing": 9,
+   "ece": 0.121,
+   "brier": 0.0972,
+   "mean_conf": 0.77,
+   "mean_score": 0.891,
+   "confident_wrong_rate": 0.0667,
+   "confident_wrong_of_confident": 0.0734,
+   "n_distinct_conf": 5,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 29,
+     "conf": 0.55,
+     "score": 0.783
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 109,
+     "conf": 0.734,
+     "score": 0.958
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 177,
+     "conf": 0.828,
+     "score": 0.868
+    }
+   ]
+  },
+  "v12/v4_W5": {
+   "n": 317,
+   "n_missing": 7,
+   "ece": 0.1448,
+   "brier": 0.0943,
+   "mean_conf": 0.758,
+   "mean_score": 0.903,
+   "confident_wrong_rate": 0.0726,
+   "confident_wrong_of_confident": 0.0836,
+   "n_distinct_conf": 6,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 40,
+     "conf": 0.55,
+     "score": 0.872
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 2,
+     "conf": 0.6,
+     "score": 0.879
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 117,
+     "conf": 0.734,
+     "score": 0.886
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 158,
+     "conf": 0.83,
+     "score": 0.923
+    }
+   ]
+  },
+  "v13/v4_W5": {
+   "n": 317,
+   "n_missing": 7,
+   "ece": 0.1181,
+   "brier": 0.1158,
+   "mean_conf": 0.761,
+   "mean_score": 0.879,
+   "confident_wrong_rate": 0.0915,
+   "confident_wrong_of_confident": 0.1055,
+   "n_distinct_conf": 6,
+   "bins": [
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 39,
+     "conf": 0.55,
+     "score": 0.863
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 3,
+     "conf": 0.6,
+     "score": 0.92
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 101,
+     "conf": 0.734,
+     "score": 0.955
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 174,
+     "conf": 0.827,
+     "score": 0.838
+    }
+   ]
+  },
+  "expert/v4": {
+   "n": 609,
+   "n_missing": 2,
+   "ece": 0.1462,
+   "brier": 0.0731,
+   "mean_conf": 0.76,
+   "mean_score": 0.906,
+   "confident_wrong_rate": 0.046,
+   "confident_wrong_of_confident": 0.0526,
+   "n_distinct_conf": 8,
+   "bins": [
+    {
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 2,
+     "conf": 0.4,
+     "score": 0.325
+    },
+    {
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 59,
+     "conf": 0.549,
+     "score": 0.721
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 16,
+     "conf": 0.6,
+     "score": 0.791
+    },
+    {
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 229,
+     "conf": 0.736,
+     "score": 0.956
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 303,
+     "conf": 0.83,
+     "score": 0.914
+    }
+   ]
+  }
+ }
+}

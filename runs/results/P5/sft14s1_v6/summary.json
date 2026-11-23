@@ -1,0 +1,81 @@
+{
+ "task": "P5",
+ "model": "sft14s1",
+ "policy": "model",
+ "set": "v6",
+ "set_path": "eval/frozen/v6/tasks.jsonl",
+ "ablation": "none",
+ "samples": 1,
+ "seed": 0,
+ "n": 700,
+ "score": 0.837,
+ "macro_score": 0.837,
+ "per_area": {
+  "collateral": {
+   "n": 100,
+   "score": 0.889,
+   "abstain_rate": 0.08
+  },
+  "df_ambiguity": {
+   "n": 100,
+   "score": 0.693,
+   "abstain_rate": 0.0
+  },
+  "drone_search": {
+   "n": 100,
+   "score": 0.833,
+   "abstain_rate": 0.02
+  },
+  "operator_query": {
+   "n": 100,
+   "score": 0.64,
+   "abstain_rate": 0.06
+  },
+  "replay": {
+   "n": 100,
+   "score": 0.925,
+   "abstain_rate": 0.0
+  },
+  "siting": {
+   "n": 100,
+   "score": 0.9,
+   "abstain_rate": 0.1
+  },
+  "unanswerable": {
+   "n": 100,
+   "score": 0.98,
+   "abstain_rate": 0.98
+  }
+ },
+ "abstain_rate": 0.1771,
+ "errors": 0,
+ "no_answer": 18,
+ "end_reasons": {
+  "format_failed": 16,
+  "max_turns": 2,
+  "submitted": 679,
+  "verifier_failed": 3
+ },
+ "generalisation": {
+  "seen_families": 0.825,
+  "n_seen": 511,
+  "held_out_families": 0.745,
+  "n_held_out": 89
+ },
+ "rfg": {
+  "rfg": 0.6665000000000001,
+  "n": 200,
+  "ds": 0.833,
+  "n_ds": 100
+ },
+ "wallclock_s": 652.6,
+ "episodes_per_s": 1.0726,
+ "latency_p50_s": 16.019,
+ "latency_p95_s": 54.207,
+ "ci95": [
+  0.8068,
+  0.8678
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 12
+}

@@ -1,0 +1,46 @@
+{
+ "episodes": 191,
+ "failed": 52,
+ "class_share": {
+  "over_abstain": 0.346,
+  "ghost_picked": 0.288,
+  "position_off": 0.154,
+  "wrong_track": 0.077,
+  "parse_format": 0.058,
+  "wrong_event": 0.058,
+  "position_imprecise": 0.019
+ },
+ "class_count": {
+  "over_abstain": 18,
+  "ghost_picked": 15,
+  "position_off": 8,
+  "wrong_track": 4,
+  "parse_format": 3,
+  "wrong_event": 3,
+  "position_imprecise": 1
+ },
+ "by_area": {
+  "drone_search": {
+   "position_off": 2,
+   "position_imprecise": 1
+  },
+  "df_ambiguity": {
+   "ghost_picked": 15,
+   "position_off": 6,
+   "parse_format": 3
+  },
+  "replay": {
+   "wrong_event": 3
+  },
+  "operator_query": {
+   "over_abstain": 16,
+   "wrong_track": 4
+  },
+  "siting": {
+   "over_abstain": 2
+  }
+ },
+ "eval": "runs/paper/results/P1/sft14_heldout_v1/eval.json",
+ "set": "eval/frozen/heldout_v1/tasks.jsonl",
+ "thr": 0.8
+}

@@ -1,0 +1,49 @@
+{
+ "task": "P5",
+ "model": "rl_b3",
+ "policy": "model",
+ "set": "v6_Npair_51s",
+ "set_path": "eval/frozen/v6_Npair_51s/tasks.jsonl",
+ "ablation": "with_consistency",
+ "samples": 1,
+ "seed": 0,
+ "n": 300,
+ "score": 0.692,
+ "macro_score": 0.692,
+ "per_area": {
+  "operator_query": {
+   "n": 300,
+   "score": 0.692,
+   "abstain_rate": 0.0
+  }
+ },
+ "abstain_rate": 0.0,
+ "errors": 0,
+ "no_answer": 18,
+ "end_reasons": {
+  "max_turns": 18,
+  "submitted": 282
+ },
+ "generalisation": {
+  "seen_families": 0.684,
+  "n_seen": 244,
+  "held_out_families": 0.726,
+  "n_held_out": 56
+ },
+ "rfg": {
+  "rfg": 0.692,
+  "n": 300,
+  "ds": null,
+  "n_ds": 0
+ },
+ "wallclock_s": 296.5,
+ "episodes_per_s": 1.0118,
+ "latency_p50_s": 19.471,
+ "latency_p95_s": 36.981,
+ "ci95": [
+  0.6032,
+  0.7726
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 10
+}

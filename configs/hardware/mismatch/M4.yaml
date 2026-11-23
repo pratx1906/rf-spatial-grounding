@@ -1,0 +1,6 @@
+# Mismatch world M4 (plan 2026-10-28 T6, audit B1): coupling drift between calibration and use, -20 dB (nominal -40).
+# Consumed by sim/obs_model/observe_v2.coupling_cal_tones (C_cal = C_true + drift; C_hat is fitted to C_cal, the IQ
+# sees C_true). Acts only while coupling-aware calibration is on (df_calibration.coupling_cal: true, and
+# SCENESCOUT_DF_COUPLING_CAL not set to 0).
+df_calibration:
+  drift_rel_db: -20.0

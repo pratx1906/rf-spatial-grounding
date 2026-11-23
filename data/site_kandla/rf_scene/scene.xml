@@ -1,0 +1,1828 @@
+<scene version="2.1.0">
+
+<!-- Materials (envbuild/config/materials.yaml) -->
+	<bsdf type="itu-radio-material" id="mat-sc_concrete">
+		<string name="type" value="concrete"/>
+		<float name="thickness" value="0.3"/>
+	</bsdf>
+	<bsdf type="itu-radio-material" id="mat-sc_ground_dry">
+		<string name="type" value="medium_dry_ground"/>
+		<float name="thickness" value="1.0"/>
+	</bsdf>
+	<bsdf type="radio-material" id="mat-sc_sea_water">
+		<float name="relative_permittivity" value="70.0"/>
+		<float name="conductivity" value="5.0"/>
+		<float name="thickness" value="10.0"/>
+	</bsdf>
+	<bsdf type="itu-radio-material" id="mat-sc_steel">
+		<string name="type" value="metal"/>
+		<float name="thickness" value="0.02"/>
+	</bsdf>
+
+<!-- Shapes: shape id = mesh-<object id> -->
+	<shape type="ply" id="mesh-tank_t001">
+		<string name="filename" value="meshes/tank_t001.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t002">
+		<string name="filename" value="meshes/tank_t002.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t003">
+		<string name="filename" value="meshes/tank_t003.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t004">
+		<string name="filename" value="meshes/tank_t004.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t005">
+		<string name="filename" value="meshes/tank_t005.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t006">
+		<string name="filename" value="meshes/tank_t006.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t007">
+		<string name="filename" value="meshes/tank_t007.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t008">
+		<string name="filename" value="meshes/tank_t008.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t009">
+		<string name="filename" value="meshes/tank_t009.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t010">
+		<string name="filename" value="meshes/tank_t010.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t011">
+		<string name="filename" value="meshes/tank_t011.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t012">
+		<string name="filename" value="meshes/tank_t012.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t013">
+		<string name="filename" value="meshes/tank_t013.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t014">
+		<string name="filename" value="meshes/tank_t014.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t015">
+		<string name="filename" value="meshes/tank_t015.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t016">
+		<string name="filename" value="meshes/tank_t016.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t017">
+		<string name="filename" value="meshes/tank_t017.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t018">
+		<string name="filename" value="meshes/tank_t018.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t019">
+		<string name="filename" value="meshes/tank_t019.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t020">
+		<string name="filename" value="meshes/tank_t020.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t021">
+		<string name="filename" value="meshes/tank_t021.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t022">
+		<string name="filename" value="meshes/tank_t022.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t023">
+		<string name="filename" value="meshes/tank_t023.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t024">
+		<string name="filename" value="meshes/tank_t024.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t025">
+		<string name="filename" value="meshes/tank_t025.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t026">
+		<string name="filename" value="meshes/tank_t026.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t027">
+		<string name="filename" value="meshes/tank_t027.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t028">
+		<string name="filename" value="meshes/tank_t028.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t029">
+		<string name="filename" value="meshes/tank_t029.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t030">
+		<string name="filename" value="meshes/tank_t030.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t031">
+		<string name="filename" value="meshes/tank_t031.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t032">
+		<string name="filename" value="meshes/tank_t032.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t033">
+		<string name="filename" value="meshes/tank_t033.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t034">
+		<string name="filename" value="meshes/tank_t034.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t035">
+		<string name="filename" value="meshes/tank_t035.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t036">
+		<string name="filename" value="meshes/tank_t036.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t037">
+		<string name="filename" value="meshes/tank_t037.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t038">
+		<string name="filename" value="meshes/tank_t038.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t039">
+		<string name="filename" value="meshes/tank_t039.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t040">
+		<string name="filename" value="meshes/tank_t040.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t041">
+		<string name="filename" value="meshes/tank_t041.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t042">
+		<string name="filename" value="meshes/tank_t042.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t043">
+		<string name="filename" value="meshes/tank_t043.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t044">
+		<string name="filename" value="meshes/tank_t044.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t045">
+		<string name="filename" value="meshes/tank_t045.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t046">
+		<string name="filename" value="meshes/tank_t046.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t047">
+		<string name="filename" value="meshes/tank_t047.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t048">
+		<string name="filename" value="meshes/tank_t048.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t049">
+		<string name="filename" value="meshes/tank_t049.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t050">
+		<string name="filename" value="meshes/tank_t050.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t051">
+		<string name="filename" value="meshes/tank_t051.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t052">
+		<string name="filename" value="meshes/tank_t052.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t053">
+		<string name="filename" value="meshes/tank_t053.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t054">
+		<string name="filename" value="meshes/tank_t054.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t055">
+		<string name="filename" value="meshes/tank_t055.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t056">
+		<string name="filename" value="meshes/tank_t056.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t057">
+		<string name="filename" value="meshes/tank_t057.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t058">
+		<string name="filename" value="meshes/tank_t058.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t059">
+		<string name="filename" value="meshes/tank_t059.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t060">
+		<string name="filename" value="meshes/tank_t060.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t061">
+		<string name="filename" value="meshes/tank_t061.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t062">
+		<string name="filename" value="meshes/tank_t062.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t063">
+		<string name="filename" value="meshes/tank_t063.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t064">
+		<string name="filename" value="meshes/tank_t064.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t065">
+		<string name="filename" value="meshes/tank_t065.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t066">
+		<string name="filename" value="meshes/tank_t066.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t067">
+		<string name="filename" value="meshes/tank_t067.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t068">
+		<string name="filename" value="meshes/tank_t068.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t069">
+		<string name="filename" value="meshes/tank_t069.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t070">
+		<string name="filename" value="meshes/tank_t070.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t071">
+		<string name="filename" value="meshes/tank_t071.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t072">
+		<string name="filename" value="meshes/tank_t072.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t073">
+		<string name="filename" value="meshes/tank_t073.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t074">
+		<string name="filename" value="meshes/tank_t074.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t075">
+		<string name="filename" value="meshes/tank_t075.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t076">
+		<string name="filename" value="meshes/tank_t076.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t077">
+		<string name="filename" value="meshes/tank_t077.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t078">
+		<string name="filename" value="meshes/tank_t078.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t079">
+		<string name="filename" value="meshes/tank_t079.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t080">
+		<string name="filename" value="meshes/tank_t080.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t081">
+		<string name="filename" value="meshes/tank_t081.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t082">
+		<string name="filename" value="meshes/tank_t082.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t083">
+		<string name="filename" value="meshes/tank_t083.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t084">
+		<string name="filename" value="meshes/tank_t084.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t085">
+		<string name="filename" value="meshes/tank_t085.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t086">
+		<string name="filename" value="meshes/tank_t086.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t087">
+		<string name="filename" value="meshes/tank_t087.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t088">
+		<string name="filename" value="meshes/tank_t088.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t089">
+		<string name="filename" value="meshes/tank_t089.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t090">
+		<string name="filename" value="meshes/tank_t090.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t091">
+		<string name="filename" value="meshes/tank_t091.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t092">
+		<string name="filename" value="meshes/tank_t092.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t093">
+		<string name="filename" value="meshes/tank_t093.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t094">
+		<string name="filename" value="meshes/tank_t094.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t095">
+		<string name="filename" value="meshes/tank_t095.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t096">
+		<string name="filename" value="meshes/tank_t096.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t097">
+		<string name="filename" value="meshes/tank_t097.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t098">
+		<string name="filename" value="meshes/tank_t098.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t099">
+		<string name="filename" value="meshes/tank_t099.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t100">
+		<string name="filename" value="meshes/tank_t100.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t101">
+		<string name="filename" value="meshes/tank_t101.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t102">
+		<string name="filename" value="meshes/tank_t102.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t103">
+		<string name="filename" value="meshes/tank_t103.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t104">
+		<string name="filename" value="meshes/tank_t104.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t105">
+		<string name="filename" value="meshes/tank_t105.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t106">
+		<string name="filename" value="meshes/tank_t106.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t107">
+		<string name="filename" value="meshes/tank_t107.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t108">
+		<string name="filename" value="meshes/tank_t108.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t109">
+		<string name="filename" value="meshes/tank_t109.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t110">
+		<string name="filename" value="meshes/tank_t110.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t111">
+		<string name="filename" value="meshes/tank_t111.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t112">
+		<string name="filename" value="meshes/tank_t112.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t113">
+		<string name="filename" value="meshes/tank_t113.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t114">
+		<string name="filename" value="meshes/tank_t114.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t115">
+		<string name="filename" value="meshes/tank_t115.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t116">
+		<string name="filename" value="meshes/tank_t116.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t117">
+		<string name="filename" value="meshes/tank_t117.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t118">
+		<string name="filename" value="meshes/tank_t118.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t119">
+		<string name="filename" value="meshes/tank_t119.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t120">
+		<string name="filename" value="meshes/tank_t120.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t121">
+		<string name="filename" value="meshes/tank_t121.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t122">
+		<string name="filename" value="meshes/tank_t122.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t123">
+		<string name="filename" value="meshes/tank_t123.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t124">
+		<string name="filename" value="meshes/tank_t124.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t125">
+		<string name="filename" value="meshes/tank_t125.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t126">
+		<string name="filename" value="meshes/tank_t126.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t127">
+		<string name="filename" value="meshes/tank_t127.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t128">
+		<string name="filename" value="meshes/tank_t128.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t129">
+		<string name="filename" value="meshes/tank_t129.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t130">
+		<string name="filename" value="meshes/tank_t130.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t131">
+		<string name="filename" value="meshes/tank_t131.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t132">
+		<string name="filename" value="meshes/tank_t132.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t133">
+		<string name="filename" value="meshes/tank_t133.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t134">
+		<string name="filename" value="meshes/tank_t134.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t135">
+		<string name="filename" value="meshes/tank_t135.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t136">
+		<string name="filename" value="meshes/tank_t136.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t137">
+		<string name="filename" value="meshes/tank_t137.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t138">
+		<string name="filename" value="meshes/tank_t138.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t139">
+		<string name="filename" value="meshes/tank_t139.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t140">
+		<string name="filename" value="meshes/tank_t140.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t141">
+		<string name="filename" value="meshes/tank_t141.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t142">
+		<string name="filename" value="meshes/tank_t142.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t143">
+		<string name="filename" value="meshes/tank_t143.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t144">
+		<string name="filename" value="meshes/tank_t144.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t145">
+		<string name="filename" value="meshes/tank_t145.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t146">
+		<string name="filename" value="meshes/tank_t146.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t147">
+		<string name="filename" value="meshes/tank_t147.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t148">
+		<string name="filename" value="meshes/tank_t148.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t149">
+		<string name="filename" value="meshes/tank_t149.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t150">
+		<string name="filename" value="meshes/tank_t150.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t151">
+		<string name="filename" value="meshes/tank_t151.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t152">
+		<string name="filename" value="meshes/tank_t152.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t153">
+		<string name="filename" value="meshes/tank_t153.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t154">
+		<string name="filename" value="meshes/tank_t154.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t155">
+		<string name="filename" value="meshes/tank_t155.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t156">
+		<string name="filename" value="meshes/tank_t156.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t157">
+		<string name="filename" value="meshes/tank_t157.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t158">
+		<string name="filename" value="meshes/tank_t158.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t159">
+		<string name="filename" value="meshes/tank_t159.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t160">
+		<string name="filename" value="meshes/tank_t160.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t161">
+		<string name="filename" value="meshes/tank_t161.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t162">
+		<string name="filename" value="meshes/tank_t162.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t163">
+		<string name="filename" value="meshes/tank_t163.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t164">
+		<string name="filename" value="meshes/tank_t164.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t165">
+		<string name="filename" value="meshes/tank_t165.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t166">
+		<string name="filename" value="meshes/tank_t166.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t167">
+		<string name="filename" value="meshes/tank_t167.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t168">
+		<string name="filename" value="meshes/tank_t168.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t169">
+		<string name="filename" value="meshes/tank_t169.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t170">
+		<string name="filename" value="meshes/tank_t170.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t171">
+		<string name="filename" value="meshes/tank_t171.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t172">
+		<string name="filename" value="meshes/tank_t172.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t173">
+		<string name="filename" value="meshes/tank_t173.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t174">
+		<string name="filename" value="meshes/tank_t174.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t175">
+		<string name="filename" value="meshes/tank_t175.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t176">
+		<string name="filename" value="meshes/tank_t176.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t177">
+		<string name="filename" value="meshes/tank_t177.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t178">
+		<string name="filename" value="meshes/tank_t178.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t179">
+		<string name="filename" value="meshes/tank_t179.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t180">
+		<string name="filename" value="meshes/tank_t180.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t181">
+		<string name="filename" value="meshes/tank_t181.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t182">
+		<string name="filename" value="meshes/tank_t182.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t183">
+		<string name="filename" value="meshes/tank_t183.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t184">
+		<string name="filename" value="meshes/tank_t184.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t185">
+		<string name="filename" value="meshes/tank_t185.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t186">
+		<string name="filename" value="meshes/tank_t186.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t187">
+		<string name="filename" value="meshes/tank_t187.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t188">
+		<string name="filename" value="meshes/tank_t188.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t189">
+		<string name="filename" value="meshes/tank_t189.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t190">
+		<string name="filename" value="meshes/tank_t190.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t191">
+		<string name="filename" value="meshes/tank_t191.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t192">
+		<string name="filename" value="meshes/tank_t192.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t193">
+		<string name="filename" value="meshes/tank_t193.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t194">
+		<string name="filename" value="meshes/tank_t194.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t195">
+		<string name="filename" value="meshes/tank_t195.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t196">
+		<string name="filename" value="meshes/tank_t196.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t197">
+		<string name="filename" value="meshes/tank_t197.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t198">
+		<string name="filename" value="meshes/tank_t198.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t199">
+		<string name="filename" value="meshes/tank_t199.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t200">
+		<string name="filename" value="meshes/tank_t200.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t201">
+		<string name="filename" value="meshes/tank_t201.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t202">
+		<string name="filename" value="meshes/tank_t202.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t203">
+		<string name="filename" value="meshes/tank_t203.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t204">
+		<string name="filename" value="meshes/tank_t204.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t205">
+		<string name="filename" value="meshes/tank_t205.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t206">
+		<string name="filename" value="meshes/tank_t206.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t207">
+		<string name="filename" value="meshes/tank_t207.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t208">
+		<string name="filename" value="meshes/tank_t208.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t209">
+		<string name="filename" value="meshes/tank_t209.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t210">
+		<string name="filename" value="meshes/tank_t210.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t211">
+		<string name="filename" value="meshes/tank_t211.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t212">
+		<string name="filename" value="meshes/tank_t212.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t213">
+		<string name="filename" value="meshes/tank_t213.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t214">
+		<string name="filename" value="meshes/tank_t214.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t215">
+		<string name="filename" value="meshes/tank_t215.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t216">
+		<string name="filename" value="meshes/tank_t216.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t217">
+		<string name="filename" value="meshes/tank_t217.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t218">
+		<string name="filename" value="meshes/tank_t218.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t219">
+		<string name="filename" value="meshes/tank_t219.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t220">
+		<string name="filename" value="meshes/tank_t220.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t221">
+		<string name="filename" value="meshes/tank_t221.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t222">
+		<string name="filename" value="meshes/tank_t222.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t223">
+		<string name="filename" value="meshes/tank_t223.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t224">
+		<string name="filename" value="meshes/tank_t224.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t225">
+		<string name="filename" value="meshes/tank_t225.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t226">
+		<string name="filename" value="meshes/tank_t226.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t227">
+		<string name="filename" value="meshes/tank_t227.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t228">
+		<string name="filename" value="meshes/tank_t228.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t229">
+		<string name="filename" value="meshes/tank_t229.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t230">
+		<string name="filename" value="meshes/tank_t230.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t231">
+		<string name="filename" value="meshes/tank_t231.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t232">
+		<string name="filename" value="meshes/tank_t232.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t233">
+		<string name="filename" value="meshes/tank_t233.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t234">
+		<string name="filename" value="meshes/tank_t234.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t235">
+		<string name="filename" value="meshes/tank_t235.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t236">
+		<string name="filename" value="meshes/tank_t236.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t237">
+		<string name="filename" value="meshes/tank_t237.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t238">
+		<string name="filename" value="meshes/tank_t238.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t239">
+		<string name="filename" value="meshes/tank_t239.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t240">
+		<string name="filename" value="meshes/tank_t240.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t241">
+		<string name="filename" value="meshes/tank_t241.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t242">
+		<string name="filename" value="meshes/tank_t242.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t243">
+		<string name="filename" value="meshes/tank_t243.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t244">
+		<string name="filename" value="meshes/tank_t244.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t245">
+		<string name="filename" value="meshes/tank_t245.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t246">
+		<string name="filename" value="meshes/tank_t246.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t247">
+		<string name="filename" value="meshes/tank_t247.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t248">
+		<string name="filename" value="meshes/tank_t248.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t249">
+		<string name="filename" value="meshes/tank_t249.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t250">
+		<string name="filename" value="meshes/tank_t250.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t251">
+		<string name="filename" value="meshes/tank_t251.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t252">
+		<string name="filename" value="meshes/tank_t252.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t253">
+		<string name="filename" value="meshes/tank_t253.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t254">
+		<string name="filename" value="meshes/tank_t254.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t255">
+		<string name="filename" value="meshes/tank_t255.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t256">
+		<string name="filename" value="meshes/tank_t256.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t257">
+		<string name="filename" value="meshes/tank_t257.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t258">
+		<string name="filename" value="meshes/tank_t258.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t259">
+		<string name="filename" value="meshes/tank_t259.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t260">
+		<string name="filename" value="meshes/tank_t260.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t261">
+		<string name="filename" value="meshes/tank_t261.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t262">
+		<string name="filename" value="meshes/tank_t262.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-tank_t263">
+		<string name="filename" value="meshes/tank_t263.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-jetty_j1">
+		<string name="filename" value="meshes/jetty_j1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-jetty_j2">
+		<string name="filename" value="meshes/jetty_j2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-jetty_j3">
+		<string name="filename" value="meshes/jetty_j3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-jetty_j4">
+		<string name="filename" value="meshes/jetty_j4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-jetty_j5">
+		<string name="filename" value="meshes/jetty_j5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-jetty_j6">
+		<string name="filename" value="meshes/jetty_j6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-substation_iffco">
+		<string name="filename" value="meshes/substation_iffco.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b001">
+		<string name="filename" value="meshes/building_b001.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b002">
+		<string name="filename" value="meshes/building_b002.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b003">
+		<string name="filename" value="meshes/building_b003.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b004">
+		<string name="filename" value="meshes/building_b004.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b005">
+		<string name="filename" value="meshes/building_b005.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b006">
+		<string name="filename" value="meshes/building_b006.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b007">
+		<string name="filename" value="meshes/building_b007.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b008">
+		<string name="filename" value="meshes/building_b008.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b009">
+		<string name="filename" value="meshes/building_b009.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b010">
+		<string name="filename" value="meshes/building_b010.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b011">
+		<string name="filename" value="meshes/building_b011.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b012">
+		<string name="filename" value="meshes/building_b012.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b013">
+		<string name="filename" value="meshes/building_b013.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b014">
+		<string name="filename" value="meshes/building_b014.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b015">
+		<string name="filename" value="meshes/building_b015.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b016">
+		<string name="filename" value="meshes/building_b016.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b017">
+		<string name="filename" value="meshes/building_b017.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b018">
+		<string name="filename" value="meshes/building_b018.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b019">
+		<string name="filename" value="meshes/building_b019.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b020">
+		<string name="filename" value="meshes/building_b020.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b021">
+		<string name="filename" value="meshes/building_b021.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b022">
+		<string name="filename" value="meshes/building_b022.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b023">
+		<string name="filename" value="meshes/building_b023.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b024">
+		<string name="filename" value="meshes/building_b024.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b025">
+		<string name="filename" value="meshes/building_b025.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b026">
+		<string name="filename" value="meshes/building_b026.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b027">
+		<string name="filename" value="meshes/building_b027.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b028">
+		<string name="filename" value="meshes/building_b028.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b029">
+		<string name="filename" value="meshes/building_b029.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b030">
+		<string name="filename" value="meshes/building_b030.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b031">
+		<string name="filename" value="meshes/building_b031.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b032">
+		<string name="filename" value="meshes/building_b032.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b033">
+		<string name="filename" value="meshes/building_b033.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b034">
+		<string name="filename" value="meshes/building_b034.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b035">
+		<string name="filename" value="meshes/building_b035.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b036">
+		<string name="filename" value="meshes/building_b036.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b037">
+		<string name="filename" value="meshes/building_b037.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b038">
+		<string name="filename" value="meshes/building_b038.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b039">
+		<string name="filename" value="meshes/building_b039.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b045">
+		<string name="filename" value="meshes/building_b045.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b046">
+		<string name="filename" value="meshes/building_b046.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b047">
+		<string name="filename" value="meshes/building_b047.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b048">
+		<string name="filename" value="meshes/building_b048.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b049">
+		<string name="filename" value="meshes/building_b049.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b057">
+		<string name="filename" value="meshes/building_b057.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b058">
+		<string name="filename" value="meshes/building_b058.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b059">
+		<string name="filename" value="meshes/building_b059.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b060">
+		<string name="filename" value="meshes/building_b060.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b061">
+		<string name="filename" value="meshes/building_b061.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b063">
+		<string name="filename" value="meshes/building_b063.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-substation_kandla">
+		<string name="filename" value="meshes/substation_kandla.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b097">
+		<string name="filename" value="meshes/building_b097.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b098">
+		<string name="filename" value="meshes/building_b098.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b099">
+		<string name="filename" value="meshes/building_b099.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b100">
+		<string name="filename" value="meshes/building_b100.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b101">
+		<string name="filename" value="meshes/building_b101.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b102">
+		<string name="filename" value="meshes/building_b102.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b103">
+		<string name="filename" value="meshes/building_b103.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b104">
+		<string name="filename" value="meshes/building_b104.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b105">
+		<string name="filename" value="meshes/building_b105.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b106">
+		<string name="filename" value="meshes/building_b106.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b107">
+		<string name="filename" value="meshes/building_b107.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b108">
+		<string name="filename" value="meshes/building_b108.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b109">
+		<string name="filename" value="meshes/building_b109.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b110">
+		<string name="filename" value="meshes/building_b110.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b111">
+		<string name="filename" value="meshes/building_b111.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b112">
+		<string name="filename" value="meshes/building_b112.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b113">
+		<string name="filename" value="meshes/building_b113.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b114">
+		<string name="filename" value="meshes/building_b114.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b115">
+		<string name="filename" value="meshes/building_b115.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b116">
+		<string name="filename" value="meshes/building_b116.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b117">
+		<string name="filename" value="meshes/building_b117.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b118">
+		<string name="filename" value="meshes/building_b118.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b119">
+		<string name="filename" value="meshes/building_b119.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b120">
+		<string name="filename" value="meshes/building_b120.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b121">
+		<string name="filename" value="meshes/building_b121.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b122">
+		<string name="filename" value="meshes/building_b122.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b123">
+		<string name="filename" value="meshes/building_b123.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b124">
+		<string name="filename" value="meshes/building_b124.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b125">
+		<string name="filename" value="meshes/building_b125.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-substation_indian_oil">
+		<string name="filename" value="meshes/substation_indian_oil.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b130">
+		<string name="filename" value="meshes/building_b130.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b131">
+		<string name="filename" value="meshes/building_b131.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b132">
+		<string name="filename" value="meshes/building_b132.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-building_b133">
+		<string name="filename" value="meshes/building_b133.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-ship_s1">
+		<string name="filename" value="meshes/ship_s1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-ship_s2">
+		<string name="filename" value="meshes/ship_s2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-ship_s3">
+		<string name="filename" value="meshes/ship_s3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-ship_s4">
+		<string name="filename" value="meshes/ship_s4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_steel" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-ground_land">
+		<string name="filename" value="meshes/ground_land.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_ground_dry" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-ground_water">
+		<string name="filename" value="meshes/ground_water.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-sc_sea_water" name="bsdf"/>
+	</shape>
+</scene>

@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sea: #13222e;          /* chart water, night */
+  --land: #23302b;         /* chart land, muted */
+  --ink: #8fa6ad;          /* chart linework */
+  --paper: #dfe7e4;        /* primary text */
+  --dim: #7f9297;          /* secondary text */
+  --rail: #182630;         /* side panel */
+  --line: #2c3d47;
+  --restricted: #c2477e;   /* nautical-chart magenta */
+  --asset: #e0a43a;        /* protected assets */
+  --track: #5fd3e8;        /* live tracks */
+  --ok: #7cc99a;
+  --bad: #e8735f;
+  --focus: #f2d16b;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--sea); color: var(--paper);
+  font: 15px/1.45 "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  font-variant-numeric: tabular-nums;
+  display: grid; grid-template-rows: auto 1fr; min-height: 100vh;
+}
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+button, input, select { font: inherit; color: inherit; }
+
+header {
+  display: flex; align-items: baseline; gap: 1.5rem; flex-wrap: wrap;
+  padding: .6rem 1.2rem; border-bottom: 1px solid var(--line); background: var(--rail);
+}
+header h1 { font-size: 1.15rem; font-weight: 600; margin: 0; letter-spacing: .01em; }
+header .meta { color: var(--dim); font-size: .85rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; margin-right: .35rem;
+       background: var(--dim); vertical-align: baseline; }
+.dot.on { background: var(--ok); } .dot.off { background: var(--bad); }
+
+main { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(340px, 1fr); min-height: 0; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+
+/* ---------- chart ---------- */
+.chart { position: relative; display: grid; grid-template-rows: 1fr auto; min-height: 60vh; }
+svg#map { width: 100%; height: 100%; display: block; }
+.water { fill: var(--sea); }
+.land { fill: var(--land); }
+.grid line { stroke: #1d2f3b; stroke-width: 1; }
+.obj { fill: #33433d; stroke: var(--ink); stroke-width: .8; }
+.obj.protected { fill: #4a3f26; stroke: var(--asset); stroke-width: 1.4; }
+.zone { fill: none; stroke: var(--ink); stroke-width: 1; stroke-dasharray: 6 5; opacity: .55; }
+.zone.restricted { fill: var(--restricted); fill-opacity: .07; stroke: var(--restricted); opacity: .9;
+                   stroke-dasharray: 10 4 2 4; }
+.zone.aviation { stroke: #9fb4ff; opacity: .7; }
+.zlabel { fill: var(--restricted); font-size: 22px; opacity: .85; }
+.olabel { fill: var(--dim); font-size: 17px; pointer-events: none; }
+.sensor { fill: var(--paper); stroke: var(--sea); stroke-width: 2; }
+.slabel { fill: var(--paper); font-size: 19px; font-weight: 600; }
+.trail { fill: none; stroke: var(--track); stroke-width: 2; opacity: .35; }
+.trk { fill: var(--track); }
+.trk.other { fill: #a7b4b8; }
+.ell { fill: var(--track); fill-opacity: .14; stroke: var(--track); stroke-width: 1.2; }
+.ell.lowconf { stroke-dasharray: 4 3; }
+.tlabel { fill: var(--track); font-size: 19px; font-weight: 500; }
+.ray { stroke: var(--paper); stroke-width: 1.6; opacity: .55; }
+.ray.chosen { stroke: var(--focus); stroke-width: 3.2; opacity: 1; }
+.ray.rejected { stroke: var(--restricted); stroke-dasharray: 12 8; opacity: .8; }
+.hl { fill: none; stroke: var(--focus); stroke-width: 4; }
+@media (prefers-reduced-motion: no-preference) {
+  .ray { animation: draw .7s ease-out both; stroke-dasharray: 3000; stroke-dashoffset: 3000; }
+  .ray.rejected { animation: none; stroke-dasharray: 12 8; stroke-dashoffset: 0; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .hl { animation: pulse 1.4s ease-out 2; }
+  @keyframes pulse { from { stroke-width: 12; opacity: .2; } to { stroke-width: 4; opacity: 1; } }
+}
+.legend { position: absolute; left: 1rem; top: .8rem; font-size: .8rem; color: var(--dim);
+          display: flex; gap: 1rem; flex-wrap: wrap; pointer-events: none; }
+.legend i { display: inline-block; width: .9rem; height: .55rem; margin-right: .35rem; vertical-align: middle; }
+.timebar { display: flex; align-items: center; gap: .8rem; padding: .55rem 1rem; border-top: 1px solid var(--line);
+           background: var(--rail); }
+.timebar input[type=range] { flex: 1; accent-color: var(--track); }
+.timebar output { min-width: 5.5rem; text-align: right; }
+.timebar button { background: none; border: 1px solid var(--line); border-radius: 4px; padding: .15rem .6rem;
+                  cursor: pointer; }
+
+/* ---------- rail ---------- */
+aside { background: var(--rail); border-left: 1px solid var(--line); display: grid;
+        grid-template-rows: auto auto 1fr auto; min-height: 0; }
+form.ask { padding: 1rem 1.1rem .6rem; display: grid; gap: .55rem; }
+form.ask textarea {
+  width: 100%; min-height: 4.2rem; resize: vertical; padding: .6rem .7rem; border-radius: 6px;
+  background: var(--sea); border: 1px solid var(--line); color: var(--paper); font: inherit;
+}
+.row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+.mode { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.mode button { background: none; border: 0; padding: .3rem .8rem; cursor: pointer; color: var(--dim); }
+.mode button[aria-pressed=true] { background: var(--line); color: var(--paper); }
+.go { margin-left: auto; background: var(--track); color: #06232a; border: 0; border-radius: 6px;
+      padding: .4rem 1.1rem; font-weight: 600; cursor: pointer; }
+.go:disabled { opacity: .5; cursor: wait; }
+.examples { padding: 0 1.1rem .8rem; display: flex; gap: .4rem; flex-wrap: wrap; }
+.examples button { background: none; border: 1px solid var(--line); color: var(--dim); border-radius: 999px;
+                   padding: .2rem .7rem; font-size: .82rem; cursor: pointer; text-align: left; }
+.examples button:hover { color: var(--paper); border-color: var(--ink); }
+
+.trace { overflow-y: auto; padding: .4rem 1.1rem 1rem; border-top: 1px solid var(--line); }
+.trace .q { font-size: 1.35rem; line-height: 1.25; font-weight: 500; margin: .7rem 0 .9rem; max-width: 34ch; }
+.trace .empty { color: var(--dim); margin-top: 1rem; max-width: 38ch; }
+.step { border-left: 2px solid var(--line); padding: .25rem 0 .55rem .75rem; margin-left: .2rem; }
+.step.err { border-left-color: var(--bad); }
+.step.think { border-left-style: dotted; color: var(--dim); font-size: .85rem; }
+.step .name { font-weight: 600; }
+.step .args { color: var(--dim); font-size: .85rem; word-break: break-word; }
+.step .res { font-size: .85rem; margin-top: .15rem; }
+.step .lat { color: var(--dim); font-size: .8rem; float: right; }
+.step .ledger { color: var(--ok); font-size: .8rem; margin-top: .2rem; }
+.step .hint { color: var(--asset); font-size: .82rem; }
+
+.answer { border-top: 1px solid var(--line); padding: .9rem 1.1rem 1.1rem; background: #1c2d38; }
+.answer[hidden] { display: none; }
+.answer h2 { margin: 0 0 .3rem; font-size: .95rem; font-weight: 500; color: var(--dim); }
+.verdict { font-size: 2rem; font-weight: 600; line-height: 1.1; margin: .1rem 0 .4rem; }
+.verdict.no { color: var(--ok); } .verdict.yes { color: var(--restricted); } .verdict.abstain { color: var(--asset); }
+.chips { display: flex; gap: .35rem; flex-wrap: wrap; margin: .35rem 0; }
+.chip { border: 1px solid var(--line); border-radius: 4px; padding: .05rem .45rem; font-size: .82rem;
+        background: none; cursor: pointer; color: var(--paper); }
+.chip:hover { border-color: var(--focus); }
+.conf { display: grid; grid-template-columns: auto 1fr auto; gap: .5rem; align-items: center; font-size: .85rem;
+        color: var(--dim); margin: .4rem 0; }
+.conf .bar { height: .4rem; background: var(--line); border-radius: 3px; overflow: hidden; }
+.conf .bar span { display: block; height: 100%; background: var(--track); }
+.assume { font-size: .85rem; color: var(--dim); margin: .25rem 0 0; padding-left: 1rem; }
+.badge { display: inline-block; border: 1px solid var(--asset); color: var(--asset); border-radius: 4px;
+         padding: .1rem .5rem; font-size: .82rem; margin-top: .4rem; }
+.vstat { font-size: .82rem; color: var(--dim); margin-top: .5rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SceneScout</h1>
+  <div class="meta">
+    <span id="llm"><span class="dot"></span>Model server: checking</span>
+    <span id="site">Site: loading</span>
+    <span id="model"></span>
+  </div>
+</header>
+<main>
+  <section class="chart" aria-label="Site chart">
+    <svg id="map" role="img" aria-label="Port chart with zones, assets, sensors and tracks"></svg>
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:var(--restricted);opacity:.6"></i>Restricted zone</span>
+      <span><i style="background:var(--asset)"></i>Protected asset</span>
+      <span><i style="background:var(--track)"></i>Drone track</span>
+      <span><i style="background:var(--paper)"></i>DF sensor</span>
+    </div>
+    <div class="timebar">
+      <button id="play" type="button" aria-label="Play time">Play</button>
+      <label for="t" class="sr">Time</label>
+      <input id="t" type="range" min="0" max="600" step="2" value="200">
+      <output id="tout" for="t">t = 200 s</output>
+    </div>
+  </section>
+
+  <aside>
+    <form class="ask" id="ask">
+      <label for="q" style="font-weight:500">Ask about the site</label>
+      <textarea id="q" placeholder="Is any drone inside the Oil Terminal Restricted Zone at t=120 s?"></textarea>
+      <div class="row">
+        <div class="mode" role="group" aria-label="Answer mode">
+          <button type="button" data-mode="model" aria-pressed="true">Model</button>
+          <button type="button" data-mode="scripted" aria-pressed="false">Scripted</button>
+        </div>
+        <button class="go" id="go" type="submit">Ask</button>
+      </div>
+    </form>
+    <div class="examples" id="examples" aria-label="Example questions"></div>
+    <div class="trace" id="trace" aria-live="polite">
+      <p class="empty">Ask a question or pick an example. Each tool the agent calls appears here as it runs, and what
+        it touches lights up on the chart.</p>
+    </div>
+    <section class="answer" id="answer" hidden aria-live="polite"></section>
+  </aside>
+</main>
+
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const $ = (s) => document.querySelector(s);
+const svg = $("#map");
+let SITE = null, TRACKS = [], DEMO = [], mode = "model", running = false;
+const layers = {};
+const sensorPos = {};
+
+function el(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const P = ([x, y]) => `${x},${-y}`;          // ENU (north up) -> SVG (y down)
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+async function boot() {
+  const [meta, site, tracks] = await Promise.all(["/api/meta", "/api/site", "/api/tracks?frame=enu"].map((u) =>
+    fetch(u).then((r) => r.json())));
+  SITE = site; TRACKS = tracks.tracks; DEMO = meta.demo;
+  $("#llm").innerHTML = `<span class="dot ${meta.llm.ok ? "on" : "off"}"></span>Model server: ${meta.llm.ok ? "ready" : "offline (use Scripted)"}`;
+  $("#site").textContent = `Site: ${meta.site} (data ${meta.data_version})`;
+  $("#model").textContent = `Model: Qwen3-4B-Instruct, untrained`;
+  $("#t").max = meta.duration_s;
+  if (!meta.llm.ok) setMode("scripted");
+  drawSite(); drawTracks(+$("#t").value); drawExamples();
+}
+
+function drawSite() {
+  const [x0, y0, x1, y1] = SITE.extent;
+  const pad = 60;
+  svg.setAttribute("viewBox", `${x0 - pad} ${-(y1 + 300)} ${x1 - x0 + 2 * pad} ${y1 - y0 + 300 + pad}`);
+  svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+  el("rect", {x: x0 - 2000, y: -4000, width: 8000, height: 8000, class: "water"}, svg);
+  el("rect", {x: x0 - 2000, y: -(y1 + 2000), width: 8000, height: y1 + 2000 - SITE.shore_y, class: "land"}, svg);
+  const g = el("g", {class: "grid"}, svg);
+  for (let x = -1500; x <= 1500; x += 500) el("line", {x1: x, y1: -2400, x2: x, y2: 1400}, g);
+  for (let y = -1000; y <= 2000; y += 500) el("line", {x1: -1700, y1: -y, x2: 1700, y2: -y}, g);
+  for (const name of ["zones", "objects", "labels", "trails", "tracks", "rays", "sensors", "hl"])
+    layers[name] = el("g", {}, svg);
+  for (const z of SITE.zones) {
+    if (z.kind === "perimeter") continue;
+    const cls = "zone " + (z.kind === "restricted" ? "restricted" : z.kind === "aviation" ? "aviation" : "");
+    const poly = el("polygon", {points: z.poly.map(P).join(" "), class: cls, "data-ref": z.ref}, layers.zones);
+    el("title", {}, poly).textContent = z.name;
+    if (z.kind === "restricted") {
+      const [xs, ys] = [z.poly.map((p) => p[0]), z.poly.map((p) => p[1])];
+      const t = el("text", {x: Math.min(...xs) + 14, y: -(Math.max(...ys) - 30), class: "zlabel"}, layers.labels);
+      t.textContent = z.name;
+    }
+  }
+  for (const o of SITE.objects) {
+    const poly = el("polygon", {points: o.poly.map(P).join(" "), class: "obj" + (o.protected ? " protected" : ""),
+                                "data-ref": o.ref}, layers.objects);
+    el("title", {}, poly).textContent = `${o.name}${o.protected ? " (protected)" : ""}`;
+    if (["tank_farm", "tower", "substation"].includes(o.kind)) {
+      const xs = o.poly.map((p) => p[0]), ys = o.poly.map((p) => p[1]);
+      el("text", {x: Math.min(...xs), y: -(Math.max(...ys) + 12), class: "olabel"}, layers.labels).textContent = o.name;
+    }
+  }
+  for (const s of SITE.sensors) {
+    if (s.type !== "fixed_df") continue;
+    sensorPos[s.ref] = [s.x, s.y];
+    el("path", {d: `M ${s.x} ${-s.y - 26} L ${s.x + 22} ${-s.y + 14} L ${s.x - 22} ${-s.y + 14} Z`, class: "sensor",
+                "data-ref": s.ref}, layers.sensors);
+    el("text", {x: s.x + 28, y: -s.y + 8, class: "slabel"}, layers.sensors).textContent = s.ref.split(":")[1];
+  }
+}
+
+function at(tr, t) {
+  let best = null;
+  for (const p of tr.pts) { if (p[0] <= t) best = p; else break; }
+  return best;
+}
+
+function drawTracks(t) {
+  layers.trails.replaceChildren(); layers.tracks.replaceChildren();
+  $("#tout").textContent = `t = ${t} s`;
+  for (const tr of TRACKS) {
+    const p = at(tr, t);
+    if (!p || t - p[0] > 6) continue;               // not observed at this time
+    const past = tr.pts.filter((q) => q[0] <= t && q[0] >= t - 120);
+    el("polyline", {points: past.map((q) => P([q[1], q[2]])).join(" "), class: "trail"}, layers.trails);
+    const [, x, y, a, b, th] = p;
+    const e = el("ellipse", {cx: x, cy: -y, rx: Math.max(a, 8), ry: Math.max(b, 6),
+                             transform: `rotate(${th - 90} ${x} ${-y})`,
+                             class: "ell" + (tr.confidence < 0.6 ? " lowconf" : ""), "data-ref": tr.ref}, layers.tracks);
+    el("title", {}, e).textContent = `${tr.ref} ${tr.band} conf ${tr.confidence}`;
+    el("circle", {cx: x, cy: -y, r: 9, class: "trk" + (tr.klass === "drone" ? "" : " other"), "data-ref": tr.ref},
+       layers.tracks);
+    el("text", {x: x + 16, y: -y - 14, class: "tlabel"}, layers.tracks).textContent = tr.ref.split(":")[1];
+  }
+}
+
+function drawRays(result) {
+  for (const s of result.data.sensors) {
+    const [sx, sy] = [s.sensor_pos.x_m, s.sensor_pos.y_m];
+    for (const h of s.hyps) {
+      const r = h.bearing_deg * Math.PI / 180, L = 2600;
+      el("line", {x1: sx, y1: -sy, x2: sx + L * Math.sin(r), y2: -(sy + L * Math.cos(r)), class: "ray",
+                  "data-hyp": h.ref.split("@")[0]}, layers.rays);
+    }
+  }
+}
+
+function markRays(chosen, rejected) {
+  const base = (r) => r.split("@")[0];
+  for (const ln of layers.rays.querySelectorAll("line")) {
+    const h = ln.getAttribute("data-hyp");
+    if (chosen.map(base).includes(h)) ln.classList.add("chosen");
+    else if (rejected.map(base).includes(h)) ln.classList.add("rejected");
+  }
+}
+
+function highlight(ref) {
+  layers.hl.replaceChildren();
+  const base = ref.split("@")[0];
+  const tm = ref.includes("@") ? +ref.split("@")[1] : null;
+  if (tm !== null && base.startsWith("trk:")) setTime(tm);
+  const target = svg.querySelector(`[data-ref="${base}"]`);
+  if (!target) return;
+  const bb = target.getBBox();
+  el("rect", {x: bb.x - 25, y: bb.y - 25, width: bb.width + 50, height: bb.height + 50, rx: 18, class: "hl"},
+     layers.hl);
+}
+
+function setTime(t) { $("#t").value = t; drawTracks(+t); }
+
+function drawExamples() {
+  const box = $("#examples");
+  box.replaceChildren();
+  for (const d of DEMO) {
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = d.question; b.dataset.task = d.task_id;
+    b.addEventListener("click", () => { $("#q").value = d.question; $("#q").dataset.task = d.task_id; ask(); });
+    box.appendChild(b);
+  }
+}
+
+function setMode(m) {
+  mode = m;
+  for (const b of document.querySelectorAll(".mode button")) b.setAttribute("aria-pressed", b.dataset.mode === m);
+}
+
+function argSummary(name, a) {
+  if (!a) return "";
+  const s = JSON.stringify(a);
+  return s.length > 140 ? s.slice(0, 137) + "..." : s;
+}
+
+function resultSummary(name, r) {
+  if (!r.ok) return `<span style="color:var(--bad)">${esc(r.error.code)}</span> ${esc(r.error.message || "")}` +
+    (r.error.candidates ? `<div class="args">${r.error.candidates.map((c) => esc(c.name)).join(" / ")}</div>` : "") +
+    (r.error.hint ? `<div class="hint">${esc(r.error.hint)}</div>` : "");
+  const d = r.data || {};
+  if (name === "site_resolve") return `Resolved to ${esc(d.candidates[0].name)}`;
+  if (name === "track_search") return `${d.total} track${d.total === 1 ? "" : "s"}: ${d.items.map((i) => i.ref).join(", ")}`;
+  if (name === "inside_zone") return `${d.inside ? "Inside" : "Outside"}, ${Math.abs(d.distance_to_boundary_m)} m from the boundary`;
+  if (name === "df_hypotheses") return d.sensors.map((s) => `${s.sensor.split(":")[1]}: ${s.hyps.map((h) => h.bearing_deg + "°").join(", ")}`).join("; ");
+  if (name === "track_detail") return `${d.ref} at ${d.pos.x_m}, ${d.pos.y_m} (±${d.uncertainty.a_m} m), ${d.signal.band}`;
+  if (name === "ask_user") return `Operator: “${esc(d.reply)}”`;
+  if (name === "submit") return "Answer accepted";
+  if (name === "declare_intent") return `Intent: ${esc(d.intent)}`;
+  return esc(JSON.stringify(d).slice(0, 140));
+}
+
+function addStep(html, cls = "") {
+  const div = document.createElement("div");
+  div.className = "step " + cls; div.innerHTML = html;
+  $("#trace").appendChild(div);
+  $("#trace").scrollTop = $("#trace").scrollHeight;
+  return div;
+}
+
+const INTENT = {operator_query: "Zone check", df_ambiguity: "Bearing resolution", abstain: "Cannot answer",
+                replay: "Replay", collateral: "Collateral check", siting: "Coverage", drone_search: "Drone search"};
+const REASON = {entity_not_found: "That place does not exist on this site.",
+                outside_tool_scope: "This needs an action. SceneScout recommends; it does not act.",
+                no_sensor_coverage: "No sensor covers that.", ambiguous_unresolved: "The question stayed ambiguous.",
+                insufficient_evidence: "Not enough evidence to answer."};
+
+function showAnswer(ev) {
+  const box = $("#answer");
+  const a = ev.answer;
+  box.hidden = false;
+  if (!a) {
+    box.innerHTML = `<h2>No answer</h2><div class="verdict abstain">Stopped</div><div class="vstat">Episode ended: ${esc(ev.end_reason)}. ${ev.verifier && !ev.verifier.ok ? esc(ev.verifier.message) : ""}</div>`;
+    return;
+  }
+  let verdict = "", cls = "";
+  if (a.intent === "abstain") { verdict = REASON[a.reason] || a.reason; cls = "abstain"; }
+  else if (a.intent === "operator_query" && a.boolean !== null && a.boolean !== undefined) {
+    verdict = a.boolean ? "Yes" : "No"; cls = a.boolean ? "yes" : "no";
+  } else if (a.intent === "df_ambiguity") { verdict = "Direct path found"; }
+  const chips = (refs) => refs.map((r) => `<button class="chip" type="button" data-ref="${esc(r)}">${esc(r)}</button>`).join("");
+  const tracks = a.track_refs && a.track_refs.length ? `<div class="chips">${chips(a.track_refs)}</div>` : "";
+  const hyps = a.chosen_hyp_refs ? `<div class="args">Direct: ${a.chosen_hyp_refs.map(esc).join(", ")}<br>Reflections: ${(a.rejected_hyp_refs || []).map(esc).join(", ") || "none"}</div>` : "";
+  box.innerHTML = `
+    <h2>${INTENT[a.intent] || a.intent}</h2>
+    <div class="verdict ${cls}" style="${cls === "abstain" ? "font-size:1.25rem" : ""}">${esc(verdict)}</div>
+    ${tracks}${hyps}
+    <div class="conf"><span>Confidence</span><div class="bar"><span style="width:${Math.round(a.confidence * 100)}%"></span></div><span>${Math.round(a.confidence * 100)}%</span></div>
+    ${a.assumptions && a.assumptions.length ? `<ul class="assume">${a.assumptions.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
+    ${a.evidence_refs.length ? `<div class="vstat">Evidence</div><div class="chips">${chips(a.evidence_refs)}</div>` : ""}
+    ${a.requires_human_confirm ? `<div class="badge">Needs operator confirmation before any action</div>` : ""}
+    <div class="vstat">${ev.verifier && ev.verifier.ok ? "Checked: every cited ref came from a tool result" : "Not verified"}. Answered in ${ev.turns} turn${ev.turns === 1 ? "" : "s"}.</div>`;
+  for (const c of box.querySelectorAll(".chip")) c.addEventListener("click", () => highlight(c.dataset.ref));
+  if (a.intent === "df_ambiguity") markRays(a.chosen_hyp_refs, a.rejected_hyp_refs || []);
+  if (a.track_refs && a.track_refs[0]) highlight(a.track_refs[0]);
+}
+
+function ask(ev) {
+  if (ev) ev.preventDefault();
+  if (running) return;
+  const q = $("#q").value.trim();
+  const task = $("#q").dataset.task || (DEMO.find((d) => d.question === q) || {}).task_id;
+  if (!q) { $("#q").focus(); return; }
+  if (mode === "scripted" && !task) {
+    $("#trace").innerHTML = `<p class="empty">Scripted mode replays the example questions. Pick one below the box, or switch to Model.</p>`;
+    return;
+  }
+  running = true; $("#go").disabled = true; $("#go").textContent = "Working";
+  layers.rays.replaceChildren(); layers.hl.replaceChildren();
+  $("#answer").hidden = true;
+  $("#trace").innerHTML = `<p class="q">${esc(q)}</p>`;
+  const m = q.match(/t=(\d+)/); if (m) setTime(+m[1]);
+  const url = mode === "scripted" ? `/api/ask?mode=scripted&task_id=${encodeURIComponent(task)}`
+                                  : `/api/ask?mode=model&q=${encodeURIComponent(q)}`;
+  const src = new EventSource(url);
+  const pending = {};
+  src.onmessage = (msg) => {
+    const e = JSON.parse(msg.data);
+    if (e.type === "assistant" && e.text) addStep(esc(e.text), "think");
+    if (e.type === "tool_call") {
+      pending[e.name] = pending[e.name] || [];
+      pending[e.name].push(addStep(`<span class="name">${esc(e.name)}</span><div class="args">${esc(argSummary(e.name, e.arguments))}</div>`));
+    }
+    if (e.type === "tool_result") {
+      const div = (pending[e.name] || []).shift() || addStep(`<span class="name">${esc(e.name)}</span>`);
+      if (!e.result.ok) div.classList.add("err");
+      div.insertAdjacentHTML("afterbegin", e.result.cost_ms !== undefined ? `<span class="lat">${e.result.cost_ms} ms</span>` : "");
+      div.insertAdjacentHTML("beforeend", `<div class="res">${resultSummary(e.name, e.result)}</div>`);
+      if (e.name === "df_hypotheses" && e.result.ok) drawRays(e.result);
+      if (e.result.ok && e.result.refs && e.result.refs[0]) {
+        const r = e.result.refs.find((x) => x.startsWith("zone:") || x.startsWith("trk:") || x.startsWith("obj:"));
+        if (r) highlight(r);
+      }
+    }
+    if (e.type === "ledger") addStep(`<div class="ledger">${esc(e.delta)}</div>`, "think");
+    if (e.type === "error") addStep(`<span style="color:var(--bad)">${esc(e.message)}</span>`, "err");
+    if (e.type === "answer") showAnswer(e);
+    if (e.type === "done") finish();
+  };
+  src.onerror = () => { addStep("Connection to the gateway closed.", "err"); finish(); };
+  function finish() { src.close(); running = false; $("#go").disabled = false; $("#go").textContent = "Ask"; delete $("#q").dataset.task; }
+}
+
+$("#ask").addEventListener("submit", ask);
+$("#q").addEventListener("input", () => delete $("#q").dataset.task);
+$("#q").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) ask(e); });
+for (const b of document.querySelectorAll(".mode button")) b.addEventListener("click", () => setMode(b.dataset.mode));
+$("#t").addEventListener("input", (e) => drawTracks(+e.target.value));
+let timer = null;
+$("#play").addEventListener("click", () => {
+  if (timer) { clearInterval(timer); timer = null; $("#play").textContent = "Play"; return; }
+  $("#play").textContent = "Pause";
+  timer = setInterval(() => { const t = (+$("#t").value + 4) % (+$("#t").max + 1); setTime(t); }, 120);
+});
+boot().catch((err) => { $("#trace").innerHTML = `<p class="empty">Could not load the site: ${esc(err)}. Start the gateway with python -m serve.gateway.</p>`; });
+</script>
+</body>
+</html>

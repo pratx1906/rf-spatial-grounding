@@ -1,0 +1,177 @@
+{
+ "version": "v6_M2cd_51",
+ "n": 3833,
+ "per_area": {
+  "df_ambiguity": 958,
+  "operator_query": 2875
+ },
+ "per_family": {
+  "band_in_zone": 235,
+  "count_in_zone": 198,
+  "direct_all": 157,
+  "direct_path": 198,
+  "genuine_drone": 208,
+  "ghost_check": 408,
+  "locate": 168,
+  "locate_ghost": 101,
+  "locate_two_sensors": 177,
+  "los_check": 244,
+  "near_object": 249,
+  "near_object_ambiguous": 101,
+  "nearest_drone": 184,
+  "noisy_band": 42,
+  "protocol_id": 135,
+  "reject_ghosts": 157,
+  "swarm_in_zone": 158,
+  "swarm_members": 2,
+  "tracks_in_band": 163,
+  "which_zone": 219,
+  "zone_incursion": 275,
+  "zone_incursion_ambiguous": 54
+ },
+ "per_seed": {
+  "51": 447,
+  "52": 260,
+  "53": 311,
+  "54": 422,
+  "55": 441,
+  "56": 405,
+  "57": 431,
+  "58": 319,
+  "59": 405,
+  "60": 392
+ },
+ "per_family_cluster": {
+  "band_in_zone": {
+   "51-60": 235
+  },
+  "count_in_zone": {
+   "51-60": 198
+  },
+  "direct_all": {
+   "51-60": 157
+  },
+  "direct_path": {
+   "51-60": 198
+  },
+  "genuine_drone": {
+   "51-60": 208
+  },
+  "ghost_check": {
+   "51-60": 408
+  },
+  "locate": {
+   "51-60": 168
+  },
+  "locate_ghost": {
+   "51-60": 101
+  },
+  "locate_two_sensors": {
+   "51-60": 177
+  },
+  "los_check": {
+   "51-60": 244
+  },
+  "near_object": {
+   "51-60": 249
+  },
+  "near_object_ambiguous": {
+   "51-60": 101
+  },
+  "nearest_drone": {
+   "51-60": 184
+  },
+  "noisy_band": {
+   "51-60": 42
+  },
+  "protocol_id": {
+   "51-60": 135
+  },
+  "reject_ghosts": {
+   "51-60": 157
+  },
+  "swarm_in_zone": {
+   "51-60": 158
+  },
+  "swarm_members": {
+   "51-60": 2
+  },
+  "tracks_in_band": {
+   "51-60": 163
+  },
+  "which_zone": {
+   "51-60": 219
+  },
+  "zone_incursion": {
+   "51-60": 275
+  },
+  "zone_incursion_ambiguous": {
+   "51-60": 54
+  }
+ },
+ "tasks_sha": "a817d222942a8c20",
+ "tasks_sha256": "a817d222942a8c20539d298385f19af78dc3597870df7e1221d37c9ea04cde4f",
+ "code_sha": {
+  "tasks/scoring.py": "000beddc4d414e02",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "c7fa6277a04b3dc5",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "1b23f6de89308e14",
+  "harness/env.py": "d6ec0cabe2a4f47d",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "a2eae7a828ff311e",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/x3_M2d_51/test.jsonl (seeds 51-60)",
+ "source_sha256": "a817d222942a8c20539d298385f19af78dc3597870df7e1221d37c9ea04cde4f",
+ "selection": {
+  "mode": "copy",
+  "areas": null,
+  "rng_seed": null,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "locate_ghost",
+  "near_object"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s51_X_M2d": "ec033c9c5d492502",
+  "data/scenarios_v3/kandla_s52_X_M2d": "502906bbb91145d0",
+  "data/scenarios_v3/kandla_s53_X_M2d": "03c69b981ed9ed8f",
+  "data/scenarios_v3/kandla_s54_X_M2d": "fee9b8acef262b1f",
+  "data/scenarios_v3/kandla_s55_X_M2d": "8d0c1e9740d1d364",
+  "data/scenarios_v3/kandla_s56_X_M2d": "b316308c242fbe15",
+  "data/scenarios_v3/kandla_s57_X_M2d": "17383c5550efaac9",
+  "data/scenarios_v3/kandla_s58_X_M2d": "17ca1cca3011872a",
+  "data/scenarios_v3/kandla_s59_X_M2d": "999ff424fd7a318b",
+  "data/scenarios_v3/kandla_s60_X_M2d": "7b07d2f071ad62f5"
+ }
+}

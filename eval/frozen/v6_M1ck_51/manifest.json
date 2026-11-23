@@ -1,0 +1,177 @@
+{
+ "version": "v6_M1ck_51",
+ "n": 4409,
+ "per_area": {
+  "df_ambiguity": 1415,
+  "operator_query": 2994
+ },
+ "per_family": {
+  "band_in_zone": 235,
+  "count_in_zone": 198,
+  "direct_all": 250,
+  "direct_path": 247,
+  "genuine_drone": 205,
+  "ghost_check": 434,
+  "locate": 223,
+  "locate_ghost": 222,
+  "locate_two_sensors": 223,
+  "los_check": 250,
+  "near_object": 249,
+  "near_object_ambiguous": 102,
+  "nearest_drone": 184,
+  "noisy_band": 42,
+  "protocol_id": 188,
+  "reject_ghosts": 250,
+  "swarm_in_zone": 158,
+  "swarm_members": 2,
+  "tracks_in_band": 173,
+  "which_zone": 245,
+  "zone_incursion": 275,
+  "zone_incursion_ambiguous": 54
+ },
+ "per_seed": {
+  "51": 463,
+  "52": 410,
+  "53": 447,
+  "54": 448,
+  "55": 445,
+  "56": 436,
+  "57": 449,
+  "58": 424,
+  "59": 448,
+  "60": 439
+ },
+ "per_family_cluster": {
+  "band_in_zone": {
+   "51-60": 235
+  },
+  "count_in_zone": {
+   "51-60": 198
+  },
+  "direct_all": {
+   "51-60": 250
+  },
+  "direct_path": {
+   "51-60": 247
+  },
+  "genuine_drone": {
+   "51-60": 205
+  },
+  "ghost_check": {
+   "51-60": 434
+  },
+  "locate": {
+   "51-60": 223
+  },
+  "locate_ghost": {
+   "51-60": 222
+  },
+  "locate_two_sensors": {
+   "51-60": 223
+  },
+  "los_check": {
+   "51-60": 250
+  },
+  "near_object": {
+   "51-60": 249
+  },
+  "near_object_ambiguous": {
+   "51-60": 102
+  },
+  "nearest_drone": {
+   "51-60": 184
+  },
+  "noisy_band": {
+   "51-60": 42
+  },
+  "protocol_id": {
+   "51-60": 188
+  },
+  "reject_ghosts": {
+   "51-60": 250
+  },
+  "swarm_in_zone": {
+   "51-60": 158
+  },
+  "swarm_members": {
+   "51-60": 2
+  },
+  "tracks_in_band": {
+   "51-60": 173
+  },
+  "which_zone": {
+   "51-60": 245
+  },
+  "zone_incursion": {
+   "51-60": 275
+  },
+  "zone_incursion_ambiguous": {
+   "51-60": 54
+  }
+ },
+ "tasks_sha": "59e39baaad85d56a",
+ "tasks_sha256": "59e39baaad85d56aa911ed35074fd9e22c186164dace51c8ee77df0ce2976fe0",
+ "code_sha": {
+  "tasks/scoring.py": "000beddc4d414e02",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "c7fa6277a04b3dc5",
+  "harness/prompt.py": "808a70062e1772e9",
+  "harness/executor.py": "b45978baa3df3490",
+  "harness/env.py": "ee03eba9c1d509bf",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "a2eae7a828ff311e",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/x3_M1k_51/test.jsonl (seeds 51-60)",
+ "source_sha256": "59e39baaad85d56aa911ed35074fd9e22c186164dace51c8ee77df0ce2976fe0",
+ "selection": {
+  "mode": "copy",
+  "areas": null,
+  "rng_seed": null,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "locate_ghost",
+  "near_object"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s51_X_M1k": "2f8820589eb6a650",
+  "data/scenarios_v3/kandla_s52_X_M1k": "faecefc9ce57ff3e",
+  "data/scenarios_v3/kandla_s53_X_M1k": "ab0f634bb29604e6",
+  "data/scenarios_v3/kandla_s54_X_M1k": "ad9c030d5eebcc70",
+  "data/scenarios_v3/kandla_s55_X_M1k": "44caee9f1b54718a",
+  "data/scenarios_v3/kandla_s56_X_M1k": "c5a2cd096e62252a",
+  "data/scenarios_v3/kandla_s57_X_M1k": "feade02e5914dcf4",
+  "data/scenarios_v3/kandla_s58_X_M1k": "f313ac4982a02070",
+  "data/scenarios_v3/kandla_s59_X_M1k": "f75b735d0c0267fa",
+  "data/scenarios_v3/kandla_s60_X_M1k": "61df75cd8ab64e82"
+ }
+}

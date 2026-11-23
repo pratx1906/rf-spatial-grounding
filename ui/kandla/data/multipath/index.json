@@ -1,0 +1,72 @@
+{
+ "product": "multipath",
+ "stack": "rf_cache_v2",
+ "source": "data/site_kandla/rf_cache_v2/air7311_<S>/spec_diff/<band>.npz",
+ "simulation": true,
+ "method": {
+  "detect_db": -115.0,
+  "echo_db": 10.0,
+  "spread_db": 20.0,
+  "footprint_m": 1500.0,
+  "score": "0.4*min(echoes/4,1) + 0.3*strongest_not_direct + 0.3*min(spread_deg/30,1)",
+  "score_u8": "score*250 (255 = not detectable or outside the node footprint); rows south to north",
+  "hot_spots": "top 5 % cells of the 3x3-smoothed score (>= 0.35), 8-connected, >= 3 cells, holes filled, top 5 by summed score"
+ },
+ "bands": [
+  {
+   "id": "sub_ghz_868_915",
+   "label": "868/915 MHz"
+  },
+  {
+   "id": "ism_2400",
+   "label": "2.4 GHz"
+  },
+  {
+   "id": "ism_5800",
+   "label": "5.8 GHz"
+  }
+ ],
+ "heights_m": [
+  5.0,
+  40.0
+ ],
+ "sensors": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ],
+ "files": [
+  {
+   "band": "sub_ghz_868_915",
+   "height_m": 5.0,
+   "file": "sub_ghz_868_915_h5.json"
+  },
+  {
+   "band": "sub_ghz_868_915",
+   "height_m": 40.0,
+   "file": "sub_ghz_868_915_h40.json"
+  },
+  {
+   "band": "ism_2400",
+   "height_m": 5.0,
+   "file": "ism_2400_h5.json"
+  },
+  {
+   "band": "ism_2400",
+   "height_m": 40.0,
+   "file": "ism_2400_h40.json"
+  },
+  {
+   "band": "ism_5800",
+   "height_m": 5.0,
+   "file": "ism_5800_h5.json"
+  },
+  {
+   "band": "ism_5800",
+   "height_m": 40.0,
+   "file": "ism_5800_h40.json"
+  }
+ ]
+}

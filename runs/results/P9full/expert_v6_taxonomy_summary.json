@@ -1,0 +1,45 @@
+{
+ "episodes": 700,
+ "failed": 99,
+ "class_share": {
+  "ghost_picked": 0.242,
+  "position_imprecise": 0.192,
+  "wrong_track": 0.192,
+  "position_off": 0.152,
+  "missed_direct": 0.141,
+  "wrong_zone": 0.04,
+  "over_abstain": 0.02,
+  "wrong_protocol": 0.02
+ },
+ "class_count": {
+  "ghost_picked": 24,
+  "position_imprecise": 19,
+  "wrong_track": 19,
+  "position_off": 15,
+  "missed_direct": 14,
+  "wrong_zone": 4,
+  "over_abstain": 2,
+  "wrong_protocol": 2
+ },
+ "by_area": {
+  "df_ambiguity": {
+   "ghost_picked": 24,
+   "missed_direct": 14,
+   "position_imprecise": 12,
+   "position_off": 6
+  },
+  "drone_search": {
+   "position_off": 9,
+   "position_imprecise": 7,
+   "over_abstain": 2
+  },
+  "operator_query": {
+   "wrong_track": 19,
+   "wrong_zone": 4,
+   "wrong_protocol": 2
+  }
+ },
+ "eval": "runs/paper/results/P1/expert_v6/eval.json",
+ "set": "eval/frozen/v6/tasks.jsonl",
+ "thr": 0.8
+}

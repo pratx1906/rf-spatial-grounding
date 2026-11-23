@@ -1,0 +1,6 @@
+# Mismatch world M1 (plan 2026-10-28 T6, audit B1): sigma = 3 deg random per-node heading error (world side only).
+# Deep-merged into configs/hardware/air7311.yaml by scripts/build_scenarios.py --hw-override ... --tag M1.
+# Nominal: 0.5 deg. The per-node draw is N(0, sigma) from a fixed stream, so M2 = M1 x 10/3 node by node;
+# the realised biases go to truth/world_variant.yaml.
+heading_datum:
+  bias_deg_1sigma: 3.0

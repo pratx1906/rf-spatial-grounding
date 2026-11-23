@@ -1,0 +1,4 @@
+# Control world M0 (plan 2026-10-28 T6/T8): restates the nominal heading sigma (0.5 deg), so M0 must reproduce _X.
+# A difference between kandla_s<N>_X_M0 and kandla_s<N>_X means the observation code changed since _X was built.
+heading_datum:
+  bias_deg_1sigma: 0.5

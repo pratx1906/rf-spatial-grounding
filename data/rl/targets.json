@@ -1,0 +1,430 @@
+{
+ "rule": {
+  "A": "n>=4 and expert>=0.80 and expert-model>=0.15",
+  "B": "n>=4 and expert<0.80",
+  "replay": "n>=4 and model>=0.95",
+  "source": "x3/val_clean per-family scores (not v6; Revision 1 M3)"
+ },
+ "A": [
+  "entered_between",
+  "first_into_zone",
+  "ghost_check",
+  "noisy_band",
+  "protocol_id",
+  "swarm_in_zone",
+  "tracks_in_band",
+  "weak_detect"
+ ],
+ "B": [
+  "count_in_zone",
+  "direct_all",
+  "direct_path",
+  "locate",
+  "locate_two_sensors",
+  "near_object_ambiguous",
+  "nearest_drone",
+  "reject_ghosts",
+  "swarm_members"
+ ],
+ "replay": [
+  "actuation",
+  "band_in_zone",
+  "ds_hover",
+  "entity_not_found",
+  "exit_time",
+  "first_detection",
+  "first_entry",
+  "future_time",
+  "jam_all",
+  "jam_aviation",
+  "jam_links",
+  "jam_protected",
+  "last_seen",
+  "los_check",
+  "suggest_one",
+  "suggest_two",
+  "unknown_track",
+  "weak_df",
+  "which_zone",
+  "zone_incursion_ambiguous"
+ ],
+ "skipped_small_n": [
+  "band_change",
+  "pilot_locate",
+  "rf_ambiguous"
+ ],
+ "model": {
+  "actuation": [
+   34,
+   1.0
+  ],
+  "band_change": [
+   1,
+   1.0
+  ],
+  "band_in_zone": [
+   50,
+   0.968
+  ],
+  "count_in_zone": [
+   50,
+   0.762
+  ],
+  "direct_all": [
+   50,
+   0.621
+  ],
+  "direct_path": [
+   50,
+   0.493
+  ],
+  "ds_hover": [
+   9,
+   0.959
+  ],
+  "ds_hover_budget2": [
+   8,
+   0.852
+  ],
+  "ds_loiter": [
+   5,
+   0.924
+  ],
+  "ds_swarm": [
+   4,
+   0.929
+  ],
+  "entered_between": [
+   48,
+   0.729
+  ],
+  "entity_not_found": [
+   63,
+   1.0
+  ],
+  "exit_time": [
+   50,
+   0.96
+  ],
+  "first_detection": [
+   45,
+   1.0
+  ],
+  "first_entry": [
+   50,
+   1.0
+  ],
+  "first_into_zone": [
+   22,
+   0.508
+  ],
+  "future_time": [
+   24,
+   1.0
+  ],
+  "genuine_drone": [
+   44,
+   0.693
+  ],
+  "ghost_check": [
+   93,
+   0.0
+  ],
+  "jam_all": [
+   6,
+   1.0
+  ],
+  "jam_aviation": [
+   22,
+   1.0
+  ],
+  "jam_fratricide": [
+   49,
+   0.895
+  ],
+  "jam_links": [
+   24,
+   1.0
+  ],
+  "jam_protected": [
+   24,
+   1.0
+  ],
+  "last_seen": [
+   45,
+   1.0
+  ],
+  "locate": [
+   50,
+   0.313
+  ],
+  "locate_two_sensors": [
+   50,
+   0.899
+  ],
+  "los_check": [
+   50,
+   0.96
+  ],
+  "near_object_ambiguous": [
+   23,
+   0.348
+  ],
+  "nearest_drone": [
+   49,
+   0.633
+  ],
+  "noisy_band": [
+   7,
+   0.0
+  ],
+  "pilot_locate": [
+   1,
+   0.0
+  ],
+  "protocol_id": [
+   36,
+   0.764
+  ],
+  "reject_ghosts": [
+   50,
+   0.585
+  ],
+  "rf_ambiguous": [
+   1,
+   0.0
+  ],
+  "suggest_one": [
+   20,
+   1.0
+  ],
+  "suggest_two": [
+   20,
+   1.0
+  ],
+  "swarm_in_zone": [
+   47,
+   0.723
+  ],
+  "swarm_members": [
+   4,
+   0.418
+  ],
+  "tracks_in_band": [
+   50,
+   0.66
+  ],
+  "unknown_track": [
+   24,
+   1.0
+  ],
+  "weak_detect": [
+   4,
+   0.196
+  ],
+  "weak_df": [
+   10,
+   1.0
+  ],
+  "which_zone": [
+   50,
+   1.0
+  ],
+  "zone_incursion": [
+   74,
+   0.837
+  ],
+  "zone_incursion_ambiguous": [
+   9,
+   1.0
+  ]
+ },
+ "expert": {
+  "actuation": [
+   34,
+   1.0
+  ],
+  "band_change": [
+   1,
+   1.0
+  ],
+  "band_in_zone": [
+   50,
+   0.973
+  ],
+  "count_in_zone": [
+   50,
+   0.795
+  ],
+  "direct_all": [
+   50,
+   0.566
+  ],
+  "direct_path": [
+   50,
+   0.42
+  ],
+  "ds_hover": [
+   9,
+   0.959
+  ],
+  "ds_hover_budget2": [
+   8,
+   0.852
+  ],
+  "ds_loiter": [
+   5,
+   0.924
+  ],
+  "ds_swarm": [
+   4,
+   0.929
+  ],
+  "entered_between": [
+   48,
+   1.0
+  ],
+  "entity_not_found": [
+   63,
+   1.0
+  ],
+  "exit_time": [
+   50,
+   1.0
+  ],
+  "first_detection": [
+   45,
+   1.0
+  ],
+  "first_entry": [
+   50,
+   1.0
+  ],
+  "first_into_zone": [
+   22,
+   1.0
+  ],
+  "future_time": [
+   24,
+   1.0
+  ],
+  "genuine_drone": [
+   44,
+   0.841
+  ],
+  "ghost_check": [
+   93,
+   1.0
+  ],
+  "jam_all": [
+   6,
+   1.0
+  ],
+  "jam_aviation": [
+   22,
+   1.0
+  ],
+  "jam_fratricide": [
+   49,
+   1.0
+  ],
+  "jam_links": [
+   24,
+   1.0
+  ],
+  "jam_protected": [
+   24,
+   1.0
+  ],
+  "last_seen": [
+   45,
+   1.0
+  ],
+  "locate": [
+   50,
+   0.754
+  ],
+  "locate_two_sensors": [
+   50,
+   0.724
+  ],
+  "los_check": [
+   50,
+   0.96
+  ],
+  "near_object_ambiguous": [
+   23,
+   0.693
+  ],
+  "nearest_drone": [
+   49,
+   0.776
+  ],
+  "noisy_band": [
+   7,
+   1.0
+  ],
+  "pilot_locate": [
+   1,
+   1.0
+  ],
+  "protocol_id": [
+   36,
+   0.917
+  ],
+  "reject_ghosts": [
+   50,
+   0.556
+  ],
+  "rf_ambiguous": [
+   1,
+   1.0
+  ],
+  "suggest_one": [
+   20,
+   1.0
+  ],
+  "suggest_two": [
+   20,
+   1.0
+  ],
+  "swarm_in_zone": [
+   47,
+   1.0
+  ],
+  "swarm_members": [
+   4,
+   0.668
+  ],
+  "tracks_in_band": [
+   50,
+   0.96
+  ],
+  "unknown_track": [
+   24,
+   1.0
+  ],
+  "weak_detect": [
+   4,
+   1.0
+  ],
+  "weak_df": [
+   10,
+   1.0
+  ],
+  "which_zone": [
+   50,
+   1.0
+  ],
+  "zone_incursion": [
+   74,
+   0.911
+  ],
+  "zone_incursion_ambiguous": [
+   9,
+   1.0
+  ]
+ },
+ "model_val": "runs/paper/results/P4/sft11_valclean/eval.json",
+ "expert_val": "runs/paper/rl/val/expert_valclean.json"
+}

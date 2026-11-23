@@ -1,0 +1,22 @@
+{
+ "version": "v1",
+ "n": 527,
+ "per_area": {
+  "collateral": 87,
+  "df_ambiguity": 100,
+  "drone_search": 45,
+  "operator_query": 100,
+  "replay": 100,
+  "siting": 68,
+  "unanswerable": 27
+ },
+ "tasks_sha": "8091c9b631c91830",
+ "code_sha": {
+  "tasks/scoring.py": "a8f1b278d38008f3",
+  "harness/verifier.py": "9828ac9cef1f97b0",
+  "harness/answers.py": "1aecb18a56df08b3",
+  "harness/prompt.py": "7ab9ff4d0d8bd299",
+  "tools/registry.py": "dbebc2171e94a5a8"
+ },
+ "source": "data/tasks/test.jsonl (seeds 15-16)"
+}

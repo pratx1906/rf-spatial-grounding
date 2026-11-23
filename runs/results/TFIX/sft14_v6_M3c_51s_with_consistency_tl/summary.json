@@ -1,0 +1,49 @@
+{
+ "task": "TFIX",
+ "model": "sft14",
+ "policy": "model",
+ "set": "v6_M3c_51s",
+ "set_path": "eval/frozen/v6_M3c_51s/tasks.jsonl",
+ "ablation": "with_consistency",
+ "samples": 1,
+ "seed": 0,
+ "n": 300,
+ "score": 0.665,
+ "macro_score": 0.665,
+ "per_area": {
+  "operator_query": {
+   "n": 300,
+   "score": 0.665,
+   "abstain_rate": 0.017
+  }
+ },
+ "abstain_rate": 0.0167,
+ "errors": 0,
+ "no_answer": 7,
+ "end_reasons": {
+  "max_turns": 7,
+  "submitted": 293
+ },
+ "generalisation": {
+  "seen_families": 0.641,
+  "n_seen": 244,
+  "held_out_families": 0.768,
+  "n_held_out": 56
+ },
+ "rfg": {
+  "rfg": 0.665,
+  "n": 300,
+  "ds": null,
+  "n_ds": 0
+ },
+ "wallclock_s": 288.5,
+ "episodes_per_s": 1.0399,
+ "latency_p50_s": 31.035,
+ "latency_p95_s": 57.111,
+ "ci95": [
+  0.5869,
+  0.7409
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 10
+}

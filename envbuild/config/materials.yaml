@@ -1,0 +1,13 @@
+# material_id -> Sionna RT radio material (ENV spec 10). Nominal values from Sionna's ITU-R P.2040 table where
+# available [VERIFY names in the installed sionna-rt]; perturbation ranges feed the world-model variants (main
+# spec S1). calibration_status: literature (none measured yet).
+materials:
+  steel:          {sionna: itu_metal,            thickness_m: 0.02, perturb_pct: 10, scattering: 0.05, note: "tanks, ships, cranes"}
+  corrugated_metal: {sionna: itu_metal,          thickness_m: 0.002, perturb_pct: 15, scattering: 0.25, note: "industrial sheds"}
+  concrete:       {sionna: itu_concrete,         thickness_m: 0.3,  perturb_pct: 30, scattering: 0.2,  note: "jetties, buildings"}
+  brick:          {sionna: itu_brick,            thickness_m: 0.2,  perturb_pct: 30, scattering: 0.2}
+  ground_dry:     {sionna: itu_medium_dry_ground, thickness_m: 1.0, perturb_pct: 40, scattering: 0.3,  note: "yards, apron"}
+  mudflat_wet:    {sionna: itu_wet_ground,       thickness_m: 1.0,  perturb_pct: 40, scattering: 0.3}
+  sea_water:      {sionna: custom_sea_water,     thickness_m: 10.0, perturb_pct: 20, scattering: 0.05,
+                   relative_permittivity: 70.0, conductivity_s_per_m: 5.0,
+                   citation: "ITU-R P.527 sea water, ~2-6 GHz (approximate constant values)"}

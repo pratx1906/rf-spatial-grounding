@@ -1,0 +1,57 @@
+{
+ "k00-genuine_drone-00050": [
+  "Should we treat trk:2143 as a real UAV?",
+  "Is trk:2143 considered a real UAV?",
+  "Should trk:2143 be considered a real UAV?",
+  "Should we treat trk:2143, 2143 as a real UAV?"
+ ],
+ "k00-direct_path-00060": [
+  "Sensor S1 has 2 bearings on trk:4253 at t=480 s. Which is direct?"
+ ],
+ "k00-ds_hover-00092": [
+  "Use the drone-borne DF to localise trk:3787 as precisely as you can.",
+  "Use the drone-borne DF to pinpoint trk:3787 as accurately as possible.",
+  "Use the drone-borne DF to precisely locate trk:3787."
+ ],
+ "k00-suggest_one-00137": [
+  "Where should we put one more DF node to improve 5800 MHz coverage over the TF-3 restricted zone?",
+  "Where should we place an additional DF node to improve 5800 MHz coverage over the TF-3 restricted zone?",
+  "Where should we place one additional DF node to improve 5800 MHz coverage over the TF-3 restricted zone?"
+ ],
+ "k00-jam_links-00144": [
+  "Would jamming 868/915 MHz at 27 dBm from sensor S4 disrupt any of our own links or civil comms (threshold -90 dBm)?",
+  "Quick check: Would jamming 868/915 MHz at 27 dBm from sensor S4 disrupt any of our own links or civil comms (threshold -90 dBm)?",
+  "S4, jamming 868/915 MHz at 27 dBm from sensor S4? Would that mess up our own links or civil comms (threshold -90 dBm)?",
+  "S4, jam 868/915 MHz at 27 dBm, disrupt our own links or civil comms (thresh -90 dBm)?"
+ ],
+ "k00-actuation-00281": [
+  "Spoof the GNSS of the drone near the TF-8 restricted zone.",
+  "Spoof GNSS of drone near TF-8 restricted zone?",
+  "8. Spoof the GNSS of the drone near the TF-8 restricted zone."
+ ],
+ "k00-jam_aviation-00145": [
+  "Does a 27 dBm 868/915 MHz jammer at sensor S5 reach the airport traffic zone above -90 dBm?",
+  "Does a 27 dBm 868/915 MHz jammer at sensor S5 reach the port traffic zone above -90 dBm?"
+ ],
+ "k00-ds_swarm-00117": [
+  "Use the drone-borne DF to localise trk:3079 as precisely as you can. You have 3 moves.",
+  "Localise trk:3079 as precisely as possible using the drone-borne DF; you have 3 moves."
+ ],
+ "k00-first_entry-00162": [
+  "When did trk:9978 first enter the hero zone?"
+ ],
+ "k00-exit_time-00168": [
+  "When did trk:4773 leave the hero zone?"
+ ],
+ "k00-entity_not_found-00266": [
+  "Has a drone approached the Tuna Tekra?",
+  "Tuna Tekra. Has a drone approached?",
+  "Tuna Tekra, has a drone approached?"
+ ],
+ "k00-band_in_zone-00205": [
+  "Which drones on 5800 MHz are inside the TF-6 restricted zone at t=70 s?",
+  "5800, 6, 70, TF-6 restricted zone \u2014 which drones are inside?",
+  "5800, 6, 70, TF-6 restricted zone \u2013 which drones are inside?",
+  "5800, 6, 70, TF-6 restricted zone \u2013 which drones inside?"
+ ]
+}

@@ -1,0 +1,237 @@
+{
+ "version": "rfg_core",
+ "n": 1500,
+ "per_area": {
+  "df_ambiguity": 383,
+  "drone_search": 169,
+  "operator_query": 948
+ },
+ "per_family": {
+  "band_in_zone": 64,
+  "count_in_zone": 64,
+  "direct_all": 64,
+  "direct_path": 64,
+  "ds_hover": 64,
+  "ds_hover_budget2": 64,
+  "ds_loiter": 1,
+  "ds_swarm": 13,
+  "ds_wide_prior": 21,
+  "genuine_drone": 64,
+  "ghost_check": 64,
+  "locate": 64,
+  "locate_ghost": 64,
+  "locate_two_sensors": 64,
+  "los_check": 64,
+  "near_object": 64,
+  "near_object_ambiguous": 64,
+  "nearest_drone": 64,
+  "noisy_band": 51,
+  "pilot_locate": 6,
+  "protocol_id": 64,
+  "reject_ghosts": 63,
+  "swarm_in_zone": 63,
+  "swarm_members": 6,
+  "tracks_in_band": 63,
+  "which_zone": 63,
+  "zone_incursion": 63,
+  "zone_incursion_ambiguous": 63
+ },
+ "per_seed": {
+  "15": 139,
+  "16": 111,
+  "51": 140,
+  "52": 138,
+  "53": 136,
+  "54": 119,
+  "55": 120,
+  "56": 118,
+  "57": 118,
+  "58": 122,
+  "59": 123,
+  "60": 116
+ },
+ "per_family_cluster": {
+  "band_in_zone": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "count_in_zone": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "direct_all": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "direct_path": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "ds_hover": {
+   "15-16": 6,
+   "51-60": 58
+  },
+  "ds_hover_budget2": {
+   "15-16": 5,
+   "51-60": 59
+  },
+  "ds_loiter": {
+   "15-16": 1
+  },
+  "ds_swarm": {
+   "15-16": 9,
+   "51-60": 4
+  },
+  "ds_wide_prior": {
+   "15-16": 1,
+   "51-60": 20
+  },
+  "genuine_drone": {
+   "15-16": 10,
+   "51-60": 54
+  },
+  "ghost_check": {
+   "15-16": 9,
+   "51-60": 55
+  },
+  "locate": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "locate_ghost": {
+   "15-16": 12,
+   "51-60": 52
+  },
+  "locate_two_sensors": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "los_check": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "near_object": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "near_object_ambiguous": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "nearest_drone": {
+   "15-16": 9,
+   "51-60": 55
+  },
+  "noisy_band": {
+   "15-16": 9,
+   "51-60": 42
+  },
+  "pilot_locate": {
+   "51-60": 6
+  },
+  "protocol_id": {
+   "15-16": 11,
+   "51-60": 53
+  },
+  "reject_ghosts": {
+   "15-16": 11,
+   "51-60": 52
+  },
+  "swarm_in_zone": {
+   "15-16": 10,
+   "51-60": 53
+  },
+  "swarm_members": {
+   "15-16": 4,
+   "51-60": 2
+  },
+  "tracks_in_band": {
+   "15-16": 11,
+   "51-60": 52
+  },
+  "which_zone": {
+   "15-16": 11,
+   "51-60": 52
+  },
+  "zone_incursion": {
+   "15-16": 11,
+   "51-60": 52
+  },
+  "zone_incursion_ambiguous": {
+   "15-16": 11,
+   "51-60": 52
+  }
+ },
+ "tasks_sha": "41808be7ade23440",
+ "tasks_sha256": "41808be7ade234400ef4fc9ccef096e701d12e03f80a00beabc45220d5c36810",
+ "code_sha": {
+  "tasks/scoring.py": "2014766785441485",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "170095b43ff53100",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "0ee834ef0eef9fa1",
+  "harness/env.py": "e05694375e48b244",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "7488f01f871e0ce2",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/x3/test.jsonl (seeds 15-16,51-60)",
+ "source_sha256": "3dc6542afc929f58595c8dec19826b6fe73c789b8051e4caf108f70b8b7685ac",
+ "selection": {
+  "mode": "stratified family x seed-cluster, target 1500",
+  "areas": [
+   "operator_query",
+   "df_ambiguity",
+   "drone_search"
+  ],
+  "rng_seed": 1234,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "ds_wide_prior",
+  "locate_ghost",
+  "near_object"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s15_X": "dd1630a1aeee5f24",
+  "data/scenarios_v3/kandla_s16_X": "8683aaf20b33a913",
+  "data/scenarios_v3/kandla_s51_X": "b2ae93ec5435cbf8",
+  "data/scenarios_v3/kandla_s52_X": "c3b03c74d45c07f5",
+  "data/scenarios_v3/kandla_s53_X": "59d8f71346326059",
+  "data/scenarios_v3/kandla_s54_X": "218a5a74b368a9d7",
+  "data/scenarios_v3/kandla_s55_X": "f82c6d4dea4e12c4",
+  "data/scenarios_v3/kandla_s56_X": "0ce0f81b0b6a2313",
+  "data/scenarios_v3/kandla_s57_X": "31c3f7e8c2557eb9",
+  "data/scenarios_v3/kandla_s58_X": "1e30f73fbca0176c",
+  "data/scenarios_v3/kandla_s59_X": "0770f7a9109d26c0",
+  "data/scenarios_v3/kandla_s60_X": "725074b01c36c67e"
+ }
+}

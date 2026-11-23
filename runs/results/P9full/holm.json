@@ -1,0 +1,56 @@
+{
+ "means_v6": {
+  "rl_b3": 0.8104,
+  "rl_b3s1": 0.7869,
+  "rl_a3": 0.5474,
+  "sft11": 0.8164,
+  "sft14": 0.8562,
+  "qwen3-4b": 0.2687,
+  "qwen3-8b": 0.353,
+  "qwen3-4b-awq": 0.2599
+ },
+ "contrasts": {
+  "i_bestRL_vs_bestSFT_v6": {
+   "a": "rl_b3",
+   "b": "sft14",
+   "n": 700,
+   "clusters": 12,
+   "delta": -0.0458,
+   "ci95": [
+    -0.0647,
+    -0.0272
+   ],
+   "p": 0.0001,
+   "p_holm": 0.0003,
+   "reject_0.05": true
+  },
+  "ii_bestRL_vs_bestPrompted_v6": {
+   "a": "rl_b3",
+   "b": "qwen3-8b",
+   "n": 700,
+   "clusters": 12,
+   "delta": 0.4574,
+   "ci95": [
+    0.4102,
+    0.5012
+   ],
+   "p": 0.0001,
+   "p_holm": 0.0003,
+   "reject_0.05": true
+  },
+  "iii_twinfail_with_minus_without_consistency_M2c": {
+   "model": "rl_b3",
+   "n": 248,
+   "clusters": 2,
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p": 1.0,
+   "p_holm": 1.0,
+   "reject_0.05": false
+  }
+ },
+ "method": "cluster bootstrap over scenario seeds (10000), two-sided, Holm over 3"
+}

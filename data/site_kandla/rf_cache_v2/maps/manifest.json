@@ -1,0 +1,43 @@
+{
+ "ensemble": "nominal + rf_cache_v2/ensemble/*",
+ "D": "D-031",
+ "ghost_deg": 5.0,
+ "summary": {
+  "sub_ghz_868_915": {
+   "members_per_sensor": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "site_ghost_risk_mean": 0.112,
+   "site_trust_mean": 0.926,
+   "cells_covered": 210129
+  },
+  "ism_2400": {
+   "members_per_sensor": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "site_ghost_risk_mean": 0.112,
+   "site_trust_mean": 0.926,
+   "cells_covered": 210127
+  },
+  "ism_5800": {
+   "members_per_sensor": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "site_ghost_risk_mean": 0.112,
+   "site_trust_mean": 0.926,
+   "cells_covered": 210125
+  }
+ }
+}

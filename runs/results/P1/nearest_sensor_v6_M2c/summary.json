@@ -1,0 +1,53 @@
+{
+ "task": "P1",
+ "model": "nearest_sensor",
+ "policy": "nearest_sensor",
+ "set": "v6_M2c",
+ "set_path": "eval/frozen/v6_M2c/tasks.jsonl",
+ "ablation": "none",
+ "samples": 1,
+ "seed": 0,
+ "n": 791,
+ "score": 0.019,
+ "macro_score": 0.031,
+ "per_area": {
+  "df_ambiguity": {
+   "n": 243,
+   "score": 0.062,
+   "abstain_rate": 0.584
+  },
+  "operator_query": {
+   "n": 548,
+   "score": 0.0,
+   "abstain_rate": 1.0
+  }
+ },
+ "abstain_rate": 0.8723,
+ "errors": 0,
+ "no_answer": 0,
+ "end_reasons": {
+  "submitted": 791
+ },
+ "generalisation": {
+  "seen_families": 0.016,
+  "n_seen": 691,
+  "held_out_families": 0.037,
+  "n_held_out": 100
+ },
+ "rfg": {
+  "rfg": 0.01904677623261694,
+  "n": 791,
+  "ds": null,
+  "n_ds": 0
+ },
+ "wallclock_s": 90.3,
+ "episodes_per_s": 8.7597,
+ "latency_p50_s": 0.085,
+ "latency_p95_s": 0.176,
+ "ci95": [
+  0.0078,
+  0.0294
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 2
+}

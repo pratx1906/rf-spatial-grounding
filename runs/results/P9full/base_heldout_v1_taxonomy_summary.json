@@ -1,0 +1,61 @@
+{
+ "episodes": 191,
+ "failed": 163,
+ "class_share": {
+  "budget_exhausted": 0.423,
+  "parse_format": 0.276,
+  "wrong_siting": 0.147,
+  "wrong_event": 0.11,
+  "position_off": 0.012,
+  "ghost_picked": 0.012,
+  "verifier_rejected": 0.006,
+  "wrong_intent": 0.006,
+  "wrong_track": 0.006
+ },
+ "class_count": {
+  "budget_exhausted": 69,
+  "parse_format": 45,
+  "wrong_siting": 24,
+  "wrong_event": 18,
+  "position_off": 2,
+  "ghost_picked": 2,
+  "verifier_rejected": 1,
+  "wrong_intent": 1,
+  "wrong_track": 1
+ },
+ "by_area": {
+  "drone_search": {
+   "budget_exhausted": 15,
+   "parse_format": 2,
+   "position_off": 1,
+   "verifier_rejected": 1,
+   "wrong_intent": 1
+  },
+  "collateral": {
+   "parse_format": 2
+  },
+  "df_ambiguity": {
+   "budget_exhausted": 36,
+   "ghost_picked": 2,
+   "position_off": 1
+  },
+  "replay": {
+   "wrong_event": 18,
+   "parse_format": 5,
+   "budget_exhausted": 2
+  },
+  "operator_query": {
+   "parse_format": 32,
+   "budget_exhausted": 4,
+   "wrong_track": 1
+  },
+  "siting": {
+   "wrong_siting": 24,
+   "budget_exhausted": 12,
+   "parse_format": 4
+  }
+ },
+ "eval": "runs/paper/results/P1/base_heldout_v1/eval.json",
+ "set": "eval/frozen/heldout_v1/tasks.jsonl",
+ "thr": 0.8
+}

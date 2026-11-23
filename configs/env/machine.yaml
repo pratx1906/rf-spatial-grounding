@@ -1,0 +1,33 @@
+# Single-machine mode (SPEC 2.5). Measured values live in docs/ENV_REPORT.md.
+machine:
+  mode: single                      # single | overflow_enabled (H200 jobs via data/_incoming/)
+  gpu_lock: .gpu_lock
+  min_free_disk_fraction: 0.15
+  keep_checkpoints: {best: 1, latest: 3}
+  vram_target_peak_gb: 22
+  wsl:
+    distro: Ubuntu-24.04
+    memory_gb: 40                   # %USERPROFILE%\.wslconfig
+    swap_gb: 12
+  paths:                            # relative to repo root; everything stays inside the project folder
+    data: data
+    runs: runs
+    venv_linux: .venv-wsl
+    hf_home: .cache/huggingface
+
+# Default precompute sizing for scripts/disk_budget.py (single-machine scale-down defaults).
+precompute:
+  extent_m: [3000, 3000]            # core zone only
+  coarse_grid_m: 20
+  fine_grid_m: 10
+  fine_area_fraction: 0.15          # fine grid only near sensors and protected assets
+  heights: 3
+  sensors: 6
+  bands: 4
+  variants: 8                       # S1/S2 world variants (world_cache/)
+  backends_path_loss: 5             # freespace, tworay, itu_corr, itm, p452
+  backends_aoa: 2                   # nominal (sionna_rt or stub), surrogate
+  aoa_top_k: 8
+  compression_ratio: 2.0            # zarr + zstd, conservative
+  lora_ckpt_gb: 0.6                 # adapter + optimizer state
+  traces_gb: 20

@@ -1,0 +1,1 @@
+{"iter": 1, "val_score": 0.7583, "adapter": "checkpoints/sft_v11", "rule": "best val mean score, ties to the earlier iteration"}

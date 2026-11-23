@@ -1,0 +1,45 @@
+{
+  "origin": {
+    "lat": 23.032732096100432,
+    "lon": 70.2124771559827,
+    "alt_m": 0.0,
+    "datum": "WGS-84 ellipsoid",
+    "frame": "local ENU tangent plane at origin; bearings relative to true north"
+  },
+  "counts": {
+    "tank": 263,
+    "tank_farm": 8,
+    "jetty": 8,
+    "substation": 4,
+    "building": 129,
+    "silo": 4,
+    "road": 2,
+    "ship": 4
+  },
+  "zones": [
+    "hero_zone",
+    "kict",
+    "kandla_creek",
+    "sathsaida_bet",
+    "tank_farm_tf1_restricted",
+    "tank_farm_tf2_restricted",
+    "tank_farm_tf3_restricted",
+    "tank_farm_tf4_restricted",
+    "tank_farm_tf5_restricted",
+    "tank_farm_tf6_restricted",
+    "tank_farm_tf7_restricted",
+    "tank_farm_tf8_restricted",
+    "jetty_restricted",
+    "perimeter",
+    "ixy_atz"
+  ],
+  "sensors": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "D1"
+  ],
+  "osm_manifest": "9d02100844c36d9e0722135ab8558343941d2fcdc50052674d8b5d8030e54f92"
+}

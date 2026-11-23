@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout pipeline</title>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root {
+  --void: #000; --panel: #0f0f0f; --raise: #171717; --rule: #2a2a2a; --rule2: #3a3a3a;
+  --ash: #9a958c; --faint: #6b675f; --bone: #ece8e1;
+  --sodium: #f2a33a; --signal: #ff5a1f; --ok: #7cc99a; --bad: #ff5a5a; --info: #7db0cc; --block: #c08cf0;
+  --mono: "B612", Consolas, "Cascadia Mono", monospace;
+  --head: "Archivo", "Arial Narrow", sans-serif;
+  --text: "B612", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--void); color: var(--bone); font: 13px/1.45 var(--text); }
+a { color: var(--sodium); }
+.wrap { max-width: 1880px; margin: 0 auto; padding: 14px 18px 30px; }
+.top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+.mark { width: 28px; height: 28px; flex: none; }
+h1 { font: 600 20px/1.1 var(--head); margin: 0; letter-spacing: .6px; text-transform: uppercase; }
+h1 small { font: 400 12px var(--text); color: var(--ash); text-transform: none; letter-spacing: 0; margin-left: 10px; }
+.clock { margin-left: auto; color: var(--ash); font: 12px var(--mono); }
+.conn { font: 12px var(--mono); padding: 3px 10px; border: 1px solid var(--rule2); border-radius: 3px; color: var(--ok); }
+.conn.bad { color: var(--bad); border-color: var(--bad); }
+
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px 12px; min-width: 0; }
+.panel > header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.panel h2 { font: 600 13px var(--head); text-transform: uppercase; letter-spacing: 1.2px; color: var(--sodium); margin: 0; }
+.panel h2 .sub { color: var(--ash); text-transform: none; letter-spacing: 0; font: 12px var(--text); margin-left: 6px; }
+.age { margin-left: auto; font: 11px var(--mono); color: var(--faint); white-space: nowrap; }
+.age.warn { color: var(--sodium); } .age.stale { color: var(--bad); font-weight: 700; }
+
+/* overall */
+.overall { display: grid; grid-template-columns: 300px 230px 1fr; gap: 0; margin-top: 12px; padding: 0; }
+.overall > div { padding: 12px 16px; position: relative; }
+.overall > div + div { border-left: 1px solid var(--rule); }
+.overall label { display: block; color: var(--ash); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.big { font: 600 40px/1.05 var(--head); font-variant-numeric: tabular-nums; color: var(--bone); }
+.big small { font: 400 15px var(--text); color: var(--ash); margin-left: 6px; }
+.segbar { display: flex; gap: 2px; height: 10px; margin-top: 8px; }
+.segbar > span { position: relative; background: #222; border-radius: 1px; overflow: hidden; }
+.segbar > span i { position: absolute; inset: 0 auto 0 0; display: block; }
+.headline { font: 15px/1.4 var(--text); color: var(--bone); margin-top: 4px; word-break: break-word; }
+.overall .age { position: absolute; right: 12px; top: 10px; }
+
+/* layout */
+.grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 12px; margin-top: 12px; align-items: start; }
+.col { display: grid; gap: 12px; min-width: 0; }
+@media (min-width: 1700px) { .grid { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); } }
+@media (max-width: 1100px) { .grid { grid-template-columns: 1fr; } .overall { grid-template-columns: 1fr 1fr; } .overall > div:last-child { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--rule); } }
+
+/* queue */
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th { color: var(--ash); font-weight: 400; font-size: 11px; text-transform: uppercase; letter-spacing: .6px; text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--rule2); white-space: nowrap; }
+td { padding: 6px 6px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr.sel td { background: #1d1408; }
+#queue tbody tr { cursor: pointer; }
+#queue tbody tr:hover td { background: #141414; }
+.tid { font: 700 13px var(--mono); color: var(--sodium); }
+.ttl { color: var(--bone); }
+.note { color: var(--ash); font-size: 12px; margin-top: 2px; word-break: break-word; }
+.deps { color: var(--faint); font-size: 11px; }
+.pill { display: inline-block; font: 700 11px var(--mono); text-transform: uppercase; padding: 1px 7px; border-radius: 2px; border: 1px solid; letter-spacing: .5px; }
+.s-queued { color: var(--ash); border-color: #444; }
+.s-running { color: #000; background: var(--sodium); border-color: var(--sodium); }
+.s-done { color: var(--ok); border-color: #2f5a3d; }
+.s-failed { color: #fff; background: #b3261e; border-color: #b3261e; }
+.s-blocked { color: var(--block); border-color: #5b3f78; }
+.bar { height: 6px; background: #222; border-radius: 1px; overflow: hidden; width: 100%; min-width: 60px; margin-top: 5px; }
+.bar i { display: block; height: 100%; background: var(--sodium); }
+.bar.done i { background: var(--ok); } .bar.failed i { background: var(--bad); }
+.num { font-family: var(--mono); white-space: nowrap; }
+.dim { color: var(--faint); }
+.gantt { margin-top: 10px; }
+.gantt svg { width: 100%; display: block; }
+
+/* task detail */
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.tabs button { font: 12px var(--mono); background: var(--raise); color: var(--ash); border: 1px solid var(--rule2); border-radius: 2px; padding: 3px 9px; cursor: pointer; }
+.tabs button.on { color: #000; background: var(--sodium); border-color: var(--sodium); }
+.tabs button.run::after { content: " ●"; color: var(--signal); }
+.tabs button.on.run::after { color: #000; }
+.detail { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.4fr); gap: 12px; }
+@media (max-width: 1100px) { .detail { grid-template-columns: 1fr; } }
+.kv { font: 12px var(--mono); }
+.kv div { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dotted var(--rule); padding: 3px 0; }
+.kv span:first-child { color: var(--ash); } .kv span:last-child { text-align: right; word-break: break-all; }
+h3 { font: 600 11px var(--head); text-transform: uppercase; letter-spacing: 1px; color: var(--ash); margin: 10px 0 4px; }
+h3:first-child { margin-top: 0; }
+ul.res { margin: 0; padding-left: 16px; font-size: 12px; }
+ul.res li { margin: 2px 0; }
+.logbox { background: #050505; border: 1px solid var(--rule); height: 340px; overflow: auto; padding: 6px 8px; font: 11.5px/1.45 var(--mono); color: #cfc9bf; white-space: pre-wrap; word-break: break-all; }
+.logbox .e { color: #ff8a7a; } .logbox .w { color: var(--sodium); } .logbox .ts { color: var(--faint); }
+.loghead { display: flex; gap: 10px; align-items: baseline; font-size: 12px; color: var(--ash); margin-bottom: 4px; }
+.loghead a { margin-left: auto; }
+
+/* hardware */
+.hw { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tile { background: var(--raise); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; min-width: 0; }
+.tile label { color: var(--ash); font-size: 11px; text-transform: uppercase; letter-spacing: .8px; display: flex; }
+.tile label .age { margin-left: auto; }
+.tile .v { font: 600 24px/1.1 var(--head); font-variant-numeric: tabular-nums; }
+.tile .v small { font: 400 12px var(--text); color: var(--ash); margin-left: 4px; }
+.tile .s { color: var(--ash); font: 11px var(--mono); margin-top: 2px; }
+.tile canvas { width: 100%; height: 34px; display: block; margin-top: 6px; }
+.tile.wide { grid-column: 1 / -1; }
+
+/* processes, ledger */
+.procs td { font: 11.5px var(--mono); }
+.procs td.cmd { color: var(--ash); word-break: break-all; }
+.procs td:not(.cmd):not(.empty) { white-space: nowrap; }
+pre.led { margin: 0; white-space: pre-wrap; word-break: break-word; font: 11.5px/1.5 var(--mono); color: #cfc9bf; max-height: 320px; overflow: auto; }
+
+/* training */
+.full { margin-top: 12px; }
+.trgrid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 12px; }
+@media (max-width: 1100px) { .trgrid { grid-template-columns: 1fr; } }
+.chart { position: relative; background: #070707; border: 1px solid var(--rule); }
+.chart canvas { width: 100%; height: 260px; display: block; }
+.legend { position: absolute; top: 6px; right: 10px; display: flex; gap: 14px; font-size: 11px; color: var(--ash); }
+.legend b { width: 14px; height: 3px; display: inline-block; margin-right: 5px; vertical-align: middle; }
+.empty { color: var(--faint); font-size: 12px; padding: 6px 0; }
+.results td { font-size: 12.5px; }
+:focus-visible { outline: 2px solid var(--sodium); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <svg class="mark" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="15.5" fill="none" stroke="#3a3a3a" stroke-width="1.4"/>
+      <circle cx="17" cy="17" r="9.5" fill="none" stroke="#3a3a3a" stroke-width="1.2"/>
+      <path d="M17 17 L17 2.5" stroke="#f2a33a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17 17 L28.5 9" stroke="#ff5a1f" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 2.4"/>
+      <circle cx="17" cy="17" r="2.4" fill="#ece8e1"/>
+    </svg>
+    <h1>SceneScout pipeline<small id="progTitle">RF convergence + v3 data (plan 2026-10-23)</small></h1>
+    <span class="clock" id="clock"></span>
+    <span class="conn" id="conn">connecting</span>
+  </div>
+
+  <section class="panel overall" aria-label="Overall">
+    <div><label>Plan progress (weighted by estimate)</label><div class="big" id="ovPct">–</div>
+      <div class="segbar" id="segbar"></div></div>
+    <div><label>Plan finishes around</label><div class="big" id="ovEta">–</div><div class="note" id="ovEtaSub"></div></div>
+    <div><label>Now</label><div class="headline" id="ovHead">–</div><span class="age" id="age-tasks"></span></div>
+  </section>
+
+  <div class="grid">
+    <div class="col">
+      <section class="panel">
+        <header><h2>Queue<span class="sub">click a row for its log</span></h2><span class="age" id="age-queue"></span></header>
+        <table id="queue"><thead><tr><th>Task</th><th>What</th><th>State</th><th style="width:120px">Progress</th>
+          <th>Started</th><th>Elapsed</th><th>ETA</th></tr></thead><tbody></tbody></table>
+        <div class="gantt" id="gantt"></div>
+      </section>
+
+      <section class="panel">
+        <header><h2>Task <span id="dTask">–</span><span class="sub" id="dTitle"></span></h2><span class="age" id="age-log"></span></header>
+        <div class="tabs" id="tabs"></div>
+        <div class="detail">
+          <div>
+            <h3>Metrics</h3><div class="kv" id="dMetrics"></div>
+            <h3>Results</h3><ul class="res" id="dResults"></ul>
+          </div>
+          <div>
+            <div class="loghead"><span id="logInfo">log</span><label><input type="checkbox" id="follow" checked> follow</label><a id="logLink" href="#" target="_blank" rel="noopener">full log</a></div>
+            <div class="logbox" id="log" tabindex="0" aria-label="Task log"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel">
+        <header><h2>Hardware<span class="sub">every 3 s, 10 min history</span></h2><span class="age" id="age-hw"></span></header>
+        <div class="hw">
+          <div class="tile"><label>GPU util</label><div class="v" id="gUtil">–</div><div class="s" id="gSub"></div><canvas id="spG"></canvas></div>
+          <div class="tile"><label>VRAM</label><div class="v" id="gMem">–</div><div class="s" id="gMemSub"></div><canvas id="spV"></canvas></div>
+          <div class="tile"><label>Windows CPU</label><div class="v" id="cpu">–</div><div class="s" id="ram"></div><canvas id="spC"></canvas></div>
+          <div class="tile"><label>WSL<span class="age" id="age-wsl"></span></label><div class="v" id="wslLoad">–</div><div class="s" id="wslMem"></div>
+            <div class="s" id="disk" style="margin-top:8px"></div></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <header><h2>Job processes</h2><span class="age" id="age-procs"></span></header>
+        <table class="procs"><thead><tr><th>Where</th><th>PID</th><th>Elapsed</th><th>RSS</th><th>Command</th></tr></thead><tbody id="procs"></tbody></table>
+      </section>
+
+      <section class="panel">
+        <header><h2>Ledger tail<span class="sub">last 15 lines</span></h2><span class="age" id="age-led"></span></header>
+        <pre class="led" id="ledger"></pre>
+      </section>
+    </div>
+  </div>
+
+  <section class="panel full" id="secQueue" hidden>
+    <header><h2>GPU queue<span class="sub" id="qSub">runs/paper/queue, lexical order, one job at a time</span></h2><span class="age" id="age-gq"></span></header>
+    <table class="results"><thead><tr><th>Job</th><th>Task</th><th>State</th><th>Queued</th><th>Started</th><th>Ended</th>
+      <th>Wall</th><th>Peak VRAM</th><th>Episodes/s</th><th>Exit</th></tr></thead><tbody id="gq"></tbody></table>
+  </section>
+
+  <section class="panel full" id="secGrpo" hidden>
+    <header><h2>GRPO<span class="sub" id="gSubT">runs/paper/results/P4*/**/log.jsonl</span></h2><span class="age" id="age-grpo"></span></header>
+    <div class="tabs" id="grpoTabs"></div>
+    <div class="trgrid" style="grid-template-columns:1fr 1fr">
+      <div class="chart"><div class="legend"><span><b style="background:#f2a33a"></b>reward mean</span></div><canvas id="cvR"></canvas></div>
+      <div class="chart"><div class="legend"><span><b style="background:#7db0cc"></b>val score</span></div><canvas id="cvV"></canvas></div>
+      <div class="chart"><div class="legend"><span><b style="background:#c08cf0"></b>abstain rate</span></div><canvas id="cvA"></canvas></div>
+      <div class="chart"><div class="legend"><span><b style="background:#7cc99a"></b>KL</span></div><canvas id="cvK"></canvas></div>
+    </div>
+    <div class="empty" id="grpoEmpty"></div>
+  </section>
+
+  <section class="panel full" id="secRes" hidden>
+    <header><h2>Results<span class="sub">runs/paper/results/**/summary.json</span></h2><span class="age" id="age-res"></span></header>
+    <table class="results"><thead><tr><th>Task</th><th>Model</th><th>Set</th><th>Ablation</th><th>n</th><th>Score</th><th>95% CI</th>
+      <th>Macro</th><th>Abstain</th><th>Run</th></tr></thead><tbody id="resRows"></tbody></table>
+  </section>
+
+  <section class="panel full">
+    <header><h2>End results<span class="sub">from each task's status results</span></h2></header>
+    <div id="results"></div>
+  </section>
+
+  <section class="panel full">
+    <header><h2>Training / eval<span class="sub" id="trSub"></span></h2><span class="age" id="age-train"></span></header>
+    <div class="trgrid">
+      <div>
+        <div class="tabs" id="runTabs"></div>
+        <div class="chart" id="chartWrap"><div class="legend"><span><b style="background:#f2a33a"></b>train loss (5-step mean)</span>
+          <span><b style="background:#7db0cc;height:7px;width:7px;border-radius:50%"></b>val loss</span></div><canvas id="cv"></canvas></div>
+        <div class="empty" id="trEmpty"></div>
+      </div>
+      <div>
+        <h3>Eval running</h3><div id="evRun" class="kv"></div>
+        <h3>Eval outputs written today</h3>
+        <table class="results"><thead><tr><th>File</th><th>Written</th><th>n</th><th>Score</th><th>Macro</th></tr></thead><tbody id="evals"></tbody></table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+"use strict";
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const C = { sod: "#f2a33a", sig: "#ff5a1f", ok: "#7cc99a", bad: "#ff5a5a", info: "#7db0cc", grid: "#262626", ash: "#9a958c", bone: "#ece8e1", block: "#c08cf0", q: "#555" };
+const STC = { queued: C.q, running: C.sod, done: C.ok, failed: C.bad, blocked: C.block };
+const now = () => Date.now() / 1000;
+const ages = {};            // panel id -> [epoch seconds of data, expected period s, prefix]
+let T = null, HW = null, TR = null, sel = null, selRun = null, userPicked = false;
+
+function clock(t, withDay) {
+  if (!t) return "–";
+  const d = new Date(t * 1000), today = new Date();
+  const hm = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+  if (!withDay && d.toDateString() === today.toDateString()) return hm;
+  return d.toLocaleDateString([], { weekday: "short" }) + " " + hm;
+}
+function dur(s) {
+  if (s == null || !isFinite(s)) return "–";
+  s = Math.max(0, Math.round(s));
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
+  return h ? `${h} h ${String(m).padStart(2, "0")} m` : m ? `${m} m ${String(s % 60).padStart(2, "0")} s` : `${s} s`;
+}
+function setAge(id, t, period, prefix = "data") { ages[id] = [t, period, prefix]; }
+function paintAges() {
+  for (const [id, [t, p, prefix]] of Object.entries(ages)) {
+    const el = document.getElementById(id); if (!el) continue;
+    if (!t) { el.textContent = `${prefix}: none`; el.className = "age"; continue; }
+    const a = now() - t;
+    el.textContent = `${prefix} ${dur(a)} old`;
+    el.className = "age" + (p && a > 10 * p ? " stale" : p && a > 3 * p ? " warn" : "");
+  }
+  $("#clock").textContent = new Date().toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+}
+
+async function get(url) {
+  const r = await fetch(url, { cache: "no-store" });
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+function conn(ok) { const c = $("#conn"); c.textContent = ok ? "live" : "server not reachable"; c.className = "conn" + (ok ? "" : " bad"); }
+
+/* ---------------- tasks ---------------- */
+function renderTasks() {
+  const d = T;
+  setAge("age-tasks", d.t, 5); setAge("age-queue", d.t, 5); setAge("age-led", d.ledger_mtime, 0, "written");
+  $("#ovPct").innerHTML = `${d.pct.toFixed(1)}<small>%</small>`;
+  const plan = d.tasks.filter((r) => r.in_plan);
+  $("#segbar").innerHTML = plan.map((r) => {
+    const p = r.state === "done" ? 100 : r.pct;
+    return `<span style="flex:${r.weight_h}" title="${esc(r.task)} ${esc(r.title)}: ${esc(r.state)} ${p.toFixed(0)}% (${r.weight_h} h est.)"><i style="width:${p}%;background:${STC[r.state] || C.q}"></i></span>`;
+  }).join("");
+  $("#ovEta").textContent = clock(d.finish);
+  const rest = d.finish - d.t;
+  $("#ovEtaSub").textContent = rest > 60 ? `in ${dur(rest)} (running tasks: their ETA; queued: plan estimates after dependencies)` : "all done";
+  $("#ovHead").textContent = d.headline;
+  const tb = $("#queue tbody");
+  tb.innerHTML = d.tasks.map((r) => {
+    const el = r.started ? ((r.ended || (r.state === "running" ? d.t : r.updated)) - r.started) : null;
+    let eta = "–", etaSub = "";
+    if (r.state === "done") { eta = `<span class="dim">${clock(r.ended)}</span>`; etaSub = "finished"; }
+    else if (r.state === "running") { eta = r.proj_finish ? clock(r.proj_finish) : "–"; etaSub = r.proj_finish ? `${dur(r.proj_finish - d.t)} left, ${r.eta_src}` : "no ETA set"; }
+    else if (r.proj_finish) { eta = `<span class="dim">~${clock(r.proj_finish)}</span>`; etaSub = `start ~${clock(r.proj_start)}`; }
+    const deps = r.deps && r.deps.length ? `after ${r.deps.join(", ")}` : (r.in_plan ? "no dependencies" : "");
+    const p = r.state === "done" ? 100 : r.pct;
+    return `<tr data-task="${esc(r.task)}" class="${r.task === sel ? "sel" : ""}">
+      <td class="tid">${esc(r.task)}</td>
+      <td><div class="ttl">${esc(r.title)}</div>${r.note ? `<div class="note">${esc(r.note)}</div>` : ""}<div class="deps">${esc(deps)}${r.weight_h ? `, est. ${r.weight_h} h` : ""}</div></td>
+      <td><span class="pill s-${esc(r.state)}">${esc(r.state)}</span></td>
+      <td class="num">${p.toFixed(0)}%<div class="bar ${esc(r.state)}"><i style="width:${p}%"></i></div></td>
+      <td class="num">${r.started ? clock(r.started) : "–"}</td>
+      <td class="num">${el != null ? dur(el) : "–"}</td>
+      <td class="num">${eta}<div class="note">${esc(etaSub)}</div></td></tr>`;
+  }).join("");
+  tb.querySelectorAll("tr").forEach((tr) => tr.addEventListener("click", () => { userPicked = true; pick(tr.dataset.task); }));
+  drawGantt();
+  // tabs
+  if (!userPicked || !sel) {
+    const run = d.tasks.find((r) => r.state === "running" && r.in_plan) || d.tasks.find((r) => r.state === "running");
+    const want = run ? run.task : (sel || (d.tasks.find((r) => r.in_plan && r.state !== "done") || d.tasks[0] || {}).task);
+    if (want && want !== sel) sel = want;
+  }
+  $("#tabs").innerHTML = d.tasks.map((r) => `<button class="${r.task === sel ? "on" : ""} ${r.state === "running" ? "run" : ""}" data-task="${esc(r.task)}">${esc(r.task)}</button>`).join("");
+  $("#tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { userPicked = true; pick(b.dataset.task); }));
+  renderDetail();
+  // processes + ledger + results
+  const pr = d.procs || [];
+  $("#procs").innerHTML = pr.length ? pr.map((p) => `<tr><td>${esc(p.where)}</td><td>${esc(p.pid)}</td><td>${dur(p.elapsed_s)}</td><td>${p.rss_gb != null ? p.rss_gb.toFixed(1) + " GB" : "–"}</td><td class="cmd">${esc(p.cmd)}</td></tr>`).join("")
+    : `<tr><td colspan="5" class="empty">No job processes (build_scenarios, precompute, Sionna, vLLM, Blender, eval.run, train.sft ...) running.</td></tr>`;
+  setAge("age-procs", Math.min(d.wsl_t || 0, d.win_t || 0) || null, 15, "WSL/Win list");
+  $("#ledger").textContent = d.ledger.length ? d.ledger.join("\n") : "LEDGER.md not found"; $("#ledger").scrollTop = 1e9;
+  const res = d.tasks.filter((r) => (r.results || []).length);
+  $("#results").innerHTML = res.length ? `<table class="results"><thead><tr><th style="width:70px">Task</th><th style="width:240px">What</th><th>Results</th></tr></thead><tbody>` +
+    res.map((r) => `<tr><td class="tid">${esc(r.task)}</td><td>${esc(r.title)} <span class="pill s-${esc(r.state)}">${esc(r.state)}</span></td><td><ul class="res">${r.results.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></td></tr>`).join("") + "</tbody></table>"
+    : `<div class="empty">No results yet. They appear here as tasks record them (pipeline_status.py result &lt;task&gt; "...").</div>`;
+}
+
+function drawGantt() {
+  const d = T, rows = d.tasks.filter((r) => r.in_plan);
+  const st = (r) => r.started || r.proj_start || d.t, fi = (r) => r.ended || r.proj_finish || d.t;
+  const t0 = Math.min(d.t, ...rows.map(st)), t1 = Math.max(d.t + 600, ...rows.map(fi));
+  const W = $("#gantt").clientWidth || 700, rowH = 14, L = 44, H = rows.length * rowH + 22;
+  const X = (t) => L + (W - L - 8) * (t - t0) / (t1 - t0);
+  let s = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="Projected timeline">`;
+  const span = t1 - t0, stepH = span > 36 * 3600 ? 6 : span > 12 * 3600 ? 3 : span > 4 * 3600 ? 1 : 0.5;
+  const first = Math.ceil(t0 / (stepH * 3600)) * stepH * 3600;
+  for (let t = first; t <= t1; t += stepH * 3600) {
+    s += `<line x1="${X(t)}" x2="${X(t)}" y1="0" y2="${H - 14}" stroke="${C.grid}"/><text x="${X(t)}" y="${H - 3}" fill="${C.ash}" font-size="10" text-anchor="middle" font-family="B612,monospace">${clock(t)}</text>`;
+  }
+  rows.forEach((r, i) => {
+    const y = i * rowH + 2, a = X(st(r)), b = Math.max(X(fi(r)), a + 2), col = STC[r.state] || C.q;
+    s += `<text x="0" y="${y + 10}" fill="${C.sod}" font-size="10.5" font-family="B612,monospace">${esc(r.task)}</text>`;
+    s += `<rect x="${a}" y="${y + 2}" width="${b - a}" height="9" fill="${col}" opacity="${r.state === "queued" || r.state === "blocked" ? 0.35 : 0.9}"/>`;
+  });
+  s += `<line x1="${X(d.t)}" x2="${X(d.t)}" y1="0" y2="${H - 14}" stroke="${C.sig}" stroke-width="1.5"/></svg>`;
+  $("#gantt").innerHTML = s;
+}
+
+function pick(task) { if (task !== sel) { sel = task; lastLogKey = ""; } if (T) renderTasks(); pollLog(); }
+
+function renderDetail() {
+  const r = T.tasks.find((x) => x.task === sel); if (!r) return;
+  $("#dTask").textContent = r.task; $("#dTitle").textContent = r.title + (r.deps.length ? `  (after ${r.deps.join(", ")})` : "");
+  const m = Object.entries(r.metrics || {});
+  $("#dMetrics").innerHTML = (m.length ? m.map(([k, v]) => `<div><span>${esc(k)}</span><span>${esc(typeof v === "number" ? +v.toPrecision(6) : v)}</span></div>`).join("") : `<div class="empty">none yet</div>`) +
+    `<div><span>state</span><span>${esc(r.state)}</span></div><div><span>status updated</span><span>${r.updated ? clock(r.updated, true) : "–"}</span></div>`;
+  $("#dResults").innerHTML = (r.results || []).length ? r.results.map((x) => `<li>${esc(x)}</li>`).join("") : `<li class="empty">none yet</li>`;
+  $("#logLink").href = `/log/${encodeURIComponent(r.task)}`;
+}
+
+let lastLogKey = "";
+async function pollLog() {
+  if (!sel) return;
+  let L; try { L = await get(`/api/log?task=${encodeURIComponent(sel)}&n=200`); } catch (e) { return; }
+  if (L.task !== sel) return;
+  setAge("age-log", L.mtime, 0, "log written");
+  const ld = (META && META.logs) || "runs/rfconv/logs";
+  $("#logInfo").textContent = L.mtime ? `${ld}/${L.task}.log, ${(L.size / 1024).toFixed(1)} kB, last 200 lines` : `${ld}/${L.task}.log does not exist yet`;
+  const key = sel + ":" + L.mtime + ":" + L.size;
+  if (key === lastLogKey) return; lastLogKey = key;
+  const box = $("#log"), atBottom = box.scrollHeight - box.scrollTop - box.clientHeight < 40;
+  box.innerHTML = L.lines.length ? L.lines.map((ln) => {
+    const m = ln.match(/^(\[[0-9: -]{19}\]) (.*)$/), body = m ? m[2] : ln;
+    const cls = /Traceback|Error|FAILED|rc=[1-9]/.test(body) ? "e" : /WARN|warning/i.test(body) ? "w" : "";
+    return `${m ? `<span class="ts">${esc(m[1])}</span> ` : ""}<span class="${cls}">${esc(body)}</span>`;
+  }).join("\n") : `<span class="empty">No log lines yet. Run the task with: bash scripts/run_logged.sh ${esc(sel)} &lt;cmd...&gt;</span>`;
+  if ($("#follow").checked || atBottom) box.scrollTop = box.scrollHeight;
+}
+
+/* ---------------- hardware ---------------- */
+function sizeCanvas(c) {
+  const r = c.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  c.width = Math.max(1, Math.round(r.width * dpr)); c.height = Math.max(1, Math.round(r.height * dpr));
+  const x = c.getContext("2d"); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [x, r.width, r.height];
+}
+function spark(id, idx, max, col) {
+  const c = document.getElementById(id), [x, W, H] = sizeCanvas(c);
+  x.clearRect(0, 0, W, H);
+  const h = (HW && HW.hist) || [], t1 = HW ? HW.now : now(), t0 = t1 - 600;
+  x.strokeStyle = C.grid; x.lineWidth = 1; x.beginPath(); x.moveTo(0, H - 0.5); x.lineTo(W, H - 0.5); x.stroke();
+  const pts = h.filter((r) => r[idx] != null && r[0] >= t0).map((r) => [W * (r[0] - t0) / 600, H - 2 - (H - 4) * Math.min(1, r[idx] / max)]);
+  if (pts.length < 2) return;
+  x.beginPath(); pts.forEach(([a, b], i) => (i ? x.lineTo(a, b) : x.moveTo(a, b)));
+  x.strokeStyle = col; x.lineWidth = 1.5; x.stroke();
+  x.lineTo(pts[pts.length - 1][0], H); x.lineTo(pts[0][0], H); x.closePath();
+  x.fillStyle = col + "22"; x.fill();
+}
+function renderHw() {
+  const d = HW, g = d.gpu;
+  setAge("age-hw", d.gpu_t || d.t, 3, "GPU");
+  setAge("age-wsl", d.wsl_t, 10, "");
+  if (g) {
+    $("#gUtil").innerHTML = `${g.util ?? "–"}<small>%</small>`;
+    $("#gSub").textContent = `${g.temp ?? "–"} °C, ${g.power != null ? g.power.toFixed(0) : "–"} / ${g.power_limit != null ? g.power_limit.toFixed(0) : "–"} W`;
+    $("#gMem").innerHTML = `${(g.mem_mb / 1024).toFixed(1)}<small>/ ${(g.mem_total_mb / 1024).toFixed(1)} GB</small>`;
+    $("#gMemSub").textContent = `${(100 * g.mem_mb / g.mem_total_mb).toFixed(0)}% used; ceiling 23 GB, guard 22 GB`;
+    $("#gMem").style.color = g.mem_mb / 1024 > 22 ? C.bad : "";
+  } else { $("#gUtil").textContent = "n/a"; $("#gSub").textContent = "nvidia-smi not answering"; }
+  $("#cpu").innerHTML = d.cpu != null ? `${d.cpu.toFixed(0)}<small>%</small>` : "–";
+  $("#ram").textContent = d.ram ? `RAM ${d.ram.used_gb} / ${d.ram.total_gb} GB` : "";
+  const w = d.wsl;
+  if (w) {
+    $("#wslLoad").innerHTML = `${w.load ? w.load[0].toFixed(2) : "–"}<small>load (${w.nproc} cpu)</small>`;
+    $("#wslMem").textContent = `RAM ${w.mem_used_gb} / ${w.mem_total_gb} GB; load 5/15 min ${w.load ? w.load[1].toFixed(2) + " / " + w.load[2].toFixed(2) : "–"}`;
+  } else { $("#wslLoad").textContent = "n/a"; $("#wslMem").textContent = "wsl not answering"; }
+  $("#disk").textContent = d.disk ? `C: ${d.disk.free_gb} GB free of ${d.disk.total_gb} GB` : "";
+  $("#disk").style.color = d.disk && d.disk.free_gb < 30 ? C.bad : "";
+  spark("spG", 1, 100, C.sod); spark("spV", 2, g ? g.mem_total_mb / 1024 : 32, C.info); spark("spC", 3, 100, C.ok);
+}
+
+/* ---------------- training / eval ---------------- */
+function smoothPath(x, pts) {
+  x.moveTo(pts[0][0], pts[0][1]);
+  for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], mx = (x0 + x1) / 2; x.bezierCurveTo(mx, y0, mx, y1, x1, y1); }
+}
+function drawChart() {
+  const run = TR && TR.runs.find((r) => r.run === selRun);
+  const c = $("#cv"); if (!run) return;
+  const [x, W, H] = sizeCanvas(c); x.clearRect(0, 0, W, H);
+  const pad = { l: 52, r: 16, t: 26, b: 30 };
+  const ys = [...run.steps.map((s) => s.loss), ...run.vals.map((v) => v[1])].filter((v) => isFinite(v));
+  let lo = Math.min(...ys), hi = Math.max(...ys); if (!isFinite(lo)) { lo = 0; hi = 1; }
+  const sp = Math.max(hi - lo, 1e-3); lo = Math.max(0, lo - sp * 0.1); hi += sp * 0.1;
+  const n = Math.max(run.total, 1), X = (s) => pad.l + (W - pad.l - pad.r) * s / n, Y = (v) => pad.t + (H - pad.t - pad.b) * (1 - (v - lo) / (hi - lo));
+  x.font = "11px B612, monospace"; x.fillStyle = C.ash; x.textBaseline = "middle";
+  for (let i = 0; i <= 4; i++) { const v = lo + (hi - lo) * i / 4, y = Y(v); x.strokeStyle = C.grid; x.setLineDash([2, 4]); x.beginPath(); x.moveTo(pad.l, y); x.lineTo(W - pad.r, y); x.stroke(); x.setLineDash([]); x.fillText(v.toFixed(3), 4, y); }
+  x.textBaseline = "top"; x.textAlign = "center";
+  const every = Math.max(1, Math.round(n / Math.max(3, Math.floor((W - 80) / 80))));
+  for (let s = 0; s <= n; s += every) x.fillText(s, X(s), H - pad.b + 8);
+  x.textAlign = "left";
+  x.fillStyle = "rgba(242,163,58,.25)"; run.steps.forEach((s) => { x.beginPath(); x.arc(X(s.step), Y(s.loss), 1.8, 0, 7); x.fill(); });
+  const sm = run.steps.map((s, i) => [X(s.step), Y(run.smooth[i])]);
+  if (sm.length > 1) { x.beginPath(); smoothPath(x, sm); x.strokeStyle = C.sod; x.lineWidth = 2.2; x.stroke(); }
+  run.vals.forEach(([s, v], i) => {
+    const a = X(s), b = Y(v);
+    if (i) { const [s0, v0] = run.vals[i - 1]; x.strokeStyle = "rgba(125,176,204,.6)"; x.lineWidth = 1.4; x.beginPath(); x.moveTo(X(s0), Y(v0)); x.lineTo(a, b); x.stroke(); }
+    x.beginPath(); x.arc(a, b, 4, 0, 7); x.fillStyle = C.info; x.fill();
+    x.fillStyle = C.bone; x.textAlign = a < pad.l + 30 ? "left" : "center"; x.fillText(v.toFixed(4), a, b - 16); x.textAlign = "left";
+  });
+}
+function renderTrain() {
+  const d = TR; setAge("age-train", d.t, 15);
+  if (!d.runs.length) { $("#chartWrap").style.display = "none"; $("#runTabs").innerHTML = ""; $("#trEmpty").textContent = "No runs/sft/<run>/log.jsonl updated in the last 6 h."; $("#trSub").textContent = ""; }
+  else {
+    $("#chartWrap").style.display = ""; $("#trEmpty").textContent = "";
+    if (!d.runs.find((r) => r.run === selRun)) selRun = d.runs.slice().sort((a, b) => b.mtime - a.mtime)[0].run;
+    $("#runTabs").innerHTML = d.runs.map((r) => `<button class="${r.run === selRun ? "on" : ""}" data-run="${esc(r.run)}">${esc(r.run)}</button>`).join("");
+    $("#runTabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { selRun = b.dataset.run; renderTrain(); }));
+    const r = d.runs.find((q) => q.run === selRun), last = r.steps[r.steps.length - 1];
+    $("#trSub").textContent = `${r.run}: step ${last ? last.step : 0}, log written ${dur(now() - r.mtime)} ago` + (r.vals.length ? `, last val ${r.vals[r.vals.length - 1][1].toFixed(4)}` : "");
+    drawChart();
+  }
+  $("#evRun").innerHTML = d.eval_running.length ? d.eval_running.map((e) => `<div><span>${esc(e.out)}</span><span>${e.n ? e.n + " tasks, " : ""}${dur(e.elapsed_s)} running</span></div>`).join("") : `<div class="empty">no eval.run process</div>`;
+  $("#evals").innerHTML = d.evals.length ? d.evals.slice().reverse().map((e) => `<tr><td>${esc(e.name)}</td><td class="num">${clock(e.mtime)}</td><td class="num">${e.n ?? "–"}</td><td class="num">${e.score != null ? e.score.toFixed(3) : "–"}</td><td class="num">${e.macro != null ? e.macro.toFixed(3) : "–"}</td></tr>`).join("")
+    : `<tr><td colspan="5" class="empty">No runs/eval/*.json written today.</td></tr>`;
+}
+
+/* ---------------- paper program: GPU queue, GRPO, results ---------------- */
+let META = null, GQ = null, GR = null, RS = null, selGrpo = null;
+const has = (p) => META && (META.panels || []).includes(p);
+function renderQueue() {
+  const d = GQ; setAge("age-gq", d.t, 10);
+  const rn = d.runner || {};
+  $("#qSub").textContent = `runner ${rn.alive ? "alive" : "NOT running"}${rn.state ? ", " + rn.state : ""}${d.stop_requested ? ", STOP requested" : ""}; ${d.pending.length} pending, ${d.running.length} running, ${d.done.length} done`;
+  $("#qSub").style.color = rn.alive ? "" : C.bad;
+  const vr = (mb) => mb != null ? (mb / 1024).toFixed(1) + " GB" : "–";
+  const rows = [
+    ...d.running.map((j) => `<tr><td>${esc(j.name)}</td><td class="tid">${esc(j.task)}</td><td><span class="pill s-running">running</span></td><td class="num">${clock(j.queued)}</td><td class="num">${clock(j.started)}</td><td class="num">–</td><td class="num">${dur(j.elapsed_s)}</td><td class="num">${vr(j.peak_vram_mb)}</td><td class="num">–</td><td>–</td></tr>`),
+    ...d.pending.map((j) => `<tr><td>${esc(j.name)}</td><td class="tid">${esc(j.task)}</td><td><span class="pill s-queued">pending</span></td><td class="num">${clock(j.queued)}</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>`),
+    ...d.done.map((j) => `<tr><td>${esc(j.name)}${j.note ? `<div class="note">${esc(j.note)}</div>` : ""}</td><td class="tid">${esc(j.task)}</td><td><span class="pill s-${j.exit === 0 ? "done" : "failed"}">${j.exit === 0 ? "done" : "failed"}</span></td><td class="num">${clock(j.queued)}</td><td class="num">${clock(j.started)}</td><td class="num">${clock(j.ended)}</td><td class="num">${dur(j.wall_s)}</td><td class="num">${vr(j.peak_vram_mb)}</td><td class="num">${j.episodes_per_s != null ? j.episodes_per_s.toFixed(2) + (j.episodes ? ` (${j.episodes})` : "") : "–"}</td><td class="num">${esc(j.exit)}</td></tr>`)];
+  $("#gq").innerHTML = rows.length ? rows.join("") : `<tr><td colspan="10" class="empty">Queue empty. Put jobs in runs/paper/queue/pending/ (see its README.md).</td></tr>`;
+}
+function lineChart(id, pts, col, xmax) {
+  const c = document.getElementById(id), [x, W, H] = sizeCanvas(c); x.clearRect(0, 0, W, H);
+  const pad = { l: 46, r: 12, t: 24, b: 22 };
+  if (!pts.length) { x.fillStyle = C.ash; x.font = "11px B612, monospace"; x.fillText("no data in the log", pad.l, H / 2); return; }
+  let lo = Math.min(...pts.map((p) => p[1])), hi = Math.max(...pts.map((p) => p[1]));
+  const sp = Math.max(hi - lo, 1e-3); lo -= sp * 0.1; hi += sp * 0.1;
+  const x0 = Math.min(...pts.map((p) => p[0])), x1 = Math.max(xmax || 1, x0 + 1);
+  const X = (v) => pad.l + (W - pad.l - pad.r) * (v - x0) / (x1 - x0), Y = (v) => pad.t + (H - pad.t - pad.b) * (1 - (v - lo) / (hi - lo));
+  x.font = "11px B612, monospace"; x.fillStyle = C.ash; x.textBaseline = "middle";
+  for (let i = 0; i <= 3; i++) { const v = lo + (hi - lo) * i / 3, y = Y(v); x.strokeStyle = C.grid; x.setLineDash([2, 4]); x.beginPath(); x.moveTo(pad.l, y); x.lineTo(W - pad.r, y); x.stroke(); x.setLineDash([]); x.fillText(v.toFixed(3), 2, y); }
+  x.textBaseline = "top"; x.fillText(String(x0), pad.l, H - pad.b + 6); x.textAlign = "right"; x.fillText(String(x1), W - pad.r, H - pad.b + 6); x.textAlign = "left";
+  x.beginPath(); pts.forEach(([a, b], i) => (i ? x.lineTo(X(a), Y(b)) : x.moveTo(X(a), Y(b)))); x.strokeStyle = col; x.lineWidth = 2; x.stroke();
+  pts.forEach(([a, b]) => { x.beginPath(); x.arc(X(a), Y(b), 2.6, 0, 7); x.fillStyle = col; x.fill(); });
+  const [la, lb] = pts[pts.length - 1]; x.fillStyle = C.bone; x.fillText(lb.toFixed(3), Math.min(X(la) + 4, W - 50), Y(lb) - 14);
+}
+function renderGrpo() {
+  const d = GR; setAge("age-grpo", d.runs.length ? Math.max(...d.runs.map((r) => r.mtime)) : null, 0, "log written");
+  if (!d.runs.length) { $("#grpoTabs").innerHTML = ""; $("#grpoEmpty").textContent = "No GRPO log yet (runs/paper/results/P4*/**/log.jsonl)."; ["cvR", "cvV", "cvA", "cvK"].forEach((i) => lineChart(i, [], C.ash, 1)); return; }
+  $("#grpoEmpty").textContent = "";
+  if (!d.runs.find((r) => r.run === selGrpo)) selGrpo = d.runs.slice().sort((a, b) => b.mtime - a.mtime)[0].run;
+  $("#grpoTabs").innerHTML = d.runs.map((r) => `<button class="${r.run === selGrpo ? "on" : ""}" data-run="${esc(r.run)}">${esc(r.run)} (${r.n})</button>`).join("");
+  $("#grpoTabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { selGrpo = b.dataset.run; renderGrpo(); }));
+  const r = d.runs.find((q) => q.run === selGrpo);
+  lineChart("cvR", r.reward, C.sod, r.x_max); lineChart("cvV", r.val, C.info, r.x_max); lineChart("cvA", r.abstain, C.block, r.x_max); lineChart("cvK", r.kl, C.ok, r.x_max);
+}
+function renderResults() {
+  const d = RS; setAge("age-res", d.t, 30);
+  const f = (v, k = 3) => v != null ? (+v).toFixed(k) : "–";
+  $("#resRows").innerHTML = d.rows.length ? d.rows.map((r) => `<tr><td class="tid">${esc(r.task)}</td><td>${esc(r.model)}</td><td>${esc(r.set)}</td><td>${esc(r.ablation || "none")}</td><td class="num">${esc(r.n)}</td><td class="num">${f(r.score)}</td><td class="num">${r.ci95 ? `[${f(r.ci95[0])}, ${f(r.ci95[1])}]` : "–"}</td><td class="num">${f(r.macro)}</td><td class="num">${f(r.abstain_rate)}</td><td class="dim">${esc(r.run)}</td></tr>`).join("")
+    : `<tr><td colspan="10" class="empty">No summary.json yet.</td></tr>`;
+}
+async function pollQueue() { if (!has("queue")) return; try { GQ = await get("/api/queue"); renderQueue(); } catch (e) { /* keep last */ } }
+async function pollGrpo() { if (!has("grpo")) return; try { GR = await get("/api/grpo"); renderGrpo(); } catch (e) { /* keep last */ } }
+async function pollRes() { if (!has("results")) return; try { RS = await get("/api/results"); renderResults(); } catch (e) { /* keep last */ } }
+
+/* ---------------- loops ---------------- */
+async function pollTasks() { try { T = await get("/api/tasks"); conn(true); renderTasks(); } catch (e) { conn(false); } }
+async function pollHw() { try { HW = await get("/api/hw"); renderHw(); } catch (e) { conn(false); } }
+async function pollTrain() { try { TR = await get("/api/train"); renderTrain(); } catch (e) { /* keep last */ } }
+async function init() {
+  try { META = await get("/api/meta"); } catch (e) { META = null; }
+  if (!META) { setTimeout(init, 3000); return; }   // server restarting: without meta the paper panels never show
+  if (META) {
+    $("#progTitle").textContent = META.title; document.title = `SceneScout ${META.program}`;
+    $("#secQueue").hidden = !has("queue"); $("#secGrpo").hidden = !has("grpo"); $("#secRes").hidden = !has("results");
+  }
+  pollTasks().then(pollLog); pollHw(); pollTrain(); pollQueue(); pollGrpo(); pollRes();
+}
+init();
+setInterval(pollTasks, 5000); setInterval(pollHw, 3000); setInterval(pollLog, 3000); setInterval(pollTrain, 15000);
+setInterval(pollQueue, 5000); setInterval(pollGrpo, 15000); setInterval(pollRes, 20000);
+setInterval(paintAges, 1000); paintAges();
+addEventListener("resize", () => { if (HW) renderHw(); if (T) drawGantt(); drawChart(); if (GR) renderGrpo(); });
+</script>
+</body>
+</html>

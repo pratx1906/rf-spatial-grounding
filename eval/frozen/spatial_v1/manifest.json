@@ -1,0 +1,284 @@
+{
+ "version": "spatial_v1",
+ "n": 980,
+ "per_area": {
+  "collateral": 1,
+  "df_ambiguity": 182,
+  "drone_search": 37,
+  "operator_query": 511,
+  "replay": 125,
+  "siting": 100,
+  "unanswerable": 24
+ },
+ "per_family": {
+  "actuation": 22,
+  "band_in_zone": 50,
+  "count_in_zone": 44,
+  "direct_all": 35,
+  "direct_path": 17,
+  "ds_hover": 17,
+  "ds_hover_budget2": 16,
+  "ds_loiter": 1,
+  "ds_wide_prior": 1,
+  "entered_between": 16,
+  "exit_time": 23,
+  "first_detection": 22,
+  "first_entry": 25,
+  "first_into_zone": 10,
+  "genuine_drone": 22,
+  "ghost_check": 58,
+  "jam_point": 1,
+  "last_seen": 21,
+  "locate": 19,
+  "locate_ghost": 56,
+  "locate_two_sensors": 25,
+  "loiter_start": 8,
+  "los_check": 27,
+  "near_object": 36,
+  "nearest_drone": 58,
+  "pilot_locate": 2,
+  "protocol_id": 21,
+  "reject_ghosts": 30,
+  "rf_ambiguous": 2,
+  "suggest_one": 12,
+  "suggest_two": 12,
+  "swarm_in_zone": 51,
+  "swarm_members": 1,
+  "tracks_in_band": 21,
+  "weak_df": 27,
+  "weak_low_alt": 49,
+  "which_zone": 32,
+  "zone_incursion": 67,
+  "zone_incursion_ambiguous": 23
+ },
+ "per_seed": {
+  "15": 54,
+  "16": 68,
+  "51": 68,
+  "52": 29,
+  "53": 168,
+  "54": 62,
+  "55": 145,
+  "56": 72,
+  "57": 72,
+  "58": 106,
+  "59": 92,
+  "60": 44
+ },
+ "per_family_cluster": {
+  "actuation": {
+   "15-16": 2,
+   "51-60": 20
+  },
+  "band_in_zone": {
+   "15-16": 11,
+   "51-60": 39
+  },
+  "count_in_zone": {
+   "15-16": 1,
+   "51-60": 43
+  },
+  "direct_all": {
+   "15-16": 3,
+   "51-60": 32
+  },
+  "direct_path": {
+   "51-60": 17
+  },
+  "ds_hover": {
+   "51-60": 17
+  },
+  "ds_hover_budget2": {
+   "51-60": 16
+  },
+  "ds_loiter": {
+   "15-16": 1
+  },
+  "ds_wide_prior": {
+   "51-60": 1
+  },
+  "entered_between": {
+   "15-16": 1,
+   "51-60": 15
+  },
+  "exit_time": {
+   "15-16": 4,
+   "51-60": 19
+  },
+  "first_detection": {
+   "15-16": 3,
+   "51-60": 19
+  },
+  "first_entry": {
+   "15-16": 7,
+   "51-60": 18
+  },
+  "first_into_zone": {
+   "15-16": 2,
+   "51-60": 8
+  },
+  "genuine_drone": {
+   "15-16": 2,
+   "51-60": 20
+  },
+  "ghost_check": {
+   "15-16": 11,
+   "51-60": 47
+  },
+  "jam_point": {
+   "15-16": 1
+  },
+  "last_seen": {
+   "15-16": 3,
+   "51-60": 18
+  },
+  "locate": {
+   "51-60": 19
+  },
+  "locate_ghost": {
+   "15-16": 9,
+   "51-60": 47
+  },
+  "locate_two_sensors": {
+   "51-60": 25
+  },
+  "loiter_start": {
+   "51-60": 8
+  },
+  "los_check": {
+   "15-16": 5,
+   "51-60": 22
+  },
+  "near_object": {
+   "15-16": 10,
+   "51-60": 26
+  },
+  "nearest_drone": {
+   "51-60": 58
+  },
+  "pilot_locate": {
+   "51-60": 2
+  },
+  "protocol_id": {
+   "15-16": 3,
+   "51-60": 18
+  },
+  "reject_ghosts": {
+   "15-16": 1,
+   "51-60": 29
+  },
+  "rf_ambiguous": {
+   "51-60": 2
+  },
+  "suggest_one": {
+   "15-16": 2,
+   "51-60": 10
+  },
+  "suggest_two": {
+   "15-16": 2,
+   "51-60": 10
+  },
+  "swarm_in_zone": {
+   "15-16": 6,
+   "51-60": 45
+  },
+  "swarm_members": {
+   "15-16": 1
+  },
+  "tracks_in_band": {
+   "15-16": 3,
+   "51-60": 18
+  },
+  "weak_df": {
+   "15-16": 7,
+   "51-60": 20
+  },
+  "weak_low_alt": {
+   "15-16": 9,
+   "51-60": 40
+  },
+  "which_zone": {
+   "15-16": 2,
+   "51-60": 30
+  },
+  "zone_incursion": {
+   "15-16": 6,
+   "51-60": 61
+  },
+  "zone_incursion_ambiguous": {
+   "15-16": 4,
+   "51-60": 19
+  }
+ },
+ "tasks_sha": "b8b7667caa914fbe",
+ "tasks_sha256": "b8b7667caa914fbead37611b8ba4a2a1085125977bcd67005118633819a8b815",
+ "code_sha": {
+  "tasks/scoring.py": "000beddc4d414e02",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "170095b43ff53100",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "0ee834ef0eef9fa1",
+  "harness/env.py": "3ab406a4515ecb8a",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "a2eae7a828ff311e",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/spatial_v1_test.jsonl (seeds 15-16,51-60)",
+ "source_sha256": "b8b7667caa914fbead37611b8ba4a2a1085125977bcd67005118633819a8b815",
+ "selection": {
+  "mode": "copy",
+  "areas": null,
+  "rng_seed": null,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "ds_wide_prior",
+  "jam_point",
+  "locate_ghost",
+  "loiter_start",
+  "near_object",
+  "weak_low_alt"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s15_X": "dd1630a1aeee5f24",
+  "data/scenarios_v3/kandla_s16_X": "8683aaf20b33a913",
+  "data/scenarios_v3/kandla_s51_X": "b2ae93ec5435cbf8",
+  "data/scenarios_v3/kandla_s52_X": "c3b03c74d45c07f5",
+  "data/scenarios_v3/kandla_s53_X": "59d8f71346326059",
+  "data/scenarios_v3/kandla_s54_X": "218a5a74b368a9d7",
+  "data/scenarios_v3/kandla_s55_X": "f82c6d4dea4e12c4",
+  "data/scenarios_v3/kandla_s56_X": "0ce0f81b0b6a2313",
+  "data/scenarios_v3/kandla_s57_X": "31c3f7e8c2557eb9",
+  "data/scenarios_v3/kandla_s58_X": "1e30f73fbca0176c",
+  "data/scenarios_v3/kandla_s59_X": "0770f7a9109d26c0",
+  "data/scenarios_v3/kandla_s60_X": "725074b01c36c67e"
+ }
+}

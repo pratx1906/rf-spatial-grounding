@@ -1,0 +1,239 @@
+{
+ "source": "runs/eval/sft_v11_v6_W5_t7.json",
+ "set": "eval/frozen/v6_W5/tasks.jsonl",
+ "set_sha256": "657f8ca1aea11b377e431ba577fd8bdf82bfbaaab315c78b22dec20dddd480b9",
+ "policy": "model",
+ "model_id": "sft_v11",
+ "ablation": null,
+ "samples": 1,
+ "answers_available": false,
+ "scorer": {
+  "v1": "tasks.scoring.score_answer",
+  "v2": "tasks.scoring.score_answer_v2 (C2)",
+  "verifier_strict": "verifier-rejected answer = 0 (C7)",
+  "headline": "tasks.scoring.is_headline (C6)"
+ },
+ "n": 337,
+ "score_v1": {
+  "n": 337,
+  "mean": 0.8686,
+  "ci95": [
+   0.8182,
+   0.9099
+  ],
+  "n_clusters": 2
+ },
+ "score_v1_verifier_strict": {
+  "n": 337,
+  "mean": 0.865,
+  "ci95": [
+   0.8156,
+   0.9054
+  ],
+  "n_clusters": 2
+ },
+ "score_v2": null,
+ "score_v2_verifier_strict": null,
+ "score_v2_bounds": [
+  0.8449,
+  0.8686
+ ],
+ "score_v2_verifier_strict_bounds": [
+  0.8414,
+  0.865
+ ],
+ "headline": {
+  "n": 217,
+  "score_v1": {
+   "n": 217,
+   "mean": 0.8453,
+   "ci95": [
+    0.7935,
+    0.8912
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 217,
+   "mean": 0.8453,
+   "ci95": [
+    0.7935,
+    0.8912
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": null,
+  "score_v2_verifier_strict": null,
+  "score_v2_bounds": [
+   0.8085,
+   0.8453
+  ],
+  "score_v2_verifier_strict_bounds": [
+   0.8085,
+   0.8453
+  ]
+ },
+ "non_headline": {
+  "n": 120,
+  "score_v1": {
+   "n": 120,
+   "mean": 0.9106,
+   "ci95": [
+    0.8319,
+    0.9651
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 120,
+   "mean": 0.9008,
+   "ci95": [
+    0.8241,
+    0.9576
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 120,
+   "mean": 0.9106,
+   "ci95": [
+    0.8319,
+    0.9651
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 120,
+   "mean": 0.9008,
+   "ci95": [
+    0.8241,
+    0.9576
+   ],
+   "n_clusters": 2
+  }
+ },
+ "per_area": {
+  "collateral": {
+   "n": 50,
+   "v1": 0.96,
+   "v2": 0.96,
+   "v2_strict": 0.9363
+  },
+  "df_ambiguity": {
+   "n": 50,
+   "v1": 0.7109,
+   "v2": null,
+   "v2_strict": null,
+   "v2_bounds": [
+    0.5513,
+    0.7109
+   ]
+  },
+  "drone_search": {
+   "n": 37,
+   "v1": 0.9769,
+   "v2": 0.9769,
+   "v2_strict": 0.9769
+  },
+  "operator_query": {
+   "n": 50,
+   "v1": 0.6633,
+   "v2": 0.6633,
+   "v2_strict": 0.6633
+  },
+  "replay": {
+   "n": 50,
+   "v1": 0.8714,
+   "v2": 0.8714,
+   "v2_strict": 0.8714
+  },
+  "siting": {
+   "n": 50,
+   "v1": 0.9255,
+   "v2": 0.9255,
+   "v2_strict": 0.9255
+  },
+  "unanswerable": {
+   "n": 50,
+   "v1": 1.0,
+   "v2": 1.0,
+   "v2_strict": 1.0
+  }
+ },
+ "c2": {
+  "n_position_keys": 24,
+  "n_applied": 0,
+  "n_unresolved_no_answer": 20
+ },
+ "c7": {
+  "n_verifier_rejected": 2,
+  "v1_mean_on_rejected": 0.5935
+ },
+ "c6": {
+  "n_headline": 217,
+  "n_empty_key": 33,
+  "n_collateral_siting": 100
+ },
+ "v1_recompute": {
+  "checked": 0,
+  "mismatch": 0
+ },
+ "near_object_split": {
+  "positive_key": {
+   "n": 0,
+   "score_v1": {
+    "n": 0,
+    "mean": null,
+    "ci95": null,
+    "n_clusters": 0
+   },
+   "score_v1_verifier_strict": {
+    "n": 0,
+    "mean": null,
+    "ci95": null,
+    "n_clusters": 0
+   },
+   "score_v2": null,
+   "score_v2_verifier_strict": null
+  },
+  "empty_key": {
+   "n": 3,
+   "score_v1": {
+    "n": 3,
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 3,
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 3,
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 3,
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "n_clusters": 2
+   }
+  }
+ }
+}

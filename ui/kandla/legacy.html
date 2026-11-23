@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout console (legacy)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/cesium@1.120.0/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+<link href="/ui/style.css" rel="stylesheet">
+<script>window.CESIUM_BASE_URL = "https://cdn.jsdelivr.net/npm/cesium@1.120.0/Build/Cesium/";</script>
+<script src="https://cdn.jsdelivr.net/npm/cesium@1.120.0/Build/Cesium/Cesium.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><b>SceneScout</b><span id="siteTitle">Deendayal Port, Kandla Creek &middot; counter-UAS operator console</span></div>
+  <div class="status">
+    <span id="llm"><span class="dot"></span>Model server: checking</span>
+    <span id="agentBadge" class="badge">Agent: model</span>
+    <span id="dataver"></span>
+  </div>
+</header>
+
+<main>
+  <section class="map" aria-label="3D port view">
+    <div id="cesium"></div>
+    <div class="ov boot" id="boot">Loading the port twin&hellip;</div>
+
+    <div class="ov fidelity" id="fidelity" role="button" tabindex="0" aria-expanded="false" title="Click for data provenance">
+      <span class="lead">Fidelity</span><span id="fidText">loading</span>
+      <dl id="fidMore" hidden></dl>
+    </div>
+
+    <div class="ov presets" role="toolbar" aria-label="Camera presets">
+      <button data-preset="overview">Port overview</button>
+      <button data-preset="hero">Hero zone (top-down)</button>
+      <button data-preset="oblique">Oblique view</button>
+      <button data-preset="jetties">Jetties</button>
+      <button data-preset="tankfarms">Tank farms</button>
+      <button data-preset="swarm">Follow swarm G1</button>
+    </div>
+
+    <div class="ov layers" aria-label="Layers">
+      <div class="search">
+        <input id="search" type="search" placeholder="Find object, zone, sensor or track" autocomplete="off" aria-label="Search the twin">
+        <ul id="searchList" hidden></ul>
+      </div>
+      <h3>Layers</h3>
+      <label><input type="checkbox" data-layer="objects" checked> Twin objects</label>
+      <label><input type="checkbox" data-layer="zones" checked> Zones</label>
+      <label><input type="checkbox" data-layer="sensors" checked> Sensors</label>
+      <label><input type="checkbox" data-layer="tracks" checked> Tracks</label>
+      <label><input type="checkbox" data-layer="rays" checked> DF rays</label>
+      <label><input type="checkbox" data-layer="osm"> Cesium OSM buildings</label>
+      <label><input type="checkbox" data-layer="prov"> Provenance colours</label>
+      <label><input type="checkbox" data-layer="low"> Low graphics</label>
+      <div class="legend" id="legend"></div>
+    </div>
+
+    <div class="ov hud" id="hud">t = 0 s</div>
+    <div class="ov evtl" id="evtl" hidden aria-label="Event timeline"></div>
+    <div class="ov attrib" id="attr"></div>
+    <aside class="ov info" id="info" hidden aria-live="polite"></aside>
+  </section>
+
+  <section class="rail" aria-label="Agent">
+    <form class="ask" id="askForm">
+      <label for="q" class="sr" hidden>Question</label>
+      <textarea id="q" placeholder="Ask about drones, zones, sensors or DF bearings at the port" maxlength="400"></textarea>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Agent mode">
+          <button type="button" data-mode="model" class="on">Model</button>
+          <button type="button" data-mode="scripted">Scripted</button>
+        </div>
+        <button class="go" id="go" type="submit">Ask</button>
+      </div>
+      <div class="note" id="modeNote"></div>
+      <div class="chips" id="examples"></div>
+    </form>
+    <div class="trace-wrap">
+      <div class="trace-head"><h3>Tool trace</h3><span id="traceMeta"></span></div>
+      <ol class="trace" id="trace"><li class="empty">Ask a question to see each tool call and its evidence here.</li></ol>
+    </div>
+    <div class="answer" id="answer" hidden></div>
+  </section>
+</main>
+<script src="/ui/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+ "task": "P7",
+ "model": "rl_b3",
+ "policy": "model",
+ "set": "rfg_s200",
+ "set_path": "eval/frozen/rfg_s200/tasks.jsonl",
+ "ablation": "none",
+ "samples": 8,
+ "seed": 0,
+ "n": 1704,
+ "score": 0.699,
+ "macro_score": 0.703,
+ "per_area": {
+  "df_ambiguity": {
+   "n": 384,
+   "score": 0.659,
+   "abstain_rate": 0.0
+  },
+  "drone_search": {
+   "n": 312,
+   "score": 0.752,
+   "abstain_rate": 0.0
+  },
+  "operator_query": {
+   "n": 1008,
+   "score": 0.697,
+   "abstain_rate": 0.006
+  }
+ },
+ "abstain_rate": 0.0035,
+ "errors": 0,
+ "no_answer": 77,
+ "end_reasons": {
+  "format_failed": 32,
+  "max_turns": 45,
+  "submitted": 1623,
+  "verifier_failed": 4
+ },
+ "generalisation": {
+  "seen_families": 0.709,
+  "n_seen": 1512,
+  "held_out_families": 0.616,
+  "n_held_out": 192
+ },
+ "rfg": {
+  "rfg": 0.6865172413793104,
+  "n": 1392,
+  "ds": 0.752,
+  "n_ds": 312
+ },
+ "wallclock_s": 1800.6,
+ "episodes_per_s": 0.9464,
+ "latency_p50_s": 12.738,
+ "latency_p95_s": 22.72,
+ "ci95": [
+  0.6374,
+  0.7526
+ ],
+ "ci_kind": "cluster (scenario, task) bootstrap, 2000",
+ "n_clusters": 12
+}

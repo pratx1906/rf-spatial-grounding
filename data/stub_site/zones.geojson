@@ -1,0 +1,351 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       1500.0,
+       -300.0
+      ],
+      [
+       1500.0,
+       1000.0
+      ],
+      [
+       -1500.0,
+       1000.0
+      ],
+      [
+       -1500.0,
+       -300.0
+      ],
+      [
+       1500.0,
+       -300.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "perimeter",
+    "name": "Port Perimeter",
+    "kind": "perimeter",
+    "aliases": [
+     "port boundary",
+     "fence line"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1312.1620141096523,
+       -750.0
+      ],
+      [
+       -462.3828525750746,
+       -750.0
+      ],
+      [
+       -462.3828525750746,
+       837.1480241235124
+      ],
+      [
+       -1312.1620141096523,
+       837.1480241235124
+      ],
+      [
+       -1312.1620141096523,
+       -750.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "oil_terminal_restricted",
+    "name": "Oil Terminal Restricted Zone",
+    "kind": "restricted",
+    "aliases": [
+     "oil terminal",
+     "terminal restricted area"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1212.1620141096523,
+       -650.0
+      ],
+      [
+       -562.3828525750746,
+       -650.0
+      ],
+      [
+       -562.3828525750746,
+       737.1480241235124
+      ],
+      [
+       -1212.1620141096523,
+       737.1480241235124
+      ],
+      [
+       -1212.1620141096523,
+       -650.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "oil_terminal",
+    "name": "Oil Terminal",
+    "kind": "named_region",
+    "aliases": [
+     "oil terminal area"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       420.0,
+       630.0
+      ],
+      [
+       780.0,
+       630.0
+      ],
+      [
+       780.0,
+       970.0
+      ],
+      [
+       420.0,
+       970.0
+      ],
+      [
+       420.0,
+       630.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "substation_restricted",
+    "name": "Substation Restricted Zone",
+    "kind": "restricted",
+    "aliases": [
+     "substation zone"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       585.0,
+       385.0
+      ],
+      [
+       1215.0,
+       385.0
+      ],
+      [
+       1215.0,
+       1015.0
+      ],
+      [
+       585.0,
+       1015.0
+      ],
+      [
+       585.0,
+       385.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "helipad_zone",
+    "name": "Helipad Zone",
+    "kind": "aviation",
+    "aliases": [
+     "heliport zone"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -399.9286098504489,
+       -218.04693307875925
+      ],
+      [
+       1415.712953651126,
+       -218.04693307875925
+      ],
+      [
+       1415.712953651126,
+       460.3877311390389
+      ],
+      [
+       -399.9286098504489,
+       460.3877311390389
+      ],
+      [
+       -399.9286098504489,
+       -218.04693307875925
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cargo_area",
+    "name": "Cargo Area",
+    "kind": "named_region",
+    "aliases": [
+     "warehouse district"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       200.0,
+       1000.0
+      ],
+      [
+       200.0,
+       2200.0
+      ],
+      [
+       -200.0,
+       2200.0
+      ],
+      [
+       -200.0,
+       1000.0
+      ],
+      [
+       200.0,
+       1000.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "north_approach",
+    "name": "North Approach Corridor",
+    "kind": "corridor",
+    "aliases": [
+     "north corridor"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       1500.0,
+       -1200.0
+      ],
+      [
+       1500.0,
+       -300.0
+      ],
+      [
+       500.0,
+       -300.0
+      ],
+      [
+       500.0,
+       -1200.0
+      ],
+      [
+       1500.0,
+       -1200.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "creek_approach",
+    "name": "Creek Approach Corridor",
+    "kind": "corridor",
+    "aliases": [
+     "creek corridor"
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       1500.0,
+       -1200.0
+      ],
+      [
+       1500.0,
+       -300.0
+      ],
+      [
+       -1500.0,
+       -300.0
+      ],
+      [
+       -1500.0,
+       -1200.0
+      ],
+      [
+       1500.0,
+       -1200.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "creek",
+    "name": "Creek Channel",
+    "kind": "named_region",
+    "aliases": [
+     "the creek",
+     "channel",
+     "waterway"
+    ]
+   }
+  }
+ ]
+}

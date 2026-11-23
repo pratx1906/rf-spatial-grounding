@@ -1,0 +1,313 @@
+{
+ "patch": "sionna-2.2-utd-luebbers-v2",
+ "same_mast_isolation_db": 30.0,
+ "fidelity": "nominal model (belief)",
+ "links": {
+  "sub_ghz_868_915": {
+   "S1->S2": {
+    "gain_db": -99.82,
+    "distance_m": 2595.3,
+    "fspl_db": 99.82
+   },
+   "S1->S3": {
+    "gain_db": -94.29,
+    "distance_m": 1572.7,
+    "fspl_db": 95.47
+   },
+   "S1->S4": {
+    "gain_db": -96.38,
+    "distance_m": 1769.9,
+    "fspl_db": 96.49
+   },
+   "S1->S5": {
+    "gain_db": -90.37,
+    "distance_m": 973.1,
+    "fspl_db": 91.3
+   },
+   "S2->S1": {
+    "gain_db": -99.72,
+    "distance_m": 2595.3,
+    "fspl_db": 99.82
+   },
+   "S2->S3": {
+    "gain_db": -94.15,
+    "distance_m": 1388.7,
+    "fspl_db": 94.38
+   },
+   "S2->S4": {
+    "gain_db": -90.14,
+    "distance_m": 1167.3,
+    "fspl_db": 92.88
+   },
+   "S2->S5": {
+    "gain_db": -119.97,
+    "distance_m": 1666.8,
+    "fspl_db": 95.97
+   },
+   "S3->S1": {
+    "gain_db": -94.29,
+    "distance_m": 1572.7,
+    "fspl_db": 95.47
+   },
+   "S3->S2": {
+    "gain_db": -94.27,
+    "distance_m": 1388.7,
+    "fspl_db": 94.38
+   },
+   "S3->S4": {
+    "gain_db": -94.35,
+    "distance_m": 1400.3,
+    "fspl_db": 94.46
+   },
+   "S3->S5": {
+    "gain_db": -91.92,
+    "distance_m": 1049.4,
+    "fspl_db": 91.95
+   },
+   "S4->S1": {
+    "gain_db": -96.04,
+    "distance_m": 1769.9,
+    "fspl_db": 96.49
+   },
+   "S4->S2": {
+    "gain_db": -90.01,
+    "distance_m": 1167.3,
+    "fspl_db": 92.88
+   },
+   "S4->S3": {
+    "gain_db": -93.51,
+    "distance_m": 1400.3,
+    "fspl_db": 94.46
+   },
+   "S4->S5": {
+    "gain_db": -92.8,
+    "distance_m": 819.4,
+    "fspl_db": 89.8
+   },
+   "S5->S1": {
+    "gain_db": -88.77,
+    "distance_m": 973.1,
+    "fspl_db": 91.3
+   },
+   "S5->S2": {
+    "gain_db": -103.66,
+    "distance_m": 1666.8,
+    "fspl_db": 95.97
+   },
+   "S5->S3": {
+    "gain_db": -90.12,
+    "distance_m": 1049.4,
+    "fspl_db": 91.95
+   },
+   "S5->S4": {
+    "gain_db": -90.85,
+    "distance_m": 819.4,
+    "fspl_db": 89.8
+   }
+  },
+  "ism_2400": {
+   "S1->S2": {
+    "gain_db": -108.48,
+    "distance_m": 2595.3,
+    "fspl_db": 108.48
+   },
+   "S1->S3": {
+    "gain_db": -102.92,
+    "distance_m": 1572.7,
+    "fspl_db": 104.13
+   },
+   "S1->S4": {
+    "gain_db": -105.11,
+    "distance_m": 1769.9,
+    "fspl_db": 105.15
+   },
+   "S1->S5": {
+    "gain_db": -99.09,
+    "distance_m": 973.1,
+    "fspl_db": 99.96
+   },
+   "S2->S1": {
+    "gain_db": -108.42,
+    "distance_m": 2595.3,
+    "fspl_db": 108.48
+   },
+   "S2->S3": {
+    "gain_db": -102.93,
+    "distance_m": 1388.7,
+    "fspl_db": 103.05
+   },
+   "S2->S4": {
+    "gain_db": -99.05,
+    "distance_m": 1167.3,
+    "fspl_db": 101.54
+   },
+   "S2->S5": {
+    "gain_db": -132.91,
+    "distance_m": 1666.8,
+    "fspl_db": 104.63
+   },
+   "S3->S1": {
+    "gain_db": -102.99,
+    "distance_m": 1572.7,
+    "fspl_db": 104.13
+   },
+   "S3->S2": {
+    "gain_db": -103.0,
+    "distance_m": 1388.7,
+    "fspl_db": 103.05
+   },
+   "S3->S4": {
+    "gain_db": -103.08,
+    "distance_m": 1400.3,
+    "fspl_db": 103.12
+   },
+   "S3->S5": {
+    "gain_db": -100.6,
+    "distance_m": 1049.4,
+    "fspl_db": 100.61
+   },
+   "S4->S1": {
+    "gain_db": -104.97,
+    "distance_m": 1769.9,
+    "fspl_db": 105.15
+   },
+   "S4->S2": {
+    "gain_db": -98.97,
+    "distance_m": 1167.3,
+    "fspl_db": 101.54
+   },
+   "S4->S3": {
+    "gain_db": -102.51,
+    "distance_m": 1400.3,
+    "fspl_db": 103.12
+   },
+   "S4->S5": {
+    "gain_db": -101.56,
+    "distance_m": 819.4,
+    "fspl_db": 98.47
+   },
+   "S5->S1": {
+    "gain_db": -97.71,
+    "distance_m": 973.1,
+    "fspl_db": 99.96
+   },
+   "S5->S2": {
+    "gain_db": -113.61,
+    "distance_m": 1666.8,
+    "fspl_db": 104.63
+   },
+   "S5->S3": {
+    "gain_db": -98.91,
+    "distance_m": 1049.4,
+    "fspl_db": 100.61
+   },
+   "S5->S4": {
+    "gain_db": -99.9,
+    "distance_m": 819.4,
+    "fspl_db": 98.47
+   }
+  },
+  "ism_5800": {
+   "S1->S2": {
+    "gain_db": -116.0,
+    "distance_m": 2595.3,
+    "fspl_db": 116.0
+   },
+   "S1->S3": {
+    "gain_db": -110.43,
+    "distance_m": 1572.7,
+    "fspl_db": 111.65
+   },
+   "S1->S4": {
+    "gain_db": -112.66,
+    "distance_m": 1769.9,
+    "fspl_db": 112.68
+   },
+   "S1->S5": {
+    "gain_db": -106.63,
+    "distance_m": 973.1,
+    "fspl_db": 107.48
+   },
+   "S2->S1": {
+    "gain_db": -115.97,
+    "distance_m": 2595.3,
+    "fspl_db": 116.0
+   },
+   "S2->S3": {
+    "gain_db": -110.51,
+    "distance_m": 1388.7,
+    "fspl_db": 110.57
+   },
+   "S2->S4": {
+    "gain_db": -106.67,
+    "distance_m": 1167.3,
+    "fspl_db": 109.06
+   },
+   "S2->S5": {
+    "gain_db": -144.18,
+    "distance_m": 1666.8,
+    "fspl_db": 112.15
+   },
+   "S3->S1": {
+    "gain_db": -110.52,
+    "distance_m": 1572.7,
+    "fspl_db": 111.65
+   },
+   "S3->S2": {
+    "gain_db": -110.55,
+    "distance_m": 1388.7,
+    "fspl_db": 110.57
+   },
+   "S3->S4": {
+    "gain_db": -110.62,
+    "distance_m": 1400.3,
+    "fspl_db": 110.64
+   },
+   "S3->S5": {
+    "gain_db": -108.13,
+    "distance_m": 1049.4,
+    "fspl_db": 108.14
+   },
+   "S4->S1": {
+    "gain_db": -112.6,
+    "distance_m": 1769.9,
+    "fspl_db": 112.68
+   },
+   "S4->S2": {
+    "gain_db": -106.63,
+    "distance_m": 1167.3,
+    "fspl_db": 109.06
+   },
+   "S4->S3": {
+    "gain_db": -110.24,
+    "distance_m": 1400.3,
+    "fspl_db": 110.64
+   },
+   "S4->S5": {
+    "gain_db": -109.12,
+    "distance_m": 819.4,
+    "fspl_db": 105.99
+   },
+   "S5->S1": {
+    "gain_db": -105.49,
+    "distance_m": 973.1,
+    "fspl_db": 107.48
+   },
+   "S5->S2": {
+    "gain_db": -122.72,
+    "distance_m": 1666.8,
+    "fspl_db": 112.15
+   },
+   "S5->S3": {
+    "gain_db": -106.65,
+    "distance_m": 1049.4,
+    "fspl_db": 108.14
+   },
+   "S5->S4": {
+    "gain_db": -107.69,
+    "distance_m": 819.4,
+    "fspl_db": 105.99
+   }
+  }
+ }
+}

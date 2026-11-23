@@ -1,0 +1,41 @@
+{
+ "version": "v3",
+ "n": 603,
+ "per_area": {
+  "collateral": 93,
+  "df_ambiguity": 100,
+  "drone_search": 45,
+  "operator_query": 100,
+  "replay": 100,
+  "siting": 65,
+  "unanswerable": 100
+ },
+ "tasks_sha": "9eab4fed7d1bbdfe",
+ "code_sha": {
+  "tasks/scoring.py": "a8f1b278d38008f3",
+  "harness/verifier.py": "9828ac9cef1f97b0",
+  "harness/answers.py": "1aecb18a56df08b3",
+  "harness/prompt.py": "7ab9ff4d0d8bd299",
+  "harness/executor.py": "5c95f56ba12f6c90",
+  "harness/env.py": "4d95671e34a9a697",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/control.py": "e9dfcbdc6c187c7f",
+  "tools/coverage.py": "c5912936fd490237",
+  "tools/df.py": "4ebe25878defb209",
+  "tools/drone.py": "febd6a5aeb355c1d",
+  "tools/effects.py": "20192562eb830436",
+  "tools/errors.py": "7687713ce336a12e",
+  "tools/registry.py": "dbebc2171e94a5a8",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f"
+ },
+ "source": "data/tasks/test.jsonl (seeds 15-16)",
+ "data_sha": {
+  "data/scenarios/kandla_s15": "ddf2117647f51d40",
+  "data/scenarios/kandla_s16": "fabef5322f2c6df7"
+ },
+ "tasks_sha256": "9eab4fed7d1bbdfe9f81a9e29ad1d9ca60b03f4cddfe6d78147ca44719788ccf",
+ "tasks_sha256_note": "added 2026-10-28 (paper Revision 2): sha256 of tasks.jsonl as committed at f20ee07 (unchanged since)"
+}

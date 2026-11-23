@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout</title>
+<link href="/ui/fonts/fonts.css" rel="stylesheet">
+<link href="/ui/console.css" rel="stylesheet">
+<script type="importmap">
+{"imports": {"three": "/ui/vendor/three/build/three.module.min.js",
+             "three/addons/": "/ui/vendor/three/examples/jsm/"}}
+</script>
+</head>
+<body>
+<header class="sys" aria-label="Systems">
+  <div class="cell brand"><span class="mark" aria-hidden="true"></span><b>SceneScout</b><span class="site" id="siteName">Deendayal Port, Kandla Creek</span></div>
+  <div class="cell" id="sysModel" data-state="wait"><span class="k">Model</span><span class="v">checking</span></div>
+  <div class="cell" id="sysServer" data-state="wait"><span class="k">Server</span><span class="v">checking</span></div>
+  <div class="cell" id="sysSensors" data-state="wait"><span class="k">Sensors</span><span class="v">checking</span></div>
+  <div class="cell" id="sysRf" data-state="wait"><span class="k">RF</span><span class="v">checking</span></div>
+  <div class="cell" id="sysData" data-state="wait"><span class="k">Data</span><span class="v">checking</span></div>
+  <div class="cell" id="sysWorld" data-state="wait"><span class="k">World</span><span class="v">loading</span></div>
+  <div class="cell grow"></div>
+  <div class="cell" id="sysSim"><span class="k">Sim</span><span class="v num">t 0 / 600 s</span></div>
+  <div class="cell" id="sysClock"><span class="k">IST</span><span class="v num">--:--:--</span></div>
+</header>
+
+<main class="deck">
+  <section class="world" aria-label="3D port view">
+    <div id="cesium"></div>
+
+    <div class="plate cam" id="camCaption" aria-live="polite">
+      <span id="camText">Port overview</span>
+      <button type="button" class="link" id="camBack" hidden>Return to previous view</button>
+    </div>
+
+    <nav class="plate views" aria-label="Camera views">
+      <button type="button" data-view="overview" class="on">Port</button>
+      <button type="button" data-view="jetties">Jetties</button>
+      <button type="button" data-view="tankfarms">Tank farms</button>
+      <button type="button" data-view="top">Top-down</button>
+      <button type="button" id="dronesBtn" aria-pressed="false" title="Observed tracks as flying drones (U)">Drones</button>
+      <button type="button" id="flyBtn" aria-pressed="false" title="Fly the camera: WASD, Q and E, mouse look (F)">Fly</button>
+      <button type="button" id="followBtn" aria-pressed="true" class="on" title="Let the agent move the camera (G)">Follow agent</button>
+      <button type="button" id="layersBtn" aria-expanded="false" aria-controls="layers">Layers</button>
+    </nav>
+
+    <div class="plate held" id="heldHint" hidden role="status">View held. <button type="button" class="link">Press <kbd>V</kbd> to frame the answer</button></div>
+    <div class="plate flyhint" id="flyHint" hidden role="status"><b>Fly mode</b> <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move, <kbd>Q</kbd> <kbd>E</kbd> down, up, mouse look, <kbd>Shift</kbd> faster, wheel speed, <kbd>Esc</kbd> leave</div>
+    <ul class="plate maplegend" id="mapLegend" hidden aria-label="Map legend"></ul>
+
+    <div class="plate layers" id="layers" hidden>
+      <label><input type="checkbox" data-layer="structures" checked> Port structures (Blender export)</label>
+      <label><input type="checkbox" data-layer="zones" checked> Zones</label>
+      <label><input type="checkbox" data-layer="sensors" checked> DF sensors</label>
+      <label><input type="checkbox" data-layer="tracks" checked> Tracks</label>
+      <label><input type="checkbox" data-layer="analysis" checked> Analysis marks</label>
+      <label><input type="checkbox" data-layer="echo" checked> Echo map in DF answers</label>
+      <div class="rfmaps">
+        <span class="lbl">RF maps (model ensemble)</span>
+        <label><input type="radio" name="rfmap" value="" checked> None</label>
+        <label><input type="radio" name="rfmap" value="ghost_risk"> Ghost risk</label>
+        <label><input type="radio" name="rfmap" value="df_err"> DF accuracy</label>
+        <label><input type="radio" name="rfmap" value="trust"> Model trust</label>
+        <label><input type="radio" name="rfmap" value="blind_spot"> Blind spots</label>
+        <div class="rfsel">
+          <select id="rfBand" aria-label="Band"><option value="sub_ghz_868_915">868/915 MHz</option><option value="ism_2400" selected>2.4 GHz</option><option value="ism_5800">5.8 GHz</option></select>
+          <select id="rfHeight" aria-label="Drone height"><option value="15" selected>15 m</option><option value="40">40 m</option><option value="80">80 m</option></select>
+        </div>
+        <div class="rflegend" id="rfLegend" hidden><i id="rfRamp"></i><span id="rfLo"></span><span id="rfHi"></span><p id="rfText"></p></div>
+      </div>
+      <div class="rfmaps mpath">
+        <label><input type="checkbox" id="mpOn"> Multipath per sensor (echoes)</label>
+        <div class="rfsel" id="mpSel" hidden>
+          <select id="mpSensor" aria-label="DF sensor"><option>S1</option><option>S2</option><option>S3</option><option selected>S4</option><option>S5</option></select>
+          <select id="mpBand" aria-label="Band"><option value="sub_ghz_868_915">868/915 MHz</option><option value="ism_2400" selected>2.4 GHz</option><option value="ism_5800">5.8 GHz</option></select>
+          <select id="mpHeight" aria-label="Drone height"><option value="5" selected>5 m</option><option value="40">40 m</option></select>
+        </div>
+        <div class="rflegend" id="mpLegend" hidden><i id="mpRamp"></i><span>few echoes</span><span class="hi">more echoes</span><p id="mpText"></p></div>
+        <ol class="mpspots" id="mpSpots" hidden></ol>
+        <button type="button" id="mpFly" hidden>Fly to worst area</button>
+      </div>
+      <div class="find">
+        <label for="search">Find</label>
+        <input id="search" type="search" placeholder="Jetty J3, TF-2, S4, trk:4773 (Shift+F)" autocomplete="off">
+        <ul id="searchList" hidden></ul>
+      </div>
+    </div>
+
+    <aside class="plate info" id="info" hidden aria-live="polite"></aside>
+
+    <div class="plate fidelity" id="fidelity" tabindex="0" role="button" aria-expanded="false">
+      <b>Simulation</b><span id="fidText">Geometry: Blender port model (from OSM footprints and imagery, heights estimated); sensors and drones synthetic</span>
+      <dl id="fidMore" hidden></dl>
+    </div>
+
+    <div class="plate compass" aria-hidden="true">
+      <svg viewBox="-20 -20 40 40" width="28" height="28"><g id="northNeedle"><path d="M0 -15 L5 6 L0 2 L-5 6 Z"/></g></svg>
+      <div class="scale"><i id="scaleBar"></i><span id="scaleText">500 m</span></div>
+    </div>
+
+    <div class="banner" id="banner" hidden role="status"></div>
+    <div class="curtain" id="curtain">
+      <div class="boot">
+        <div class="word"><span class="mark" aria-hidden="true"></span>SceneScout</div>
+        <ol id="bootList"></ol>
+      </div>
+    </div>
+  </section>
+
+  <aside class="rail" aria-label="Question and answer">
+    <div class="scroll" id="railScroll">
+      <section class="qa" id="qa">
+        <div class="idle" id="idle">
+          <h1>Ask about drones, sensors, bearings or jamming at the port.</h1>
+          <p>The agent searches the simulated RF picture with its tools and shows every piece of evidence on the map.</p>
+          <p class="keys">Press <kbd>/</kbd> to ask, <kbd>T</kbd> for plan view, <kbd>D</kbd> for demo questions, <kbd>W</kbd> for the wall-display size.</p>
+          <p class="keys">Camera: right-drag orbits about the point under the cursor, <kbd>F</kbd> flies, <kbd>V</kbd> frames the answer, <kbd>Shift</kbd>+<kbd>1</kbd> to <kbd>4</kbd> saves a view and <kbd>1</kbd> to <kbd>4</kbd> recalls it, <kbd>U</kbd> shows live drones.</p>
+        </div>
+        <div class="question" id="question" hidden>
+          <p class="qnote" id="qNote" hidden></p>
+          <p class="q" id="qText"></p>
+          <p class="meta" id="qMeta"></p>
+        </div>
+        <div class="working" id="working" hidden aria-live="polite">
+          <div class="now"><span id="nowText">Reading the question</span><span class="clock num" id="nowClock">0.0 s</span></div>
+          <div class="turns" id="turnBar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="nownote" id="nowNote" hidden><span id="nowNoteText"></span><div class="acts" id="nowActs"></div></div>
+        </div>
+        <div class="verdict" id="verdict" hidden></div>
+      </section>
+
+      <section class="steps" id="stepsBox" hidden>
+        <h2>Agent work</h2>
+        <ol class="steps" id="steps"></ol>
+      </section>
+
+      <section class="compare" id="compare" hidden></section>
+    </div>
+
+    <div class="gate" id="gate" hidden role="dialog" aria-labelledby="gateTitle"></div>
+
+    <form class="ask" id="askForm" autocomplete="off">
+      <label for="q" class="vh">Question</label>
+      <textarea id="q" rows="2" maxlength="400" placeholder="Ask a question"></textarea>
+      <div class="row">
+        <button type="button" class="ghost" id="demoBtn" aria-expanded="false" aria-controls="demo">Demo questions <kbd>D</kbd></button>
+        <span class="grow"></span>
+        <button type="button" class="ghost" id="stopBtn" hidden>Stop <kbd>Esc</kbd></button>
+        <button type="submit" class="go" id="go">Ask</button>
+      </div>
+    </form>
+    <div class="demo" id="demo" hidden>
+      <h2>Demo questions</h2>
+      <ol id="demoList"></ol>
+      <p class="note">Seed 0 demo scenario, never used in training or evaluation.</p>
+    </div>
+  </aside>
+
+  <footer class="timeline" aria-label="Simulation time">
+    <button type="button" class="play" id="play" aria-label="Play">Play</button>
+    <span class="speed" id="speed">10x</span>
+    <div class="track" id="tl" role="slider" aria-label="Simulation time" aria-valuemin="0" aria-valuemax="600" aria-valuenow="0" tabindex="0">
+      <div class="ticks" id="tlTicks"></div>
+      <div class="events" id="tlEvents"></div>
+      <div class="head" id="tlHead"><span id="tlHeadText">0 s</span></div>
+    </div>
+  </footer>
+</main>
+<script type="module" src="/ui/console3.js"></script>
+</body>
+</html>

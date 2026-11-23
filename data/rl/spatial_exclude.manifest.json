@@ -1,0 +1,79 @@
+{
+ "cluster": "west tank-farm area: convex hull of zone:tank_farm_tf3_restricted, zone:tank_farm_tf8_restricted, buffered 100 m",
+ "rule": "scripts/spatial_holdout.py in_cluster (zone/object names, key position, siting zones, track position observed or true at task time)",
+ "test_source": "data/tasks/x3/test.jsonl",
+ "test_tasks": 9758,
+ "held_out_tasks": 980,
+ "held_out_by_reason": {
+  "zone_ref": 181,
+  "track_observed": 313,
+  "named": 236,
+  "key_position": 132,
+  "track_true": 77,
+  "siting_zone": 41
+ },
+ "held_out_by_area": {
+  "operator_query": 511,
+  "df_ambiguity": 182,
+  "drone_search": 37,
+  "siting": 100,
+  "collateral": 1,
+  "replay": 125,
+  "unanswerable": 24
+ },
+ "train_exclusions": {
+  "data/tasks/x3/train.jsonl": {
+   "rows": 13150,
+   "excluded": 900
+  },
+  "data/tasks/x3_W6/train.jsonl": {
+   "rows": 2241,
+   "excluded": 215
+  },
+  "data/tasks/x3_W7/train.jsonl": {
+   "rows": 2233,
+   "excluded": 190
+  },
+  "data/tasks/x3_W8/train.jsonl": {
+   "rows": 2230,
+   "excluded": 109
+  },
+  "data/tasks/x3/val_clean.jsonl": {
+   "rows": 1499,
+   "excluded": 97
+  },
+  "data/tasks/x3_Mtrain/train_M1d.jsonl": {
+   "rows": 1762,
+   "excluded": 116
+  },
+  "data/tasks/x3_Mtrain/train_M2d.jsonl": {
+   "rows": 1748,
+   "excluded": 165
+  },
+  "data/tasks/x3_Mtrain/train_M3d.jsonl": {
+   "rows": 1720,
+   "excluded": 146
+  },
+  "data/tasks/x3_Mtrain/train_M4d.jsonl": {
+   "rows": 1772,
+   "excluded": 142
+  },
+  "data/tasks/x3_Mtrain/train_ds_M1d.jsonl": {
+   "rows": 49,
+   "excluded": 0
+  },
+  "data/tasks/x3_Mtrain/train_ds_M2d.jsonl": {
+   "rows": 38,
+   "excluded": 0
+  },
+  "data/tasks/x3_Mtrain/train_ds_M3d.jsonl": {
+   "rows": 54,
+   "excluded": 3
+  },
+  "data/tasks/x3_Mtrain/train_ds_M4d.jsonl": {
+   "rows": 58,
+   "excluded": 0
+  }
+ },
+ "exclude_sha256": "52176e957db50141225e00ca43877b045a3d70a89c3d5ec3d4afe808b8ae24a3"
+}

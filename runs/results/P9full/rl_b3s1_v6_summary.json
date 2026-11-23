@@ -1,0 +1,565 @@
+{
+ "name": "rl_b3s1_v6",
+ "n": 381,
+ "success_rate": 0.656,
+ "phys": {
+  "cv_auc_forest": 0.764,
+  "cv_auc_logit": 0.774,
+  "top_forest": [
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.0452
+   },
+   {
+    "feature": "hyps_per_look",
+    "auc_drop_mean": 0.0149
+   },
+   {
+    "feature": "strongest_los_frac",
+    "auc_drop_mean": 0.0131
+   },
+   {
+    "feature": "los_look_frac",
+    "auc_drop_mean": 0.0086
+   },
+   {
+    "feature": "ghost_frac_5deg",
+    "auc_drop_mean": 0.008
+   }
+  ],
+  "top_logit": [
+   {
+    "feature": "strongest_los_frac",
+    "auc_drop_mean": 0.084
+   },
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.0747
+   },
+   {
+    "feature": "ghost_frac_5deg",
+    "auc_drop_mean": 0.0594
+   },
+   {
+    "feature": "map_ghost_risk",
+    "auc_drop_mean": 0.0397
+   },
+   {
+    "feature": "emitter_z_m",
+    "auc_drop_mean": 0.0393
+   }
+  ],
+  "sig_logit_terms": [
+   {
+    "term": "emitter_z_m_missing",
+    "coef": 1.428,
+    "ci_lo": 1.02,
+    "ci_hi": 2.073
+   },
+   {
+    "term": "hyps_per_look",
+    "coef": -0.463,
+    "ci_lo": -0.806,
+    "ci_hi": -0.211
+   },
+   {
+    "term": "ghost_frac_5deg_missing",
+    "coef": 1.477,
+    "ci_lo": 0.844,
+    "ci_hi": 2.279
+   },
+   {
+    "term": "map_ghost_risk_missing",
+    "coef": 1.35,
+    "ci_lo": 0.922,
+    "ci_hi": 2.064
+   },
+   {
+    "term": "map_az_spread_deg",
+    "coef": 1.162,
+    "ci_lo": 0.13,
+    "ci_hi": 1.438
+   },
+   {
+    "term": "n_tracks_active",
+    "coef": 0.789,
+    "ci_lo": 0.518,
+    "ci_hi": 1.209
+   },
+   {
+    "term": "strongest_los_frac",
+    "coef": 1.261,
+    "ci_lo": 0.749,
+    "ci_hi": 1.77
+   }
+  ]
+ },
+ "phys_area": {
+  "cv_auc_forest": 0.831,
+  "cv_auc_logit": 0.832,
+  "top_forest": [
+   {
+    "feature": "area",
+    "auc_drop_mean": 0.1153
+   },
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.031
+   },
+   {
+    "feature": "strongest_los_frac",
+    "auc_drop_mean": 0.025
+   },
+   {
+    "feature": "los_look_frac",
+    "auc_drop_mean": 0.0095
+   },
+   {
+    "feature": "ghost_frac_5deg",
+    "auc_drop_mean": 0.0065
+   }
+  ],
+  "top_logit": [
+   {
+    "feature": "area",
+    "auc_drop_mean": 0.1639
+   },
+   {
+    "feature": "strongest_los_frac",
+    "auc_drop_mean": 0.0952
+   },
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.0509
+   },
+   {
+    "feature": "ghost_frac_label",
+    "auc_drop_mean": 0.0486
+   },
+   {
+    "feature": "hyps_per_look",
+    "auc_drop_mean": 0.0315
+   }
+  ],
+  "sig_logit_terms": [
+   {
+    "term": "emitter_z_m",
+    "coef": -0.337,
+    "ci_lo": -0.625,
+    "ci_hi": -0.042
+   },
+   {
+    "term": "emitter_z_m_missing",
+    "coef": 0.819,
+    "ci_lo": 0.486,
+    "ci_hi": 1.475
+   },
+   {
+    "term": "nearest_sensor_m",
+    "coef": 0.349,
+    "ci_lo": 0.009,
+    "ci_hi": 0.717
+   },
+   {
+    "term": "hyps_per_look",
+    "coef": -0.502,
+    "ci_lo": -0.881,
+    "ci_hi": -0.168
+   },
+   {
+    "term": "ghost_frac_label",
+    "coef": 0.947,
+    "ci_lo": 0.285,
+    "ci_hi": 1.405
+   },
+   {
+    "term": "ghost_frac_5deg_missing",
+    "coef": 0.907,
+    "ci_lo": 0.406,
+    "ci_hi": 1.588
+   },
+   {
+    "term": "map_ghost_risk_missing",
+    "coef": 0.801,
+    "ci_lo": 0.442,
+    "ci_hi": 1.458
+   },
+   {
+    "term": "map_az_spread_deg",
+    "coef": 1.13,
+    "ci_lo": 0.095,
+    "ci_hi": 1.418
+   },
+   {
+    "term": "n_tracks_active",
+    "coef": 0.732,
+    "ci_lo": 0.546,
+    "ci_hi": 1.196
+   },
+   {
+    "term": "los_look_frac",
+    "coef": 0.535,
+    "ci_lo": 0.052,
+    "ci_hi": 1.154
+   },
+   {
+    "term": "strongest_los_frac",
+    "coef": 1.315,
+    "ci_lo": 0.889,
+    "ci_hi": 1.788
+   },
+   {
+    "term": "area=replay",
+    "coef": 3.339,
+    "ci_lo": 2.814,
+    "ci_hi": 3.687
+   },
+   {
+    "term": "area=unanswerable",
+    "coef": 1.269,
+    "ci_lo": 0.466,
+    "ci_hi": 1.888
+   }
+  ]
+ },
+ "strata": {
+  "los_stratum": {
+   "LOS": {
+    "n": 311,
+    "success": 0.627,
+    "score": 0.764
+   },
+   "NLOS": {
+    "n": 41,
+    "success": 0.683,
+    "score": 0.765
+   },
+   "none": {
+    "n": 348,
+    "success": 0.784,
+    "score": 0.81
+   }
+  },
+  "band": {
+   "ism_2400": {
+    "n": 189,
+    "success": 0.646,
+    "score": 0.743
+   },
+   "ism_5800": {
+    "n": 222,
+    "success": 0.725,
+    "score": 0.808
+   },
+   "none": {
+    "n": 113,
+    "success": 0.796,
+    "score": 0.823
+   },
+   "sub_ghz_868_915": {
+    "n": 176,
+    "success": 0.699,
+    "score": 0.784
+   }
+  },
+  "area": {
+   "collateral": {
+    "n": 100,
+    "success": 0.94,
+    "score": 0.932
+   },
+   "df_ambiguity": {
+    "n": 100,
+    "success": 0.36,
+    "score": 0.643
+   },
+   "drone_search": {
+    "n": 100,
+    "success": 0.72,
+    "score": 0.812
+   },
+   "operator_query": {
+    "n": 100,
+    "success": 0.62,
+    "score": 0.713
+   },
+   "replay": {
+    "n": 100,
+    "success": 0.88,
+    "score": 0.905
+   },
+   "siting": {
+    "n": 100,
+    "success": 0.56,
+    "score": 0.623
+   },
+   "unanswerable": {
+    "n": 100,
+    "success": 0.88,
+    "score": 0.88
+   }
+  },
+  "template": {
+   "actuation": {
+    "n": 24,
+    "success": 0.875,
+    "score": 0.875
+   },
+   "band_change": {
+    "n": 13,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "band_in_zone": {
+    "n": 7,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "count_in_zone": {
+    "n": 7,
+    "success": 0.714,
+    "score": 0.802
+   },
+   "direct_all": {
+    "n": 17,
+    "success": 0.235,
+    "score": 0.577
+   },
+   "direct_path": {
+    "n": 17,
+    "success": 0.706,
+    "score": 0.706
+   },
+   "ds_hover": {
+    "n": 30,
+    "success": 0.767,
+    "score": 0.865
+   },
+   "ds_hover_budget2": {
+    "n": 29,
+    "success": 0.724,
+    "score": 0.857
+   },
+   "ds_loiter": {
+    "n": 1,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "ds_swarm": {
+    "n": 13,
+    "success": 0.923,
+    "score": 0.969
+   },
+   "ds_wide_prior": {
+    "n": 21,
+    "success": 0.714,
+    "score": 0.8
+   },
+   "entered_between": {
+    "n": 13,
+    "success": 0.462,
+    "score": 0.638
+   },
+   "entity_not_found": {
+    "n": 24,
+    "success": 0.833,
+    "score": 0.833
+   },
+   "exit_time": {
+    "n": 13,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "first_detection": {
+    "n": 13,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "first_entry": {
+    "n": 12,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "first_into_zone": {
+    "n": 12,
+    "success": 0.583,
+    "score": 0.599
+   },
+   "future_time": {
+    "n": 24,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "genuine_drone": {
+    "n": 7,
+    "success": 0.429,
+    "score": 0.643
+   },
+   "ghost_check": {
+    "n": 7,
+    "success": 0.0,
+    "score": 0.143
+   },
+   "jam_all": {
+    "n": 18,
+    "success": 0.944,
+    "score": 0.935
+   },
+   "jam_aviation": {
+    "n": 18,
+    "success": 0.889,
+    "score": 0.901
+   },
+   "jam_fratricide": {
+    "n": 18,
+    "success": 1.0,
+    "score": 0.956
+   },
+   "jam_links": {
+    "n": 18,
+    "success": 0.944,
+    "score": 0.944
+   },
+   "jam_point": {
+    "n": 10,
+    "success": 1.0,
+    "score": 0.996
+   },
+   "jam_protected": {
+    "n": 18,
+    "success": 0.889,
+    "score": 0.886
+   },
+   "last_seen": {
+    "n": 12,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "locate": {
+    "n": 17,
+    "success": 0.412,
+    "score": 0.796
+   },
+   "locate_ghost": {
+    "n": 17,
+    "success": 0.059,
+    "score": 0.375
+   },
+   "locate_two_sensors": {
+    "n": 16,
+    "success": 0.5,
+    "score": 0.755
+   },
+   "loiter_start": {
+    "n": 12,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "los_check": {
+    "n": 6,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "near_object": {
+    "n": 6,
+    "success": 0.833,
+    "score": 0.833
+   },
+   "near_object_ambiguous": {
+    "n": 6,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "nearest_drone": {
+    "n": 6,
+    "success": 0.167,
+    "score": 0.167
+   },
+   "noisy_band": {
+    "n": 6,
+    "success": 0.833,
+    "score": 0.917
+   },
+   "pilot_locate": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "protocol_id": {
+    "n": 6,
+    "success": 0.667,
+    "score": 0.833
+   },
+   "reject_ghosts": {
+    "n": 16,
+    "success": 0.25,
+    "score": 0.659
+   },
+   "rf_ambiguous": {
+    "n": 5,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "suggest_one": {
+    "n": 24,
+    "success": 0.208,
+    "score": 0.208
+   },
+   "suggest_two": {
+    "n": 24,
+    "success": 0.625,
+    "score": 0.792
+   },
+   "swarm_in_zone": {
+    "n": 6,
+    "success": 0.667,
+    "score": 0.639
+   },
+   "swarm_members": {
+    "n": 6,
+    "success": 0.333,
+    "score": 0.74
+   },
+   "tracks_in_band": {
+    "n": 6,
+    "success": 0.333,
+    "score": 0.417
+   },
+   "unknown_track": {
+    "n": 23,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "weak_detect": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "weak_df": {
+    "n": 23,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "weak_low_alt": {
+    "n": 23,
+    "success": 0.565,
+    "score": 0.666
+   },
+   "which_zone": {
+    "n": 6,
+    "success": 0.833,
+    "score": 0.917
+   },
+   "zone_incursion": {
+    "n": 6,
+    "success": 0.333,
+    "score": 0.57
+   },
+   "zone_incursion_ambiguous": {
+    "n": 6,
+    "success": 0.833,
+    "score": 0.833
+   }
+  }
+ }
+}

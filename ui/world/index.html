@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/cesium@1.145.0/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+<link href="world.css" rel="stylesheet">
+<script>window.CESIUM_BASE_URL = "https://cdn.jsdelivr.net/npm/cesium@1.145.0/Build/Cesium/";</script>
+<script src="https://cdn.jsdelivr.net/npm/cesium@1.145.0/Build/Cesium/Cesium.js"></script>
+</head>
+<body>
+<div id="cesium"></div>
+<canvas id="hud" aria-hidden="true"></canvas>
+
+<header class="title">
+  <h1>Deendayal Port, Kandla Creek</h1>
+  <p id="shotLine">Gulf of Kutch, Gujarat</p>
+  <span class="badge">Simulation: drones, swarms and sensor sites are synthetic</span>
+</header>
+
+<section class="stats" aria-label="Performance">
+  <div class="presets" role="radiogroup" aria-label="Rendering quality">
+    <button data-q="performance">Performance</button>
+    <button data-q="balanced">Balanced</button>
+    <button data-q="cinematic">Cinematic</button>
+  </div>
+  <div class="meter"><span id="fps">-- fps</span><span id="ft">p50 -- ms, p95 -- ms</span><span id="res">--</span><span id="tiles">tiles: --</span></div>
+</section>
+
+<nav class="layers" aria-label="Layers">
+  <label><input type="checkbox" data-layer="photoreal" checked> Photoreal 3D (Google)</label>
+  <label><input type="checkbox" data-layer="aerial"> Aerial imagery and terrain</label>
+  <label><input type="checkbox" data-layer="twin"> OSM twin outlines</label>
+  <label><input type="checkbox" data-layer="zones" checked> Restricted zones</label>
+  <label><input type="checkbox" data-layer="sensors" checked> DF sensors</label>
+  <label><input type="checkbox" data-layer="drones" checked> Drones and swarms</label>
+  <label><input type="checkbox" data-layer="hud" checked> Tracking HUD</label>
+  <dl class="legend">
+    <dt class="real">Photogrammetry</dt><dd>Google 3D tiles, as captured</dd>
+    <dt class="osm">OSM</dt><dd>mapped footprints, heights estimated</dd>
+    <dt class="syn">Synthetic</dt><dd>drones, swarms, sensor sites, zones</dd>
+  </dl>
+</nav>
+
+<footer class="bar">
+  <button id="play" aria-label="Play or pause">Pause</button>
+  <select id="speed" aria-label="Playback speed"><option>1</option><option>2</option><option selected>4</option><option>10</option></select>
+  <input id="time" type="range" min="0" max="600" step="0.1" value="300" aria-label="Scenario time">
+  <span id="clock">T+05:00</span>
+  <div class="shots" role="toolbar" aria-label="Camera">
+    <button data-shot="overview">Overview</button>
+    <button data-shot="jetties">Jetties</button>
+    <button data-shot="tankfarms">Tank farms</button>
+    <button data-shot="chase1">Chase SW-1</button>
+    <button data-shot="chase2">Chase SW-2</button>
+    <button data-shot="nodeS1">DF node S1</button>
+    <button data-shot="free">Free fly</button>
+  </div>
+</footer>
+<div id="boot" class="boot">Loading the port&hellip;</div>
+<script src="world.js"></script>
+</body>
+</html>

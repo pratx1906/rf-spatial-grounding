@@ -1,0 +1,271 @@
+{
+ "version": "para_v1",
+ "n": 150,
+ "per_area": {
+  "collateral": 4,
+  "df_ambiguity": 25,
+  "drone_search": 19,
+  "operator_query": 48,
+  "replay": 35,
+  "siting": 10,
+  "unanswerable": 9
+ },
+ "per_family": {
+  "band_change": 5,
+  "count_in_zone": 4,
+  "direct_all": 3,
+  "direct_path": 5,
+  "ds_hover": 5,
+  "ds_hover_budget2": 5,
+  "ds_loiter": 1,
+  "ds_swarm": 3,
+  "ds_wide_prior": 5,
+  "entered_between": 5,
+  "exit_time": 4,
+  "first_detection": 4,
+  "first_entry": 4,
+  "first_into_zone": 5,
+  "future_time": 3,
+  "genuine_drone": 4,
+  "ghost_check": 2,
+  "jam_fratricide": 1,
+  "jam_protected": 3,
+  "last_seen": 3,
+  "locate": 5,
+  "locate_ghost": 4,
+  "locate_two_sensors": 4,
+  "loiter_start": 5,
+  "los_check": 3,
+  "nearest_drone": 4,
+  "noisy_band": 4,
+  "protocol_id": 5,
+  "reject_ghosts": 4,
+  "rf_ambiguous": 2,
+  "suggest_one": 5,
+  "suggest_two": 5,
+  "swarm_members": 2,
+  "tracks_in_band": 5,
+  "unknown_track": 4,
+  "which_zone": 5,
+  "zone_incursion": 5,
+  "zone_incursion_ambiguous": 5
+ },
+ "per_seed": {
+  "15": 15,
+  "16": 11,
+  "51": 9,
+  "52": 12,
+  "53": 16,
+  "54": 12,
+  "55": 9,
+  "56": 17,
+  "57": 12,
+  "58": 17,
+  "59": 7,
+  "60": 13
+ },
+ "per_family_cluster": {
+  "band_change": {
+   "15-16": 2,
+   "51-60": 3
+  },
+  "count_in_zone": {
+   "15-16": 2,
+   "51-60": 2
+  },
+  "direct_all": {
+   "51-60": 3
+  },
+  "direct_path": {
+   "15-16": 3,
+   "51-60": 2
+  },
+  "ds_hover": {
+   "15-16": 1,
+   "51-60": 4
+  },
+  "ds_hover_budget2": {
+   "51-60": 5
+  },
+  "ds_loiter": {
+   "15-16": 1
+  },
+  "ds_swarm": {
+   "15-16": 1,
+   "51-60": 2
+  },
+  "ds_wide_prior": {
+   "51-60": 5
+  },
+  "entered_between": {
+   "51-60": 5
+  },
+  "exit_time": {
+   "15-16": 1,
+   "51-60": 3
+  },
+  "first_detection": {
+   "15-16": 1,
+   "51-60": 3
+  },
+  "first_entry": {
+   "15-16": 1,
+   "51-60": 3
+  },
+  "first_into_zone": {
+   "51-60": 5
+  },
+  "future_time": {
+   "51-60": 3
+  },
+  "genuine_drone": {
+   "51-60": 4
+  },
+  "ghost_check": {
+   "51-60": 2
+  },
+  "jam_fratricide": {
+   "51-60": 1
+  },
+  "jam_protected": {
+   "51-60": 3
+  },
+  "last_seen": {
+   "51-60": 3
+  },
+  "locate": {
+   "15-16": 2,
+   "51-60": 3
+  },
+  "locate_ghost": {
+   "51-60": 4
+  },
+  "locate_two_sensors": {
+   "15-16": 1,
+   "51-60": 3
+  },
+  "loiter_start": {
+   "15-16": 1,
+   "51-60": 4
+  },
+  "los_check": {
+   "51-60": 3
+  },
+  "nearest_drone": {
+   "15-16": 2,
+   "51-60": 2
+  },
+  "noisy_band": {
+   "51-60": 4
+  },
+  "protocol_id": {
+   "15-16": 1,
+   "51-60": 4
+  },
+  "reject_ghosts": {
+   "51-60": 4
+  },
+  "rf_ambiguous": {
+   "51-60": 2
+  },
+  "suggest_one": {
+   "15-16": 1,
+   "51-60": 4
+  },
+  "suggest_two": {
+   "15-16": 1,
+   "51-60": 4
+  },
+  "swarm_members": {
+   "15-16": 1,
+   "51-60": 1
+  },
+  "tracks_in_band": {
+   "51-60": 5
+  },
+  "unknown_track": {
+   "15-16": 2,
+   "51-60": 2
+  },
+  "which_zone": {
+   "15-16": 1,
+   "51-60": 4
+  },
+  "zone_incursion": {
+   "51-60": 5
+  },
+  "zone_incursion_ambiguous": {
+   "51-60": 5
+  }
+ },
+ "tasks_sha": "b729e6d9ab715ac4",
+ "tasks_sha256": "b729e6d9ab715ac4fc5a36fcefd498c950e97affa891e1764daeaeb49d82a11c",
+ "code_sha": {
+  "tasks/scoring.py": "000beddc4d414e02",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "170095b43ff53100",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "1b23f6de89308e14",
+  "harness/env.py": "3ab406a4515ecb8a",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "a2eae7a828ff311e",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/para_v1.jsonl (seeds 15-16,51-60)",
+ "source_sha256": "7234aeb5595aa34a90ce72222e09d9ee415801603e52cf543775072de90ef19f",
+ "selection": {
+  "mode": "copy",
+  "areas": null,
+  "rng_seed": null,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "ds_wide_prior",
+  "locate_ghost",
+  "loiter_start"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s15_X": "dd1630a1aeee5f24",
+  "data/scenarios_v3/kandla_s16_X": "8683aaf20b33a913",
+  "data/scenarios_v3/kandla_s51_X": "b2ae93ec5435cbf8",
+  "data/scenarios_v3/kandla_s52_X": "c3b03c74d45c07f5",
+  "data/scenarios_v3/kandla_s53_X": "59d8f71346326059",
+  "data/scenarios_v3/kandla_s54_X": "218a5a74b368a9d7",
+  "data/scenarios_v3/kandla_s55_X": "f82c6d4dea4e12c4",
+  "data/scenarios_v3/kandla_s56_X": "0ce0f81b0b6a2313",
+  "data/scenarios_v3/kandla_s57_X": "31c3f7e8c2557eb9",
+  "data/scenarios_v3/kandla_s58_X": "1e30f73fbca0176c",
+  "data/scenarios_v3/kandla_s59_X": "0770f7a9109d26c0",
+  "data/scenarios_v3/kandla_s60_X": "725074b01c36c67e"
+ },
+ "provenance": "PROXY, NOT HUMAN-WRITTEN: rule-based rewording (scripts/paraphrase_rules.py, rules_v1, seed 11) of 150 eval/frozen/v6 tasks, at most 5 source tasks per family, each checked by scripts/paraphrase.ok (protected refs/numbers/places, no echoed fact list, meaning-critical words kept). Answer keys are the v6 keys. The paper's free-text claim may not use this set.",
+ "human_written": false
+}

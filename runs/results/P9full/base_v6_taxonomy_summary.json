@@ -1,0 +1,89 @@
+{
+ "episodes": 700,
+ "failed": 537,
+ "class_share": {
+  "budget_exhausted": 0.59,
+  "parse_format": 0.132,
+  "wrong_siting": 0.089,
+  "wrong_event": 0.039,
+  "missed_abstain": 0.03,
+  "wrong_intent": 0.026,
+  "verifier_rejected": 0.022,
+  "over_abstain": 0.017,
+  "wrong_track": 0.015,
+  "position_off": 0.011,
+  "wrong_abstain_reason": 0.009,
+  "incomplete_collateral": 0.007,
+  "position_imprecise": 0.006,
+  "wrong_zone": 0.004,
+  "wrong_protocol": 0.002
+ },
+ "class_count": {
+  "budget_exhausted": 317,
+  "parse_format": 71,
+  "wrong_siting": 48,
+  "wrong_event": 21,
+  "missed_abstain": 16,
+  "wrong_intent": 14,
+  "verifier_rejected": 12,
+  "over_abstain": 9,
+  "wrong_track": 8,
+  "position_off": 6,
+  "wrong_abstain_reason": 5,
+  "incomplete_collateral": 4,
+  "position_imprecise": 3,
+  "wrong_zone": 2,
+  "wrong_protocol": 1
+ },
+ "by_area": {
+  "collateral": {
+   "budget_exhausted": 33,
+   "parse_format": 14,
+   "verifier_rejected": 9,
+   "incomplete_collateral": 4,
+   "over_abstain": 1
+  },
+  "df_ambiguity": {
+   "budget_exhausted": 89,
+   "verifier_rejected": 1
+  },
+  "drone_search": {
+   "budget_exhausted": 49,
+   "wrong_intent": 9,
+   "position_off": 6,
+   "parse_format": 5,
+   "position_imprecise": 3,
+   "verifier_rejected": 1
+  },
+  "operator_query": {
+   "budget_exhausted": 42,
+   "parse_format": 29,
+   "wrong_track": 8,
+   "over_abstain": 6,
+   "wrong_zone": 2,
+   "wrong_protocol": 1
+  },
+  "replay": {
+   "budget_exhausted": 28,
+   "wrong_event": 21,
+   "wrong_intent": 5,
+   "parse_format": 5,
+   "verifier_rejected": 1
+  },
+  "siting": {
+   "wrong_siting": 48,
+   "budget_exhausted": 13,
+   "parse_format": 13,
+   "over_abstain": 2
+  },
+  "unanswerable": {
+   "budget_exhausted": 63,
+   "missed_abstain": 16,
+   "parse_format": 5,
+   "wrong_abstain_reason": 5
+  }
+ },
+ "eval": "runs/paper/results/P1/base_v6/eval.json",
+ "set": "eval/frozen/v6/tasks.jsonl",
+ "thr": 0.8
+}

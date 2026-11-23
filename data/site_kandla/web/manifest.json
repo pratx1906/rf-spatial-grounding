@@ -1,0 +1,373 @@
+{
+ "frame": "site ENU (m), glTF Y-up",
+ "tiles": {
+  "jetties": {
+   "file": "jetties.glb",
+   "objects": 8,
+   "bytes": 599120,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "jetties_albedo.webp",
+    "ao": "jetties_ao.webp",
+    "atlas": 8192,
+    "texel_m": 0.088,
+    "bytes": 6782412
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "tanks": {
+   "file": "tanks.glb",
+   "objects": 263,
+   "bytes": 5032960,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "tanks_albedo.webp",
+    "ao": "tanks_ao.webp",
+    "atlas": 8192,
+    "texel_m": 0.125,
+    "bytes": 14231932,
+    "gi": "tanks_gi.webp",
+    "gi_scale": 1.5
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "buildings": {
+   "file": "buildings.glb",
+   "objects": 137,
+   "bytes": 511708,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "buildings_albedo.webp",
+    "ao": "buildings_ao.webp",
+    "atlas": 8192,
+    "texel_m": 0.132,
+    "bytes": 9230232
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "buildings_ml": {
+   "file": "buildings_ml.glb",
+   "objects": 68,
+   "bytes": 3277408,
+   "fidelity": [
+    "estimated",
+    "ml_footprint"
+   ],
+   "baked": {
+    "albedo": "buildings_ml_albedo.webp",
+    "ao": "buildings_ml_ao.webp",
+    "atlas": 8192,
+    "texel_m": 0.279,
+    "bytes": 15136792
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "cranes": {
+   "file": "cranes.glb",
+   "objects": 1,
+   "bytes": 29476,
+   "fidelity": [
+    "illustrative"
+   ],
+   "baked": {
+    "albedo": "cranes_albedo.webp",
+    "ao": "cranes_ao.webp",
+    "atlas": 1024,
+    "texel_m": 0.158,
+    "bytes": 179848
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "fences": {
+   "file": "fences.glb",
+   "objects": 1,
+   "bytes": 72660,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "fences_albedo.webp",
+    "ao": "fences_ao.webp",
+    "atlas": 512,
+    "texel_m": 0.064,
+    "bytes": 73716
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "pipelines": {
+   "file": "pipelines.glb",
+   "objects": 1,
+   "bytes": 773656,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "pipelines_albedo.webp",
+    "ao": "pipelines_ao.webp",
+    "atlas": 2048,
+    "texel_m": 0.173,
+    "bytes": 1210870
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "power": {
+   "file": "power.glb",
+   "objects": 142,
+   "bytes": 295164,
+   "fidelity": [
+    "illustrative",
+    "osm"
+   ],
+   "baked": {
+    "albedo": "power_albedo.webp",
+    "ao": "power_ao.webp",
+    "atlas": 2048,
+    "texel_m": 0.192,
+    "bytes": 1921428
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers",
+   "position_bits": 20
+  },
+  "rail": {
+   "file": "rail.glb",
+   "objects": 1,
+   "bytes": 313792,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "rail_albedo.webp",
+    "ao": "rail_ao.webp",
+    "atlas": 2048,
+    "texel_m": 0.462,
+    "bytes": 1063280
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "roads": {
+   "file": "roads.glb",
+   "objects": 2,
+   "bytes": 171488,
+   "fidelity": [
+    "osm"
+   ],
+   "baked": {
+    "albedo": "roads_albedo.webp",
+    "ao": "roads_ao.webp",
+    "atlas": 4096,
+    "texel_m": 0.305,
+    "bytes": 3884176
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "sensors": {
+   "file": "sensors.glb",
+   "objects": 5,
+   "bytes": 965508,
+   "fidelity": [
+    "illustrative"
+   ]
+  },
+  "ships": {
+   "file": "ships.glb",
+   "objects": 13,
+   "bytes": 254744,
+   "fidelity": [
+    "estimated"
+   ],
+   "baked": {
+    "albedo": "ships_albedo.webp",
+    "ao": "ships_ao.webp",
+    "atlas": 4096,
+    "texel_m": 0.169,
+    "bytes": 1553852
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "stockpiles": {
+   "file": "stockpiles.glb",
+   "objects": 1,
+   "bytes": 147392,
+   "fidelity": [
+    "estimated"
+   ],
+   "baked": {
+    "albedo": "stockpiles_albedo.webp",
+    "ao": "stockpiles_ao.webp",
+    "atlas": 2048,
+    "texel_m": 0.566,
+    "bytes": 534084
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "tank_farms": {
+   "file": "tank_farms.glb",
+   "objects": 8,
+   "bytes": 244516,
+   "fidelity": [
+    "illustrative"
+   ],
+   "baked": {
+    "albedo": "tank_farms_albedo.webp",
+    "ao": "tank_farms_ao.webp",
+    "atlas": 4096,
+    "texel_m": 0.17,
+    "bytes": 2073292
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "traffic": {
+   "file": "traffic.glb",
+   "objects": 1,
+   "bytes": 520860,
+   "fidelity": [
+    "illustrative"
+   ],
+   "baked": {
+    "albedo": "traffic_albedo.webp",
+    "ao": "traffic_ao.webp",
+    "atlas": 2048,
+    "texel_m": 0.36,
+    "bytes": 1291282
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  },
+  "yard": {
+   "file": "yard.glb",
+   "objects": 1,
+   "bytes": 752400,
+   "fidelity": [
+    "illustrative"
+   ],
+   "baked": {
+    "albedo": "yard_albedo.webp",
+    "ao": "yard_ao.webp",
+    "atlas": 4096,
+    "texel_m": 0.211,
+    "bytes": 2241128
+   },
+   "markings": "illustrative: plate seams, panel joints, deck safety lines, roof sheet laps and skylights, edge wear; tank side stencils are the console's synthetic tank ids, not real tank numbers"
+  }
+ },
+ "vegetation": {
+  "veg_mangrove_shrub_02": {
+   "file": "veg_veg_mangrove_shrub_02.glb",
+   "instances": "veg_veg_mangrove_shrub_02.json",
+   "count": 65404,
+   "bin": "veg_veg_mangrove_shrub_02.bin"
+  },
+  "veg_mangrove_shrub_03": {
+   "file": "veg_veg_mangrove_shrub_03.glb",
+   "instances": "veg_veg_mangrove_shrub_03.json",
+   "count": 65996,
+   "bin": "veg_veg_mangrove_shrub_03.bin"
+  },
+  "veg_mangrove_shrub_04": {
+   "file": "veg_veg_mangrove_shrub_04.glb",
+   "instances": "veg_veg_mangrove_shrub_04.json",
+   "count": 64314,
+   "bin": "veg_veg_mangrove_shrub_04.bin"
+  },
+  "veg_scrub_shrub_03": {
+   "file": "veg_veg_scrub_shrub_03.glb",
+   "instances": "veg_veg_scrub_shrub_03.json",
+   "count": 9410,
+   "bin": "veg_veg_scrub_shrub_03.bin"
+  },
+  "veg_scrub_wild_rooibos_bush": {
+   "file": "veg_veg_scrub_wild_rooibos_bush.glb",
+   "instances": "veg_veg_scrub_wild_rooibos_bush.json",
+   "count": 9443,
+   "bin": "veg_veg_scrub_wild_rooibos_bush.bin"
+  },
+  "veg_scrub_shrub_04": {
+   "file": "veg_veg_scrub_shrub_04.glb",
+   "instances": "veg_veg_scrub_shrub_04.json",
+   "count": 9469,
+   "bin": "veg_veg_scrub_shrub_04.bin"
+  },
+  "veg_scrub_shrub_02": {
+   "file": "veg_veg_scrub_shrub_02.glb",
+   "instances": "veg_veg_scrub_shrub_02.json",
+   "count": 9949,
+   "bin": "veg_veg_scrub_shrub_02.bin"
+  }
+ },
+ "ground": {
+  "albedo": "ground_albedo.webp",
+  "ao": "ground_ao.webp",
+  "size": 8192,
+  "texel_m": 1.17,
+  "bytes": 2891948,
+  "cls": "ground_cls.webp"
+ },
+ "look": {
+  "source": "envbuild/blender/web_look.py from kandla_world.blend",
+  "view_transform": "AgX",
+  "look": "AgX - Medium High Contrast",
+  "exposure_stops": -0.45,
+  "lut": {
+   "file": "look_lut.png",
+   "n": 65,
+   "log2_lo": -12.5,
+   "log2_hi": 4.5,
+   "mid_grey": 0.18
+  },
+  "world": {
+   "hdri": "kloofendal_48d_partly_cloudy_puresky_4k.hdr",
+   "rotation_z_deg": 300.767,
+   "strength": 0.55,
+   "irradiance_up": [
+    2.5186,
+    2.6442,
+    2.8504
+   ]
+  },
+  "sun": {
+   "azimuth_deg": 245.0,
+   "elevation_deg": 47.86,
+   "strength": 5.2,
+   "colour": [
+    1.0,
+    0.93,
+    0.83
+   ],
+   "angle_deg": 0.53
+  },
+  "mist": {
+   "start_m": 4000.0,
+   "depth_m": 32000.0,
+   "falloff": "QUADRATIC",
+   "colour": [
+    0.7,
+    0.71,
+    0.72
+   ],
+   "factor": 0.5
+  },
+  "bloom": {
+   "threshold": 1.5,
+   "strength": 0.5,
+   "size": 0.4
+  }
+ },
+ "water": {
+  "flow": "water_flow.png",
+  "x0": -4800.0,
+  "y0": -6400.0,
+  "step_m": 10.0,
+  "nx": 961,
+  "ny": 961,
+  "vscale": 4.0,
+  "note": "ILLUSTRATIVE ebb-tide potential flow; speeds scaled, not measured",
+  "shore": "water_shore.png",
+  "shore_lo": 20.0,
+  "shore_span": 25.0
+ }
+}

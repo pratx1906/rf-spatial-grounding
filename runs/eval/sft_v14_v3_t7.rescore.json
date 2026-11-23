@@ -1,0 +1,261 @@
+{
+ "source": "runs/eval/sft_v14_v3_t7.json",
+ "set": "eval/frozen/v3/tasks.jsonl",
+ "set_sha256": "9eab4fed7d1bbdfe9f81a9e29ad1d9ca60b03f4cddfe6d78147ca44719788ccf",
+ "policy": "model",
+ "model_id": "sft_v14",
+ "ablation": null,
+ "samples": 1,
+ "answers_available": false,
+ "scorer": {
+  "v1": "tasks.scoring.score_answer",
+  "v2": "tasks.scoring.score_answer_v2 (C2)",
+  "verifier_strict": "verifier-rejected answer = 0 (C7)",
+  "headline": "tasks.scoring.is_headline (C6)"
+ },
+ "n": 603,
+ "score_v1": {
+  "n": 603,
+  "mean": 0.9298,
+  "ci95": [
+   0.904,
+   0.9545
+  ],
+  "n_clusters": 2
+ },
+ "score_v1_verifier_strict": {
+  "n": 603,
+  "mean": 0.9298,
+  "ci95": [
+   0.904,
+   0.9545
+  ],
+  "n_clusters": 2
+ },
+ "score_v2": null,
+ "score_v2_verifier_strict": null,
+ "score_v2_bounds": [
+  0.8951,
+  0.9298
+ ],
+ "score_v2_verifier_strict_bounds": [
+  0.8951,
+  0.9298
+ ],
+ "headline": {
+  "n": 406,
+  "score_v1": {
+   "n": 406,
+   "mean": 0.9102,
+   "ci95": [
+    0.8702,
+    0.949
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 406,
+   "mean": 0.9102,
+   "ci95": [
+    0.8702,
+    0.949
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": null,
+  "score_v2_verifier_strict": null,
+  "score_v2_bounds": [
+   0.8587,
+   0.9102
+  ],
+  "score_v2_verifier_strict_bounds": [
+   0.8587,
+   0.9102
+  ]
+ },
+ "non_headline": {
+  "n": 197,
+  "score_v1": {
+   "n": 197,
+   "mean": 0.9702,
+   "ci95": [
+    0.9407,
+    0.9948
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 197,
+   "mean": 0.9702,
+   "ci95": [
+    0.9407,
+    0.9948
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 197,
+   "mean": 0.9702,
+   "ci95": [
+    0.9407,
+    0.9948
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 197,
+   "mean": 0.9702,
+   "ci95": [
+    0.9407,
+    0.9948
+   ],
+   "n_clusters": 2
+  }
+ },
+ "per_area": {
+  "collateral": {
+   "n": 93,
+   "v1": 0.98,
+   "v2": 0.98,
+   "v2_strict": 0.98
+  },
+  "df_ambiguity": {
+   "n": 100,
+   "v1": 0.8478,
+   "v2": null,
+   "v2_strict": null,
+   "v2_bounds": [
+    0.6386,
+    0.8478
+   ]
+  },
+  "drone_search": {
+   "n": 45,
+   "v1": 0.9824,
+   "v2": 0.9824,
+   "v2_strict": 0.9824
+  },
+  "operator_query": {
+   "n": 100,
+   "v1": 0.8345,
+   "v2": 0.8345,
+   "v2_strict": 0.8345
+  },
+  "replay": {
+   "n": 100,
+   "v1": 0.921,
+   "v2": 0.921,
+   "v2_strict": 0.921
+  },
+  "siting": {
+   "n": 65,
+   "v1": 1.0,
+   "v2": 1.0,
+   "v2_strict": 1.0
+  },
+  "unanswerable": {
+   "n": 100,
+   "v1": 1.0,
+   "v2": 1.0,
+   "v2_strict": 1.0
+  }
+ },
+ "c2": {
+  "n_position_keys": 50,
+  "n_applied": 0,
+  "n_unresolved_no_answer": 50
+ },
+ "c7": {
+  "n_verifier_rejected": 1,
+  "v1_mean_on_rejected": 0.0
+ },
+ "c6": {
+  "n_headline": 406,
+  "n_empty_key": 67,
+  "n_collateral_siting": 158
+ },
+ "v1_recompute": {
+  "checked": 0,
+  "mismatch": 0
+ },
+ "near_object_split": {
+  "positive_key": {
+   "n": 3,
+   "score_v1": {
+    "n": 3,
+    "mean": 0.4833,
+    "ci95": [
+     0.0,
+     0.7375
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 3,
+    "mean": 0.4833,
+    "ci95": [
+     0.0,
+     0.7375
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 3,
+    "mean": 0.4833,
+    "ci95": [
+     0.0,
+     0.7375
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 3,
+    "mean": 0.4833,
+    "ci95": [
+     0.0,
+     0.7375
+    ],
+    "n_clusters": 2
+   }
+  },
+  "empty_key": {
+   "n": 5,
+   "score_v1": {
+    "n": 5,
+    "mean": 0.6,
+    "ci95": [
+     0.2,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 5,
+    "mean": 0.6,
+    "ci95": [
+     0.2,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 5,
+    "mean": 0.6,
+    "ci95": [
+     0.2,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 5,
+    "mean": 0.6,
+    "ci95": [
+     0.2,
+     1.0
+    ],
+    "n_clusters": 2
+   }
+  }
+ }
+}

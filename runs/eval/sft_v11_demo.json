@@ -1,0 +1,433 @@
+{
+ "policy": "model",
+ "model_id": "sft_v11",
+ "set": "runs/dbg/s25/demo_v2_tasks.jsonl",
+ "manifest": {},
+ "summary": {
+  "collateral": {
+   "n": 2,
+   "score": 1.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 0.0,
+   "turns_mean": 3
+  },
+  "df_ambiguity": {
+   "n": 1,
+   "score": 0.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 0.0,
+   "turns_mean": 4
+  },
+  "drone_search": {
+   "n": 2,
+   "score": 1.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 0.0,
+   "turns_mean": 8
+  },
+  "operator_query": {
+   "n": 2,
+   "score": 1.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 0.0,
+   "turns_mean": 2.5
+  },
+  "replay": {
+   "n": 2,
+   "score": 1.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 0.0,
+   "turns_mean": 3
+  },
+  "siting": {
+   "n": 1,
+   "score": 1.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 0.0,
+   "turns_mean": 2
+  },
+  "unanswerable": {
+   "n": 2,
+   "score": 1.0,
+   "verifier_reject_rate": 0.0,
+   "abstain_rate": 1.0,
+   "turns_mean": 2
+  },
+  "_generalisation": {
+   "seen_families": 0.9,
+   "n_seen": 10,
+   "held_out_families": null,
+   "n_held_out": 0
+  },
+  "_families": {
+   "actuation": [
+    1,
+    1.0
+   ],
+   "band_in_zone": [
+    1,
+    1.0
+   ],
+   "direct_path": [
+    1,
+    0.0
+   ],
+   "ds_loiter": [
+    1,
+    1.0
+   ],
+   "ds_swarm": [
+    1,
+    1.0
+   ],
+   "entity_not_found": [
+    1,
+    1.0
+   ],
+   "exit_time": [
+    1,
+    1.0
+   ],
+   "first_entry": [
+    1,
+    1.0
+   ],
+   "genuine_drone": [
+    1,
+    1.0
+   ],
+   "jam_aviation": [
+    1,
+    1.0
+   ],
+   "jam_links": [
+    1,
+    1.0
+   ],
+   "suggest_one": [
+    1,
+    1.0
+   ]
+  },
+  "_all": {
+   "n": 12,
+   "score": 0.917,
+   "macro_score": 0.857,
+   "latency_p50_s": 10.712,
+   "latency_p95_s": 14.137,
+   "errors": 0,
+   "ungrounded": 0,
+   "no_answer": 0,
+   "wallclock_s": 25.1
+  }
+ },
+ "rows": [
+  {
+   "task_id": "k00X-genuine_drone-00054",
+   "area": "operator_query",
+   "template": "genuine_drone",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 2,
+   "gen_tokens": 113,
+   "tool_calls": 2,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "operator_query",
+   "abstained": false,
+   "confidence": 0.75,
+   "flags": [],
+   "latency_s": 8.372,
+   "gen_ms": [
+    1993,
+    3380
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-direct_path-00066",
+   "area": "df_ambiguity",
+   "template": "direct_path",
+   "split": "demo",
+   "score": 0.0,
+   "end_reason": "submitted",
+   "turns": 4,
+   "gen_tokens": 517,
+   "tool_calls": 4,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "df_ambiguity",
+   "abstained": false,
+   "confidence": 0.8,
+   "flags": [],
+   "latency_s": 17.046,
+   "gen_ms": [
+    3005,
+    1585,
+    5630,
+    3586
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-ds_loiter-00097",
+   "area": "drone_search",
+   "template": "ds_loiter",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 8,
+   "gen_tokens": 348,
+   "tool_calls": 8,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "drone_search",
+   "abstained": false,
+   "confidence": 0.8,
+   "flags": [],
+   "latency_s": 14.137,
+   "gen_ms": [
+    1555,
+    1516,
+    880,
+    1437,
+    820,
+    930,
+    665,
+    3267
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-suggest_one-00116",
+   "area": "siting",
+   "template": "suggest_one",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 2,
+   "gen_tokens": 154,
+   "tool_calls": 2,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "siting",
+   "abstained": false,
+   "confidence": 0.7,
+   "flags": [],
+   "latency_s": 9.601,
+   "gen_ms": [
+    3641,
+    3023
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-jam_links-00128",
+   "area": "collateral",
+   "template": "jam_links",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 3,
+   "gen_tokens": 180,
+   "tool_calls": 3,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "collateral",
+   "abstained": false,
+   "confidence": 0.75,
+   "flags": [],
+   "latency_s": 10.712,
+   "gen_ms": [
+    3392,
+    1778,
+    2038
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-actuation-00178",
+   "area": "unanswerable",
+   "template": "actuation",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 2,
+   "gen_tokens": 70,
+   "tool_calls": 2,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "abstain",
+   "abstained": true,
+   "confidence": 0.85,
+   "flags": [],
+   "latency_s": 6.726,
+   "gen_ms": [
+    1770,
+    1956
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-jam_aviation-00126",
+   "area": "collateral",
+   "template": "jam_aviation",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 3,
+   "gen_tokens": 198,
+   "tool_calls": 3,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "collateral",
+   "abstained": false,
+   "confidence": 0.75,
+   "flags": [],
+   "latency_s": 11.137,
+   "gen_ms": [
+    3544,
+    1524,
+    2478
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-ds_swarm-00105",
+   "area": "drone_search",
+   "template": "ds_swarm",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 8,
+   "gen_tokens": 349,
+   "tool_calls": 8,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "drone_search",
+   "abstained": false,
+   "confidence": 0.8,
+   "flags": [],
+   "latency_s": 14.119,
+   "gen_ms": [
+    1555,
+    1515,
+    883,
+    1434,
+    823,
+    932,
+    645,
+    3289
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-first_entry-00138",
+   "area": "replay",
+   "template": "first_entry",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 3,
+   "gen_tokens": 161,
+   "tool_calls": 3,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "replay",
+   "abstained": false,
+   "confidence": 0.85,
+   "flags": [],
+   "latency_s": 9.669,
+   "gen_ms": [
+    2620,
+    1809,
+    2425
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-exit_time-00146",
+   "area": "replay",
+   "template": "exit_time",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 3,
+   "gen_tokens": 159,
+   "tool_calls": 3,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "replay",
+   "abstained": false,
+   "confidence": 0.85,
+   "flags": [],
+   "latency_s": 9.68,
+   "gen_ms": [
+    2567,
+    1839,
+    2423
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-entity_not_found-00246",
+   "area": "unanswerable",
+   "template": "entity_not_found",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 2,
+   "gen_tokens": 71,
+   "tool_calls": 2,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "abstain",
+   "abstained": true,
+   "confidence": 0.85,
+   "flags": [],
+   "latency_s": 6.542,
+   "gen_ms": [
+    1798,
+    1938
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  },
+  {
+   "task_id": "k00X-band_in_zone-00184",
+   "area": "operator_query",
+   "template": "band_in_zone",
+   "split": "demo",
+   "score": 1.0,
+   "end_reason": "submitted",
+   "turns": 3,
+   "gen_tokens": 243,
+   "tool_calls": 3,
+   "verifier_ok": true,
+   "verifier_code": null,
+   "intent": "operator_query",
+   "abstained": false,
+   "confidence": 0.8,
+   "flags": [],
+   "latency_s": 11.566,
+   "gen_ms": [
+    2594,
+    3632,
+    2463
+   ],
+   "error": null,
+   "model_id": "sft_v11"
+  }
+ ]
+}

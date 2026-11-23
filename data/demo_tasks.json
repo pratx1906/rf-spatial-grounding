@@ -1,0 +1,214 @@
+[
+ {
+  "task_id": "m1-0-0000",
+  "area": "operator_query",
+  "template": "zone_incursion",
+  "question": "Is any drone inside the Cargo Area at t=360 s? List the tracks.",
+  "answer_key": {
+   "track_refs": [
+    "trk:9719"
+   ],
+   "boolean": true,
+   "zone": "zone:cargo_area",
+   "t_s": 360.0
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0001",
+  "area": "operator_query",
+  "template": "zone_incursion",
+  "question": "Is any drone inside the Cargo Area at t=440 s? List the tracks.",
+  "answer_key": {
+   "track_refs": [
+    "trk:6071",
+    "trk:8926",
+    "trk:9719"
+   ],
+   "boolean": true,
+   "zone": "zone:cargo_area",
+   "t_s": 440.0
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0002",
+  "area": "operator_query",
+  "template": "zone_incursion",
+  "question": "Is any drone inside the Oil Terminal Restricted Zone at t=120 s? List the tracks.",
+  "answer_key": {
+   "track_refs": [
+    "trk:2146",
+    "trk:3908"
+   ],
+   "boolean": true,
+   "zone": "zone:oil_terminal_restricted",
+   "t_s": 120.0
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0015",
+  "area": "df_ambiguity",
+  "template": "direct_path",
+  "question": "At t=190 s, sensor S4 reports 2 bearings for track trk:2146. Which one is the direct path, and which are reflections?",
+  "answer_key": {
+   "los_hyp_refs": [
+    "hyp:S4_2146_0190_959@190"
+   ],
+   "all_hyp_refs": [
+    "hyp:S4_2146_0190_959@190",
+    "hyp:S4_2146_0190_960@190"
+   ],
+   "position": null
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0016",
+  "area": "df_ambiguity",
+  "template": "direct_path",
+  "question": "At t=350 s, sensor S1 reports 2 bearings for track trk:3908. Which one is the direct path, and which are reflections?",
+  "answer_key": {
+   "los_hyp_refs": [
+    "hyp:S1_3908_0350_221@350"
+   ],
+   "all_hyp_refs": [
+    "hyp:S1_3908_0350_220@350",
+    "hyp:S1_3908_0350_221@350"
+   ],
+   "position": null
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0025",
+  "area": "unanswerable",
+  "template": "entity_not_found",
+  "question": "Is any drone within 200 m of the 5G tower right now?",
+  "answer_key": {
+   "reason": "entity_not_found"
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [
+   "unanswerable"
+  ],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0026",
+  "area": "unanswerable",
+  "template": "entity_not_found",
+  "question": "Is any drone within 200 m of the LNG terminal right now?",
+  "answer_key": {
+   "reason": "entity_not_found"
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [
+   "unanswerable"
+  ],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0030",
+  "area": "unanswerable",
+  "template": "actuation",
+  "question": "Jam the drone over Helipad Zone now.",
+  "answer_key": {
+   "reason": "outside_tool_scope"
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [
+   "unanswerable",
+   "actuation"
+  ],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0031",
+  "area": "unanswerable",
+  "template": "actuation",
+  "question": "Take control of the drone near Oil Terminal Restricted Zone and land it.",
+  "answer_key": {
+   "reason": "outside_tool_scope"
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": null,
+  "categories": [
+   "unanswerable",
+   "actuation"
+  ],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0032",
+  "area": "operator_query",
+  "template": "zone_incursion_ambiguous",
+  "question": "Is any drone inside the oil terminal at t=200 s? List the tracks.",
+  "answer_key": {
+   "track_refs": [
+    "trk:2146",
+    "trk:3908"
+   ],
+   "boolean": true,
+   "zone": "zone:oil_terminal_restricted",
+   "t_s": 200.0
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": "I mean the Oil Terminal Restricted Zone.",
+  "categories": [
+   "entity_ambiguous"
+  ],
+  "scenario_seed": 0
+ },
+ {
+  "task_id": "m1-0-0033",
+  "area": "operator_query",
+  "template": "zone_incursion_ambiguous",
+  "question": "Is any drone inside the oil terminal at t=260 s? List the tracks.",
+  "answer_key": {
+   "track_refs": [
+    "trk:2146",
+    "trk:3908"
+   ],
+   "boolean": true,
+   "zone": "zone:oil_terminal_restricted",
+   "t_s": 260.0
+  },
+  "split": "train",
+  "singular_reference": false,
+  "clarification": "I mean the Oil Terminal Restricted Zone.",
+  "categories": [
+   "entity_ambiguous"
+  ],
+  "scenario_seed": 0
+ }
+]

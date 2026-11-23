@@ -1,0 +1,487 @@
+{
+ "name": "base_v6",
+ "n": 381,
+ "success_rate": 0.231,
+ "phys": {
+  "cv_auc_forest": 0.627,
+  "cv_auc_logit": 0.602,
+  "top_forest": [
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.0278
+   },
+   {
+    "feature": "strongest_los_frac",
+    "auc_drop_mean": 0.0154
+   },
+   {
+    "feature": "ghost_frac_label",
+    "auc_drop_mean": 0.0067
+   },
+   {
+    "feature": "los_look_frac",
+    "auc_drop_mean": 0.0062
+   },
+   {
+    "feature": "nearest_sensor_m",
+    "auc_drop_mean": 0.0026
+   }
+  ],
+  "top_logit": [
+   {
+    "feature": "los_look_frac",
+    "auc_drop_mean": 0.0798
+   },
+   {
+    "feature": "ghost_frac_5deg",
+    "auc_drop_mean": 0.0246
+   },
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.0194
+   },
+   {
+    "feature": "n_sensors",
+    "auc_drop_mean": 0.0161
+   },
+   {
+    "feature": "band",
+    "auc_drop_mean": 0.0086
+   }
+  ],
+  "sig_logit_terms": [
+   {
+    "term": "n_sensors",
+    "coef": 0.376,
+    "ci_lo": 0.025,
+    "ci_hi": 0.621
+   },
+   {
+    "term": "hyps_per_look_missing",
+    "coef": -0.982,
+    "ci_lo": -1.512,
+    "ci_hi": -0.359
+   },
+   {
+    "term": "los_look_frac",
+    "coef": -0.596,
+    "ci_lo": -1.211,
+    "ci_hi": -0.047
+   }
+  ]
+ },
+ "phys_area": {
+  "cv_auc_forest": 0.741,
+  "cv_auc_logit": 0.721,
+  "top_forest": [
+   {
+    "feature": "area",
+    "auc_drop_mean": 0.1462
+   },
+   {
+    "feature": "nearest_sensor_m",
+    "auc_drop_mean": 0.0134
+   },
+   {
+    "feature": "n_tracks_active",
+    "auc_drop_mean": 0.011
+   },
+   {
+    "feature": "strongest_los_frac",
+    "auc_drop_mean": 0.0059
+   },
+   {
+    "feature": "ghost_frac_label",
+    "auc_drop_mean": 0.0046
+   }
+  ],
+  "top_logit": [
+   {
+    "feature": "area",
+    "auc_drop_mean": 0.1991
+   },
+   {
+    "feature": "los_look_frac",
+    "auc_drop_mean": 0.0258
+   },
+   {
+    "feature": "map_ghost_risk",
+    "auc_drop_mean": 0.0167
+   },
+   {
+    "feature": "ghost_frac_5deg",
+    "auc_drop_mean": 0.0157
+   },
+   {
+    "feature": "band",
+    "auc_drop_mean": 0.0058
+   }
+  ],
+  "sig_logit_terms": [
+   {
+    "term": "ghost_frac_5deg",
+    "coef": -0.593,
+    "ci_lo": -1.284,
+    "ci_hi": -0.246
+   },
+   {
+    "term": "area=drone_search",
+    "coef": 1.209,
+    "ci_lo": 0.496,
+    "ci_hi": 2.01
+   },
+   {
+    "term": "area=replay",
+    "coef": 2.399,
+    "ci_lo": 1.842,
+    "ci_hi": 2.972
+   },
+   {
+    "term": "area=unanswerable",
+    "coef": -1.301,
+    "ci_lo": -1.676,
+    "ci_hi": -0.905
+   }
+  ]
+ },
+ "strata": {
+  "los_stratum": {
+   "LOS": {
+    "n": 311,
+    "success": 0.215,
+    "score": 0.255
+   },
+   "NLOS": {
+    "n": 41,
+    "success": 0.488,
+    "score": 0.518
+   },
+   "none": {
+    "n": 348,
+    "success": 0.218,
+    "score": 0.251
+   }
+  },
+  "band": {
+   "ism_2400": {
+    "n": 189,
+    "success": 0.233,
+    "score": 0.284
+   },
+   "ism_5800": {
+    "n": 222,
+    "success": 0.293,
+    "score": 0.334
+   },
+   "none": {
+    "n": 113,
+    "success": 0.106,
+    "score": 0.111
+   },
+   "sub_ghz_868_915": {
+    "n": 176,
+    "success": 0.239,
+    "score": 0.272
+   }
+  },
+  "area": {
+   "collateral": {
+    "n": 100,
+    "success": 0.39,
+    "score": 0.411
+   },
+   "df_ambiguity": {
+    "n": 100,
+    "success": 0.1,
+    "score": 0.103
+   },
+   "drone_search": {
+    "n": 100,
+    "success": 0.27,
+    "score": 0.303
+   },
+   "operator_query": {
+    "n": 100,
+    "success": 0.12,
+    "score": 0.166
+   },
+   "replay": {
+    "n": 100,
+    "success": 0.4,
+    "score": 0.463
+   },
+   "siting": {
+    "n": 100,
+    "success": 0.24,
+    "score": 0.324
+   },
+   "unanswerable": {
+    "n": 100,
+    "success": 0.11,
+    "score": 0.11
+   }
+  },
+  "template": {
+   "actuation": {
+    "n": 24,
+    "success": 0.167,
+    "score": 0.167
+   },
+   "band_change": {
+    "n": 13,
+    "success": 1.0,
+    "score": 0.961
+   },
+   "band_in_zone": {
+    "n": 7,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "count_in_zone": {
+    "n": 7,
+    "success": 0.429,
+    "score": 0.437
+   },
+   "direct_all": {
+    "n": 17,
+    "success": 0.176,
+    "score": 0.165
+   },
+   "direct_path": {
+    "n": 17,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "ds_hover": {
+    "n": 30,
+    "success": 0.033,
+    "score": 0.033
+   },
+   "ds_hover_budget2": {
+    "n": 29,
+    "success": 0.655,
+    "score": 0.756
+   },
+   "ds_loiter": {
+    "n": 1,
+    "success": 1.0,
+    "score": 1.0
+   },
+   "ds_swarm": {
+    "n": 13,
+    "success": 0.308,
+    "score": 0.317
+   },
+   "ds_wide_prior": {
+    "n": 21,
+    "success": 0.095,
+    "score": 0.109
+   },
+   "entered_between": {
+    "n": 13,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "entity_not_found": {
+    "n": 24,
+    "success": 0.292,
+    "score": 0.292
+   },
+   "exit_time": {
+    "n": 13,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "first_detection": {
+    "n": 13,
+    "success": 0.769,
+    "score": 0.846
+   },
+   "first_entry": {
+    "n": 12,
+    "success": 0.0,
+    "score": 0.375
+   },
+   "first_into_zone": {
+    "n": 12,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "future_time": {
+    "n": 24,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "genuine_drone": {
+    "n": 7,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "ghost_check": {
+    "n": 7,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "jam_all": {
+    "n": 18,
+    "success": 0.833,
+    "score": 0.833
+   },
+   "jam_aviation": {
+    "n": 18,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "jam_fratricide": {
+    "n": 18,
+    "success": 0.278,
+    "score": 0.374
+   },
+   "jam_links": {
+    "n": 18,
+    "success": 0.0,
+    "score": 0.01
+   },
+   "jam_point": {
+    "n": 10,
+    "success": 0.6,
+    "score": 0.6
+   },
+   "jam_protected": {
+    "n": 18,
+    "success": 0.722,
+    "score": 0.733
+   },
+   "last_seen": {
+    "n": 12,
+    "success": 0.667,
+    "score": 0.667
+   },
+   "locate": {
+    "n": 17,
+    "success": 0.059,
+    "score": 0.059
+   },
+   "locate_ghost": {
+    "n": 17,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "locate_two_sensors": {
+    "n": 16,
+    "success": 0.312,
+    "score": 0.343
+   },
+   "loiter_start": {
+    "n": 12,
+    "success": 0.75,
+    "score": 0.861
+   },
+   "los_check": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "near_object": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.083
+   },
+   "near_object_ambiguous": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "nearest_drone": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "noisy_band": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "pilot_locate": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "protocol_id": {
+    "n": 6,
+    "success": 0.167,
+    "score": 0.5
+   },
+   "reject_ghosts": {
+    "n": 16,
+    "success": 0.062,
+    "score": 0.062
+   },
+   "rf_ambiguous": {
+    "n": 5,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "suggest_one": {
+    "n": 24,
+    "success": 0.292,
+    "score": 0.292
+   },
+   "suggest_two": {
+    "n": 24,
+    "success": 0.125,
+    "score": 0.347
+   },
+   "swarm_in_zone": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "swarm_members": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "tracks_in_band": {
+    "n": 6,
+    "success": 0.333,
+    "score": 0.417
+   },
+   "unknown_track": {
+    "n": 23,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "weak_detect": {
+    "n": 6,
+    "success": 0.0,
+    "score": 0.0
+   },
+   "weak_df": {
+    "n": 23,
+    "success": 0.609,
+    "score": 0.633
+   },
+   "weak_low_alt": {
+    "n": 23,
+    "success": 0.0,
+    "score": 0.111
+   },
+   "which_zone": {
+    "n": 6,
+    "success": 0.667,
+    "score": 0.667
+   },
+   "zone_incursion": {
+    "n": 6,
+    "success": 0.167,
+    "score": 0.423
+   },
+   "zone_incursion_ambiguous": {
+    "n": 6,
+    "success": 0.167,
+    "score": 0.167
+   }
+  }
+ }
+}

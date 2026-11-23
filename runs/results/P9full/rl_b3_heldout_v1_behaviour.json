@@ -1,0 +1,110 @@
+{
+ "name": "rl_b3_heldout_v1",
+ "rows": {
+  "eval": "runs/paper/results/P5/rl_b3_heldout_v1/eval.json",
+  "n": 191,
+  "success": 0.67,
+  "mean_tool_calls": 3.58,
+  "corr_calls_success": -0.134,
+  "success_by_tool_calls": {
+   "2": {
+    "n": 76,
+    "success": 0.895
+   },
+   "3": {
+    "n": 55,
+    "success": 0.327
+   },
+   "4": {
+    "n": 19,
+    "success": 0.842
+   },
+   "5": {
+    "n": 7,
+    "success": 0.571
+   },
+   "6": {
+    "n": 8,
+    "success": 1.0
+   },
+   "8": {
+    "n": 26,
+    "success": 0.538
+   }
+  },
+  "success_by_turns": {
+   "2": {
+    "n": 76,
+    "success": 0.895
+   },
+   "3": {
+    "n": 55,
+    "success": 0.327
+   },
+   "4": {
+    "n": 19,
+    "success": 0.842
+   },
+   "5": {
+    "n": 7,
+    "success": 0.571
+   },
+   "6": {
+    "n": 8,
+    "success": 1.0
+   },
+   "8": {
+    "n": 26,
+    "success": 0.538
+   }
+  },
+  "end_reasons": {
+   "submitted": 182,
+   "max_turns": 9
+  },
+  "per_family": {
+   "ds_wide_prior": {
+    "n": 21,
+    "success": 0.857,
+    "mean_calls_success": 7.56,
+    "mean_calls_failure": 8.0,
+    "abstain_rate": 0.0
+   },
+   "jam_point": {
+    "n": 10,
+    "success": 0.2,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 8.0,
+    "abstain_rate": 0.0
+   },
+   "locate_ghost": {
+    "n": 40,
+    "success": 0.15,
+    "mean_calls_success": 3.0,
+    "mean_calls_failure": 3.03,
+    "abstain_rate": 0.0
+   },
+   "loiter_start": {
+    "n": 40,
+    "success": 0.875,
+    "mean_calls_success": 2.0,
+    "mean_calls_failure": 2.0,
+    "abstain_rate": 0.0
+   },
+   "near_object": {
+    "n": 40,
+    "success": 0.75,
+    "mean_calls_success": 3.8,
+    "mean_calls_failure": 4.3,
+    "abstain_rate": 0.0
+   },
+   "weak_low_alt": {
+    "n": 40,
+    "success": 0.925,
+    "mean_calls_success": 2.27,
+    "mean_calls_failure": 2.0,
+    "abstain_rate": 0.0
+   }
+  }
+ }
+}

@@ -1,0 +1,13 @@
+# Spatial relation defaults (SPEC 5 "Spatial relation"). Every result echoes the definition actually used.
+near_radius_m:            # within_m default when param_m is omitted, by kind of the reference object
+  default: 150
+  jetty: 200
+  tank_farm: 250
+  berth: 150
+  warehouse: 100
+  zone: 0
+between_corridor_m: 100   # a is between b and c if within this distance of segment b-c, strictly between them
+direction_rule: "a.centroid beyond b's bbox edge"   # north_of: a.y > b.maxy (east_of: a.x > b.maxx, ...)
+site_resolve:
+  min_score: 0.55         # below -> not_found
+  ambiguity_margin: 0.06  # top-2 within margin -> AMBIGUOUS_ENTITY

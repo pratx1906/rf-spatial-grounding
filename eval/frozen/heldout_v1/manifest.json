@@ -1,0 +1,131 @@
+{
+ "version": "heldout_v1",
+ "n": 191,
+ "per_area": {
+  "collateral": 10,
+  "df_ambiguity": 40,
+  "drone_search": 21,
+  "operator_query": 40,
+  "replay": 40,
+  "siting": 40
+ },
+ "per_family": {
+  "ds_wide_prior": 21,
+  "jam_point": 10,
+  "locate_ghost": 40,
+  "loiter_start": 40,
+  "near_object": 40,
+  "weak_low_alt": 40
+ },
+ "per_seed": {
+  "15": 24,
+  "16": 15,
+  "51": 16,
+  "52": 17,
+  "53": 19,
+  "54": 13,
+  "55": 13,
+  "56": 18,
+  "57": 12,
+  "58": 19,
+  "59": 17,
+  "60": 8
+ },
+ "per_family_cluster": {
+  "ds_wide_prior": {
+   "15-16": 1,
+   "51-60": 20
+  },
+  "jam_point": {
+   "15-16": 3,
+   "51-60": 7
+  },
+  "locate_ghost": {
+   "15-16": 8,
+   "51-60": 32
+  },
+  "loiter_start": {
+   "15-16": 10,
+   "51-60": 30
+  },
+  "near_object": {
+   "15-16": 8,
+   "51-60": 32
+  },
+  "weak_low_alt": {
+   "15-16": 9,
+   "51-60": 31
+  }
+ },
+ "tasks_sha": "327e2423a634eda5",
+ "tasks_sha256": "327e2423a634eda5bc680965fd30dcd9aa27c7558277b89819d0a8a249930c95",
+ "code_sha": {
+  "tasks/scoring.py": "2014766785441485",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "170095b43ff53100",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "0ee834ef0eef9fa1",
+  "harness/env.py": "e05694375e48b244",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "7488f01f871e0ce2",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "runs/s79/v14/heldout_tasks.jsonl (seeds 15-16,51-60)",
+ "source_sha256": "327e2423a634eda5bc680965fd30dcd9aa27c7558277b89819d0a8a249930c95",
+ "selection": {
+  "mode": "copy",
+  "areas": null,
+  "rng_seed": null,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "ds_wide_prior",
+  "jam_point",
+  "locate_ghost",
+  "loiter_start",
+  "near_object",
+  "weak_low_alt"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s15_X": "dd1630a1aeee5f24",
+  "data/scenarios_v3/kandla_s16_X": "8683aaf20b33a913",
+  "data/scenarios_v3/kandla_s51_X": "b2ae93ec5435cbf8",
+  "data/scenarios_v3/kandla_s52_X": "c3b03c74d45c07f5",
+  "data/scenarios_v3/kandla_s53_X": "59d8f71346326059",
+  "data/scenarios_v3/kandla_s54_X": "218a5a74b368a9d7",
+  "data/scenarios_v3/kandla_s55_X": "f82c6d4dea4e12c4",
+  "data/scenarios_v3/kandla_s56_X": "0ce0f81b0b6a2313",
+  "data/scenarios_v3/kandla_s57_X": "31c3f7e8c2557eb9",
+  "data/scenarios_v3/kandla_s58_X": "1e30f73fbca0176c",
+  "data/scenarios_v3/kandla_s59_X": "0770f7a9109d26c0",
+  "data/scenarios_v3/kandla_s60_X": "725074b01c36c67e"
+ }
+}

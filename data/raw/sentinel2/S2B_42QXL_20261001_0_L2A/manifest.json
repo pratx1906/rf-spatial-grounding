@@ -1,0 +1,13 @@
+{
+ "source": "Copernicus Sentinel-2 L2A, true colour (TCI, B04/B03/B02), 10 m",
+ "item": "S2B_42QXL_20261001_0_L2A",
+ "datetime": "2026-10-01T06:02:45.353000Z",
+ "cloud_cover": 0.015922,
+ "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/42/Q/XL/2026/10/S2B_42QXL_20261001_0_L2A/TCI.tif",
+ "stac": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_42QXL_20261001_0_L2A",
+ "sha256": "d783607d32a660d7e286d82a38c7b5b9b2a34dbb385b2aae5c844e30eb266c4f",
+ "crs": "EPSG:32642",
+ "license": "Copernicus Sentinel data: free, full and open (Commission Delegated Regulation (EU) 1159/2013)",
+ "attribution": "Contains modified Copernicus Sentinel data 2026",
+ "retrieved_at": "2026-10-17T21:51:56Z"
+}

@@ -1,0 +1,490 @@
+{
+ "source": "runs/paper/results/P1/residual_check_v6_M0c/eval.json",
+ "nominal_source": "runs/paper/results/P1/residual_check_v6_Npair/eval.json",
+ "set": "eval/frozen/v6_M0c/tasks.jsonl",
+ "set_sha256": "2212b8b6338da6d727b43e28dccafa64c3883ec4b6efc0f172360d66c50e489b",
+ "policy": "residual_check",
+ "model_id": "residual_check",
+ "ablation": "none",
+ "samples": 1,
+ "answers_available": true,
+ "scorer": {
+  "v1": "tasks.scoring.score_answer",
+  "v2": "tasks.scoring.score_answer_v2 (C2)",
+  "verifier_strict": "verifier-rejected answer = 0 (C7)",
+  "headline": "tasks.scoring.is_headline (C6)"
+ },
+ "n": 866,
+ "score_v1": {
+  "n": 866,
+  "mean": 0.5977,
+  "ci95": [
+   0.4908,
+   0.7091
+  ],
+  "n_clusters": 2
+ },
+ "score_v1_verifier_strict": {
+  "n": 866,
+  "mean": 0.5977,
+  "ci95": [
+   0.4908,
+   0.7091
+  ],
+  "n_clusters": 2
+ },
+ "score_v2": {
+  "n": 866,
+  "mean": 0.5977,
+  "ci95": [
+   0.4908,
+   0.7091
+  ],
+  "n_clusters": 2
+ },
+ "score_v2_verifier_strict": {
+  "n": 866,
+  "mean": 0.5977,
+  "ci95": [
+   0.4908,
+   0.7091
+  ],
+  "n_clusters": 2
+ },
+ "headline": {
+  "n": 704,
+  "score_v1": {
+   "n": 704,
+   "mean": 0.5434,
+   "ci95": [
+    0.4452,
+    0.6466
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 704,
+   "mean": 0.5434,
+   "ci95": [
+    0.4452,
+    0.6466
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 704,
+   "mean": 0.5434,
+   "ci95": [
+    0.4452,
+    0.6466
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 704,
+   "mean": 0.5434,
+   "ci95": [
+    0.4452,
+    0.6466
+   ],
+   "n_clusters": 2
+  }
+ },
+ "non_headline": {
+  "n": 162,
+  "score_v1": {
+   "n": 162,
+   "mean": 0.8333,
+   "ci95": [
+    0.6812,
+    0.9409
+   ],
+   "n_clusters": 2
+  },
+  "score_v1_verifier_strict": {
+   "n": 162,
+   "mean": 0.8333,
+   "ci95": [
+    0.6812,
+    0.9409
+   ],
+   "n_clusters": 2
+  },
+  "score_v2": {
+   "n": 162,
+   "mean": 0.8333,
+   "ci95": [
+    0.6812,
+    0.9409
+   ],
+   "n_clusters": 2
+  },
+  "score_v2_verifier_strict": {
+   "n": 162,
+   "mean": 0.8333,
+   "ci95": [
+    0.6812,
+    0.9409
+   ],
+   "n_clusters": 2
+  }
+ },
+ "per_area": {
+  "df_ambiguity": {
+   "n": 298,
+   "v1": 0.6655,
+   "v2": 0.6655,
+   "v2_strict": 0.6655
+  },
+  "operator_query": {
+   "n": 568,
+   "v1": 0.5621,
+   "v2": 0.5621,
+   "v2_strict": 0.5621
+  }
+ },
+ "c2": {
+  "n_position_keys": 149,
+  "n_applied": 0,
+  "n_unresolved_no_answer": 0
+ },
+ "c7": {
+  "n_verifier_rejected": 0,
+  "v1_mean_on_rejected": null
+ },
+ "c6": {
+  "n_headline": 704,
+  "n_empty_key": 162,
+  "n_collateral_siting": 0
+ },
+ "v1_recompute": {
+  "checked": 866,
+  "mismatch": 0
+ },
+ "near_object_split": {
+  "positive_key": {
+   "n": 16,
+   "score_v1": {
+    "n": 16,
+    "mean": 0.7604,
+    "ci95": [
+     0.4739,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 16,
+    "mean": 0.7604,
+    "ci95": [
+     0.4739,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 16,
+    "mean": 0.7604,
+    "ci95": [
+     0.4739,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 16,
+    "mean": 0.7604,
+    "ci95": [
+     0.4739,
+     1.0
+    ],
+    "n_clusters": 2
+   }
+  },
+  "empty_key": {
+   "n": 34,
+   "score_v1": {
+    "n": 34,
+    "mean": 0.7941,
+    "ci95": [
+     0.5,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v1_verifier_strict": {
+    "n": 34,
+    "mean": 0.7941,
+    "ci95": [
+     0.5,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2": {
+    "n": 34,
+    "mean": 0.7941,
+    "ci95": [
+     0.5,
+     1.0
+    ],
+    "n_clusters": 2
+   },
+   "score_v2_verifier_strict": {
+    "n": 34,
+    "mean": 0.7941,
+    "ci95": [
+     0.5,
+     1.0
+    ],
+    "n_clusters": 2
+   }
+  }
+ },
+ "timeouts": {
+  "n_rows_logged": 866,
+  "n_timeouts": 0,
+  "rows_with_timeout": 0,
+  "per_tool": {}
+ },
+ "pairing": {
+  "thr": 0.8,
+  "pairs": 248,
+  "unmatched_pairs": 0,
+  "twin_fail": 0,
+  "twin_fail_rate": 0.0,
+  "part_twin_fail": 0,
+  "totals": {
+   "n": 248,
+   "ok_n": 175,
+   "ok_m": 175,
+   "twin_fail": 0,
+   "twin_fix": 0,
+   "part_ok_n": 176,
+   "part_ok_m": 176,
+   "part_twin_fail": 0,
+   "act_ok_n": 175,
+   "flag_m": 29,
+   "act_abstain_ok": 0,
+   "world_n": 248,
+   "world_part_ok_n": 133,
+   "world_part_ok_m": 133,
+   "world_part_twin_fail": 0,
+   "key_disagree_n": 67,
+   "key_disagree_m": 67
+  },
+  "per_family": {
+   "band_in_zone": {
+    "n": 46,
+    "ok_n": 37,
+    "ok_m": 37,
+    "twin_fail": 0,
+    "twin_fix": 0,
+    "part_ok_n": 35,
+    "part_ok_m": 35,
+    "part_twin_fail": 0,
+    "act_ok_n": 37,
+    "flag_m": 4,
+    "act_abstain_ok": 0,
+    "world_n": 46,
+    "world_part_ok_n": 24,
+    "world_part_ok_m": 24,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 18,
+    "key_disagree_m": 18
+   },
+   "count_in_zone": {
+    "n": 36,
+    "ok_n": 24,
+    "ok_m": 24,
+    "twin_fail": 0,
+    "twin_fix": 0,
+    "part_ok_n": 21,
+    "part_ok_m": 21,
+    "part_twin_fail": 0,
+    "act_ok_n": 24,
+    "flag_m": 2,
+    "act_abstain_ok": 0,
+    "world_n": 36,
+    "world_part_ok_n": 4,
+    "world_part_ok_m": 4,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 26,
+    "key_disagree_m": 26
+   },
+   "near_object": {
+    "n": 50,
+    "ok_n": 39,
+    "ok_m": 39,
+    "twin_fail": 0,
+    "twin_fix": 0,
+    "part_ok_n": 40,
+    "part_ok_m": 40,
+    "part_twin_fail": 0,
+    "act_ok_n": 39,
+    "flag_m": 8,
+    "act_abstain_ok": 0,
+    "world_n": 50,
+    "world_part_ok_n": 34,
+    "world_part_ok_m": 34,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 6,
+    "key_disagree_m": 6
+   },
+   "nearest_drone": {
+    "n": 33,
+    "ok_n": 16,
+    "ok_m": 16,
+    "twin_fail": 0,
+    "twin_fix": 0,
+    "part_ok_n": 16,
+    "part_ok_m": 16,
+    "part_twin_fail": 0,
+    "act_ok_n": 16,
+    "flag_m": 3,
+    "act_abstain_ok": 0,
+    "world_n": 33,
+    "world_part_ok_n": 13,
+    "world_part_ok_m": 13,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 9,
+    "key_disagree_m": 9
+   },
+   "swarm_in_zone": {
+    "n": 26,
+    "ok_n": 18,
+    "ok_m": 18,
+    "twin_fail": 0,
+    "twin_fix": 0,
+    "part_ok_n": 20,
+    "part_ok_m": 20,
+    "part_twin_fail": 0,
+    "act_ok_n": 18,
+    "flag_m": 4,
+    "act_abstain_ok": 0,
+    "world_n": 26,
+    "world_part_ok_n": 17,
+    "world_part_ok_m": 17,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 3,
+    "key_disagree_m": 3
+   },
+   "zone_incursion": {
+    "n": 57,
+    "ok_n": 41,
+    "ok_m": 41,
+    "twin_fail": 0,
+    "twin_fix": 0,
+    "part_ok_n": 44,
+    "part_ok_m": 44,
+    "part_twin_fail": 0,
+    "act_ok_n": 41,
+    "flag_m": 8,
+    "act_abstain_ok": 0,
+    "world_n": 57,
+    "world_part_ok_n": 41,
+    "world_part_ok_m": 41,
+    "world_part_twin_fail": 0,
+    "key_disagree_n": 5,
+    "key_disagree_m": 5
+   }
+  },
+  "unpaired_mean_score": {
+   "direct_all": {
+    "N": 0.734,
+    "M": 0.734
+   },
+   "direct_path": {
+    "N": 0.487,
+    "M": 0.487
+   },
+   "genuine_drone": {
+    "N": 0.949,
+    "M": 0.949
+   },
+   "ghost_check": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "locate": {
+    "N": 0.828,
+    "M": 0.828
+   },
+   "locate_ghost": {
+    "N": 0.509,
+    "M": 0.509
+   },
+   "locate_two_sensors": {
+    "N": 0.738,
+    "M": 0.738
+   },
+   "los_check": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "near_object_ambiguous": {
+    "N": 0.833,
+    "M": 0.833
+   },
+   "noisy_band": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "protocol_id": {
+    "N": 0.0,
+    "M": 0.0
+   },
+   "reject_ghosts": {
+    "N": 0.694,
+    "M": 0.694
+   },
+   "swarm_members": {
+    "N": 0.604,
+    "M": 0.604
+   },
+   "tracks_in_band": {
+    "N": 0.771,
+    "M": 0.771
+   },
+   "which_zone": {
+    "N": 0.95,
+    "M": 0.95
+   },
+   "zone_incursion_ambiguous": {
+    "N": 0.7,
+    "M": 0.7
+   }
+  },
+  "act_abstain": {
+   "n": 248,
+   "act_ok_n": 175,
+   "flag_m": 29,
+   "pairs_ok": 0,
+   "rate": 0.0,
+   "m_world": [
+    "M0"
+   ],
+   "m_twin_world": false,
+   "ci95_cluster": [
+    0.0,
+    0.0
+   ],
+   "n_clusters": 2
+  },
+  "world_key": {
+   "pairs": 248,
+   "unresolved": 0,
+   "part_ok_n": 133,
+   "part_ok_m": 133,
+   "part_twin_fail": 0,
+   "part_twin_fail_rate": 0.0,
+   "key_disagree_n": 67,
+   "key_disagree_m": 67,
+   "tracker_key": {
+    "part_twin_fail": 0,
+    "part_twin_fail_rate": 0.0
+   }
+  },
+  "nominal_set": "eval/frozen/v6_Npair/tasks.jsonl"
+ }
+}

@@ -1,0 +1,442 @@
+{
+ "name": "rl_a3_v6",
+ "rows": {
+  "eval": "runs/paper/results/P5/rl_a3_v6/eval.json",
+  "n": 700,
+  "success": 0.494,
+  "mean_tool_calls": 5.59,
+  "corr_calls_success": -0.39,
+  "success_by_tool_calls": {
+   "2": {
+    "n": 42,
+    "success": 0.976
+   },
+   "3": {
+    "n": 21,
+    "success": 0.476
+   },
+   "4": {
+    "n": 166,
+    "success": 0.747
+   },
+   "5": {
+    "n": 117,
+    "success": 0.436
+   },
+   "6": {
+    "n": 102,
+    "success": 0.333
+   },
+   "7": {
+    "n": 112,
+    "success": 0.562
+   },
+   "8": {
+    "n": 140,
+    "success": 0.164
+   }
+  },
+  "success_by_turns": {
+   "2": {
+    "n": 42,
+    "success": 0.976
+   },
+   "3": {
+    "n": 21,
+    "success": 0.476
+   },
+   "4": {
+    "n": 161,
+    "success": 0.77
+   },
+   "5": {
+    "n": 98,
+    "success": 0.52
+   },
+   "6": {
+    "n": 125,
+    "success": 0.272
+   },
+   "7": {
+    "n": 111,
+    "success": 0.568
+   },
+   "8": {
+    "n": 142,
+    "success": 0.162
+   }
+  },
+  "end_reasons": {
+   "format_failed": 35,
+   "submitted": 578,
+   "max_turns": 83,
+   "verifier_failed": 4
+  },
+  "per_family": {
+   "actuation": {
+    "n": 24,
+    "success": 0.75,
+    "mean_calls_success": 2.61,
+    "mean_calls_failure": 8.0,
+    "abstain_rate": 0.792
+   },
+   "band_change": {
+    "n": 13,
+    "success": 1.0,
+    "mean_calls_success": 2.0,
+    "mean_calls_failure": null,
+    "abstain_rate": 0.0
+   },
+   "band_in_zone": {
+    "n": 7,
+    "success": 0.143,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 7.17,
+    "abstain_rate": 0.429
+   },
+   "count_in_zone": {
+    "n": 7,
+    "success": 0.286,
+    "mean_calls_success": 4.5,
+    "mean_calls_failure": 5.2,
+    "abstain_rate": 0.429
+   },
+   "direct_all": {
+    "n": 17,
+    "success": 0.706,
+    "mean_calls_success": 7.17,
+    "mean_calls_failure": 6.4,
+    "abstain_rate": 0.0
+   },
+   "direct_path": {
+    "n": 17,
+    "success": 0.235,
+    "mean_calls_success": 7.75,
+    "mean_calls_failure": 7.85,
+    "abstain_rate": 0.0
+   },
+   "ds_hover": {
+    "n": 30,
+    "success": 0.7,
+    "mean_calls_success": 6.19,
+    "mean_calls_failure": 6.67,
+    "abstain_rate": 0.0
+   },
+   "ds_hover_budget2": {
+    "n": 29,
+    "success": 0.69,
+    "mean_calls_success": 5.75,
+    "mean_calls_failure": 5.11,
+    "abstain_rate": 0.0
+   },
+   "ds_loiter": {
+    "n": 1,
+    "success": 1.0,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": null,
+    "abstain_rate": 0.0
+   },
+   "ds_swarm": {
+    "n": 13,
+    "success": 0.846,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 6.0,
+    "abstain_rate": 0.0
+   },
+   "ds_wide_prior": {
+    "n": 21,
+    "success": 0.476,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 6.55,
+    "abstain_rate": 0.0
+   },
+   "entered_between": {
+    "n": 13,
+    "success": 0.077,
+    "mean_calls_success": 8.0,
+    "mean_calls_failure": 7.75,
+    "abstain_rate": 0.0
+   },
+   "entity_not_found": {
+    "n": 24,
+    "success": 0.958,
+    "mean_calls_success": 3.91,
+    "mean_calls_failure": 6.0,
+    "abstain_rate": 0.958
+   },
+   "exit_time": {
+    "n": 13,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 5.62,
+    "abstain_rate": 0.231
+   },
+   "first_detection": {
+    "n": 13,
+    "success": 1.0,
+    "mean_calls_success": 4.0,
+    "mean_calls_failure": null,
+    "abstain_rate": 0.0
+   },
+   "first_entry": {
+    "n": 12,
+    "success": 0.917,
+    "mean_calls_success": 4.18,
+    "mean_calls_failure": 4.0,
+    "abstain_rate": 0.0
+   },
+   "first_into_zone": {
+    "n": 12,
+    "success": 0.583,
+    "mean_calls_success": 5.43,
+    "mean_calls_failure": 6.0,
+    "abstain_rate": 0.083
+   },
+   "future_time": {
+    "n": 24,
+    "success": 0.875,
+    "mean_calls_success": 4.19,
+    "mean_calls_failure": 6.67,
+    "abstain_rate": 0.958
+   },
+   "genuine_drone": {
+    "n": 7,
+    "success": 0.286,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 6.0,
+    "abstain_rate": 0.714
+   },
+   "ghost_check": {
+    "n": 7,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 7.57,
+    "abstain_rate": 0.286
+   },
+   "jam_all": {
+    "n": 18,
+    "success": 0.056,
+    "mean_calls_success": 4.0,
+    "mean_calls_failure": 4.76,
+    "abstain_rate": 0.0
+   },
+   "jam_aviation": {
+    "n": 18,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 5.72,
+    "abstain_rate": 0.889
+   },
+   "jam_fratricide": {
+    "n": 18,
+    "success": 0.056,
+    "mean_calls_success": 4.0,
+    "mean_calls_failure": 7.29,
+    "abstain_rate": 0.056
+   },
+   "jam_links": {
+    "n": 18,
+    "success": 0.056,
+    "mean_calls_success": 4.0,
+    "mean_calls_failure": 4.76,
+    "abstain_rate": 0.0
+   },
+   "jam_point": {
+    "n": 10,
+    "success": 0.9,
+    "mean_calls_success": 4.33,
+    "mean_calls_failure": 8.0,
+    "abstain_rate": 0.0
+   },
+   "jam_protected": {
+    "n": 18,
+    "success": 0.944,
+    "mean_calls_success": 4.0,
+    "mean_calls_failure": 4.0,
+    "abstain_rate": 0.0
+   },
+   "last_seen": {
+    "n": 12,
+    "success": 0.917,
+    "mean_calls_success": 3.64,
+    "mean_calls_failure": 3.0,
+    "abstain_rate": 0.0
+   },
+   "locate": {
+    "n": 17,
+    "success": 0.647,
+    "mean_calls_success": 7.0,
+    "mean_calls_failure": 7.5,
+    "abstain_rate": 0.0
+   },
+   "locate_ghost": {
+    "n": 17,
+    "success": 0.235,
+    "mean_calls_success": 7.0,
+    "mean_calls_failure": 6.46,
+    "abstain_rate": 0.0
+   },
+   "locate_two_sensors": {
+    "n": 16,
+    "success": 0.75,
+    "mean_calls_success": 6.08,
+    "mean_calls_failure": 6.5,
+    "abstain_rate": 0.0
+   },
+   "loiter_start": {
+    "n": 12,
+    "success": 0.917,
+    "mean_calls_success": 2.0,
+    "mean_calls_failure": 2.0,
+    "abstain_rate": 0.0
+   },
+   "los_check": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 7.67,
+    "abstain_rate": 0.667
+   },
+   "near_object": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 6.67,
+    "abstain_rate": 0.833
+   },
+   "near_object_ambiguous": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 6.83,
+    "abstain_rate": 1.0
+   },
+   "nearest_drone": {
+    "n": 6,
+    "success": 0.167,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 8.0,
+    "abstain_rate": 0.167
+   },
+   "noisy_band": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 7.67,
+    "abstain_rate": 0.167
+   },
+   "pilot_locate": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 7.17,
+    "abstain_rate": 0.5
+   },
+   "protocol_id": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 6.0,
+    "abstain_rate": 0.667
+   },
+   "reject_ghosts": {
+    "n": 16,
+    "success": 0.5,
+    "mean_calls_success": 5.88,
+    "mean_calls_failure": 7.62,
+    "abstain_rate": 0.0
+   },
+   "rf_ambiguous": {
+    "n": 5,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 7.6,
+    "abstain_rate": 0.0
+   },
+   "suggest_one": {
+    "n": 24,
+    "success": 0.375,
+    "mean_calls_success": 4.22,
+    "mean_calls_failure": 4.6,
+    "abstain_rate": 0.0
+   },
+   "suggest_two": {
+    "n": 24,
+    "success": 0.292,
+    "mean_calls_success": 3.86,
+    "mean_calls_failure": 3.76,
+    "abstain_rate": 0.0
+   },
+   "swarm_in_zone": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 7.5,
+    "abstain_rate": 0.833
+   },
+   "swarm_members": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 6.83,
+    "abstain_rate": 0.833
+   },
+   "tracks_in_band": {
+    "n": 6,
+    "success": 0.167,
+    "mean_calls_success": 5.0,
+    "mean_calls_failure": 6.6,
+    "abstain_rate": 0.5
+   },
+   "unknown_track": {
+    "n": 23,
+    "success": 1.0,
+    "mean_calls_success": 5.57,
+    "mean_calls_failure": null,
+    "abstain_rate": 1.0
+   },
+   "weak_detect": {
+    "n": 6,
+    "success": 0.833,
+    "mean_calls_success": 7.8,
+    "mean_calls_failure": 7.0,
+    "abstain_rate": 0.0
+   },
+   "weak_df": {
+    "n": 23,
+    "success": 0.913,
+    "mean_calls_success": 5.52,
+    "mean_calls_failure": 6.5,
+    "abstain_rate": 0.0
+   },
+   "weak_low_alt": {
+    "n": 23,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 6.78,
+    "abstain_rate": 0.435
+   },
+   "which_zone": {
+    "n": 6,
+    "success": 0.167,
+    "mean_calls_success": 5.0,
+    "mean_calls_failure": 4.6,
+    "abstain_rate": 0.833
+   },
+   "zone_incursion": {
+    "n": 6,
+    "success": 0.167,
+    "mean_calls_success": 6.0,
+    "mean_calls_failure": 6.0,
+    "abstain_rate": 0.333
+   },
+   "zone_incursion_ambiguous": {
+    "n": 6,
+    "success": 0.0,
+    "mean_calls_success": null,
+    "mean_calls_failure": 6.17,
+    "abstain_rate": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,24 @@
+# Episode budgets (SPEC 7.1, 15.1; DECISIONS D-002, D-003, D-004).
+env:
+  site: stub_site
+  max_turns: 8
+  max_tokens_per_turn: 512     # 256 truncated jam/locate answers (D-029)
+  max_obs_tokens: 3000          # tool output + ledger deltas in context, whole episode (D-002 rev 2, D-023)
+  per_tool_output_tokens: 1000
+  max_question_tokens: 200
+  template_overhead_tokens: 400
+  static_prefix_tokens: 6900    # rendered prefix, 31 tools (measured 6859 with the Qwen tokenizer, 2026-10-20: + family S signal tools; D-032)
+  max_seq_len: 15360           # 6900+200+400+3000+8*512 = 14596 (D-032: + family S tools)
+  parallel_tool_calls: 3
+  max_ask_user: 1
+  max_format_retries: 1
+  max_verifier_retries: 1
+  tool_timeout_ms: {default: 250, sql_readonly: 2000, fit_candidates: 1500, weak_zones: 800, suggest_node: 800,
+                    effect_footprint: 800, coverage_query: 800, sensor_consistency: 1500}
+  max_wallclock_s: 15           # serve/eval only (D-004)
+  chars_per_token: 3.5          # token estimate for budgets when no tokenizer is attached
+  # Ablation switches (plan 2026-10-28 T3; eval/ablations.py). Empty = the byte-identical default prompt + schemas.
+  tools_disabled: []            # tools removed from the schemas (calls answer NOT_PERMITTED) + their playbook clauses
+  tools_extra: []               # opt-in tools to expose, e.g. [sensor_consistency]
+  playbook_disabled: []         # prompt-only control: playbook clauses naming these tools dropped, tools kept
+  fit_methods_disabled: []      # fit_candidates methods knocked out, e.g. [rt_match] (triangulate kept)

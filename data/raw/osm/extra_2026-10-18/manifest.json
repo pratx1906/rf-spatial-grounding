@@ -1,0 +1,9 @@
+{
+ "source": "OpenStreetMap via Overpass API",
+ "query": "[out:json][timeout:120];(\nway[\"man_made\"~\"goods_conveyor|conveyor|crane|silo|chimney|mast|tower|gantry|works\"](22.985,70.165,23.06,70.26);\nnode[\"man_made\"~\"crane|mast|tower|chimney|flare\"](22.985,70.165,23.06,70.26);\nway[\"building\"~\"warehouse|hangar|shed|silo|roof\"](22.985,70.165,23.06,70.26);\nway[\"landuse\"~\"industrial|port|railway|depot\"](22.985,70.165,23.06,70.26);\nway[\"industrial\"](22.985,70.165,23.06,70.26);way[\"harbour\"](22.985,70.165,23.06,70.26);way[\"railway\"=\"crane\"](22.985,70.165,23.06,70.26);node[\"seamark:type\"](22.985,70.165,23.06,70.26);way[\"aeroway\"](22.985,70.165,23.06,70.26););out body geom;",
+ "license": "ODbL 1.0",
+ "attribution": "(c) OpenStreetMap contributors",
+ "retrieved_at": "2026-10-17T22:35:10Z",
+ "sha256": "75cf17144c44feb5037159e914f3c5ca642bf3d4d64eb2754d2805c08d4b4209",
+ "elements": 29
+}

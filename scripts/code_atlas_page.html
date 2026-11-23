@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SceneScout code atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/force-graph@1.43.5/dist/force-graph.min.js"></script>
+<style>
+:root { --harbour:#0e2231; --shoal:#13293a; --edge:#1f3d52; --ink:#e7f0f2; --mist:#8ba7b4; --amber:#f2b63d; --port:#ef6a5b;
+  --display:"Barlow Semi Condensed","Arial Narrow",sans-serif; --text:"Barlow",system-ui,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; background:var(--harbour); color:var(--ink); font:14px/1.45 var(--text); overflow:hidden; }
+#graph { position:fixed; inset:0; }
+.panel { position:fixed; background:rgba(15,34,48,.86); backdrop-filter:blur(8px); border-radius:14px;
+  box-shadow:inset 0 0 0 1px #20405a, 0 12px 40px rgba(0,0,0,.35); }
+.head { top:18px; left:18px; width:340px; padding:16px 18px 14px; }
+h1 { font:600 23px/1.1 var(--display); margin:0; }
+.lede { color:var(--mist); margin:6px 0 12px; font-size:13.5px; }
+.stats { display:flex; gap:16px; margin-bottom:12px; }
+.stats div { font:600 22px/1 var(--display); }
+.stats small { display:block; font:400 12.5px var(--text); color:var(--mist); margin-top:3px; }
+.seg { display:flex; background:#0c1d29; border-radius:9px; padding:3px; margin-bottom:10px; }
+.seg button { flex:1; border:0; background:transparent; color:var(--mist); font:600 14px var(--display); padding:7px 0; border-radius:7px; cursor:pointer; }
+.seg button.on { background:#1d3b50; color:var(--ink); }
+input[type=search] { width:100%; background:#0c1d29; border:1px solid #20405a; color:var(--ink); border-radius:9px; padding:9px 11px;
+  font:14px var(--text); }
+input[type=search]::placeholder { color:#5f7d8b; }
+.toggle { display:flex; align-items:center; gap:10px; margin-top:12px; cursor:pointer; color:var(--ink); font-size:13.5px; }
+.toggle input { accent-color:var(--port); width:16px; height:16px; }
+.verdict { margin-top:8px; font-size:13px; color:var(--mist); }
+.verdict b { color:#5fc27e; font-weight:600; }
+.verdict b.bad { color:var(--port); }
+.layers { bottom:18px; left:18px; width:340px; padding:12px 14px; max-height:46vh; overflow:auto; }
+.layers h2 { font:600 15px var(--display); margin:0 0 6px; color:var(--mist); }
+.lay { display:flex; align-items:center; gap:10px; padding:5px 6px; border-radius:7px; cursor:pointer; user-select:none; }
+.lay:hover { background:#16304200; background:#173144; }
+.lay i { width:12px; height:12px; border-radius:50%; flex:none; }
+.lay span { flex:1; } .lay em { font-style:normal; color:var(--mist); font-size:12.5px; }
+.lay.off { opacity:.38; }
+.side { margin:8px 0 2px; font:600 12.5px var(--display); color:#5f7d8b; letter-spacing:.2px; }
+.info { top:18px; right:18px; width:360px; padding:16px 18px; max-height:calc(100vh - 36px); overflow:auto; display:none; }
+.info.on { display:block; }
+.info h3 { font:600 21px/1.15 var(--display); margin:0; word-break:break-all; }
+.info .path { color:var(--mist); font-size:12.5px; margin:3px 0 10px; word-break:break-all; }
+.chip { display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; margin:0 4px 4px 0; background:#18344a; }
+.info h4 { font:600 14px var(--display); color:var(--mist); margin:12px 0 4px; }
+.info ul { list-style:none; margin:0; padding:0; }
+.info li { padding:4px 6px; border-radius:6px; cursor:pointer; display:flex; justify-content:space-between; gap:8px; }
+.info li:hover { background:#173144; }
+.info li em { font-style:normal; color:var(--mist); font-size:12px; white-space:nowrap; }
+.close { position:absolute; top:10px; right:12px; background:none; border:0; color:var(--mist); font-size:20px; cursor:pointer; }
+.hint { position:fixed; bottom:18px; right:18px; color:#5f7d8b; font-size:12.5px; }
+:focus-visible { outline:2px solid var(--amber); outline-offset:2px; }
+@media (max-width:760px) { .head,.layers { width:calc(100% - 36px); } .layers { max-height:28vh; } .info { width:calc(100% - 36px); top:auto; bottom:18px; max-height:50vh; } }
+</style>
+</head>
+<body>
+<div id="graph"></div>
+<section class="panel head">
+  <h1>SceneScout code atlas</h1>
+  <p class="lede">Every module of the counter-UAS agent, grouped into islands by layer. Lines are imports and calls between files.</p>
+  <div class="stats"><div id="sMods">0<small>modules</small></div><div id="sLinks">0<small>connections</small></div><div id="sSyms">0<small>functions and classes</small></div></div>
+  <div class="seg" role="group" aria-label="Detail"><button id="vMod" class="on">Modules</button><button id="vSym">Functions and classes</button></div>
+  <input type="search" id="q" placeholder="Find a module or function" list="names" aria-label="Find a module or function">
+  <datalist id="names"></datalist>
+  <label class="toggle"><input type="checkbox" id="truth"> Show the truth boundary</label>
+  <div class="verdict" id="verdict"></div>
+</section>
+<section class="panel layers" aria-label="Layers"><h2>Layers</h2><div id="layers"></div></section>
+<aside class="panel info" id="info" aria-live="polite"><button class="close" id="close" aria-label="Close">×</button><div id="infoBody"></div></aside>
+<div class="hint">Drag to pan, scroll to zoom, click a module to follow its connections</div>
+<script>
+"use strict";
+const DATA = /*__DATA__*/null;
+const COLORS = { tools:"#8fd8c8", harness:"#5fc27e", belief:"#7fb7ff", serve:"#b8a1ff", ui:"#e6a2f0", world:"#ef6a5b",
+  tasks:"#f2b63d", shared:"#d7e3e6", train:"#ffd27f", eval:"#f59a6b", envbuild:"#c9b37e", scripts:"#8ba7b4", tests:"#5e8193" };
+const SIDE_LABEL = { agent:"Agent side", shared:"Shared", world:"World side", offline:"Offline pipeline" };
+const $ = (s) => document.querySelector(s);
+const hidden = new Set();
+let view = "mod", sel = null, hoverN = null, truth = false, G = null, nbrs = new Map(), linksOf = new Map();
+
+// island anchors: agent side on the left arc, world side on the right, offline pipeline along the bottom
+const ANCHOR = { tools:[-520,-160], harness:[-300,-300], belief:[-120,-60], serve:[-420,120], ui:[-640,40],
+  world:[420,-120], shared:[120,-260], tasks:[160,240], train:[420,300], eval:[660,180], envbuild:[680,-320], scripts:[-120,420], tests:[-560,380] };
+
+function buildData() {
+  const src = view === "mod" ? DATA.modules : DATA.symbols;
+  const ls = view === "mod" ? DATA.links : DATA.symlinks;
+  const nodes = src.filter((n) => !hidden.has(n.layer)).map((n) => ({ ...n }));
+  const ids = new Set(nodes.map((n) => n.id));
+  const links = ls.filter((l) => ids.has(l.source.id ?? l.source) && ids.has(l.target.id ?? l.target))
+                  .map((l) => ({ ...l, source: l.source.id ?? l.source, target: l.target.id ?? l.target }));
+  nbrs = new Map(); linksOf = new Map();
+  for (const n of nodes) { nbrs.set(n.id, new Set()); linksOf.set(n.id, []); }
+  for (const l of links) { nbrs.get(l.source).add(l.target); nbrs.get(l.target).add(l.source);
+    linksOf.get(l.source).push(l); linksOf.get(l.target).push(l); }
+  return { nodes, links };
+}
+
+const rad = (n) => view === "mod" ? 4.5 + Math.sqrt(n.n) * 2.1 : 1.8 + Math.sqrt(n.d || 0) * 0.85;
+const isLit = (n) => !sel && !hoverN ? true : (n.id === (sel || hoverN)?.id || nbrs.get((sel || hoverN).id)?.has(n.id));
+const linkLit = (l) => { const f = sel || hoverN; return f && (l.source.id === f.id || l.target.id === f.id); };
+
+function draw(n, ctx, scale) {
+  const lit = isLit(n), col = COLORS[n.layer] || "#aaa", r = rad(n);
+  ctx.globalAlpha = lit ? 1 : 0.13;
+  if (truth && view === "mod") {
+    const side = DATA.layers.find((l) => l.key === n.layer)?.side;
+    if (side === "world" || side === "agent") { ctx.beginPath(); ctx.arc(n.x, n.y, r + 3.5, 0, 7);
+      ctx.strokeStyle = side === "world" ? "rgba(239,106,91,.7)" : "rgba(127,183,255,.55)"; ctx.lineWidth = 1.4 / scale * 2; ctx.stroke(); }
+  }
+  if (sel && n.id === sel.id) { ctx.beginPath(); ctx.arc(n.x, n.y, r + 7, 0, 7); ctx.fillStyle = col + "33"; ctx.fill(); }
+  ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 7); ctx.fillStyle = col; ctx.fill();
+  ctx.lineWidth = 1 / scale; ctx.strokeStyle = "#0e2231"; ctx.stroke();
+  const showLabel = view === "mod" ? (scale > 1.6 || n.n > 28 || (lit && (sel || hoverN))) : (scale > 3.2 || (lit && (sel || hoverN) && scale > 1.4));
+  if (showLabel) {
+    const fs = Math.max(10 / scale, 3.2);
+    ctx.font = `500 ${fs}px Barlow, sans-serif`; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    ctx.fillStyle = lit ? "#e7f0f2" : "rgba(231,240,242,.3)"; ctx.fillText(view === "mod" ? n.name : n.name.slice(0, 32), n.x, n.y + r + 2);
+  }
+  ctx.globalAlpha = 1;
+}
+
+function islands(ctx, scale) {
+  const groups = new Map();
+  for (const n of G.graphData().nodes) { if (n.x == null) continue; if (!groups.has(n.layer)) groups.set(n.layer, []); groups.get(n.layer).push(n); }
+  for (const [k, ns] of groups) {
+    const col = COLORS[k] || "#aaa", pad = (view === "mod" ? 26 : 14);
+    const pts = [];
+    for (const n of ns) { const r = rad(n) + pad; for (let a = 0; a < 6.28; a += 0.785) pts.push([n.x + r * Math.cos(a), n.y + r * Math.sin(a)]); }
+    const hull = d3.polygonHull(pts); if (!hull) continue;
+    const path = d3.line().curve(d3.curveCatmullRomClosed.alpha(0.5)).context(ctx);
+    ctx.beginPath(); path(hull);
+    const dim = (sel || hoverN) && !ns.some(isLit);
+    ctx.fillStyle = col + (dim ? "08" : "14"); ctx.fill();
+    ctx.lineWidth = 1.2 / scale; ctx.strokeStyle = col + (dim ? "18" : "40"); ctx.stroke();
+  }
+}
+
+function islandLabels(ctx, scale) {
+  if (scale > 2.4) return;
+  const groups = new Map();
+  for (const n of G.graphData().nodes) { if (!groups.has(n.layer)) groups.set(n.layer, []); groups.get(n.layer).push(n); }
+  ctx.textAlign = "center"; ctx.textBaseline = "bottom";
+  for (const [k, ns] of groups) {
+    const x = d3.mean(ns, (n) => n.x), y = d3.min(ns, (n) => n.y - rad(n)) - (view === "mod" ? 30 : 18);
+    const lab = DATA.layers.find((l) => l.key === k)?.label.replace(/ \(.*\)/, "") || k;
+    ctx.font = `600 ${15 / scale}px "Barlow Semi Condensed", sans-serif`;
+    ctx.fillStyle = (COLORS[k] || "#aaa") + "dd"; ctx.fillText(lab, x, y);
+  }
+}
+
+function linkColor(l) {
+  if (truth && l.cross) return "rgba(239,106,91,.95)";
+  if (linkLit(l)) return (COLORS[(l.source.layer)] || "#9bd") + "dd";
+  return (sel || hoverN) ? "rgba(139,167,180,.05)" : "rgba(139,167,180,.16)";
+}
+
+function makeGraph() {
+  const el = $("#graph");
+  G = ForceGraph()(el)
+    .backgroundColor("rgba(0,0,0,0)")
+    .nodeId("id").nodeVal((n) => rad(n) ** 2 / 4)
+    .nodeCanvasObject(draw).nodePointerAreaPaint((n, color, ctx) => { ctx.fillStyle = color; ctx.beginPath(); ctx.arc(n.x, n.y, rad(n) + 2, 0, 7); ctx.fill(); })
+    .linkColor(linkColor)
+    .linkWidth((l) => (linkLit(l) ? 1.8 : 0.6) + (view === "mod" ? Math.log1p(l.w || 1) * 0.35 : 0))
+    .linkCurvature(0.12)
+    .linkDirectionalArrowLength((l) => linkLit(l) ? 5 : 0).linkDirectionalArrowRelPos(0.92)
+    .linkDirectionalArrowColor(linkColor)
+    .linkDirectionalParticles((l) => linkLit(l) ? Math.min(4, 1 + Math.round(Math.log1p(l.w || 1))) : 0)
+    .linkDirectionalParticleWidth(2.6).linkDirectionalParticleSpeed(0.006)
+    .linkDirectionalParticleColor((l) => COLORS[l.source.layer] || "#fff")
+    .onNodeHover((n) => { hoverN = n; el.style.cursor = n ? "pointer" : "grab"; refresh(); })
+    .onNodeClick((n) => select(n))
+    .onBackgroundClick(() => select(null))
+    .onRenderFramePre(islands).onRenderFramePost(islandLabels)
+    .cooldownTicks(400).d3VelocityDecay(0.28)
+    .width(innerWidth).height(innerHeight);
+  setForces();
+  G.graphData(buildData());
+  setTimeout(() => fit(), 1700);
+}
+
+function setForces() {
+  const strength = view === "mod" ? 0.16 : 0.07;
+  G.d3Force("x", d3.forceX((n) => (ANCHOR[n.layer] || [0, 0])[0]).strength(strength));
+  G.d3Force("y", d3.forceY((n) => (ANCHOR[n.layer] || [0, 0])[1]).strength(strength));
+  G.d3Force("charge").strength(view === "mod" ? -55 : -10).distanceMax(260);
+  G.d3Force("link").distance((l) => (l.source.layer === l.target.layer ? 28 : 90)).strength((l) => l.source.layer === l.target.layer ? 0.25 : 0.02);
+  G.d3Force("collide", d3.forceCollide((n) => rad(n) + (view === "mod" ? 4 : 1)));
+}
+
+function fit() {
+  // leave room for the left panels: fit, then shift the view so the graph sits in the open area
+  G.zoomToFit(800, 90);
+  setTimeout(() => { if (innerWidth > 900) { const c = G.centerAt(), z = G.zoom() * 0.8; G.zoom(z, 600); G.centerAt(c.x - 150 / z, c.y, 600); } }, 850);
+}
+
+function refresh() { G.linkColor(G.linkColor()).linkWidth(G.linkWidth()).linkDirectionalParticles(G.linkDirectionalParticles()); }
+
+function select(n) {
+  sel = n; refresh();
+  const info = $("#info");
+  $(".hint").style.display = n ? "none" : "";
+  if (!n) { info.classList.remove("on"); return; }
+  const ls = linksOf.get(n.id) || [];
+  const out = ls.filter((l) => l.source.id === n.id), inn = ls.filter((l) => l.target.id === n.id);
+  const item = (m, w) => `<li data-id="${m.id}"><span>${m.name}</span><em>${m.layer}${w ? ", " + w : ""}</em></li>`;
+  const sideOf = DATA.layers.find((l) => l.key === n.layer);
+  $("#infoBody").innerHTML = `<h3>${n.name}</h3><div class="path">${n.path}${n.loc ? " " + n.loc : ""}</div>
+    <span class="chip" style="background:${COLORS[n.layer]}22;color:${COLORS[n.layer]}">${sideOf?.label || n.layer}</span>
+    <span class="chip">${SIDE_LABEL[sideOf?.side] || ""}</span>
+    ${view === "mod" ? `<span class="chip">${n.n} functions and classes</span>` : ""}
+    <h4>Uses ${out.length}</h4><ul>${out.sort((a, b) => (b.w || 0) - (a.w || 0)).map((l) => item(l.target, l.w ? `${l.w} refs` : l.rel)).join("") || "<li><em>nothing in the project</em></li>"}</ul>
+    <h4>Used by ${inn.length}</h4><ul>${inn.sort((a, b) => (b.w || 0) - (a.w || 0)).map((l) => item(l.source, l.w ? `${l.w} refs` : l.rel)).join("") || "<li><em>no project callers</em></li>"}</ul>
+    ${view === "mod" && n.symbols?.length ? `<h4>Defines</h4><div>${n.symbols.slice(0, 40).map((s) => `<span class="chip">${s}</span>`).join("")}</div>` : ""}`;
+  info.classList.add("on");
+  info.querySelectorAll("li[data-id]").forEach((li) => (li.onclick = () => { const m = G.graphData().nodes.find((x) => x.id === li.dataset.id); if (m) select(m); }));
+  G.centerAt(n.x, n.y, 900); G.zoom(Math.max(G.zoom(), view === "mod" ? 2.2 : 3.2), 900);
+}
+
+function layersPanel() {
+  const counts = d3.rollup(DATA.modules, (v) => v.length, (d) => d.layer);
+  let html = "";
+  for (const side of ["agent", "shared", "world", "offline"]) {
+    html += `<div class="side">${SIDE_LABEL[side]}</div>`;
+    for (const l of DATA.layers.filter((x) => x.side === side)) {
+      html += `<div class="lay${hidden.has(l.key) ? " off" : ""}" data-k="${l.key}" tabindex="0" role="button" aria-pressed="${!hidden.has(l.key)}">
+        <i style="background:${COLORS[l.key]}"></i><span>${l.label}</span><em>${counts.get(l.key) || 0}</em></div>`;
+    }
+  }
+  $("#layers").innerHTML = html;
+  $("#layers").querySelectorAll(".lay").forEach((d) => {
+    const flip = () => { hidden.has(d.dataset.k) ? hidden.delete(d.dataset.k) : hidden.add(d.dataset.k); layersPanel(); select(null); G.graphData(buildData()); };
+    d.onclick = flip; d.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } };
+  });
+}
+
+function setView(v) {
+  view = v; $("#vMod").classList.toggle("on", v === "mod"); $("#vSym").classList.toggle("on", v === "sym");
+  select(null); setForces(); G.graphData(buildData()); setTimeout(() => fit(), 1900);
+  $("#names").innerHTML = (v === "mod" ? DATA.modules : DATA.symbols).slice(0, 3000).map((n) => `<option value="${n.name}">`).join("");
+}
+
+function init() {
+  $("#sMods").firstChild.textContent = DATA.modules.length;
+  $("#sLinks").firstChild.textContent = DATA.links.length;
+  $("#sSyms").firstChild.textContent = DATA.symbols.length;
+  $("#verdict").innerHTML = DATA.crossing === 0
+    ? `Agent-side code never imports or calls world-side code: <b>0 crossings</b>.`
+    : `<b class="bad">${DATA.crossing} agent-to-world crossings</b> (shown in red).`;
+  layersPanel(); makeGraph(); setView("mod");
+  $("#vMod").onclick = () => setView("mod"); $("#vSym").onclick = () => setView("sym");
+  $("#truth").onchange = (e) => { truth = e.target.checked; refresh(); };
+  $("#close").onclick = () => select(null);
+  $("#q").addEventListener("change", (e) => {
+    const t = e.target.value.trim().toLowerCase(); if (!t) return;
+    const n = G.graphData().nodes.find((x) => x.name.toLowerCase() === t) || G.graphData().nodes.find((x) => x.name.toLowerCase().includes(t));
+    if (n) select(n);
+  });
+  addEventListener("resize", () => G.width(innerWidth).height(innerHeight));
+}
+init();
+</script>
+</body>
+</html>

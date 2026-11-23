@@ -1,0 +1,106 @@
+{
+ "name": "sft14_heldout_v1",
+ "rows": {
+  "eval": "runs/paper/results/P1/sft14_heldout_v1/eval.json",
+  "n": 191,
+  "success": 0.728,
+  "mean_tool_calls": 3.62,
+  "corr_calls_success": -0.097,
+  "success_by_tool_calls": {
+   "2": {
+    "n": 62,
+    "success": 0.903
+   },
+   "3": {
+    "n": 36,
+    "success": 0.778
+   },
+   "4": {
+    "n": 68,
+    "success": 0.529
+   },
+   "5": {
+    "n": 4,
+    "success": 0.25
+   },
+   "8": {
+    "n": 21,
+    "success": 0.857
+   }
+  },
+  "success_by_turns": {
+   "2": {
+    "n": 60,
+    "success": 0.933
+   },
+   "3": {
+    "n": 35,
+    "success": 0.8
+   },
+   "4": {
+    "n": 70,
+    "success": 0.514
+   },
+   "5": {
+    "n": 4,
+    "success": 0.25
+   },
+   "6": {
+    "n": 1,
+    "success": 0.0
+   },
+   "8": {
+    "n": 21,
+    "success": 0.857
+   }
+  },
+  "end_reasons": {
+   "submitted": 188,
+   "format_failed": 3
+  },
+  "per_family": {
+   "ds_wide_prior": {
+    "n": 21,
+    "success": 0.857,
+    "mean_calls_success": 8.0,
+    "mean_calls_failure": 8.0,
+    "abstain_rate": 0.0
+   },
+   "jam_point": {
+    "n": 10,
+    "success": 1.0,
+    "mean_calls_success": 3.0,
+    "mean_calls_failure": null,
+    "abstain_rate": 0.0
+   },
+   "locate_ghost": {
+    "n": 40,
+    "success": 0.4,
+    "mean_calls_success": 3.88,
+    "mean_calls_failure": 3.83,
+    "abstain_rate": 0.0
+   },
+   "loiter_start": {
+    "n": 40,
+    "success": 0.925,
+    "mean_calls_success": 2.0,
+    "mean_calls_failure": 2.0,
+    "abstain_rate": 0.0
+   },
+   "near_object": {
+    "n": 40,
+    "success": 0.5,
+    "mean_calls_success": 3.45,
+    "mean_calls_failure": 3.8,
+    "abstain_rate": 0.4
+   },
+   "weak_low_alt": {
+    "n": 40,
+    "success": 0.95,
+    "mean_calls_success": 2.89,
+    "mean_calls_failure": 2.5,
+    "abstain_rate": 0.05
+   }
+  }
+ }
+}

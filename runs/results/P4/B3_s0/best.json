@@ -1,0 +1,1 @@
+{"iter": 11, "val_score": 0.8051, "adapter": "runs/paper/results/P4/B3_s0/adapters/iter_010", "rule": "best val mean score, ties to the earlier iteration"}

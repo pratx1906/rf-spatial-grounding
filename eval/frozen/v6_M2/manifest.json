@@ -1,0 +1,161 @@
+{
+ "version": "v6_M2",
+ "n": 791,
+ "per_area": {
+  "df_ambiguity": 243,
+  "operator_query": 548
+ },
+ "per_family": {
+  "band_in_zone": 46,
+  "count_in_zone": 36,
+  "direct_all": 46,
+  "direct_path": 50,
+  "genuine_drone": 43,
+  "ghost_check": 63,
+  "locate": 25,
+  "locate_ghost": 50,
+  "locate_two_sensors": 26,
+  "los_check": 50,
+  "near_object": 50,
+  "near_object_ambiguous": 18,
+  "nearest_drone": 33,
+  "noisy_band": 9,
+  "protocol_id": 21,
+  "reject_ghosts": 46,
+  "swarm_in_zone": 26,
+  "swarm_members": 3,
+  "tracks_in_band": 33,
+  "which_zone": 50,
+  "zone_incursion": 57,
+  "zone_incursion_ambiguous": 10
+ },
+ "per_seed": {
+  "15": 426,
+  "16": 365
+ },
+ "per_family_cluster": {
+  "band_in_zone": {
+   "15-16": 46
+  },
+  "count_in_zone": {
+   "15-16": 36
+  },
+  "direct_all": {
+   "15-16": 46
+  },
+  "direct_path": {
+   "15-16": 50
+  },
+  "genuine_drone": {
+   "15-16": 43
+  },
+  "ghost_check": {
+   "15-16": 63
+  },
+  "locate": {
+   "15-16": 25
+  },
+  "locate_ghost": {
+   "15-16": 50
+  },
+  "locate_two_sensors": {
+   "15-16": 26
+  },
+  "los_check": {
+   "15-16": 50
+  },
+  "near_object": {
+   "15-16": 50
+  },
+  "near_object_ambiguous": {
+   "15-16": 18
+  },
+  "nearest_drone": {
+   "15-16": 33
+  },
+  "noisy_band": {
+   "15-16": 9
+  },
+  "protocol_id": {
+   "15-16": 21
+  },
+  "reject_ghosts": {
+   "15-16": 46
+  },
+  "swarm_in_zone": {
+   "15-16": 26
+  },
+  "swarm_members": {
+   "15-16": 3
+  },
+  "tracks_in_band": {
+   "15-16": 33
+  },
+  "which_zone": {
+   "15-16": 50
+  },
+  "zone_incursion": {
+   "15-16": 57
+  },
+  "zone_incursion_ambiguous": {
+   "15-16": 10
+  }
+ },
+ "tasks_sha": "8a539a640c91a421",
+ "tasks_sha256": "8a539a640c91a421780ac5c55380f732bd6f5056d10fe2d27384683f755e0ad2",
+ "code_sha": {
+  "tasks/scoring.py": "2014766785441485",
+  "harness/verifier.py": "6504b081a8a22ad1",
+  "harness/answers.py": "170095b43ff53100",
+  "harness/prompt.py": "fa74c182d1b48c06",
+  "harness/executor.py": "0ee834ef0eef9fa1",
+  "harness/env.py": "e05694375e48b244",
+  "tools/__init__.py": "b0d19f57ebe9888c",
+  "tools/consistency.py": "a2eae7a828ff311e",
+  "tools/control.py": "6662f3138d6c624f",
+  "tools/coverage.py": "e55299811f7c97ba",
+  "tools/df.py": "cf89c25bfa1499ec",
+  "tools/drone.py": "25455504f4c60957",
+  "tools/effects.py": "58be3ce7930b5418",
+  "tools/errors.py": "c70e9553b6f78399",
+  "tools/registry.py": "53b71ccbd7c374b7",
+  "tools/replay.py": "609191d9425eed0a",
+  "tools/signals.py": "b6cf9702cf8ebffc",
+  "tools/site.py": "dae598682e609580",
+  "tools/tracks.py": "bc98133c37d7e8fa",
+  "tools/types.py": "d9da0144f095a28f",
+  "sim/belief/__init__.py": "02d9024a8345871f",
+  "sim/belief/aoa.py": "8d13a13de2161427",
+  "sim/belief/assign.py": "b72a53d801d5983d",
+  "sim/belief/rf_cache.py": "ba2f5b7335183229",
+  "sim/belief/site_view.py": "ac3d6c014285475f",
+  "sim/belief/tdoa.py": "2ad796a59424c77a",
+  "sim/belief/trust.py": "32e32b42154ee4b9"
+ },
+ "source": "data/tasks/x3_M2/test.jsonl (seeds 15-16)",
+ "source_sha256": "8a539a640c91a421780ac5c55380f732bd6f5056d10fe2d27384683f755e0ad2",
+ "selection": {
+  "mode": "copy",
+  "areas": null,
+  "rng_seed": null,
+  "seed_clusters": {
+   "15-16": [
+    15,
+    16
+   ],
+   "51-60": [
+    51,
+    60
+   ]
+  }
+ },
+ "held_out_families": [
+  "locate_ghost",
+  "near_object"
+ ],
+ "compositional_families": [],
+ "data_sha": {
+  "data/scenarios_v3/kandla_s15_X_M2": "dbbc77c22a1f677a",
+  "data/scenarios_v3/kandla_s16_X_M2": "86a525bf519bde8e"
+ }
+}

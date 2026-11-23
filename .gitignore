@@ -1,0 +1,40 @@
+# environments, tools and caches
+.venv*/
+.tools/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+wandb/
+
+# secrets: the 3D console reads a Cesium ion token from token.txt at run time; never commit it
+token.txt
+*token*.txt
+.env
+.env.*
+*.pem
+*.key
+
+# machine-local state
+.gpu_lock
+.gpu_lock.*
+
+# adapters are committed as <95 MB parts (scripts/bigfiles.py join rebuilds them); joined files stay local
+checkpoints/*/adapter_model.safetensors
+
+# large or rebuildable products (see the README for how to regenerate them)
+*.blend
+*.blend1
+*.pt
+*.pth
+*.ckpt
+data/*/world_cache*/
+data/site_kandla/rf_cache*/*
+!data/site_kandla/rf_cache*/maps/
+!data/site_kandla/rf_cache*/node_links.json
+
+# local run output (published results live under runs/eval, runs/s8x and runs/paper/results)
+runs/*.log
+runs/serve_llm.log
+runs/gateway.log
